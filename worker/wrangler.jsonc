@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "ai-mistake-learning-vision",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-01",
+  "vars": {
+    "ALLOWED_ORIGIN": "https://yuningliu52018-ship-it.github.io",
+    "OPENAI_MODEL": "gpt-5"
+  },
+  "secrets": {
+    "required": ["OPENAI_API_KEY"]
+  }
+}
