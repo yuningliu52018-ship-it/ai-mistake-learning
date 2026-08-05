@@ -17,13 +17,13 @@
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v0.3 OCR 辨識</p><h2>📷 上傳已批改的考卷</h2><p>可移動、縮放、旋轉與裁切。裁切後可使用 OCR 辨識題號與題目文字，再建立錯題草稿。</p></div>
+        <div><p class="eyebrow dark">v0.3 OCR 辨識</p><h2>📷 上傳已批改的考卷</h2><p>裁切框已改為自由比例，可依短題、長題、閱讀題或圖表題重新拉出不同大小。</p></div>
         <label class="upload-btn primary">選擇照片<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
       <div id="scanWorkspace" class="scan-workspace hidden">
-        <div class="scan-toolbar"><strong id="paperName"></strong><div class="scan-actions"><button id="rotateLeftBtn" type="button">↶ 左轉</button><button id="rotateRightBtn" type="button">↷ 右轉</button><button id="zoomOutBtn" type="button">－ 縮小</button><button id="zoomInBtn" type="button">＋ 放大</button><button id="resetCropBtn" type="button">重設</button><button id="captureCropBtn" type="button" class="primary">✂️ 裁切此題</button></div></div>
-        <p class="hint">方向不正時先旋轉；拖曳裁切框框住完整題目。裁切後按「OCR 辨識」擷取題號與文字。</p>
+        <div class="scan-toolbar"><strong id="paperName"></strong><div class="scan-actions"><button id="newCropBtn" type="button">▣ 重新框選</button><button id="rotateLeftBtn" type="button">↶ 左轉</button><button id="rotateRightBtn" type="button">↷ 右轉</button><button id="zoomOutBtn" type="button">－ 縮小</button><button id="zoomInBtn" type="button">＋ 放大</button><button id="resetCropBtn" type="button">重設</button><button id="captureCropBtn" type="button" class="primary">✂️ 裁切此題</button></div></div>
+        <p class="hint">按「重新框選」後，在考卷任意位置拖曳建立新的裁切框；四邊與四角都可自由拉動，不固定長寬比例。</p>
         <div class="cropper-wrap"><img id="paperImage" alt="考卷預覽" /></div>
         <h3 class="result-title">已裁切錯題</h3>
         <div id="detectedList" class="detected-list"></div>
