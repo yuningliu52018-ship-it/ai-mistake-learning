@@ -11,12 +11,16 @@
   let boxes = [];
   let dragStart = null;
   let draftBox = null;
+  let dragging = false;
 
-  function pointerPosition(event) {
+  canvas.draggable = false;
+
+  function eventPoint(event) {
+    const source = event.touches?.[0] || event.changedTouches?.[0] || event;
     const rect = canvas.getBoundingClientRect();
     return {
-      x: (event.clientX - rect.left) * (canvas.width / rect.width),
-      y: (event.clientY - rect.top) * (canvas.height / rect.height)
+      x: Math.max(0, Math.min(canvas.width, (source.clientX - rect.left) * (canvas.width / rect.width))),
+      y: Math.max(0, Math.min(canvas.height, (source.clientY - rect.top) * (canvas.height / rect.height)))
     };
   }
 
@@ -33,7 +37,6 @@
     if (!image) return;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
     ctx.lineWidth = Math.max(3, canvas.width / 350);
     ctx.font = `${Math.max(18, canvas.width / 35)}px sans-serif`;
 
@@ -48,7 +51,7 @@
 
     if (draftBox) {
       ctx.strokeStyle = '#2563eb';
-      ctx.fillStyle = 'rgba(37,99,235,.12)';
+      ctx.fillStyle = 'rgba(37,99,235,.16)';
       ctx.fillRect(draftBox.x, draftBox.y, draftBox.width, draftBox.height);
       ctx.strokeRect(draftBox.x, draftBox.y, draftBox.width, draftBox.height);
     }
@@ -58,20 +61,15 @@
     const crop = document.createElement('canvas');
     crop.width = Math.max(1, Math.round(box.width));
     crop.height = Math.max(1, Math.round(box.height));
-    crop.getContext('2d').drawImage(
-      image,
-      box.x, box.y, box.width, box.height,
-      0, 0, crop.width, crop.height
-    );
+    crop.getContext('2d').drawImage(image, box.x, box.y, box.width, box.height, 0, 0, crop.width, crop.height);
     return crop.toDataURL('image/jpeg', 0.86);
   }
 
   function renderDetected() {
     if (!boxes.length) {
-      detectedList.innerHTML = '<div class="empty compact">尚未框選錯題。請在考卷圖片上拖曳。</div>';
+      detectedList.innerHTML = '<div class="empty compact">尚未框選錯題。請在考卷圖片上按住滑鼠左鍵拖曳。</div>';
       return;
     }
-
     detectedList.innerHTML = boxes.map((box, index) => `
       <article class="detected-item">
         <img src="${cropDataUrl(box)}" alt="錯題裁切 ${index + 1}" />
@@ -83,24 +81,18 @@
             <button type="button" class="primary" data-action="add" data-index="${index}">加入錯題資料庫</button>
           </div>
         </div>
-      </article>
-    `).join('');
+      </article>`).join('');
   }
 
   function loadFile(file) {
-    if (!file || !file.type.startsWith('image/')) {
-      alert('請選擇圖片檔案。');
-      return;
-    }
-
+    if (!file || !file.type.startsWith('image/')) return alert('請選擇圖片檔案。');
     const reader = new FileReader();
     reader.onload = () => {
       const nextImage = new Image();
       nextImage.onload = () => {
         image = nextImage;
         boxes = [];
-        const maxWidth = 1500;
-        const scale = Math.min(1, maxWidth / image.naturalWidth);
+        const scale = Math.min(1, 1500 / image.naturalWidth);
         canvas.width = Math.round(image.naturalWidth * scale);
         canvas.height = Math.round(image.naturalHeight * scale);
         paperName.textContent = file.name;
@@ -114,41 +106,49 @@
     reader.readAsDataURL(file);
   }
 
-  input.addEventListener('change', (event) => loadFile(event.target.files[0]));
-
-  canvas.addEventListener('pointerdown', (event) => {
-    if (!image) return;
+  function startDrag(event) {
+    if (!image || (event.button !== undefined && event.button !== 0)) return;
     event.preventDefault();
-    canvas.setPointerCapture(event.pointerId);
-    dragStart = pointerPosition(event);
+    dragging = true;
+    dragStart = eventPoint(event);
     draftBox = { x: dragStart.x, y: dragStart.y, width: 0, height: 0 };
-  });
-
-  canvas.addEventListener('pointermove', (event) => {
-    if (!dragStart) return;
-    event.preventDefault();
-    draftBox = normalizeBox(dragStart, pointerPosition(event));
     draw();
-  });
+  }
 
-  function finishDrag(event) {
-    if (!dragStart) return;
+  function moveDrag(event) {
+    if (!dragging || !dragStart) return;
     event.preventDefault();
-    const box = normalizeBox(dragStart, pointerPosition(event));
+    draftBox = normalizeBox(dragStart, eventPoint(event));
+    draw();
+  }
+
+  function endDrag(event) {
+    if (!dragging || !dragStart) return;
+    event.preventDefault();
+    const box = normalizeBox(dragStart, eventPoint(event));
+    dragging = false;
     dragStart = null;
     draftBox = null;
-
-    if (box.width >= 30 && box.height >= 30) boxes.push(box);
+    if (box.width >= 20 && box.height >= 20) boxes.push(box);
     draw();
     renderDetected();
   }
 
-  canvas.addEventListener('pointerup', finishDrag);
-  canvas.addEventListener('pointercancel', () => {
-    dragStart = null;
-    draftBox = null;
-    draw();
-  });
+  input.addEventListener('change', (event) => loadFile(event.target.files[0]));
+
+  if (window.PointerEvent) {
+    canvas.addEventListener('pointerdown', startDrag);
+    window.addEventListener('pointermove', moveDrag, { passive: false });
+    window.addEventListener('pointerup', endDrag, { passive: false });
+    window.addEventListener('pointercancel', endDrag, { passive: false });
+  } else {
+    canvas.addEventListener('mousedown', startDrag);
+    window.addEventListener('mousemove', moveDrag);
+    window.addEventListener('mouseup', endDrag);
+    canvas.addEventListener('touchstart', startDrag, { passive: false });
+    window.addEventListener('touchmove', moveDrag, { passive: false });
+    window.addEventListener('touchend', endDrag, { passive: false });
+  }
 
   clearBtn.addEventListener('click', () => {
     boxes = [];
@@ -161,14 +161,12 @@
     if (!button) return;
     const index = Number(button.dataset.index);
     if (!Number.isInteger(index) || !boxes[index]) return;
-
     if (button.dataset.action === 'remove') {
       boxes.splice(index, 1);
       draw();
       renderDetected();
       return;
     }
-
     const numberInput = detectedList.querySelector(`.detected-number[data-index="${index}"]`);
     document.getElementById('addBtn').click();
     document.getElementById('subject').value = '自然';
