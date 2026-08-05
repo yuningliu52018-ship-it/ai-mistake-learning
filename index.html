@@ -3,21 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="第二代 AI 學習系統錯題資料庫" />
-  <title>AI 錯題資料庫</title>
+  <meta name="description" content="116 會考 AI 學習系統錯題資料庫" />
+  <title>116 會考 AI 學習系統</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="hero">
     <div>
-      <p class="eyebrow">第二代 AI 學習系統</p>
+      <p class="eyebrow">116 會考 AI 學習系統</p>
       <h1>錯題資料庫</h1>
-      <p>記錄錯誤原因、核心觀念與複習狀態，讓每一次錯題都真正變成能力。</p>
+      <p>先從考卷中找出錯題，再整理錯誤原因、解題觀念與知識點。</p>
     </div>
     <button id="addBtn" class="primary">＋ 新增錯題</button>
   </header>
 
   <main>
+    <section class="scan-card card">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow dark">第一版：考卷辨識</p>
+          <h2>📷 上傳已批改的考卷</h2>
+          <p>目前先用人工確認模式：上傳照片後，在圖片上拖曳框選錯題，再把各題加入資料庫。這能先驗證完整流程，下一版再加入紅筆記號與 OCR 自動辨識。</p>
+        </div>
+        <label class="upload-btn primary">
+          選擇照片
+          <input id="paperInput" type="file" accept="image/*" capture="environment" hidden />
+        </label>
+      </div>
+
+      <div id="scanWorkspace" class="scan-workspace hidden">
+        <div class="scan-toolbar">
+          <span id="paperName"></span>
+          <button id="clearMarksBtn" type="button">清除框選</button>
+        </div>
+        <p class="hint">在考卷上按住並拖曳，框出每一道錯題。框選後可輸入題號並加入錯題資料庫。</p>
+        <div class="canvas-wrap"><canvas id="paperCanvas"></canvas></div>
+        <div id="detectedList" class="detected-list"></div>
+      </div>
+    </section>
+
     <section class="toolbar card">
       <input id="searchInput" type="search" placeholder="搜尋題目、觀念、知識點…" />
       <select id="subjectFilter"><option value="all">全部科目</option></select>
@@ -42,7 +66,7 @@
       </div>
       <input type="hidden" id="questionId" />
       <div class="grid two">
-        <label>科目<input id="subject" required placeholder="例如：生物" /></label>
+        <label>科目<input id="subject" required placeholder="例如：自然" /></label>
         <label>章節<input id="chapter" placeholder="例如：刺激與反應" /></label>
         <label>題號<input id="number" placeholder="例如：23" /></label>
         <label>狀態<select id="status"><option>待複習</option><option>複習中</option><option>已掌握</option></select></label>
@@ -65,5 +89,6 @@
   </dialog>
 
   <script src="app.js"></script>
+  <script src="scan.js"></script>
 </body>
 </html>
