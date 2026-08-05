@@ -28,33 +28,29 @@
     const pageWidth = Math.max(...words.map(word => word?.bbox?.x1 || 0), 1);
     const pageHeight = Math.max(...words.map(word => word?.bbox?.y1 || 0), 1);
 
-    const candidates = words
-      .map(word => {
-        const raw = String(word.text || '').trim();
-        const match = raw.match(/^(?:第)?[\(（]?\s*(\d{1,2})\s*[\)）\.．、題:]?$/);
-        if (!match || !plausibleQuestionNumber(match[1])) return null;
-        const box = word.bbox || {};
-        const x = (box.x0 || 0) / pageWidth;
-        const y = (box.y0 || 0) / pageHeight;
-        const confidence = Number(word.confidence || 0);
-        if (x > 0.42 || y > 0.38 || confidence < 25) return null;
-        return { number: match[1], score: confidence - x * 50 - y * 35 };
-      })
-      .filter(Boolean)
-      .sort((a, b) => b.score - a.score);
+    const candidates = words.map(word => {
+      const raw = String(word.text || '').trim();
+      const match = raw.match(/^(?:第\s*)?[（(]?\s*(\d{1,2})\s*(?:題|[.．、:：)）])$/);
+      if (!match || !plausibleQuestionNumber(match[1])) return null;
+      const box = word.bbox || {};
+      const x = (box.x0 || 0) / pageWidth;
+      const y = (box.y0 || 0) / pageHeight;
+      const confidence = Number(word.confidence || 0);
+      if (x > 0.28 || y > 0.22 || confidence < 60) return null;
+      return { number: match[1], score: confidence - x * 60 - y * 45 };
+    }).filter(Boolean).sort((a, b) => b.score - a.score);
 
     return candidates[0]?.number || '';
   }
 
   function numberFromText(text) {
-    const firstLines = normalizeCommon(text).split('\n').slice(0, 3).join(' ');
+    const firstLine = normalizeCommon(text).split('\n').find(Boolean) || '';
     const patterns = [
-      /(?:^|\s)(\d{1,2})\s*[\.．、題\)）:：]/,
-      /第\s*(\d{1,2})\s*題/,
-      /^\s*[\(（]?\s*(\d{1,2})\s*[\)）\.．、]?\s+/
+      /^\s*第\s*(\d{1,2})\s*題(?:\s|$)/,
+      /^\s*[（(]?\s*(\d{1,2})\s*(?:[.．、:：)）])\s+/
     ];
     for (const pattern of patterns) {
-      const match = firstLines.match(pattern);
+      const match = firstLine.match(pattern);
       if (match && plausibleQuestionNumber(match[1])) return match[1];
     }
     return '';
@@ -70,18 +66,7 @@
       .replace(/(?:^|\s)\(?D\)?\s*(?=[^\n])/g, '\n(D) ')
       .replace(/\n{3,}/g, '\n\n');
 
-    const lines = output.split('\n').map(line => line.trim()).filter(Boolean);
-    const merged = [];
-    for (const line of lines) {
-      if (/^\([A-D]\)/.test(line)) {
-        merged.push(line);
-      } else if (merged.length && !/[。？！?：:]$/.test(merged[merged.length - 1]) && !/^\([A-D]\)/.test(merged[merged.length - 1])) {
-        merged[merged.length - 1] += line;
-      } else {
-        merged.push(line);
-      }
-    }
-    return merged.join('\n');
+    return output.split('\n').map(line => line.trim()).filter(Boolean).join('\n');
   }
 
   function removeObviousNoise(text) {
@@ -98,15 +83,12 @@
     const result = await recognize(image, languages, options);
     if (!result?.data) return result;
 
-    const wordNumber = numberFromWords(result.data);
     const cleaned = removeObviousNoise(tidyOptions(result.data.text || ''));
-    const textNumber = numberFromText(cleaned);
-    const number = wordNumber || textNumber;
+    const number = numberFromWords(result.data) || numberFromText(cleaned);
 
-    result.data.text = number && !numberFromText(cleaned)
-      ? `${number}. ${cleaned}`.trim()
-      : cleaned;
+    result.data.text = cleaned;
     result.data.questionNumber = number;
+    result.data.questionNumberReliable = Boolean(number);
     return result;
   };
 
