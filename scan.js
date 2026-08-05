@@ -1,180 +1,166 @@
 (() => {
   const input = document.getElementById('paperInput');
   const workspace = document.getElementById('scanWorkspace');
-  const canvas = document.getElementById('paperCanvas');
-  const ctx = canvas.getContext('2d');
+  const imageEl = document.getElementById('paperImage');
   const paperName = document.getElementById('paperName');
   const detectedList = document.getElementById('detectedList');
-  const clearBtn = document.getElementById('clearMarksBtn');
+  const captureBtn = document.getElementById('captureCropBtn');
+  const zoomInBtn = document.getElementById('zoomInBtn');
+  const zoomOutBtn = document.getElementById('zoomOutBtn');
+  const resetBtn = document.getElementById('resetCropBtn');
 
-  let image = null;
-  let boxes = [];
-  let dragStart = null;
-  let draftBox = null;
-  let dragging = false;
-
-  canvas.draggable = false;
-
-  function eventPoint(event) {
-    const source = event.touches?.[0] || event.changedTouches?.[0] || event;
-    const rect = canvas.getBoundingClientRect();
-    return {
-      x: Math.max(0, Math.min(canvas.width, (source.clientX - rect.left) * (canvas.width / rect.width))),
-      y: Math.max(0, Math.min(canvas.height, (source.clientY - rect.top) * (canvas.height / rect.height)))
-    };
-  }
-
-  function normalizeBox(start, end) {
-    return {
-      x: Math.min(start.x, end.x),
-      y: Math.min(start.y, end.y),
-      width: Math.abs(end.x - start.x),
-      height: Math.abs(end.y - start.y)
-    };
-  }
-
-  function draw() {
-    if (!image) return;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-    ctx.lineWidth = Math.max(3, canvas.width / 350);
-    ctx.font = `${Math.max(18, canvas.width / 35)}px sans-serif`;
-
-    boxes.forEach((box, index) => {
-      ctx.strokeStyle = '#dc2626';
-      ctx.fillStyle = 'rgba(220,38,38,.12)';
-      ctx.fillRect(box.x, box.y, box.width, box.height);
-      ctx.strokeRect(box.x, box.y, box.width, box.height);
-      ctx.fillStyle = '#dc2626';
-      ctx.fillText(String(index + 1), box.x + 8, box.y + 28);
-    });
-
-    if (draftBox) {
-      ctx.strokeStyle = '#2563eb';
-      ctx.fillStyle = 'rgba(37,99,235,.16)';
-      ctx.fillRect(draftBox.x, draftBox.y, draftBox.width, draftBox.height);
-      ctx.strokeRect(draftBox.x, draftBox.y, draftBox.width, draftBox.height);
-    }
-  }
-
-  function cropDataUrl(box) {
-    const crop = document.createElement('canvas');
-    crop.width = Math.max(1, Math.round(box.width));
-    crop.height = Math.max(1, Math.round(box.height));
-    crop.getContext('2d').drawImage(image, box.x, box.y, box.width, box.height, 0, 0, crop.width, crop.height);
-    return crop.toDataURL('image/jpeg', 0.86);
-  }
+  let cropper = null;
+  let croppedQuestions = [];
+  let currentObjectUrl = null;
 
   function renderDetected() {
-    if (!boxes.length) {
-      detectedList.innerHTML = '<div class="empty compact">尚未框選錯題。請在考卷圖片上按住滑鼠左鍵拖曳。</div>';
+    if (!croppedQuestions.length) {
+      detectedList.innerHTML = '<div class="empty compact">尚未裁切錯題。調整裁切框後，按「裁切此題」。</div>';
       return;
     }
-    detectedList.innerHTML = boxes.map((box, index) => `
+
+    detectedList.innerHTML = croppedQuestions.map((item, index) => `
       <article class="detected-item">
-        <img src="${cropDataUrl(box)}" alt="錯題裁切 ${index + 1}" />
+        <img src="${item.image}" alt="錯題裁切 ${index + 1}" />
         <div class="detected-body">
           <h3>錯題 ${index + 1}</h3>
-          <label>題號<input class="detected-number" data-index="${index}" placeholder="例如：23" /></label>
+          <label>科目
+            <select class="detected-subject" data-index="${index}">
+              <option>國文</option><option>英文</option><option>數學</option><option selected>自然</option><option>社會</option>
+            </select>
+          </label>
+          <label>題號<input class="detected-number" data-index="${index}" value="${item.number || ''}" placeholder="例如：23" /></label>
           <div class="detected-actions">
-            <button type="button" data-action="remove" data-index="${index}">刪除此框</button>
+            <button type="button" data-action="remove" data-index="${index}">刪除裁切</button>
             <button type="button" class="primary" data-action="add" data-index="${index}">加入錯題資料庫</button>
           </div>
         </div>
-      </article>`).join('');
+      </article>
+    `).join('');
+  }
+
+  function destroyCropper() {
+    if (cropper) {
+      cropper.destroy();
+      cropper = null;
+    }
   }
 
   function loadFile(file) {
-    if (!file || !file.type.startsWith('image/')) return alert('請選擇圖片檔案。');
-    const reader = new FileReader();
-    reader.onload = () => {
-      const nextImage = new Image();
-      nextImage.onload = () => {
-        image = nextImage;
-        boxes = [];
-        const scale = Math.min(1, 1500 / image.naturalWidth);
-        canvas.width = Math.round(image.naturalWidth * scale);
-        canvas.height = Math.round(image.naturalHeight * scale);
-        paperName.textContent = file.name;
-        workspace.classList.remove('hidden');
-        draw();
-        renderDetected();
-        workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      };
-      nextImage.src = reader.result;
+    if (!file || !file.type.startsWith('image/')) {
+      alert('請選擇圖片檔案。');
+      return;
+    }
+
+    destroyCropper();
+    croppedQuestions = [];
+    renderDetected();
+
+    if (currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
+    currentObjectUrl = URL.createObjectURL(file);
+    imageEl.src = currentObjectUrl;
+    paperName.textContent = file.name;
+    workspace.classList.remove('hidden');
+
+    imageEl.onload = () => {
+      if (typeof Cropper === 'undefined') {
+        alert('圖片裁切元件載入失敗，請確認網路連線後重新整理。');
+        return;
+      }
+
+      cropper = new Cropper(imageEl, {
+        viewMode: 1,
+        dragMode: 'move',
+        autoCropArea: 0.45,
+        background: false,
+        responsive: true,
+        restore: false,
+        guides: true,
+        center: true,
+        highlight: true,
+        movable: true,
+        zoomable: true,
+        zoomOnWheel: true,
+        zoomOnTouch: true,
+        cropBoxMovable: true,
+        cropBoxResizable: true,
+        toggleDragModeOnDblclick: false,
+        minCropBoxWidth: 80,
+        minCropBoxHeight: 60
+      });
+      workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
-    reader.readAsDataURL(file);
   }
 
-  function startDrag(event) {
-    if (!image || (event.button !== undefined && event.button !== 0)) return;
-    event.preventDefault();
-    dragging = true;
-    dragStart = eventPoint(event);
-    draftBox = { x: dragStart.x, y: dragStart.y, width: 0, height: 0 };
-    draw();
-  }
-
-  function moveDrag(event) {
-    if (!dragging || !dragStart) return;
-    event.preventDefault();
-    draftBox = normalizeBox(dragStart, eventPoint(event));
-    draw();
-  }
-
-  function endDrag(event) {
-    if (!dragging || !dragStart) return;
-    event.preventDefault();
-    const box = normalizeBox(dragStart, eventPoint(event));
-    dragging = false;
-    dragStart = null;
-    draftBox = null;
-    if (box.width >= 20 && box.height >= 20) boxes.push(box);
-    draw();
-    renderDetected();
-  }
-
-  input.addEventListener('change', (event) => loadFile(event.target.files[0]));
-
-  if (window.PointerEvent) {
-    canvas.addEventListener('pointerdown', startDrag);
-    window.addEventListener('pointermove', moveDrag, { passive: false });
-    window.addEventListener('pointerup', endDrag, { passive: false });
-    window.addEventListener('pointercancel', endDrag, { passive: false });
-  } else {
-    canvas.addEventListener('mousedown', startDrag);
-    window.addEventListener('mousemove', moveDrag);
-    window.addEventListener('mouseup', endDrag);
-    canvas.addEventListener('touchstart', startDrag, { passive: false });
-    window.addEventListener('touchmove', moveDrag, { passive: false });
-    window.addEventListener('touchend', endDrag, { passive: false });
-  }
-
-  clearBtn.addEventListener('click', () => {
-    boxes = [];
-    draw();
-    renderDetected();
+  input.addEventListener('change', (event) => {
+    loadFile(event.target.files?.[0]);
+    input.value = '';
   });
+
+  captureBtn.addEventListener('click', () => {
+    if (!cropper) {
+      alert('請先選擇考卷照片。');
+      return;
+    }
+
+    const cropCanvas = cropper.getCroppedCanvas({
+      maxWidth: 1400,
+      maxHeight: 1400,
+      imageSmoothingEnabled: true,
+      imageSmoothingQuality: 'high',
+      fillColor: '#ffffff'
+    });
+
+    if (!cropCanvas || cropCanvas.width < 30 || cropCanvas.height < 30) {
+      alert('裁切範圍太小，請重新調整。');
+      return;
+    }
+
+    croppedQuestions.push({
+      id: crypto.randomUUID(),
+      image: cropCanvas.toDataURL('image/jpeg', 0.88),
+      number: ''
+    });
+    renderDetected();
+    detectedList.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  zoomInBtn.addEventListener('click', () => cropper?.zoom(0.1));
+  zoomOutBtn.addEventListener('click', () => cropper?.zoom(-0.1));
+  resetBtn.addEventListener('click', () => cropper?.reset());
 
   detectedList.addEventListener('click', (event) => {
     const button = event.target.closest('button[data-action]');
     if (!button) return;
+
     const index = Number(button.dataset.index);
-    if (!Number.isInteger(index) || !boxes[index]) return;
+    const item = croppedQuestions[index];
+    if (!Number.isInteger(index) || !item) return;
+
     if (button.dataset.action === 'remove') {
-      boxes.splice(index, 1);
-      draw();
+      croppedQuestions.splice(index, 1);
       renderDetected();
       return;
     }
-    const numberInput = detectedList.querySelector(`.detected-number[data-index="${index}"]`);
+
+    const number = detectedList.querySelector(`.detected-number[data-index="${index}"]`)?.value.trim() || '';
+    const subject = detectedList.querySelector(`.detected-subject[data-index="${index}"]`)?.value || '自然';
+
     document.getElementById('addBtn').click();
-    document.getElementById('subject').value = '自然';
-    document.getElementById('number').value = numberInput?.value.trim() || '';
-    document.getElementById('question').value = '請依照裁切的考卷圖片補上完整題目。';
+    document.getElementById('subject').value = subject;
+    document.getElementById('number').value = number;
+    document.getElementById('question').value = `【考卷裁切圖片已建立】請補上第 ${number || '　'} 題完整題目。`;
     document.getElementById('correctAnswer').value = '待確認';
-    document.getElementById('mistake').value = '由考卷照片框選加入，尚待分析錯誤原因。';
+    document.getElementById('mistake').value = '由考卷照片裁切匯入，尚待分析錯誤原因。';
+    document.getElementById('concept').value = '待完成詳細解答後整理。';
+    document.getElementById('knowledge').value = '待分類';
+    document.getElementById('explanation').value = '裁切圖片目前保留於本次操作頁面；下一版將與錯題資料一併儲存。';
     document.getElementById('tags').value = '考卷匯入, 待整理';
+  });
+
+  window.addEventListener('beforeunload', () => {
+    destroyCropper();
+    if (currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
   });
 
   renderDetected();
