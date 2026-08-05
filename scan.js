@@ -5,6 +5,7 @@
   const paperName = document.getElementById('paperName');
   const detectedList = document.getElementById('detectedList');
   const captureBtn = document.getElementById('captureCropBtn');
+  const newCropBtn = document.getElementById('newCropBtn');
   const zoomInBtn = document.getElementById('zoomInBtn');
   const zoomOutBtn = document.getElementById('zoomOutBtn');
   const rotateLeftBtn = document.getElementById('rotateLeftBtn');
@@ -23,7 +24,7 @@
 
   function renderDetected() {
     if (!croppedQuestions.length) {
-      detectedList.innerHTML = '<div class="empty compact">尚未裁切錯題。調整裁切框後，按「裁切此題」。</div>';
+      detectedList.innerHTML = '<div class="empty compact">尚未裁切錯題。按「重新框選」後，在考卷上拖曳建立任意大小的框。</div>';
       return;
     }
 
@@ -50,22 +51,16 @@
   }
 
   function destroyCropper() {
-    if (cropper) {
-      cropper.destroy();
-      cropper = null;
-    }
+    cropper?.destroy();
+    cropper = null;
   }
 
   function loadFile(file) {
-    if (!file || !file.type.startsWith('image/')) {
-      alert('請選擇圖片檔案。');
-      return;
-    }
+    if (!file || !file.type.startsWith('image/')) return alert('請選擇圖片檔案。');
 
     destroyCropper();
     croppedQuestions = [];
     renderDetected();
-
     if (currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
     currentObjectUrl = URL.createObjectURL(file);
     imageEl.src = currentObjectUrl;
@@ -73,15 +68,15 @@
     workspace.classList.remove('hidden');
 
     imageEl.onload = () => {
-      if (typeof Cropper === 'undefined') {
-        alert('圖片裁切元件載入失敗，請確認網路連線後重新整理。');
-        return;
-      }
+      if (typeof Cropper === 'undefined') return alert('圖片裁切元件載入失敗，請確認網路連線後重新整理。');
 
       cropper = new Cropper(imageEl, {
         viewMode: 1,
-        dragMode: 'move',
-        autoCropArea: 0.45,
+        dragMode: 'crop',
+        aspectRatio: NaN,
+        initialAspectRatio: NaN,
+        autoCrop: true,
+        autoCropArea: 0.35,
         background: false,
         responsive: true,
         restore: false,
@@ -97,8 +92,8 @@
         cropBoxMovable: true,
         cropBoxResizable: true,
         toggleDragModeOnDblclick: false,
-        minCropBoxWidth: 80,
-        minCropBoxHeight: 60
+        minCropBoxWidth: 30,
+        minCropBoxHeight: 24
       });
 
       workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -110,22 +105,26 @@
     input.value = '';
   });
 
+  newCropBtn.addEventListener('click', () => {
+    if (!cropper) return alert('請先選擇考卷照片。');
+    cropper.setAspectRatio(NaN);
+    cropper.clear();
+    cropper.setDragMode('crop');
+  });
+
   captureBtn.addEventListener('click', () => {
-    if (!cropper) {
-      alert('請先選擇考卷照片。');
-      return;
-    }
+    if (!cropper) return alert('請先選擇考卷照片。');
 
     const cropCanvas = cropper.getCroppedCanvas({
       maxWidth: 1200,
-      maxHeight: 1200,
+      maxHeight: 1600,
       imageSmoothingEnabled: true,
       imageSmoothingQuality: 'high',
       fillColor: '#ffffff'
     });
 
-    if (!cropCanvas || cropCanvas.width < 30 || cropCanvas.height < 30) {
-      alert('裁切範圍太小，請重新調整。');
+    if (!cropCanvas || cropCanvas.width < 30 || cropCanvas.height < 24) {
+      alert('請先框選完整題目，或把裁切框拉大。');
       return;
     }
 
@@ -137,6 +136,8 @@
     });
 
     renderDetected();
+    cropper.clear();
+    cropper.setDragMode('crop');
     detectedList.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 
@@ -144,7 +145,11 @@
   rotateRightBtn.addEventListener('click', () => cropper?.rotate(90));
   zoomInBtn.addEventListener('click', () => cropper?.zoom(0.1));
   zoomOutBtn.addEventListener('click', () => cropper?.zoom(-0.1));
-  resetBtn.addEventListener('click', () => cropper?.reset());
+  resetBtn.addEventListener('click', () => {
+    cropper?.reset();
+    cropper?.setAspectRatio(NaN);
+    cropper?.setDragMode('crop');
+  });
 
   detectedList.addEventListener('change', (event) => {
     const index = Number(event.target.dataset.index);
@@ -157,7 +162,6 @@
   detectedList.addEventListener('click', (event) => {
     const button = event.target.closest('button[data-action]');
     if (!button) return;
-
     const index = Number(button.dataset.index);
     const item = croppedQuestions[index];
     if (!Number.isInteger(index) || !item) return;
@@ -170,11 +174,7 @@
 
     const number = detectedList.querySelector(`.detected-number[data-index="${index}"]`)?.value.trim() || '';
     const subject = detectedList.querySelector(`.detected-subject[data-index="${index}"]`)?.value || '自然';
-
-    if (typeof window.openQuestionFromCrop !== 'function') {
-      alert('錯題表單尚未載入，請重新整理頁面後再試。');
-      return;
-    }
+    if (typeof window.openQuestionFromCrop !== 'function') return alert('錯題表單尚未載入，請重新整理頁面後再試。');
 
     window.openQuestionFromCrop({
       image: item.image,
