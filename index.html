@@ -16,7 +16,7 @@
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v0.5 OCR 強化</p><h2>📷 上傳已批改的考卷</h2><p>支援多框標註、影像前處理、單題或批次 OCR、題目文字與題號補抓；辨識結果可人工修正。</p></div>
+        <div><p class="eyebrow dark">v0.6 OCR 版面分析</p><h2>📷 上傳已批改的考卷</h2><p>支援多框標註、影像前處理、單題或批次 OCR、題號可信度判斷，以及題目與選項分行整理。</p></div>
         <label class="upload-btn primary">選擇照片<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
@@ -30,7 +30,7 @@
             <button id="clearBoxesBtn" type="button">清除全部</button>
           </div>
         </div>
-        <p class="hint">框選時把題號一起包含在左上角。可逐題按「OCR 辨識」，也可按工具列的「全部 OCR」依序辨識所有框。</p>
+        <p class="hint">框選時請把題號完整包含在左上角。系統只接受左上區域且可信度足夠的數字作為題號，降低把選項、圖例或門牌數字誤判為題號。</p>
         <div id="annotationViewport" class="annotation-viewport"><div id="annotationStage"></div></div>
         <h3 class="result-title">已框選錯題</h3>
         <div id="detectedList" class="detected-list"></div>
@@ -46,6 +46,7 @@
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <script src="ocr-enhance.js"></script>
+  <script src="ocr-postprocess.js"></script>
   <script src="app.js"></script>
   <script src="scan.js"></script>
   <script src="batch-ocr.js"></script>
