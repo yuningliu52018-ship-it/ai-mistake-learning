@@ -17,13 +17,13 @@
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v0.2 考卷裁切</p><h2>📷 上傳已批改的考卷</h2><p>使用可移動、縮放、旋轉及調整大小的裁切框。每次框好一道錯題後按「裁切此題」，可重複擷取多題。</p></div>
+        <div><p class="eyebrow dark">v0.3 OCR 辨識</p><h2>📷 上傳已批改的考卷</h2><p>可移動、縮放、旋轉與裁切。裁切後可使用 OCR 辨識題號與題目文字，再建立錯題草稿。</p></div>
         <label class="upload-btn primary">選擇照片<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
       <div id="scanWorkspace" class="scan-workspace hidden">
         <div class="scan-toolbar"><strong id="paperName"></strong><div class="scan-actions"><button id="rotateLeftBtn" type="button">↶ 左轉</button><button id="rotateRightBtn" type="button">↷ 右轉</button><button id="zoomOutBtn" type="button">－ 縮小</button><button id="zoomInBtn" type="button">＋ 放大</button><button id="resetCropBtn" type="button">重設</button><button id="captureCropBtn" type="button" class="primary">✂️ 裁切此題</button></div></div>
-        <p class="hint">方向不正時先按「左轉」或「右轉」；拖曳虛線框調整範圍，框內可移動圖片，滾輪可縮放。</p>
+        <p class="hint">方向不正時先旋轉；拖曳裁切框框住完整題目。裁切後按「OCR 辨識」擷取題號與文字。</p>
         <div class="cropper-wrap"><img id="paperImage" alt="考卷預覽" /></div>
         <h3 class="result-title">已裁切錯題</h3>
         <div id="detectedList" class="detected-list"></div>
@@ -37,6 +37,7 @@
   <dialog id="questionDialog"><form id="questionForm" method="dialog"><div class="dialog-head"><h2 id="dialogTitle">新增錯題</h2><button type="button" id="closeBtn" class="icon-btn" aria-label="關閉">×</button></div><input type="hidden" id="questionId" /><div class="grid two"><label>科目<input id="subject" required placeholder="例如：自然" /></label><label>章節<input id="chapter" placeholder="例如：刺激與反應" /></label><label>題號<input id="number" placeholder="例如：23" /></label><label>狀態<select id="status"><option>待複習</option><option>複習中</option><option>已掌握</option></select></label></div><label>1. 題目<textarea id="question" required rows="4"></textarea></label><div class="grid two"><label>2. 正確答案<input id="correctAnswer" required /></label><label>我的答案<input id="myAnswer" /></label></div><label>3. 我的錯誤<textarea id="mistake" rows="3"></textarea></label><label>4. 解題觀念<textarea id="concept" rows="3"></textarea></label><label>5. 知識點<textarea id="knowledge" rows="3"></textarea></label><label>詳細解答<textarea id="explanation" rows="7"></textarea></label><label>錯誤類型<input id="tags" placeholder="觀念混淆, 範圍判斷" /></label><div class="actions"><button type="button" id="deleteBtn" class="danger hidden">刪除</button><button type="submit" class="primary">儲存錯題</button></div></form></dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <script src="app.js"></script>
   <script src="scan.js"></script>
 </body>
