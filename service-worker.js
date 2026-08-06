@@ -1,16 +1,16 @@
-const CACHE_NAME = 'ai-mistake-learning-v1.2';
+const CACHE_NAME = 'ai-mistake-learning-v1.3';
 const APP_SHELL = [
   './',
   './index.html',
-  './styles.css?v=1.2',
-  './config.js?v=1.2',
-  './ocr-enhance.js?v=1.2',
-  './ocr-postprocess.js?v=1.2',
-  './app.js?v=1.2',
-  './scan.js?v=1.2',
-  './batch-ocr.js?v=1.2',
-  './vision-ai.js?v=1.2',
-  './manifest.webmanifest',
+  './styles.css?v=1.3',
+  './config.js?v=1.3',
+  './ocr-enhance.js?v=1.3',
+  './ocr-postprocess.js?v=1.3',
+  './app.js?v=1.3',
+  './scan.js?v=1.3',
+  './batch-ocr.js?v=1.3',
+  './vision-ai.js?v=1.3',
+  './manifest.webmanifest?v=1.3',
   './app-icon.svg'
 ];
 
@@ -20,37 +20,26 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))
-  );
+  event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))));
   self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   if (request.method !== 'GET') return;
-
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
-
   if (request.mode === 'navigate') {
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put('./index.html', copy));
-          return response;
-        })
-        .catch(() => caches.match('./index.html'))
-    );
+    event.respondWith(fetch(request).then((response) => {
+      const copy = response.clone();
+      caches.open(CACHE_NAME).then((cache) => cache.put('./index.html', copy));
+      return response;
+    }).catch(() => caches.match('./index.html')));
     return;
   }
-
-  event.respondWith(
-    caches.match(request).then((cached) => cached || fetch(request).then((response) => {
-      const copy = response.clone();
-      caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-      return response;
-    }))
-  );
+  event.respondWith(caches.match(request).then((cached) => cached || fetch(request).then((response) => {
+    const copy = response.clone();
+    caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+    return response;
+  })));
 });
