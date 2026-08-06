@@ -9,21 +9,21 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="AI錯題" />
   <title>116 會考 AI 學習系統</title>
-  <link rel="manifest" href="manifest.webmanifest?v=1.2" />
+  <link rel="manifest" href="manifest.webmanifest?v=1.3" />
   <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="app-icon.svg" />
-  <link rel="stylesheet" href="styles.css?v=1.2" />
+  <link rel="stylesheet" href="styles.css?v=1.3" />
 </head>
 <body>
   <header class="hero">
-    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>iPhone 拍考卷、Gemini 智慧分析，並針對弱點生成同觀念類題。</p></div>
+    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>iPhone 拍考卷、Gemini 智慧分析，並透過 Cloudflare D1 跨裝置同步。</p></div>
     <button id="addBtn" class="primary">＋ 新增錯題</button>
   </header>
 
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v1.2 iPhone PWA</p><h2>📷 拍攝已批改的考卷</h2><p>在 iPhone Safari 點「拍考卷」可直接開啟後鏡頭；也可從照片圖庫選擇既有考卷。</p></div>
+        <div><p class="eyebrow dark">v1.3 雲端同步</p><h2>📷 拍攝已批改的考卷</h2><p>在 iPhone Safari 點「拍考卷」可直接開啟後鏡頭；桌機與手機輸入相同同步碼即可共用錯題。</p></div>
         <label class="upload-btn primary">📷 拍考卷<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
@@ -63,16 +63,16 @@
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-  <script src="config.js?v=1.2"></script>
-  <script src="ocr-enhance.js?v=1.2"></script>
-  <script src="ocr-postprocess.js?v=1.2"></script>
-  <script src="app.js?v=1.2"></script>
-  <script src="scan.js?v=1.2"></script>
-  <script src="batch-ocr.js?v=1.2"></script>
-  <script src="vision-ai.js?v=1.2"></script>
+  <script src="config.js?v=1.3"></script>
+  <script src="ocr-enhance.js?v=1.3"></script>
+  <script src="ocr-postprocess.js?v=1.3"></script>
+  <script src="app.js?v=1.3"></script>
+  <script src="scan.js?v=1.3"></script>
+  <script src="batch-ocr.js?v=1.3"></script>
+  <script src="vision-ai.js?v=1.3"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=1.2').catch(console.error));
+      window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=1.3').catch(console.error));
     }
   </script>
 </body>
