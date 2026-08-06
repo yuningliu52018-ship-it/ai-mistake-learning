@@ -9,14 +9,14 @@
 </head>
 <body>
   <header class="hero">
-    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>從整張考卷一次框出多題，OCR 辨識後建立錯題。</p></div>
+    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>從整張考卷一次框出多題，OCR 或 Gemini Vision 辨識後建立錯題。</p></div>
     <button id="addBtn" class="primary">＋ 新增錯題</button>
   </header>
 
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v0.6 OCR 版面分析</p><h2>📷 上傳已批改的考卷</h2><p>支援多框標註、影像前處理、單題或批次 OCR、題號可信度判斷，以及題目與選項分行整理。</p></div>
+        <div><p class="eyebrow dark">v0.7 Gemini Vision</p><h2>📷 上傳已批改的考卷</h2><p>支援多框標註、OCR 草稿與 Gemini Vision 圖片辨識。先框選題目，再使用 Gemini 讀取題號、題幹與選項。</p></div>
         <label class="upload-btn primary">選擇照片<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
@@ -30,7 +30,7 @@
             <button id="clearBoxesBtn" type="button">清除全部</button>
           </div>
         </div>
-        <p class="hint">框選時請把題號完整包含在左上角。系統只接受左上區域且可信度足夠的數字作為題號，降低把選項、圖例或門牌數字誤判為題號。</p>
+        <p class="hint">框選時請完整包含題號、題幹、選項與必要圖表。每個框下方會出現「🤖 Gemini Vision」按鈕。</p>
         <div id="annotationViewport" class="annotation-viewport"><div id="annotationStage"></div></div>
         <h3 class="result-title">已框選錯題</h3>
         <div id="detectedList" class="detected-list"></div>
@@ -45,10 +45,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="config.js"></script>
   <script src="ocr-enhance.js"></script>
   <script src="ocr-postprocess.js"></script>
   <script src="app.js"></script>
   <script src="scan.js"></script>
   <script src="batch-ocr.js"></script>
+  <script src="vision-ai.js"></script>
 </body>
 </html>
