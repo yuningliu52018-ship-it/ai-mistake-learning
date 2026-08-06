@@ -19,15 +19,21 @@ function json(data, status, origin, allowedOrigin) {
   });
 }
 
-function extractOutputText(payload) {
-  if (typeof payload?.output_text === "string") return payload.output_text;
-  const parts = [];
-  for (const item of payload?.output || []) {
-    for (const content of item?.content || []) {
-      if (content?.type === "output_text" && content?.text) parts.push(content.text);
-    }
-  }
-  return parts.join("\n");
+function parseDataUrl(image) {
+  const match = String(image || "").match(/^data:image\/(png|jpeg|jpg|webp);base64,(.+)$/i);
+  if (!match) return null;
+  return {
+    mimeType: match[1].toLowerCase() === "jpg" ? "image/jpeg" : `image/${match[1].toLowerCase()}`,
+    data: match[2]
+  };
+}
+
+function extractGeminiText(payload) {
+  return (payload?.candidates || [])
+    .flatMap(candidate => candidate?.content?.parts || [])
+    .map(part => part?.text || "")
+    .join("\n")
+    .trim();
 }
 
 function parseJsonText(text) {
@@ -60,8 +66,8 @@ export default {
       return json({ error: "Image is too large" }, 413, origin, allowedOrigin);
     }
 
-    if (!env.OPENAI_API_KEY) {
-      return json({ error: "Server is missing OPENAI_API_KEY" }, 500, origin, allowedOrigin);
+    if (!env.GEMINI_API_KEY) {
+      return json({ error: "Server is missing GEMINI_API_KEY" }, 500, origin, allowedOrigin);
     }
 
     let body;
@@ -71,45 +77,87 @@ export default {
       return json({ error: "Invalid JSON body" }, 400, origin, allowedOrigin);
     }
 
-    const image = body?.image;
+    const parsedImage = parseDataUrl(body?.image);
     const subject = String(body?.subject || "未知").slice(0, 20);
     const ocrDraft = String(body?.ocrText || "").slice(0, 6000);
 
-    if (typeof image !== "string" || !/^data:image\/(png|jpeg|jpg|webp);base64,/i.test(image)) {
+    if (!parsedImage) {
       return json({ error: "A PNG, JPEG, or WebP data URL is required" }, 400, origin, allowedOrigin);
     }
 
-    const prompt = `你是台灣國中會考考卷辨識助手。請直接閱讀圖片，不要盲目相信 OCR 草稿。\n\n科目：${subject}\nOCR 草稿：${ocrDraft || "（無）"}\n\n請輸出純 JSON，不要使用 Markdown，格式必須完全符合：\n{\n  "questionNumber": "題號；看不清楚時為空字串",\n  "question": "完整題幹，不要自行補造看不清楚的字",\n  "options": {"A":"", "B":"", "C":"", "D":""},\n  "studentAnswer": "學生作答；無法判斷時為空字串",\n  "correctAnswer": "批改可確定時填入，否則空字串",\n  "confidence": 0,\n  "notes": "簡短列出模糊或不確定之處"\n}\n\n規則：\n1. confidence 為 0 到 100 的整數。\n2. 圖表中的數字不可當成題號。\n3. 保留繁體中文與原選項順序。\n4. 無法辨識時留空，不可猜測。`;
+    const prompt = `你是台灣國中會考考卷辨識助手。請直接閱讀圖片，不要盲目相信 OCR 草稿。\n\n科目：${subject}\nOCR 草稿：${ocrDraft || "（無）"}\n\n請輸出符合指定 JSON 結構的資料。\n\n規則：\n1. questionNumber 只填真正題號；看不清楚時留空。\n2. 圖表中的數字不可當成題號。\n3. question 必須保留完整繁體中文題幹。\n4. options 依 A、B、C、D 分開。\n5. studentAnswer 只在圖片中可確定學生作答時填入。\n6. correctAnswer 只在批改記號可明確判斷時填入。\n7. confidence 為 0 到 100 的整數。\n8. 無法辨識時留空，不可猜測。`;
 
-    const openAiResponse = await fetch("https://api.openai.com/v1/responses", {
+    const model = env.GEMINI_MODEL || "gemini-2.5-flash";
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(env.GEMINI_API_KEY)}`;
+
+    const geminiResponse = await fetch(endpoint, {
       method: "POST",
-      headers: {
-        "Authorization": `Bearer ${env.OPENAI_API_KEY}`,
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: env.OPENAI_MODEL || "gpt-5",
-        input: [{
+        contents: [{
           role: "user",
-          content: [
-            { type: "input_text", text: prompt },
-            { type: "input_image", image_url: image, detail: "high" }
+          parts: [
+            { text: prompt },
+            {
+              inline_data: {
+                mime_type: parsedImage.mimeType,
+                data: parsedImage.data
+              }
+            }
           ]
-        }]
+        }],
+        generationConfig: {
+          temperature: 0.1,
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: "OBJECT",
+            properties: {
+              questionNumber: { type: "STRING" },
+              question: { type: "STRING" },
+              options: {
+                type: "OBJECT",
+                properties: {
+                  A: { type: "STRING" },
+                  B: { type: "STRING" },
+                  C: { type: "STRING" },
+                  D: { type: "STRING" }
+                },
+                required: ["A", "B", "C", "D"]
+              },
+              studentAnswer: { type: "STRING" },
+              correctAnswer: { type: "STRING" },
+              confidence: { type: "INTEGER" },
+              notes: { type: "STRING" }
+            },
+            required: [
+              "questionNumber",
+              "question",
+              "options",
+              "studentAnswer",
+              "correctAnswer",
+              "confidence",
+              "notes"
+            ]
+          }
+        }
       })
     });
 
-    const raw = await openAiResponse.json();
-    if (!openAiResponse.ok) {
-      console.error("OpenAI API error", raw);
-      return json({ error: "Vision service failed", detail: raw?.error?.message || "Unknown error" }, 502, origin, allowedOrigin);
+    const raw = await geminiResponse.json();
+    if (!geminiResponse.ok) {
+      console.error("Gemini API error", raw);
+      return json({
+        error: "Vision service failed",
+        detail: raw?.error?.message || "Unknown Gemini API error"
+      }, 502, origin, allowedOrigin);
     }
 
     try {
-      const parsed = parseJsonText(extractOutputText(raw));
-      return json({ result: parsed }, 200, origin, allowedOrigin);
+      const text = extractGeminiText(raw);
+      const result = parseJsonText(text);
+      return json({ result }, 200, origin, allowedOrigin);
     } catch (error) {
-      console.error("Vision JSON parse error", error, raw);
+      console.error("Gemini JSON parse error", error, raw);
       return json({ error: "Vision response was not valid JSON" }, 502, origin, allowedOrigin);
     }
   }
