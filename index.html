@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="116 會考 AI 學習系統錯題資料庫" />
   <title>116 會考 AI 學習系統</title>
-  <link rel="stylesheet" href="styles.css?v=0.9" />
+  <link rel="stylesheet" href="styles.css?v=1.0" />
 </head>
 <body>
   <header class="hero">
@@ -16,7 +16,7 @@
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v0.9 Gemini 智慧分類</p><h2>📷 上傳已批改的考卷</h2><p>Gemini 會自動判斷科目、章節、題型與難度，並整理正確答案、錯誤原因、解題觀念、知識點及詳細解答。</p></div>
+        <div><p class="eyebrow dark">v1.0 智慧錯題</p><h2>📷 上傳已批改的考卷</h2><p>Gemini 會自動判斷科目、章節、題型、難度與考點，並整理完整錯題分析。</p></div>
         <label class="upload-btn primary">選擇照片<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
@@ -37,20 +37,31 @@
       </div>
     </section>
 
-    <section class="toolbar card"><input id="searchInput" type="search" placeholder="搜尋題目、觀念、知識點…" /><select id="subjectFilter"><option value="all">全部科目</option></select><select id="statusFilter"><option value="all">全部狀態</option><option value="待複習">待複習</option><option value="複習中">複習中</option><option value="已掌握">已掌握</option></select><button id="randomBtn">隨機重做一題</button></section>
+    <section class="toolbar card"><input id="searchInput" type="search" placeholder="搜尋題目、觀念、知識點、題型…" /><select id="subjectFilter"><option value="all">全部科目</option></select><select id="statusFilter"><option value="all">全部狀態</option><option value="待複習">待複習</option><option value="複習中">複習中</option><option value="已掌握">已掌握</option></select><button id="randomBtn">隨機重做一題</button></section>
     <section id="stats" class="stats"></section><section id="questionList" class="question-list"></section>
   </main>
 
-  <dialog id="questionDialog"><form id="questionForm" method="dialog"><div class="dialog-head"><h2 id="dialogTitle">新增錯題</h2><button type="button" id="closeBtn" class="icon-btn" aria-label="關閉">×</button></div><input type="hidden" id="questionId" /><div class="grid two"><label>科目<input id="subject" required placeholder="例如：自然" /></label><label>章節<input id="chapter" placeholder="例如：刺激與反應" /></label><label>題號<input id="number" placeholder="例如：23" /></label><label>狀態<select id="status"><option>待複習</option><option>複習中</option><option>已掌握</option></select></label></div><label>1. 題目<textarea id="question" required rows="4"></textarea></label><div class="grid two"><label>2. 正確答案<input id="correctAnswer" required /></label><label>我的答案<input id="myAnswer" /></label></div><label>3. 我的錯誤<textarea id="mistake" rows="3"></textarea></label><label>4. 解題觀念<textarea id="concept" rows="3"></textarea></label><label>5. 知識點<textarea id="knowledge" rows="3"></textarea></label><label>詳細解答<textarea id="explanation" rows="7"></textarea></label><label>錯誤類型<input id="tags" placeholder="觀念混淆, 圖表判讀, 難度3" /></label><div class="actions"><button type="button" id="deleteBtn" class="danger hidden">刪除</button><button type="submit" class="primary">儲存錯題</button></div></form></dialog>
+  <dialog id="questionDialog"><form id="questionForm" method="dialog"><div class="dialog-head"><h2 id="dialogTitle">新增錯題</h2><button type="button" id="closeBtn" class="icon-btn" aria-label="關閉">×</button></div><input type="hidden" id="questionId" />
+    <div class="grid two">
+      <label>科目<input id="subject" required placeholder="例如：自然" /></label>
+      <label>章節<input id="chapter" placeholder="例如：刺激與反應" /></label>
+      <label>題號<input id="number" placeholder="例如：23" /></label>
+      <label>狀態<select id="status"><option>待複習</option><option>複習中</option><option>已掌握</option></select></label>
+      <label>題型<input id="questionType" placeholder="例如：圖表判讀" /></label>
+      <label>難度<select id="difficulty"><option value="1">★☆☆☆☆</option><option value="2">★★☆☆☆</option><option value="3" selected>★★★☆☆</option><option value="4">★★★★☆</option><option value="5">★★★★★</option></select></label>
+    </div>
+    <label>1. 題目<textarea id="question" required rows="4"></textarea></label>
+    <div class="grid two"><label>2. 正確答案<input id="correctAnswer" required /></label><label>我的答案<input id="myAnswer" /></label></div>
+    <label>3. 我的錯誤<textarea id="mistake" rows="3"></textarea></label><label>4. 解題觀念<textarea id="concept" rows="3"></textarea></label><label>5. 知識點／考點<textarea id="knowledge" rows="3"></textarea></label><label>詳細解答<textarea id="explanation" rows="7"></textarea></label><label>錯誤類型與 AI 標籤<input id="tags" placeholder="觀念混淆, 親屬稱謂" /></label><div class="actions"><button type="button" id="deleteBtn" class="danger hidden">刪除</button><button type="submit" class="primary">儲存錯題</button></div></form></dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-  <script src="config.js?v=0.9"></script>
-  <script src="ocr-enhance.js?v=0.9"></script>
-  <script src="ocr-postprocess.js?v=0.9"></script>
-  <script src="app.js?v=0.9"></script>
-  <script src="scan.js?v=0.9"></script>
-  <script src="batch-ocr.js?v=0.9"></script>
-  <script src="vision-ai.js?v=0.9"></script>
+  <script src="config.js?v=1.0"></script>
+  <script src="ocr-enhance.js?v=1.0"></script>
+  <script src="ocr-postprocess.js?v=1.0"></script>
+  <script src="app.js?v=1.0"></script>
+  <script src="scan.js?v=1.0"></script>
+  <script src="batch-ocr.js?v=1.0"></script>
+  <script src="vision-ai.js?v=1.0"></script>
 </body>
 </html>
