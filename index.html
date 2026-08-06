@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="116 會考 AI 學習系統錯題資料庫" />
   <title>116 會考 AI 學習系統</title>
-  <link rel="stylesheet" href="styles.css?v=1.0" />
+  <link rel="stylesheet" href="styles.css?v=1.1" />
 </head>
 <body>
   <header class="hero">
-    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>從考卷框選錯題，由 Gemini 自動辨識、分類、解析並建立第二代 AI 學習系統資料。</p></div>
+    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>從考卷框選錯題，由 Gemini 自動分析，並針對弱點生成同觀念類題。</p></div>
     <button id="addBtn" class="primary">＋ 新增錯題</button>
   </header>
 
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v1.0 智慧錯題</p><h2>📷 上傳已批改的考卷</h2><p>Gemini 會自動判斷科目、章節、題型、難度與考點，並整理完整錯題分析。</p></div>
+        <div><p class="eyebrow dark">v1.1 AI 類題練習</p><h2>📷 上傳已批改的考卷</h2><p>Gemini 會自動判斷科目、章節、題型、難度與考點；儲存後可一鍵生成 3 題同觀念練習題。</p></div>
         <label class="upload-btn primary">選擇照片<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
@@ -56,12 +56,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-  <script src="config.js?v=1.0"></script>
-  <script src="ocr-enhance.js?v=1.0"></script>
-  <script src="ocr-postprocess.js?v=1.0"></script>
-  <script src="app.js?v=1.0"></script>
-  <script src="scan.js?v=1.0"></script>
-  <script src="batch-ocr.js?v=1.0"></script>
-  <script src="vision-ai.js?v=1.0"></script>
+  <script src="config.js?v=1.1"></script>
+  <script src="ocr-enhance.js?v=1.1"></script>
+  <script src="ocr-postprocess.js?v=1.1"></script>
+  <script src="app.js?v=1.1"></script>
+  <script src="scan.js?v=1.1"></script>
+  <script src="batch-ocr.js?v=1.1"></script>
+  <script src="vision-ai.js?v=1.1"></script>
 </body>
 </html>
