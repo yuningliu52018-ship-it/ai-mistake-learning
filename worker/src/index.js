@@ -52,11 +52,11 @@ export default {
     catch { return json({ error: "Invalid JSON body" }, 400, origin, allowedOrigin); }
 
     const parsedImage = parseDataUrl(body?.image);
-    const subject = String(body?.subject || "未知").slice(0, 20);
+    const subjectHint = String(body?.subject || "未知").slice(0, 20);
     const ocrDraft = String(body?.ocrText || "").slice(0, 6000);
     if (!parsedImage) return json({ error: "A PNG, JPEG, or WebP data URL is required" }, 400, origin, allowedOrigin);
 
-    const prompt = `你是台灣國中會考的專業錯題老師。請閱讀考卷圖片，並整理成「第二代 AI 學習系統」格式。不要盲目相信 OCR 草稿；以圖片為主要依據。\n\n科目：${subject}\nOCR 草稿：${ocrDraft || "（無）"}\n\n要求：\n1. 完整保留題幹、選項、必要圖表文字。\n2. questionNumber 只填真正題號；圖表數字不可誤判。\n3. studentAnswer 只在學生作答記號清楚時填。\n4. correctAnswer 優先依批改記號與題意判斷；無法確定時填「待確認」。\n5. mistake 要分析學生為什麼容易答錯；若圖片看不出思考過程，請寫最可能的錯誤類型並標示為推測。\n6. concept 說明本題核心解題觀念與判斷流程。\n7. knowledge 條列必須掌握的知識點。\n8. explanation 提供完整、可重新學會的逐步解析，並說明其他選項錯在哪裡。\n9. tags 提供 2 到 5 個精簡錯誤標籤。\n10. 全部使用繁體中文；不可捏造看不清楚的文字。\n11. confidence 為 0 到 100 的整數。`;
+    const prompt = `你是台灣國中會考的專業錯題老師。請閱讀考卷圖片，整理成第二代 AI 學習系統格式。以圖片為主要依據，不要盲目相信 OCR 或原本選擇的科目。\n\n原本科目提示：${subjectHint}\nOCR 草稿：${ocrDraft || "（無）"}\n\n要求：\n1. subject 必須自行判斷，只能是國文、英文、數學、自然、社會之一。\n2. chapter 填最適合的章節名稱。\n3. questionType 填精簡題型，例如圖表判讀、閱讀理解、文法、計算、實驗推理、史料判讀。\n4. difficulty 為 1 到 5 的整數。\n5. 完整保留題幹、選項及必要圖表文字。\n6. questionNumber 只填真正題號，圖表數字不可誤判。\n7. studentAnswer 只在學生作答記號清楚時填。\n8. correctAnswer 優先依批改記號與題意判斷；無法確定時填「待確認」。\n9. mistake 要分析可能的錯誤原因；若圖片看不出思考過程，必須標示「推測」。\n10. concept 說明核心觀念與判斷流程。\n11. knowledge 條列必須掌握的知識點。\n12. explanation 提供完整解析並說明其他選項錯在哪裡。\n13. tags 提供 2 到 5 個精簡標籤。\n14. 全部使用繁體中文，不可捏造看不清楚的文字。\n15. confidence 為 0 到 100 的整數。`;
 
     const model = env.GEMINI_MODEL || "gemini-3.6-flash";
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(env.GEMINI_API_KEY)}`;
@@ -72,8 +72,11 @@ export default {
           responseSchema: {
             type: "OBJECT",
             properties: {
-              questionNumber: { type: "STRING" },
+              subject: { type: "STRING", enum: ["國文", "英文", "數學", "自然", "社會"] },
               chapter: { type: "STRING" },
+              questionType: { type: "STRING" },
+              difficulty: { type: "INTEGER" },
+              questionNumber: { type: "STRING" },
               question: { type: "STRING" },
               options: { type: "OBJECT", properties: { A:{type:"STRING"}, B:{type:"STRING"}, C:{type:"STRING"}, D:{type:"STRING"} }, required:["A","B","C","D"] },
               studentAnswer: { type: "STRING" },
@@ -86,7 +89,7 @@ export default {
               confidence: { type: "INTEGER" },
               notes: { type: "STRING" }
             },
-            required: ["questionNumber","chapter","question","options","studentAnswer","correctAnswer","mistake","concept","knowledge","explanation","tags","confidence","notes"]
+            required: ["subject","chapter","questionType","difficulty","questionNumber","question","options","studentAnswer","correctAnswer","mistake","concept","knowledge","explanation","tags","confidence","notes"]
           }
         }
       })
@@ -100,6 +103,7 @@ export default {
 
     try {
       const result = parseJsonText(extractGeminiText(raw));
+      result.difficulty = Math.max(1, Math.min(5, Number(result.difficulty) || 3));
       return json({ result }, 200, origin, allowedOrigin);
     } catch (error) {
       console.error("Gemini JSON parse error", error, raw);
