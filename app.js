@@ -1,5 +1,6 @@
 const STORAGE_KEY = "aiMistakeLearning.questions.v2";
 const LEGACY_KEY = "aiMistakeLearning.questions.v1";
+const AI_ENDPOINT = window.AI_MISTAKE_CONFIG?.visionEndpoint || "";
 
 const starterQuestions = [
   {id:crypto.randomUUID(),subject:"自然",chapter:"植物的感應",number:"1",status:"待複習",questionType:"觀念判斷",difficulty:2,question:"下列關於植物向性的敘述，何者正確？",correctAnswer:"A：植物的根會表現出向地性，以利吸收水分。",myAnswer:"D",mistake:"把根固定植物的功能，誤認成根具有向觸性。",concept:"先辨認刺激來源，再判斷植物器官的生長方向。",knowledge:"向地性、向觸性、根的功能",explanation:"根受到重力刺激後通常順著重力方向往下生長。",tags:["觀念混淆","向性判斷"],image:"",createdAt:new Date().toISOString()},
@@ -14,17 +15,35 @@ function loadQuestions(){try{const current=JSON.parse(localStorage.getItem(STORA
 function saveQuestions(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(questions));}catch(error){alert("儲存失敗：圖片可能太大。請重新裁切較小範圍後再試。");throw error;}}
 function escapeHtml(value=""){return String(value).replace(/[&<>'"]/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"})[char]);}
 function stars(value){const n=Math.max(1,Math.min(5,Number(value)||3));return "★".repeat(n)+"☆".repeat(5-n);}
+function formatGeneratedQuestion(item){const lines=[String(item.question||"").trim()];for(const key of ["A","B","C","D"]){if(item.options?.[key])lines.push(`(${key}) ${String(item.options[key]).trim()}`);}return lines.filter(Boolean).join("\n");}
 
 function filteredQuestions(){const keyword=$("searchInput").value.trim().toLowerCase(),subject=$("subjectFilter").value,status=$("statusFilter").value;return questions.filter(q=>{const haystack=[q.subject,q.chapter,q.questionType,q.question,q.concept,q.knowledge,q.explanation,...(q.tags||[])].join(" ").toLowerCase();return(!keyword||haystack.includes(keyword))&&(subject==="all"||q.subject===subject)&&(status==="all"||q.status===status);});}
 
 function render(){renderSubjects();renderStats();const data=filteredQuestions();if(!data.length){list.innerHTML='<div class="empty">找不到符合條件的錯題。</div>';return;}list.innerHTML=data.map(q=>`
 <article class="question-card"><div class="question-head"><div><div class="meta">
 <span class="badge">${escapeHtml(q.subject)}</span>${q.chapter?`<span class="badge">${escapeHtml(q.chapter)}</span>`:""}${q.number?`<span class="badge">第 ${escapeHtml(q.number)} 題</span>`:""}${q.questionType?`<span class="badge">${escapeHtml(q.questionType)}</span>`:""}<span class="badge" title="難度 ${q.difficulty}/5">${stars(q.difficulty)}</span><span class="badge status-${escapeHtml(q.status)}">${escapeHtml(q.status)}</span>
-</div><h3>${escapeHtml(q.question)}</h3></div><button onclick="editQuestion('${q.id}')">查看／編輯</button></div>
+</div><h3>${escapeHtml(q.question)}</h3></div><div class="card-actions"><button onclick="generateSimilar('${q.id}',this)">✨ AI 類題 ×3</button><button onclick="editQuestion('${q.id}')">查看／編輯</button></div></div>
 ${q.image?`<div class="question-image-wrap"><img class="question-image" src="${q.image}" alt="第 ${escapeHtml(q.number||"")} 題圖片" /></div>`:""}
 <div class="detail"><h4>正確答案</h4><div>${escapeHtml(q.correctAnswer)}</div><h4>我的錯誤</h4><div>${escapeHtml(q.mistake||"尚未填寫")}</div><h4>解題觀念</h4><div>${escapeHtml(q.concept||"尚未填寫")}</div><div class="tags">${(q.tags||[]).map(tag=>`<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div></div></article>`).join("");}
 function renderSubjects(){const current=$("subjectFilter").value,subjects=[...new Set(questions.map(q=>q.subject).filter(Boolean))].sort();$("subjectFilter").innerHTML='<option value="all">全部科目</option>'+subjects.map(s=>`<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join("");$("subjectFilter").value=subjects.includes(current)?current:"all";}
 function renderStats(){const mastered=questions.filter(q=>q.status==="已掌握").length,reviewing=questions.filter(q=>q.status==="複習中").length,pending=questions.filter(q=>q.status==="待複習").length;$("stats").innerHTML=[["錯題總數",questions.length],["待複習",pending],["複習中",reviewing],["已掌握",mastered]].map(([label,value])=>`<div class="stat"><span>${label}</span><strong>${value}</strong></div>`).join("");}
+
+window.generateSimilar=async function(id,button){
+  const source=questions.find(q=>q.id===id);if(!source)return;
+  if(!AI_ENDPOINT)return alert("尚未設定 Gemini API 網址。");
+  if(!confirm("要依這題生成 3 題同觀念練習題並加入資料庫嗎？"))return;
+  const original=button.textContent;button.disabled=true;button.textContent="✨ 生成中…";
+  try{
+    const response=await fetch(AI_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"generateSimilar",question:{subject:source.subject,chapter:source.chapter,questionType:source.questionType,difficulty:source.difficulty,question:source.question,correctAnswer:source.correctAnswer,concept:source.concept,knowledge:source.knowledge}})});
+    const payload=await response.json().catch(()=>({}));if(!response.ok)throw new Error(payload.detail||payload.error||`HTTP ${response.status}`);
+    const generated=(payload.questions||[]).slice(0,3).map((item,index)=>normalizeQuestion({
+      id:crypto.randomUUID(),subject:item.subject||source.subject,chapter:item.chapter||source.chapter,number:`類題${index+1}`,status:"待複習",questionType:item.questionType||source.questionType,difficulty:item.difficulty||source.difficulty,
+      question:formatGeneratedQuestion(item),correctAnswer:item.correctAnswer||"待確認",myAnswer:"",mistake:"由原錯題延伸的練習題，作答後再記錄錯誤原因。",concept:item.concept||source.concept,knowledge:item.knowledge||source.knowledge,explanation:item.explanation||"待完成解析。",tags:["AI類題",...(item.tags||[])],image:"",createdAt:new Date().toISOString(),sourceQuestionId:source.id
+    }));
+    if(!generated.length)throw new Error("Gemini 沒有產生類題");
+    questions=[...generated,...questions];saveQuestions();render();alert(`已加入 ${generated.length} 題 AI 類題。`);
+  }catch(error){console.error(error);alert(`類題生成失敗：${error.message}`);}finally{button.disabled=false;button.textContent=original;}
+};
 
 function openNew(){editingId=null;pendingImage="";form.reset();$("status").value="待複習";$("difficulty").value="3";$("dialogTitle").textContent="新增錯題";$("deleteBtn").classList.add("hidden");dialog.showModal();}
 window.openQuestionFromCrop=function(draft){editingId=null;form.reset();pendingImage=draft.image||"";$("status").value="待複習";$("dialogTitle").textContent="由考卷建立錯題";$("deleteBtn").classList.add("hidden");$("subject").value=draft.subject||"自然";$("chapter").value=draft.chapter||"";$("number").value=draft.number||"";$("questionType").value=draft.questionType||"";$("difficulty").value=String(Math.max(1,Math.min(5,Number(draft.difficulty)||3)));$("question").value=draft.question||"請補上完整題目。";$("correctAnswer").value=draft.correctAnswer||"待確認";$("myAnswer").value=draft.myAnswer||"";$("mistake").value=draft.mistake||"由考卷照片裁切匯入，尚待分析錯誤原因。";$("concept").value=draft.concept||"待整理";$("knowledge").value=draft.knowledge||"待分類";$("explanation").value=draft.explanation||"待完成詳細解答。";$("tags").value=(draft.tags||["考卷匯入","待整理"]).join(", ");dialog.showModal();};
