@@ -1,0 +1,19 @@
+{
+  "name": "116 會考 AI 學習系統",
+  "short_name": "AI錯題",
+  "description": "拍攝考卷、Gemini 智慧分析、建立錯題與類題練習。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
