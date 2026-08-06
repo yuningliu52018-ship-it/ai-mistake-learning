@@ -27,9 +27,16 @@
   }
 
   function buildFormData(card, result) {
+    const difficulty = Math.max(1, Math.min(5, Number(result.difficulty) || 3));
+    const aiTags = [
+      result.questionType || '',
+      `難度${difficulty}`,
+      ...normalizeTags(result.tags)
+    ].filter(Boolean);
+
     return {
       image: card.querySelector('img')?.src || '',
-      subject: card.querySelector('.detected-subject')?.value || '未知',
+      subject: result.subject || card.querySelector('.detected-subject')?.value || '未知',
       chapter: result.chapter || '',
       number: result.questionNumber || card.querySelector('.detected-number')?.value || '',
       question: formatQuestion(result) || card.querySelector('.detected-ocr')?.value || '',
@@ -39,7 +46,7 @@
       concept: result.concept || '待整理',
       knowledge: result.knowledge || '待分類',
       explanation: result.explanation || '待完成詳細解答。',
-      tags: ['考卷匯入', 'Gemini 已分析', ...normalizeTags(result.tags)]
+      tags: ['考卷匯入', 'Gemini 已分析', ...aiTags]
     };
   }
 
@@ -51,6 +58,7 @@
     const image = card.querySelector('img')?.src;
     const subject = card.querySelector('.detected-subject')?.value || '未知';
     const ocrText = card.querySelector('.detected-ocr')?.value || '';
+    const subjectSelect = card.querySelector('.detected-subject');
     const numberInput = card.querySelector('.detected-number');
     const textArea = card.querySelector('.detected-ocr');
     if (!image?.startsWith('data:image/')) return alert('找不到框選圖片，請重新框選後再試。');
@@ -58,7 +66,7 @@
     button.disabled = true;
     const originalText = button.textContent;
     button.textContent = '🤖 Gemini 分析中…';
-    setStatus(card, 'Gemini 正在辨識題目並產生完整錯題解析，通常需要數秒。', 'running');
+    setStatus(card, 'Gemini 正在判斷科目、題型、難度並產生完整錯題解析。', 'running');
 
     try {
       const response = await fetch(endpoint, {
@@ -71,6 +79,11 @@
 
       const result = payload.result || {};
       card.dataset.visionResult = JSON.stringify(result);
+
+      if (subjectSelect && result.subject && [...subjectSelect.options].some(option => option.value === result.subject || option.text === result.subject)) {
+        subjectSelect.value = result.subject;
+        subjectSelect.dispatchEvent(new Event('change', { bubbles: true }));
+      }
       if (numberInput && result.questionNumber) {
         numberInput.value = result.questionNumber;
         numberInput.dispatchEvent(new Event('input', { bubbles: true }));
@@ -83,7 +96,10 @@
 
       const confidence = Number.isFinite(Number(result.confidence)) ? `｜信心值 ${Math.round(Number(result.confidence))}%` : '';
       const answer = result.correctAnswer ? `｜答案 ${result.correctAnswer}` : '';
-      setStatus(card, `Gemini 完整分析完成${confidence}${answer}｜按「加入錯題資料庫」可自動帶入全部欄位。`, 'done');
+      const subjectText = result.subject ? `｜${result.subject}` : '';
+      const type = result.questionType ? `｜${result.questionType}` : '';
+      const difficulty = result.difficulty ? `｜難度 ${result.difficulty}/5` : '';
+      setStatus(card, `Gemini 分析完成${confidence}${answer}${subjectText}${type}${difficulty}｜按「加入錯題資料庫」自動帶入全部欄位。`, 'done');
     } catch (error) {
       console.error('Gemini Vision error', error);
       setStatus(card, `Gemini 分析失敗：${error.message}`, 'error');
@@ -102,7 +118,7 @@
       button.type = 'button';
       button.dataset.action = 'vision';
       button.className = 'vision-btn';
-      button.textContent = '🤖 Gemini 完整分析';
+      button.textContent = '🤖 Gemini 智慧分析';
       actions.insertBefore(button, actions.querySelector('[data-action="add"]') || null);
     });
   }
