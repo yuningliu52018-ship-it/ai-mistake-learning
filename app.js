@@ -2,179 +2,36 @@ const STORAGE_KEY = "aiMistakeLearning.questions.v2";
 const LEGACY_KEY = "aiMistakeLearning.questions.v1";
 
 const starterQuestions = [
-  {
-    id: crypto.randomUUID(), subject: "自然", chapter: "植物的感應", number: "1", status: "待複習",
-    question: "下列關於植物向性的敘述，何者正確？",
-    correctAnswer: "A：植物的根會表現出向地性，以利吸收水分。", myAnswer: "D",
-    mistake: "把根固定植物的功能，誤認成根具有向觸性。",
-    concept: "先辨認刺激來源，再判斷植物器官的生長方向。根通常具有向地性；卷鬚纏繞支架才是典型向觸性。",
-    knowledge: "向地性、向觸性、根的功能",
-    explanation: "根受到重力刺激後，通常順著重力方向往下生長，這叫向地性。根深入土壤後可接觸水分與礦物質，也有助於固定植物。向觸性是植物受到接觸刺激後改變生長方向，例如豌豆或絲瓜的卷鬚碰到支架後纏繞，因此 D 錯。",
-    tags: ["觀念混淆", "向性判斷"], image: "", createdAt: new Date().toISOString()
-  },
-  {
-    id: crypto.randomUUID(), subject: "自然", chapter: "神經系統", number: "23", status: "待複習",
-    question: "腦中風是腦部血管堵塞或破裂造成的損傷，腦中風一定是下列何者受到損傷？",
-    correctAnswer: "C：中樞神經系統", myAnswer: "D：腦幹",
-    mistake: "把腦的一個局部構造，誤當成所有腦中風都一定受損的位置。",
-    concept: "看到「一定」時，要找能涵蓋全部情況的上位分類。",
-    knowledge: "中樞神經系統包含腦與脊髓；腦包含大腦、小腦與腦幹。",
-    explanation: "腦中風可能發生在大腦、小腦或腦幹，不一定只發生在腦幹。但不論發生在哪一個腦部區域，都屬於中樞神經系統受損，因此答案是 C。",
-    tags: ["範圍判斷", "被關鍵字誤導"], image: "", createdAt: new Date().toISOString()
-  }
+  {id:crypto.randomUUID(),subject:"自然",chapter:"植物的感應",number:"1",status:"待複習",questionType:"觀念判斷",difficulty:2,question:"下列關於植物向性的敘述，何者正確？",correctAnswer:"A：植物的根會表現出向地性，以利吸收水分。",myAnswer:"D",mistake:"把根固定植物的功能，誤認成根具有向觸性。",concept:"先辨認刺激來源，再判斷植物器官的生長方向。",knowledge:"向地性、向觸性、根的功能",explanation:"根受到重力刺激後通常順著重力方向往下生長。",tags:["觀念混淆","向性判斷"],image:"",createdAt:new Date().toISOString()},
+  {id:crypto.randomUUID(),subject:"自然",chapter:"神經系統",number:"23",status:"待複習",questionType:"範圍判斷",difficulty:3,question:"腦中風一定是下列何者受到損傷？",correctAnswer:"C：中樞神經系統",myAnswer:"D：腦幹",mistake:"把腦的一個局部構造，誤當成所有腦中風都一定受損的位置。",concept:"看到「一定」時，要找能涵蓋全部情況的上位分類。",knowledge:"中樞神經系統包含腦與脊髓。",explanation:"腦中風可能發生在不同腦區，但都屬於中樞神經系統受損。",tags:["範圍判斷","被關鍵字誤導"],image:"",createdAt:new Date().toISOString()}
 ];
 
-let questions = loadQuestions();
-let editingId = null;
-let pendingImage = "";
+let questions=loadQuestions(),editingId=null,pendingImage="";
+const $=id=>document.getElementById(id),list=$("questionList"),dialog=$("questionDialog"),form=$("questionForm");
 
-const $ = (id) => document.getElementById(id);
-const list = $("questionList");
-const dialog = $("questionDialog");
-const form = $("questionForm");
+function normalizeQuestion(q){return {questionType:"",difficulty:3,...q,difficulty:Math.max(1,Math.min(5,Number(q?.difficulty)||3))};}
+function loadQuestions(){try{const current=JSON.parse(localStorage.getItem(STORAGE_KEY));if(Array.isArray(current))return current.map(normalizeQuestion);const legacy=JSON.parse(localStorage.getItem(LEGACY_KEY));if(Array.isArray(legacy))return legacy.map(q=>normalizeQuestion({image:"",...q}));return starterQuestions;}catch{return starterQuestions;}}
+function saveQuestions(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(questions));}catch(error){alert("儲存失敗：圖片可能太大。請重新裁切較小範圍後再試。");throw error;}}
+function escapeHtml(value=""){return String(value).replace(/[&<>'"]/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"})[char]);}
+function stars(value){const n=Math.max(1,Math.min(5,Number(value)||3));return "★".repeat(n)+"☆".repeat(5-n);}
 
-function loadQuestions() {
-  try {
-    const current = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (Array.isArray(current)) return current;
-    const legacy = JSON.parse(localStorage.getItem(LEGACY_KEY));
-    if (Array.isArray(legacy)) return legacy.map((q) => ({ image: "", ...q }));
-    return starterQuestions;
-  } catch {
-    return starterQuestions;
-  }
-}
+function filteredQuestions(){const keyword=$("searchInput").value.trim().toLowerCase(),subject=$("subjectFilter").value,status=$("statusFilter").value;return questions.filter(q=>{const haystack=[q.subject,q.chapter,q.questionType,q.question,q.concept,q.knowledge,q.explanation,...(q.tags||[])].join(" ").toLowerCase();return(!keyword||haystack.includes(keyword))&&(subject==="all"||q.subject===subject)&&(status==="all"||q.status===status);});}
 
-function saveQuestions() {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(questions));
-  } catch (error) {
-    alert("儲存失敗：圖片可能太大。請重新裁切較小範圍後再試。 ");
-    throw error;
-  }
-}
+function render(){renderSubjects();renderStats();const data=filteredQuestions();if(!data.length){list.innerHTML='<div class="empty">找不到符合條件的錯題。</div>';return;}list.innerHTML=data.map(q=>`
+<article class="question-card"><div class="question-head"><div><div class="meta">
+<span class="badge">${escapeHtml(q.subject)}</span>${q.chapter?`<span class="badge">${escapeHtml(q.chapter)}</span>`:""}${q.number?`<span class="badge">第 ${escapeHtml(q.number)} 題</span>`:""}${q.questionType?`<span class="badge">${escapeHtml(q.questionType)}</span>`:""}<span class="badge" title="難度 ${q.difficulty}/5">${stars(q.difficulty)}</span><span class="badge status-${escapeHtml(q.status)}">${escapeHtml(q.status)}</span>
+</div><h3>${escapeHtml(q.question)}</h3></div><button onclick="editQuestion('${q.id}')">查看／編輯</button></div>
+${q.image?`<div class="question-image-wrap"><img class="question-image" src="${q.image}" alt="第 ${escapeHtml(q.number||"")} 題圖片" /></div>`:""}
+<div class="detail"><h4>正確答案</h4><div>${escapeHtml(q.correctAnswer)}</div><h4>我的錯誤</h4><div>${escapeHtml(q.mistake||"尚未填寫")}</div><h4>解題觀念</h4><div>${escapeHtml(q.concept||"尚未填寫")}</div><div class="tags">${(q.tags||[]).map(tag=>`<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div></div></article>`).join("");}
+function renderSubjects(){const current=$("subjectFilter").value,subjects=[...new Set(questions.map(q=>q.subject).filter(Boolean))].sort();$("subjectFilter").innerHTML='<option value="all">全部科目</option>'+subjects.map(s=>`<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join("");$("subjectFilter").value=subjects.includes(current)?current:"all";}
+function renderStats(){const mastered=questions.filter(q=>q.status==="已掌握").length,reviewing=questions.filter(q=>q.status==="複習中").length,pending=questions.filter(q=>q.status==="待複習").length;$("stats").innerHTML=[["錯題總數",questions.length],["待複習",pending],["複習中",reviewing],["已掌握",mastered]].map(([label,value])=>`<div class="stat"><span>${label}</span><strong>${value}</strong></div>`).join("");}
 
-function escapeHtml(value = "") {
-  return String(value).replace(/[&<>'"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"})[char]);
-}
+function openNew(){editingId=null;pendingImage="";form.reset();$("status").value="待複習";$("difficulty").value="3";$("dialogTitle").textContent="新增錯題";$("deleteBtn").classList.add("hidden");dialog.showModal();}
+window.openQuestionFromCrop=function(draft){editingId=null;form.reset();pendingImage=draft.image||"";$("status").value="待複習";$("dialogTitle").textContent="由考卷建立錯題";$("deleteBtn").classList.add("hidden");$("subject").value=draft.subject||"自然";$("chapter").value=draft.chapter||"";$("number").value=draft.number||"";$("questionType").value=draft.questionType||"";$("difficulty").value=String(Math.max(1,Math.min(5,Number(draft.difficulty)||3)));$("question").value=draft.question||"請補上完整題目。";$("correctAnswer").value=draft.correctAnswer||"待確認";$("myAnswer").value=draft.myAnswer||"";$("mistake").value=draft.mistake||"由考卷照片裁切匯入，尚待分析錯誤原因。";$("concept").value=draft.concept||"待整理";$("knowledge").value=draft.knowledge||"待分類";$("explanation").value=draft.explanation||"待完成詳細解答。";$("tags").value=(draft.tags||["考卷匯入","待整理"]).join(", ");dialog.showModal();};
+window.editQuestion=function(id){const q=questions.find(item=>item.id===id);if(!q)return;editingId=id;pendingImage=q.image||"";$("dialogTitle").textContent="查看／編輯錯題";["subject","chapter","number","status","questionType","question","correctAnswer","myAnswer","mistake","concept","knowledge","explanation"].forEach(key=>$(key).value=q[key]||"");$("difficulty").value=String(q.difficulty||3);$("tags").value=(q.tags||[]).join(", ");$("deleteBtn").classList.remove("hidden");dialog.showModal();};
 
-function filteredQuestions() {
-  const keyword = $("searchInput").value.trim().toLowerCase();
-  const subject = $("subjectFilter").value;
-  const status = $("statusFilter").value;
-  return questions.filter((q) => {
-    const haystack = [q.subject, q.chapter, q.question, q.concept, q.knowledge, q.explanation, ...(q.tags || [])].join(" ").toLowerCase();
-    return (!keyword || haystack.includes(keyword)) && (subject === "all" || q.subject === subject) && (status === "all" || q.status === status);
-  });
-}
-
-function render() {
-  renderSubjects();
-  renderStats();
-  const data = filteredQuestions();
-  if (!data.length) {
-    list.innerHTML = '<div class="empty">找不到符合條件的錯題。</div>';
-    return;
-  }
-  list.innerHTML = data.map((q) => `
-    <article class="question-card">
-      <div class="question-head"><div><div class="meta">
-        <span class="badge">${escapeHtml(q.subject)}</span>
-        ${q.chapter ? `<span class="badge">${escapeHtml(q.chapter)}</span>` : ""}
-        ${q.number ? `<span class="badge">第 ${escapeHtml(q.number)} 題</span>` : ""}
-        <span class="badge status-${escapeHtml(q.status)}">${escapeHtml(q.status)}</span>
-      </div><h3>${escapeHtml(q.question)}</h3></div><button onclick="editQuestion('${q.id}')">查看／編輯</button></div>
-      ${q.image ? `<div class="question-image-wrap"><img class="question-image" src="${q.image}" alt="第 ${escapeHtml(q.number || "")} 題圖片" /></div>` : ""}
-      <div class="detail"><h4>正確答案</h4><div>${escapeHtml(q.correctAnswer)}</div><h4>我的錯誤</h4><div>${escapeHtml(q.mistake || "尚未填寫")}</div><h4>解題觀念</h4><div>${escapeHtml(q.concept || "尚未填寫")}</div><div class="tags">${(q.tags || []).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div></div>
-    </article>`).join("");
-}
-
-function renderSubjects() {
-  const current = $("subjectFilter").value;
-  const subjects = [...new Set(questions.map((q) => q.subject).filter(Boolean))].sort();
-  $("subjectFilter").innerHTML = '<option value="all">全部科目</option>' + subjects.map((s) => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join("");
-  $("subjectFilter").value = subjects.includes(current) ? current : "all";
-}
-
-function renderStats() {
-  const mastered = questions.filter((q) => q.status === "已掌握").length;
-  const reviewing = questions.filter((q) => q.status === "複習中").length;
-  const pending = questions.filter((q) => q.status === "待複習").length;
-  $("stats").innerHTML = [["錯題總數",questions.length],["待複習",pending],["複習中",reviewing],["已掌握",mastered]].map(([label,value]) => `<div class="stat"><span>${label}</span><strong>${value}</strong></div>`).join("");
-}
-
-function openNew() {
-  editingId = null;
-  pendingImage = "";
-  form.reset();
-  $("status").value = "待複習";
-  $("dialogTitle").textContent = "新增錯題";
-  $("deleteBtn").classList.add("hidden");
-  dialog.showModal();
-}
-
-window.openQuestionFromCrop = function (draft) {
-  editingId = null;
-  form.reset();
-  pendingImage = draft.image || "";
-  $("status").value = "待複習";
-  $("dialogTitle").textContent = "由考卷建立錯題";
-  $("deleteBtn").classList.add("hidden");
-  $("subject").value = draft.subject || "自然";
-  $("number").value = draft.number || "";
-  $("question").value = draft.question || "請補上完整題目。";
-  $("correctAnswer").value = draft.correctAnswer || "待確認";
-  $("mistake").value = draft.mistake || "由考卷照片裁切匯入，尚待分析錯誤原因。";
-  $("concept").value = draft.concept || "待整理";
-  $("knowledge").value = draft.knowledge || "待分類";
-  $("explanation").value = draft.explanation || "待完成詳細解答。";
-  $("tags").value = (draft.tags || ["考卷匯入","待整理"]).join(", ");
-  dialog.showModal();
-};
-
-window.editQuestion = function (id) {
-  const q = questions.find((item) => item.id === id);
-  if (!q) return;
-  editingId = id;
-  pendingImage = q.image || "";
-  $("dialogTitle").textContent = "查看／編輯錯題";
-  ["subject","chapter","number","status","question","correctAnswer","myAnswer","mistake","concept","knowledge","explanation"].forEach((key) => $(key).value = q[key] || "");
-  $("tags").value = (q.tags || []).join(", ");
-  $("deleteBtn").classList.remove("hidden");
-  dialog.showModal();
-};
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const existing = editingId ? questions.find((q) => q.id === editingId) : null;
-  const data = {
-    id: editingId || crypto.randomUUID(), subject: $("subject").value.trim(), chapter: $("chapter").value.trim(), number: $("number").value.trim(), status: $("status").value,
-    question: $("question").value.trim(), correctAnswer: $("correctAnswer").value.trim(), myAnswer: $("myAnswer").value.trim(), mistake: $("mistake").value.trim(), concept: $("concept").value.trim(), knowledge: $("knowledge").value.trim(), explanation: $("explanation").value.trim(),
-    tags: $("tags").value.split(/[,，]/).map((tag) => tag.trim()).filter(Boolean), image: pendingImage || existing?.image || "",
-    createdAt: existing?.createdAt || new Date().toISOString(), updatedAt: new Date().toISOString()
-  };
-  if (editingId) questions = questions.map((q) => q.id === editingId ? data : q); else questions.unshift(data);
-  saveQuestions();
-  pendingImage = "";
-  dialog.close();
-  render();
-});
-
-$("deleteBtn").addEventListener("click", () => {
-  if (!editingId || !confirm("確定要刪除這題嗎？")) return;
-  questions = questions.filter((q) => q.id !== editingId);
-  saveQuestions(); dialog.close(); render();
-});
-
-$("randomBtn").addEventListener("click", () => {
-  const pool = filteredQuestions();
-  if (!pool.length) return alert("目前沒有可抽出的題目。 ");
-  window.editQuestion(pool[Math.floor(Math.random() * pool.length)].id);
-});
-
-$("addBtn").addEventListener("click", openNew);
-$("closeBtn").addEventListener("click", () => { pendingImage = ""; dialog.close(); });
-["searchInput","subjectFilter","statusFilter"].forEach((id) => $(id).addEventListener(id === "searchInput" ? "input" : "change", render));
-
-saveQuestions();
-render();
+form.addEventListener("submit",event=>{event.preventDefault();const existing=editingId?questions.find(q=>q.id===editingId):null;const data={id:editingId||crypto.randomUUID(),subject:$("subject").value.trim(),chapter:$("chapter").value.trim(),number:$("number").value.trim(),status:$("status").value,questionType:$("questionType").value.trim(),difficulty:Number($("difficulty").value)||3,question:$("question").value.trim(),correctAnswer:$("correctAnswer").value.trim(),myAnswer:$("myAnswer").value.trim(),mistake:$("mistake").value.trim(),concept:$("concept").value.trim(),knowledge:$("knowledge").value.trim(),explanation:$("explanation").value.trim(),tags:$("tags").value.split(/[,，]/).map(tag=>tag.trim()).filter(Boolean),image:pendingImage||existing?.image||"",createdAt:existing?.createdAt||new Date().toISOString(),updatedAt:new Date().toISOString()};if(editingId)questions=questions.map(q=>q.id===editingId?data:q);else questions.unshift(data);saveQuestions();pendingImage="";dialog.close();render();});
+$("deleteBtn").addEventListener("click",()=>{if(!editingId||!confirm("確定要刪除這題嗎？"))return;questions=questions.filter(q=>q.id!==editingId);saveQuestions();dialog.close();render();});
+$("randomBtn").addEventListener("click",()=>{const pool=filteredQuestions();if(!pool.length)return alert("目前沒有可抽出的題目。");window.editQuestion(pool[Math.floor(Math.random()*pool.length)].id);});
+$("addBtn").addEventListener("click",openNew);$("closeBtn").addEventListener("click",()=>{pendingImage="";dialog.close();});["searchInput","subjectFilter","statusFilter"].forEach(id=>$(id).addEventListener(id==="searchInput"?"input":"change",render));
+saveQuestions();render();
