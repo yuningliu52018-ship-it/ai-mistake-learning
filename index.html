@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="116 會考 AI 學習系統錯題資料庫" />
   <title>116 會考 AI 學習系統</title>
-  <link rel="stylesheet" href="styles.css?v=0.7.1" />
+  <link rel="stylesheet" href="styles.css?v=0.8" />
 </head>
 <body>
   <header class="hero">
-    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>從整張考卷一次框出多題，OCR 或 Gemini Vision 辨識後建立錯題。</p></div>
+    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>從考卷框選錯題，由 Gemini 自動辨識、解析並建立第二代 AI 學習系統資料。</p></div>
     <button id="addBtn" class="primary">＋ 新增錯題</button>
   </header>
 
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v0.7.1 Gemini Vision</p><h2>📷 上傳已批改的考卷</h2><p>支援多框標註、OCR 草稿與 Gemini Vision 圖片辨識。先框選題目，再使用 Gemini 讀取題號、題幹與選項。</p></div>
+        <div><p class="eyebrow dark">v0.8 Gemini 完整錯題分析</p><h2>📷 上傳已批改的考卷</h2><p>先框選題目，再使用 Gemini 自動整理完整題目、正確答案、錯誤原因、解題觀念、知識點與詳細解答。</p></div>
         <label class="upload-btn primary">選擇照片<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
@@ -30,7 +30,7 @@
             <button id="clearBoxesBtn" type="button">清除全部</button>
           </div>
         </div>
-        <p class="hint">框選時請完整包含題號、題幹、選項與必要圖表。每個框下方會出現「🤖 Gemini Vision」按鈕。</p>
+        <p class="hint">框選時請完整包含題號、題幹、選項與必要圖表。按「🤖 Gemini 完整分析」，完成後再按「加入錯題資料庫」。</p>
         <div id="annotationViewport" class="annotation-viewport"><div id="annotationStage"></div></div>
         <h3 class="result-title">已框選錯題</h3>
         <div id="detectedList" class="detected-list"></div>
@@ -45,12 +45,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-  <script src="config.js?v=0.7.1"></script>
-  <script src="ocr-enhance.js?v=0.7.1"></script>
-  <script src="ocr-postprocess.js?v=0.7.1"></script>
-  <script src="app.js?v=0.7.1"></script>
-  <script src="scan.js?v=0.7.1"></script>
-  <script src="batch-ocr.js?v=0.7.1"></script>
-  <script src="vision-ai.js?v=0.7.1"></script>
+  <script src="config.js?v=0.8"></script>
+  <script src="ocr-enhance.js?v=0.8"></script>
+  <script src="ocr-postprocess.js?v=0.8"></script>
+  <script src="app.js?v=0.8"></script>
+  <script src="scan.js?v=0.8"></script>
+  <script src="batch-ocr.js?v=0.8"></script>
+  <script src="vision-ai.js?v=0.8"></script>
 </body>
 </html>
