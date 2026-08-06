@@ -6,5 +6,13 @@
   "vars": {
     "ALLOWED_ORIGIN": "https://yuningliu52018-ship-it.github.io",
     "GEMINI_MODEL": "gemini-3.6-flash"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ai-mistake-learning-db",
+      "database_id": "902aac35-d339-4dee-8353-56ae0d5070dc",
+      "remote": true
+    }
+  ]
 }
