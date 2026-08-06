@@ -5,9 +5,6 @@
   "compatibility_date": "2026-08-01",
   "vars": {
     "ALLOWED_ORIGIN": "https://yuningliu52018-ship-it.github.io",
-    "OPENAI_MODEL": "gpt-5"
-  },
-  "secrets": {
-    "required": ["OPENAI_API_KEY"]
+    "GEMINI_MODEL": "gemini-2.5-flash"
   }
 }
