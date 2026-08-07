@@ -4,12 +4,14 @@
   const section = document.getElementById('autoDetectPanel');
   const button = document.getElementById('autoDetectBtn');
   const results = document.getElementById('autoDetectResults');
+  const workspace = document.getElementById('scanWorkspace');
   if (!input || !section || !button || !results) return;
 
   let pageImage = '';
   let detected = [];
 
   const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'})[c]);
+  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
   function formatQuestion(item) {
     const lines = [item.question || ''];
@@ -17,17 +19,29 @@
     return lines.filter(Boolean).join('\n');
   }
 
+  function draftFromDetected(item) {
+    return {
+      image: '', subject: item.subject || '自然', chapter: item.chapter || '', number: item.questionNumber || '',
+      questionType: item.questionType || '', difficulty: item.difficulty || 3, question: formatQuestion(item),
+      correctAnswer: item.correctAnswer || '待確認', myAnswer: item.studentAnswer || '',
+      mistake: item.mistake || 'Gemini 依批改記號判斷為錯題，請在桌機確認錯誤原因。',
+      concept: item.concept || '待整理', knowledge: item.knowledge || '待分類',
+      explanation: item.explanation || '待在桌機確認完整解析。',
+      tags: ['整張考卷自動辨識', 'Gemini 自動找錯題', ...(item.tags || [])]
+    };
+  }
+
   function render() {
     if (!detected.length) {
-      results.innerHTML = '<div class="empty compact">尚未找到明確錯題。可改用手動畫框分析。</div>';
+      results.innerHTML = '<div class="empty compact">尚未找到有明確批改證據的錯題。AI 漏題時可按下方「手動補一題」。</div>';
       return;
     }
     results.innerHTML = `
-      <div class="auto-detect-head"><strong>Gemini 找到 ${detected.length} 題可能錯題</strong><button id="addDetectedBtn" class="primary" type="button">加入勾選題目</button></div>
+      <div class="auto-detect-head"><strong>Gemini 找到 ${detected.length} 題可能錯題</strong><button id="addDetectedBtn" class="primary" type="button">☁️ 上傳勾選題目</button></div>
       ${detected.map((item, index) => `
         <label class="auto-detected-item">
           <input type="checkbox" data-detected-index="${index}" checked />
-          <span><strong>第 ${escapeHtml(item.questionNumber || '?')} 題｜${escapeHtml(item.subject || '待確認')}</strong><br>${escapeHtml(item.question || '').slice(0,180)}<br><small>學生答案：${escapeHtml(item.studentAnswer || '不清楚')}｜正確答案：${escapeHtml(item.correctAnswer || '待確認')}｜信心值 ${Math.round(Number(item.confidence)||0)}%</small></span>
+          <span><strong>第 ${escapeHtml(item.questionNumber || '?')} 題｜${escapeHtml(item.subject || '待確認')}</strong><br>${escapeHtml(item.question || '').slice(0,220)}<br><small>學生答案：${escapeHtml(item.studentAnswer || '不清楚')}｜正確答案：${escapeHtml(item.correctAnswer || '待確認')}｜信心值 ${Math.round(Number(item.confidence)||0)}%</small></span>
         </label>`).join('')}`;
   }
 
@@ -38,15 +52,14 @@
       pageImage = String(reader.result || '');
       detected = [];
       section.classList.remove('hidden');
-      results.innerHTML = '<div class="empty compact">照片已載入。按「AI 自動找錯題」，Gemini 會檢查紅筆批改與作答記號。</div>';
+      if (document.documentElement.classList.contains('capture-mode') && workspace && !window.__manualFallbackOpen) workspace.classList.add('hidden');
+      results.innerHTML = '<div class="empty compact">照片已載入。按「AI 自動找錯題」開始分析。</div>';
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
     reader.readAsDataURL(file);
   }
 
-  // 使用 capture 階段先取得檔案，避免 scan.js 清空 input 後讀不到照片。
-  input.addEventListener('change', (event) => {
-    loadWholePageImage(event.target.files?.[0]);
-  }, true);
+  input.addEventListener('change', event => loadWholePageImage(event.target.files?.[0]), true);
 
   button.addEventListener('click', async () => {
     if (!pageImage) return alert('請先拍攝或選擇整張考卷。');
@@ -56,11 +69,7 @@
     button.textContent = '🤖 正在找錯題…';
     results.innerHTML = '<div class="empty compact">Gemini 正在檢查整張考卷，請稍候。</div>';
     try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({action:'detectMistakes', image:pageImage})
-      });
+      const response = await fetch(endpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'detectMistakes', image:pageImage}) });
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(payload.detail || payload.error || `HTTP ${response.status}`);
       detected = Array.isArray(payload.mistakes) ? payload.mistakes : [];
@@ -74,24 +83,34 @@
     }
   });
 
-  results.addEventListener('click', (event) => {
+  results.addEventListener('click', async event => {
     if (event.target.id !== 'addDetectedBtn') return;
-    if (typeof window.openQuestionFromCrop !== 'function') return alert('錯題表單尚未載入。');
+    if (typeof window.openQuestionFromCrop !== 'function') return alert('錯題儲存功能尚未載入。');
     const selected = [...results.querySelectorAll('input[data-detected-index]:checked')].map(el => detected[Number(el.dataset.detectedIndex)]).filter(Boolean);
     if (!selected.length) return alert('請至少勾選一題。');
-    const addOne = (item) => window.openQuestionFromCrop({
-      image: '', subject:item.subject || '自然', chapter:item.chapter || '', number:item.questionNumber || '',
-      questionType:item.questionType || '', difficulty:item.difficulty || 3,
-      question:formatQuestion(item), correctAnswer:item.correctAnswer || '待確認', myAnswer:item.studentAnswer || '',
-      mistake:item.mistake || 'Gemini 依批改記號推測為錯題，請在桌機確認。', concept:item.concept || '待整理',
-      knowledge:item.knowledge || '待分類', explanation:item.explanation || '待完成詳細解析。',
-      tags:['整張考卷自動辨識','Gemini 自動找錯題',...(item.tags || [])]
-    });
-    if (document.documentElement.classList.contains('capture-mode')) {
-      selected.forEach((item, i) => setTimeout(() => addOne(item), i * 250));
-    } else {
-      addOne(selected[0]);
-      if (selected.length > 1) alert(`已先開啟第 1 題供確認；其餘 ${selected.length-1} 題請稍後逐題加入。`);
+
+    const addButton = event.target;
+    const original = addButton.textContent;
+    addButton.disabled = true;
+    addButton.textContent = `☁️ 上傳中 0/${selected.length}`;
+    window.__batchCapture = true;
+    try {
+      for (let i = 0; i < selected.length; i++) {
+        window.openQuestionFromCrop(draftFromDetected(selected[i]));
+        await sleep(450);
+        addButton.textContent = `☁️ 上傳中 ${i + 1}/${selected.length}`;
+      }
+      detected = [];
+      results.innerHTML = `<div class="empty compact"><strong>✅ 已加入 ${selected.length} 題錯題</strong><br>確認上方顯示「☁️ 已同步」後，桌機按同步即可閱讀與編輯。</div>`;
+      if (workspace) workspace.classList.add('hidden');
+      window.__manualFallbackOpen = false;
+    } catch (error) {
+      console.error(error);
+      alert(`加入錯題失敗：${error.message}`);
+      addButton.disabled = false;
+      addButton.textContent = original;
+    } finally {
+      window.__batchCapture = false;
     }
   });
 })();
