@@ -31,9 +31,18 @@ async function callGemini(env,prompt,responseSchema,extraParts=[]){
   const raw=await response.json();if(!response.ok)throw new Error(raw?.error?.message||"Unknown Gemini API error");return parseJsonText(extractGeminiText(raw));
 }
 const OPTIONS={type:"OBJECT",properties:{A:{type:"STRING"},B:{type:"STRING"},C:{type:"STRING"},D:{type:"STRING"}},required:["A","B","C","D"]};
-const QUESTION_PROPERTIES={subject:{type:"STRING",enum:["國文","英文","數學","自然","社會"]},chapter:{type:"STRING"},questionType:{type:"STRING"},difficulty:{type:"INTEGER"},questionNumber:{type:"STRING"},question:{type:"STRING"},options:OPTIONS,studentAnswer:{type:"STRING"},correctAnswer:{type:"STRING"},mistake:{type:"STRING"},concept:{type:"STRING"},knowledge:{type:"STRING"},explanation:{type:"STRING"},tags:{type:"ARRAY",items:{type:"STRING"}},confidence:{type:"INTEGER"},notes:{type:"STRING"},imageRequired:{type:"BOOLEAN"},imageReason:{type:"STRING"}};
+const CROP_BOX={type:"OBJECT",properties:{x:{type:"INTEGER"},y:{type:"INTEGER"},width:{type:"INTEGER"},height:{type:"INTEGER"}},required:["x","y","width","height"]};
+const QUESTION_PROPERTIES={subject:{type:"STRING",enum:["國文","英文","數學","自然","社會"]},chapter:{type:"STRING"},questionType:{type:"STRING"},difficulty:{type:"INTEGER"},questionNumber:{type:"STRING"},question:{type:"STRING"},options:OPTIONS,studentAnswer:{type:"STRING"},correctAnswer:{type:"STRING"},mistake:{type:"STRING"},concept:{type:"STRING"},knowledge:{type:"STRING"},explanation:{type:"STRING"},tags:{type:"ARRAY",items:{type:"STRING"}},confidence:{type:"INTEGER"},notes:{type:"STRING"},imageRequired:{type:"BOOLEAN"},imageReason:{type:"STRING"},cropBox:CROP_BOX};
 const QUESTION_REQUIRED=Object.keys(QUESTION_PROPERTIES);
 const QUESTION_SCHEMA={type:"OBJECT",properties:QUESTION_PROPERTIES,required:QUESTION_REQUIRED};
+function normalizeCropBox(box, required){
+  if(!required)return{x:0,y:0,width:0,height:0};
+  const n=v=>Math.max(0,Math.min(1000,Math.round(Number(v)||0)));
+  let x=n(box?.x),y=n(box?.y),width=n(box?.width),height=n(box?.height);
+  if(x+width>1000)width=1000-x;if(y+height>1000)height=1000-y;
+  if(width<40||height<40)return{x:0,y:0,width:1000,height:1000};
+  return{x,y,width,height};
+}
 
 export default{async fetch(request,env){
   const origin=request.headers.get("Origin")||"",allowed=env.ALLOWED_ORIGIN||"https://yuningliu52018-ship-it.github.io";
@@ -48,10 +57,10 @@ export default{async fetch(request,env){
 
     if(body?.action==="detectMistakes"){
       const image=parseDataUrl(body.image);if(!image)return json({error:"A valid exam image is required"},400,origin,allowed);
-      const prompt=`你是台灣國中考卷批改辨識專家。請檢查整張已批改考卷，只找出有明確證據答錯的題目。證據可包含紅色叉號、錯誤圈選、老師寫出的正確答案、扣分符號或清楚的批改痕跡。不要因為看不清楚就猜測，也不要把未作答、範例、頁碼或圖表編號當成錯題。\n\n每個錯題都要完整整理題號、題幹、A-D 選項、學生答案、正確答案、科目、章節、題型、難度、錯誤原因、核心觀念、知識點與解析。若能確定是錯題但部分文字不清楚，保留可讀內容並在 notes 說明。confidence 為 0 到 100；低於 65 的題目不要列入。最多回傳 12 題。全部使用繁體中文。\n\n另外判斷這一題之後重做或理解時是否『必須保留原題圖片』：只有圖片本身包含不可由文字完整取代的解題資訊時，imageRequired 才設 true，例如幾何圖、座標圖、函數圖、統計圖表、地圖、實驗裝置圖、流程圖、表格、特殊版面，或學生手寫計算/老師批改痕跡對判斷錯因很重要。若題幹與選項已能完整轉成文字，圖片只是整頁考卷背景、排版或與解題無關，imageRequired 必須設 false。imageReason 用一句話說明原因。`;
+      const prompt=`你是台灣國中考卷批改辨識專家。請檢查整張已批改考卷，只找出有明確證據答錯的題目。證據可包含紅色叉號、錯誤圈選、老師寫出的正確答案、扣分符號或清楚的批改痕跡。不要因為看不清楚就猜測，也不要把未作答、範例、頁碼或圖表編號當成錯題。\n\n每個錯題都要完整整理題號、題幹、A-D 選項、學生答案、正確答案、科目、章節、題型、難度、錯誤原因、核心觀念、知識點與解析。若能確定是錯題但部分文字不清楚，保留可讀內容並在 notes 說明。confidence 為 0 到 100；低於 65 的題目不要列入。最多回傳 12 題。全部使用繁體中文。\n\n另外判斷這一題之後重做或理解時是否『必須保留題圖』：只有圖片本身包含不可由文字完整取代的解題資訊時，imageRequired 才設 true，例如幾何圖、座標圖、函數圖、統計圖表、地圖、實驗裝置圖、流程圖、表格、特殊版面，或學生手寫計算/老師批改痕跡對判斷錯因很重要。若題幹與選項已能完整轉成文字，imageRequired 必須設 false。imageReason 用一句話說明原因。\n\n若 imageRequired=true，請回傳 cropBox，座標以整張原始照片左上角為 (0,0)、右下角為 (1000,1000) 的正規化座標。cropBox 必須是能完整重做此題的『最小矩形』：保留題號、完整題幹、所有選項，以及真正必要的圖形/表格/閱讀文章；排除前後題、空白、頁碼、Logo、裝飾與無關內容。若上方共用文章或表格是解題必要資訊，必須一起包含。四周可留少量安全邊界。若 imageRequired=false，cropBox 請回傳 x=0,y=0,width=0,height=0。`;
       const schema={type:"OBJECT",properties:{mistakes:{type:"ARRAY",items:{type:"OBJECT",properties:QUESTION_PROPERTIES,required:QUESTION_REQUIRED}}},required:["mistakes"]};
       const result=await callGemini(env,prompt,schema,[{inline_data:{mime_type:image.mimeType,data:image.data}}]);
-      result.mistakes=(result.mistakes||[]).filter(x=>Number(x.confidence)>=65).slice(0,12).map(x=>({...x,difficulty:Math.max(1,Math.min(5,Number(x.difficulty)||3)),imageRequired:x.imageRequired===true}));
+      result.mistakes=(result.mistakes||[]).filter(x=>Number(x.confidence)>=65).slice(0,12).map(x=>{const imageRequired=x.imageRequired===true;return{...x,difficulty:Math.max(1,Math.min(5,Number(x.difficulty)||3)),imageRequired,cropBox:normalizeCropBox(x.cropBox,imageRequired)};});
       return json(result,200,origin,allowed);
     }
 
@@ -63,7 +72,7 @@ export default{async fetch(request,env){
     }
 
     const image=parseDataUrl(body.image);if(!image)return json({error:"A valid image is required"},400,origin,allowed);
-    const prompt=`你是台灣國中會考的專業錯題老師。閱讀框選的單一題目圖片，完整整理題幹、A-D 選項、學生答案、正確答案、科目、章節、題型、難度、錯誤原因、核心觀念、知識點與詳細解析。看不清楚時標示待確認，不可捏造。全部使用繁體中文。若圖形、圖表、地圖、實驗裝置、表格、特殊版面或手寫批改資訊對解題不可或缺，imageRequired=true；若文字已完整足夠重做，imageRequired=false，並在 imageReason 簡述原因。`;
-    const result=await callGemini(env,prompt,QUESTION_SCHEMA,[{inline_data:{mime_type:image.mimeType,data:image.data}}]);result.difficulty=Math.max(1,Math.min(5,Number(result.difficulty)||3));result.imageRequired=result.imageRequired===true;return json({result},200,origin,allowed);
+    const prompt=`你是台灣國中會考的專業錯題老師。閱讀框選的單一題目圖片，完整整理題幹、A-D 選項、學生答案、正確答案、科目、章節、題型、難度、錯誤原因、核心觀念、知識點與詳細解析。看不清楚時標示待確認，不可捏造。全部使用繁體中文。若圖形、圖表、地圖、實驗裝置、表格、特殊版面或手寫批改資訊對解題不可或缺，imageRequired=true；若文字已完整足夠重做，imageRequired=false。單題已由使用者框選，因此 cropBox 固定回傳 x=0,y=0,width=1000,height=1000。`;
+    const result=await callGemini(env,prompt,QUESTION_SCHEMA,[{inline_data:{mime_type:image.mimeType,data:image.data}}]);result.difficulty=Math.max(1,Math.min(5,Number(result.difficulty)||3));result.imageRequired=result.imageRequired===true;result.cropBox=normalizeCropBox(result.cropBox,result.imageRequired);return json({result},200,origin,allowed);
   }catch(error){console.error("Request failed",error);return json({error:"Service failed",detail:error.message},502,origin,allowed);}
 }};
