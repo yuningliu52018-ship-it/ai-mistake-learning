@@ -31,8 +31,7 @@
         </label>`).join('')}`;
   }
 
-  input.addEventListener('change', (event) => {
-    const file = event.target.files?.[0];
+  function loadWholePageImage(file) {
     if (!file || !file.type.startsWith('image/')) return;
     const reader = new FileReader();
     reader.onload = () => {
@@ -42,7 +41,12 @@
       results.innerHTML = '<div class="empty compact">照片已載入。按「AI 自動找錯題」，Gemini 會檢查紅筆批改與作答記號。</div>';
     };
     reader.readAsDataURL(file);
-  });
+  }
+
+  // 使用 capture 階段先取得檔案，避免 scan.js 清空 input 後讀不到照片。
+  input.addEventListener('change', (event) => {
+    loadWholePageImage(event.target.files?.[0]);
+  }, true);
 
   button.addEventListener('click', async () => {
     if (!pageImage) return alert('請先拍攝或選擇整張考卷。');
@@ -75,7 +79,6 @@
     if (typeof window.openQuestionFromCrop !== 'function') return alert('錯題表單尚未載入。');
     const selected = [...results.querySelectorAll('input[data-detected-index]:checked')].map(el => detected[Number(el.dataset.detectedIndex)]).filter(Boolean);
     if (!selected.length) return alert('請至少勾選一題。');
-    // 逐題加入；手機模式會自動儲存，桌機則先開第一題供確認。
     const addOne = (item) => window.openQuestionFromCrop({
       image: '', subject:item.subject || '自然', chapter:item.chapter || '', number:item.questionNumber || '',
       questionType:item.questionType || '', difficulty:item.difficulty || 3,
