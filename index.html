@@ -9,26 +9,26 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="AI錯題" />
   <title>116 會考 AI 學習系統</title>
-  <link rel="manifest" href="manifest.webmanifest?v=3.2" />
+  <link rel="manifest" href="manifest.webmanifest?v=3.3" />
   <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="app-icon.svg" />
-  <link rel="stylesheet" href="styles.css?v=3.2" />
+  <link rel="stylesheet" href="styles.css?v=3.3" />
 </head>
 <body>
   <header class="hero">
-    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>手機拍照與上傳，桌機閱讀、整理、類題與複習。</p></div>
+    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>手機連續拍考卷、批次 AI 找錯題；桌機閱讀、整理、類題與複習。</p></div>
     <button id="addBtn" class="primary">＋ 新增錯題</button>
   </header>
 
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v3.2 Capture / Study</p><h2>📷 拍攝整張已批改考卷</h2><p>Gemini 找出錯題後直接上傳；桌機採精簡卡片閱讀，可展開詳細內容並放大原始考卷。</p></div>
-        <label class="upload-btn primary">📷 拍考卷<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
+        <div><p class="eyebrow dark">v3.3 Batch Capture / Study</p><h2>📷 批次拍攝已批改考卷</h2><p>可連續拍多張考卷，全部拍完後再讓 Gemini 逐頁找錯題；失敗頁可單獨重試，完成後一次上傳。</p></div>
+        <label class="upload-btn primary">📷 拍／加入下一張<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
-      <section id="autoDetectPanel" class="auto-detect-panel hidden">
-        <div class="auto-detect-head"><div><strong>整張考卷模式</strong><div class="hint">Gemini 會依紅筆、扣分與作答記號找出錯題；加入前請先勾選確認。</div></div><button id="autoDetectBtn" type="button" class="primary">🤖 AI 自動找錯題</button></div>
+      <section id="autoDetectPanel" class="auto-detect-panel">
+        <div class="auto-detect-head"><div><strong>批次考卷模式</strong><div class="hint">先連續拍完所有頁面，再按「AI 批次找錯題」。Gemini 會逐頁分析，結果依頁數整理。</div></div><button id="autoDetectBtn" type="button" class="primary" disabled>🤖 AI 批次找錯題</button></div>
         <div id="autoDetectResults"></div>
         <button id="manualFallbackBtn" type="button">＋ AI 漏題？手動補一題</button>
       </section>
@@ -62,14 +62,14 @@
   </form></dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
-  <script src="config.js?v=3.2"></script>
-  <script src="app.js?v=3.2"></script>
-  <script src="ui-v3.2.js?v=3.2"></script>
-  <script src="scan.js?v=3.2"></script>
-  <script src="no-ocr-mode.js?v=3.2"></script>
-  <script src="vision-ai.js?v=3.2"></script>
-  <script src="mobile-mode.js?v=3.2"></script>
-  <script src="auto-detect.js?v=3.2"></script>
-  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=3.2').catch(console.error));}</script>
+  <script src="config.js?v=3.3"></script>
+  <script src="app.js?v=3.3"></script>
+  <script src="ui-v3.2.js?v=3.3"></script>
+  <script src="scan.js?v=3.3"></script>
+  <script src="no-ocr-mode.js?v=3.3"></script>
+  <script src="vision-ai.js?v=3.3"></script>
+  <script src="mobile-mode.js?v=3.3"></script>
+  <script src="auto-detect.js?v=3.3"></script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=3.3').catch(console.error));}</script>
 </body>
 </html>
