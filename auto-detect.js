@@ -7,11 +7,10 @@
   const workspace = document.getElementById('scanWorkspace');
   if (!input || !section || !button || !results) return;
 
-  let pageImage = '';
-  let storedPageImage = '';
-  let detected = [];
+  let pages = [];
+  let analyzing = false;
 
-  const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'})[c]);
+  const escapeHtml = (value = '') => String(value).replace(/[&<>'\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','\"':'&quot;'})[c]);
   const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
   function formatQuestion(item) {
@@ -37,10 +36,10 @@
     });
   }
 
-  function draftFromDetected(item) {
+  function draftFromDetected(item, page) {
     const hasStudentAnswer = Boolean(String(item.studentAnswer || '').trim());
     return {
-      image: storedPageImage,
+      image: page.storedImage,
       subject: item.subject || '待確認',
       chapter: item.chapter || '',
       number: item.questionNumber || '',
@@ -55,91 +54,186 @@
       concept: item.concept || '待整理',
       knowledge: item.knowledge || '待分類',
       explanation: item.explanation || '待在桌機確認完整解析。',
-      tags: ['整張考卷自動辨識', 'Gemini 自動找錯題', '保留原題圖片', ...(item.tags || [])]
+      tags: [`批次拍攝第${page.pageNo}頁`, '整張考卷自動辨識', 'Gemini 自動找錯題', '保留原題圖片', ...(item.tags || [])]
     };
+  }
+
+  function totalDetected() {
+    return pages.reduce((sum, page) => sum + (page.detected?.length || 0), 0);
+  }
+
+  function pageStatus(page) {
+    if (page.status === 'analyzing') return '🤖 分析中…';
+    if (page.status === 'done') return `✅ 找到 ${page.detected.length} 題`;
+    if (page.status === 'error') return '⚠️ 分析失敗';
+    return '等待分析';
   }
 
   function render() {
-    if (!detected.length) {
-      results.innerHTML = '<div class="empty compact">尚未找到有明確批改證據的錯題。AI 漏題時可按下方「手動補一題」。</div>';
+    if (!pages.length) {
+      results.innerHTML = '<div class="empty compact">尚未加入考卷。可連續拍多張，最後再一次分析。</div>';
+      button.disabled = true;
+      button.textContent = '🤖 AI 批次找錯題';
       return;
     }
-    results.innerHTML = `
-      <div class="auto-detect-head"><strong>Gemini 找到 ${detected.length} 題可能錯題</strong><button id="addDetectedBtn" class="primary" type="button">☁️ 上傳勾選題目</button></div>
-      ${detected.map((item, index) => `
-        <label class="auto-detected-item">
-          <input type="checkbox" data-detected-index="${index}" checked />
-          <span><strong>第 ${escapeHtml(item.questionNumber || '?')} 題｜${escapeHtml(item.subject || '待確認')}</strong><br>${escapeHtml(item.question || '').slice(0,220)}<br><small>學生答案：${escapeHtml(item.studentAnswer || '待確認')}｜正確答案：${escapeHtml(item.correctAnswer || '待確認')}｜信心值 ${Math.round(Number(item.confidence)||0)}%</small></span>
-        </label>`).join('')}`;
+
+    const finished = pages.filter(p => p.status === 'done' || p.status === 'error').length;
+    const found = totalDetected();
+    button.disabled = analyzing;
+    button.textContent = analyzing ? `🤖 分析中 ${finished}/${pages.length}` : `🤖 AI 批次找錯題（${pages.length} 張）`;
+
+    const queue = `
+      <div class="batch-summary">
+        <strong>📚 已拍 ${pages.length} 張考卷</strong>
+        <span>${analyzing ? `分析進度 ${finished}/${pages.length}` : found ? `目前找到 ${found} 題可能錯題` : '拍完後再一次分析'}</span>
+        <button id="clearBatchBtn" type="button" ${analyzing ? 'disabled' : ''}>清除這批</button>
+      </div>
+      <div class="batch-pages">
+        ${pages.map((page, index) => `
+          <div class="batch-page ${escapeHtml(page.status)}">
+            <img src="${page.storedImage || page.image}" alt="第 ${page.pageNo} 頁" />
+            <div><strong>第 ${page.pageNo} 頁</strong><small>${escapeHtml(page.name || `第 ${page.pageNo} 張`)}</small><span>${pageStatus(page)}</span>${page.error ? `<small class="batch-error">${escapeHtml(page.error)}</small>` : ''}</div>
+            <button type="button" data-remove-page="${index}" ${analyzing ? 'disabled' : ''}>刪除</button>
+          </div>`).join('')}
+      </div>`;
+
+    const detectedHtml = pages.map((page, pageIndex) => {
+      if (page.status !== 'done' || !page.detected.length) return '';
+      return `
+        <section class="batch-result-page">
+          <h3>第 ${page.pageNo} 頁｜找到 ${page.detected.length} 題</h3>
+          ${page.detected.map((item, itemIndex) => `
+            <label class="auto-detected-item">
+              <input type="checkbox" data-page-index="${pageIndex}" data-item-index="${itemIndex}" checked />
+              <span><strong>第 ${escapeHtml(item.questionNumber || '?')} 題｜${escapeHtml(item.subject || '待確認')}</strong><br>${escapeHtml(item.question || '').slice(0,220)}<br><small>學生答案：${escapeHtml(item.studentAnswer || '待確認')}｜正確答案：${escapeHtml(item.correctAnswer || '待確認')}｜信心值 ${Math.round(Number(item.confidence)||0)}%</small></span>
+            </label>`).join('')}
+        </section>`;
+    }).join('');
+
+    const failedCount = pages.filter(p => p.status === 'error').length;
+    const footer = found ? `
+      <div class="batch-actions">
+        <strong>共找到 ${found} 題可能錯題</strong>
+        <button id="addDetectedBtn" class="primary" type="button">☁️ 一次上傳勾選題目</button>
+      </div>` : (!analyzing && finished === pages.length ? `<div class="empty compact">這批沒有找到明確錯題。${failedCount ? `有 ${failedCount} 頁分析失敗，可再按一次「AI 批次找錯題」重試失敗頁。` : ''}</div>` : '');
+
+    results.innerHTML = queue + detectedHtml + footer;
   }
 
-  function loadWholePageImage(file) {
-    if (!file || !file.type.startsWith('image/')) return;
-    const reader = new FileReader();
-    reader.onload = async () => {
-      pageImage = String(reader.result || '');
-      storedPageImage = await compressForStorage(pageImage);
-      detected = [];
-      section.classList.remove('hidden');
-      if (document.documentElement.classList.contains('capture-mode') && workspace && !window.__manualFallbackOpen) workspace.classList.add('hidden');
-      results.innerHTML = '<div class="empty compact">照片已載入。按「AI 自動找錯題」開始分析。</div>';
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    };
-    reader.readAsDataURL(file);
+  async function addFiles(fileList) {
+    const files = [...(fileList || [])].filter(file => file?.type?.startsWith('image/'));
+    if (!files.length) return;
+    for (const file of files) {
+      const image = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result || ''));
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+      const storedImage = await compressForStorage(image);
+      pages.push({
+        id: crypto.randomUUID(),
+        pageNo: pages.length + 1,
+        name: file.name || `第 ${pages.length + 1} 張`,
+        image,
+        storedImage,
+        detected: [],
+        status: 'pending',
+        error: ''
+      });
+    }
+    section.classList.remove('hidden');
+    if (document.documentElement.classList.contains('capture-mode') && workspace && !window.__manualFallbackOpen) workspace.classList.add('hidden');
+    render();
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // 允許 iPhone 再次按「繼續拍」加入下一張，即使檔名相同也會觸發 change。
+    input.value = '';
   }
 
-  input.addEventListener('change', event => loadWholePageImage(event.target.files?.[0]), true);
+  input.addEventListener('change', event => addFiles(event.target.files), true);
 
   button.addEventListener('click', async () => {
-    if (!pageImage) return alert('請先拍攝或選擇整張考卷。');
+    if (!pages.length) return alert('請先拍攝或選擇至少一張考卷。');
     if (!endpoint) return alert('尚未設定 Gemini API 網址。');
-    const original = button.textContent;
-    button.disabled = true;
-    button.textContent = '🤖 正在找錯題…';
-    results.innerHTML = '<div class="empty compact">Gemini 正在檢查整張考卷，請稍候。</div>';
-    try {
-      const response = await fetch(endpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'detectMistakes', image:pageImage}) });
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(payload.detail || payload.error || `HTTP ${response.status}`);
-      detected = Array.isArray(payload.mistakes) ? payload.mistakes : [];
+    if (analyzing) return;
+    analyzing = true;
+    // 已成功頁保留結果，只重跑尚未分析或失敗頁。
+    const targets = pages.filter(page => page.status !== 'done');
+    for (const page of targets) {
+      page.status = 'analyzing';
+      page.error = '';
       render();
-    } catch (error) {
-      console.error(error);
-      results.innerHTML = `<div class="empty compact">自動找錯題失敗：${escapeHtml(error.message)}</div>`;
-    } finally {
-      button.disabled = false;
-      button.textContent = original;
+      try {
+        const response = await fetch(endpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'detectMistakes', image:page.image}) });
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(payload.detail || payload.error || `HTTP ${response.status}`);
+        page.detected = Array.isArray(payload.mistakes) ? payload.mistakes : [];
+        page.status = 'done';
+      } catch (error) {
+        console.error(error);
+        page.status = 'error';
+        page.error = error.message || '未知錯誤';
+      }
+      render();
+      await sleep(120);
     }
+    analyzing = false;
+    render();
   });
 
   results.addEventListener('click', async event => {
+    const removeIndex = event.target.dataset?.removePage;
+    if (removeIndex !== undefined) {
+      if (analyzing) return;
+      pages.splice(Number(removeIndex), 1);
+      pages.forEach((page, index) => page.pageNo = index + 1);
+      render();
+      return;
+    }
+
+    if (event.target.id === 'clearBatchBtn') {
+      if (analyzing) return;
+      if (!confirm('確定清除這一批已拍的考卷嗎？')) return;
+      pages = [];
+      render();
+      return;
+    }
+
     if (event.target.id !== 'addDetectedBtn') return;
     if (typeof window.openQuestionFromCrop !== 'function') return alert('錯題儲存功能尚未載入。');
-    const selected = [...results.querySelectorAll('input[data-detected-index]:checked')].map(el => detected[Number(el.dataset.detectedIndex)]).filter(Boolean);
+    const selected = [...results.querySelectorAll('input[data-page-index][data-item-index]:checked')]
+      .map(el => {
+        const page = pages[Number(el.dataset.pageIndex)];
+        const item = page?.detected?.[Number(el.dataset.itemIndex)];
+        return page && item ? { page, item } : null;
+      }).filter(Boolean);
     if (!selected.length) return alert('請至少勾選一題。');
 
     const addButton = event.target;
-    const original = addButton.textContent;
     addButton.disabled = true;
-    addButton.textContent = `☁️ 上傳中 0/${selected.length}`;
     window.__batchCapture = true;
     try {
       for (let i = 0; i < selected.length; i++) {
-        window.openQuestionFromCrop(draftFromDetected(selected[i]));
-        await sleep(450);
         addButton.textContent = `☁️ 上傳中 ${i + 1}/${selected.length}`;
+        window.openQuestionFromCrop(draftFromDetected(selected[i].item, selected[i].page));
+        await sleep(500);
       }
-      detected = [];
-      results.innerHTML = `<div class="empty compact"><strong>✅ 已加入 ${selected.length} 題錯題</strong><br>題目原圖已一併保留；學生答案無法確認時會標示「待確認」。</div>`;
+      const count = selected.length;
+      pages = [];
+      results.innerHTML = `<div class="empty compact"><strong>✅ 已加入 ${count} 題錯題</strong><br>整批考卷已完成；每題都保留原本所在頁面的考卷圖片。</div>`;
+      button.disabled = true;
+      button.textContent = '🤖 AI 批次找錯題';
       if (workspace) workspace.classList.add('hidden');
       window.__manualFallbackOpen = false;
     } catch (error) {
       console.error(error);
       alert(`加入錯題失敗：${error.message}`);
       addButton.disabled = false;
-      addButton.textContent = original;
+      addButton.textContent = '☁️ 一次上傳勾選題目';
     } finally {
       window.__batchCapture = false;
     }
   });
+
+  render();
 })();
