@@ -9,37 +9,42 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="AI錯題" />
   <title>116 會考 AI 學習系統</title>
-  <link rel="manifest" href="manifest.webmanifest?v=1.3.2" />
+  <link rel="manifest" href="manifest.webmanifest?v=2.0" />
   <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="app-icon.svg" />
-  <link rel="stylesheet" href="styles.css?v=1.3.2" />
+  <link rel="stylesheet" href="styles.css?v=2.0" />
 </head>
 <body>
   <header class="hero">
-    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>手機拍攝上傳，桌機閱讀、整理、類題與複習。</p></div>
+    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>手機拍整張考卷，Gemini 自動找出有批改證據的錯題；桌機負責閱讀、整理、類題與複習。</p></div>
     <button id="addBtn" class="primary">＋ 新增錯題</button>
   </header>
 
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v1.3.2 Gemini Capture / Study</p><h2>📷 拍攝已批改的考卷</h2><p>iPhone 負責拍攝與上傳；Gemini 直接辨識題目，桌機負責閱讀、校正、分類及複習。</p></div>
+        <div><p class="eyebrow dark">v2.0 Gemini 自動找錯題</p><h2>📷 拍攝整張已批改考卷</h2><p>先拍照，再按「AI 自動找錯題」。Gemini 會根據紅筆叉號、扣分與作答記號找出可能錯題；不確定的題目不會自動加入。</p></div>
         <label class="upload-btn primary">📷 拍考卷<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
+
+      <section id="autoDetectPanel" class="auto-detect-panel hidden">
+        <div class="auto-detect-head"><div><strong>整張考卷模式</strong><div class="hint">適合批改符號清楚的考卷；辨識後請先勾選確認。</div></div><button id="autoDetectBtn" type="button" class="primary">🤖 AI 自動找錯題</button></div>
+        <div id="autoDetectResults"></div>
+      </section>
 
       <div id="scanWorkspace" class="scan-workspace hidden">
         <div class="scan-toolbar">
           <strong id="paperName"></strong>
           <div class="scan-actions">
-            <button id="drawModeBtn" type="button" class="primary">＋ 畫新框</button>
+            <button id="drawModeBtn" type="button" class="primary">＋ 手動畫框</button>
             <button id="selectModeBtn" type="button">↖ 選取調整</button>
             <button id="deleteBoxBtn" type="button">刪除選取框</button>
             <button id="clearBoxesBtn" type="button">清除全部</button>
           </div>
         </div>
-        <p class="hint">框選時請完整包含題號、題幹、選項與必要圖表。直接按「🤖 Gemini 智慧分析」，完成後按「加入錯題資料庫」。手機會直接上傳，桌機再進行完整整理。</p>
+        <p class="hint">若自動找錯題漏掉或判斷不確定，可手動畫框，再按「🤖 Gemini 智慧分析」。</p>
         <div id="annotationViewport" class="annotation-viewport"><div id="annotationStage"></div></div>
-        <h3 class="result-title">已框選錯題</h3>
+        <h3 class="result-title">手動框選錯題</h3>
         <div id="detectedList" class="detected-list"></div>
       </div>
     </section>
@@ -50,28 +55,19 @@
 
   <dialog id="questionDialog"><form id="questionForm" method="dialog"><div class="dialog-head"><h2 id="dialogTitle">新增錯題</h2><button type="button" id="closeBtn" class="icon-btn" aria-label="關閉">×</button></div><input type="hidden" id="questionId" />
     <div class="grid two">
-      <label>科目<input id="subject" required placeholder="例如：自然" /></label>
-      <label>章節<input id="chapter" placeholder="例如：刺激與反應" /></label>
-      <label>題號<input id="number" placeholder="例如：23" /></label>
-      <label>狀態<select id="status"><option>待複習</option><option>複習中</option><option>已掌握</option></select></label>
-      <label>題型<input id="questionType" placeholder="例如：圖表判讀" /></label>
-      <label>難度<select id="difficulty"><option value="1">★☆☆☆☆</option><option value="2">★★☆☆☆</option><option value="3" selected>★★★☆☆</option><option value="4">★★★★☆</option><option value="5">★★★★★</option></select></label>
+      <label>科目<input id="subject" required placeholder="例如：自然" /></label><label>章節<input id="chapter" placeholder="例如：刺激與反應" /></label><label>題號<input id="number" placeholder="例如：23" /></label><label>狀態<select id="status"><option>待複習</option><option>複習中</option><option>已掌握</option></select></label><label>題型<input id="questionType" placeholder="例如：圖表判讀" /></label><label>難度<select id="difficulty"><option value="1">★☆☆☆☆</option><option value="2">★★☆☆☆</option><option value="3" selected>★★★☆☆</option><option value="4">★★★★☆</option><option value="5">★★★★★</option></select></label>
     </div>
-    <label>1. 題目<textarea id="question" required rows="4"></textarea></label>
-    <div class="grid two"><label>2. 正確答案<input id="correctAnswer" required /></label><label>我的答案<input id="myAnswer" /></label></div>
-    <label>3. 我的錯誤<textarea id="mistake" rows="3"></textarea></label><label>4. 解題觀念<textarea id="concept" rows="3"></textarea></label><label>5. 知識點／考點<textarea id="knowledge" rows="3"></textarea></label><label>詳細解答<textarea id="explanation" rows="7"></textarea></label><label>錯誤類型與 AI 標籤<input id="tags" placeholder="觀念混淆, 親屬稱謂" /></label><div class="actions"><button type="button" id="deleteBtn" class="danger hidden">刪除</button><button type="submit" class="primary">儲存錯題</button></div></form></dialog>
+    <label>1. 題目<textarea id="question" required rows="4"></textarea></label><div class="grid two"><label>2. 正確答案<input id="correctAnswer" required /></label><label>我的答案<input id="myAnswer" /></label></div><label>3. 我的錯誤<textarea id="mistake" rows="3"></textarea></label><label>4. 解題觀念<textarea id="concept" rows="3"></textarea></label><label>5. 知識點／考點<textarea id="knowledge" rows="3"></textarea></label><label>詳細解答<textarea id="explanation" rows="7"></textarea></label><label>錯誤類型與 AI 標籤<input id="tags" placeholder="觀念混淆, 親屬稱謂" /></label><div class="actions"><button type="button" id="deleteBtn" class="danger hidden">刪除</button><button type="submit" class="primary">儲存錯題</button></div>
+  </form></dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
-  <script src="config.js?v=1.3.2"></script>
-  <script src="app.js?v=1.3.2"></script>
-  <script src="scan.js?v=1.3.2"></script>
-  <script src="no-ocr-mode.js?v=1.3.2"></script>
-  <script src="vision-ai.js?v=1.3.2"></script>
-  <script src="mobile-mode.js?v=1.3.2"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=1.3.2').catch(console.error));
-    }
-  </script>
+  <script src="config.js?v=2.0"></script>
+  <script src="app.js?v=2.0"></script>
+  <script src="scan.js?v=2.0"></script>
+  <script src="no-ocr-mode.js?v=2.0"></script>
+  <script src="vision-ai.js?v=2.0"></script>
+  <script src="mobile-mode.js?v=2.0"></script>
+  <script src="auto-detect.js?v=2.0"></script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=2.0').catch(console.error));}</script>
 </body>
 </html>
