@@ -9,10 +9,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="AI錯題" />
   <title>116 會考 AI 學習系統</title>
-  <link rel="manifest" href="manifest.webmanifest?v=2.0" />
+  <link rel="manifest" href="manifest.webmanifest?v=2.0.1" />
   <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="app-icon.svg" />
-  <link rel="stylesheet" href="styles.css?v=2.0" />
+  <link rel="stylesheet" href="styles.css?v=2.0.1" />
 </head>
 <body>
   <header class="hero">
@@ -23,7 +23,7 @@
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v2.0 Gemini 自動找錯題</p><h2>📷 拍攝整張已批改考卷</h2><p>先拍照，再按「AI 自動找錯題」。Gemini 會根據紅筆叉號、扣分與作答記號找出可能錯題；不確定的題目不會自動加入。</p></div>
+        <div><p class="eyebrow dark">v2.0.1 Gemini 自動找錯題</p><h2>📷 拍攝整張已批改考卷</h2><p>先拍照，再按「AI 自動找錯題」。Gemini 會根據紅筆叉號、扣分與作答記號找出可能錯題；不確定的題目不會自動加入。</p></div>
         <label class="upload-btn primary">📷 拍考卷<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
@@ -61,13 +61,13 @@
   </form></dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
-  <script src="config.js?v=2.0"></script>
-  <script src="app.js?v=2.0"></script>
-  <script src="scan.js?v=2.0"></script>
-  <script src="no-ocr-mode.js?v=2.0"></script>
-  <script src="vision-ai.js?v=2.0"></script>
-  <script src="mobile-mode.js?v=2.0"></script>
-  <script src="auto-detect.js?v=2.0"></script>
-  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=2.0').catch(console.error));}</script>
+  <script src="config.js?v=2.0.1"></script>
+  <script src="app.js?v=2.0.1"></script>
+  <script src="scan.js?v=2.0.1"></script>
+  <script src="no-ocr-mode.js?v=2.0.1"></script>
+  <script src="vision-ai.js?v=2.0.1"></script>
+  <script src="mobile-mode.js?v=2.0.1"></script>
+  <script src="auto-detect.js?v=2.0.1"></script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=2.0.1').catch(console.error));}</script>
 </body>
 </html>
