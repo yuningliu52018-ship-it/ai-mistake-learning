@@ -8,6 +8,7 @@
   if (!input || !section || !button || !results) return;
 
   let pageImage = '';
+  let storedPageImage = '';
   let detected = [];
 
   const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'})[c]);
@@ -19,15 +20,42 @@
     return lines.filter(Boolean).join('\n');
   }
 
+  function compressForStorage(dataUrl) {
+    return new Promise(resolve => {
+      const image = new Image();
+      image.onload = () => {
+        const maxWidth = 900;
+        const scale = Math.min(1, maxWidth / image.naturalWidth);
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+        canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+        canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL('image/jpeg', 0.62));
+      };
+      image.onerror = () => resolve('');
+      image.src = dataUrl;
+    });
+  }
+
   function draftFromDetected(item) {
+    const hasStudentAnswer = Boolean(String(item.studentAnswer || '').trim());
     return {
-      image: '', subject: item.subject || '自然', chapter: item.chapter || '', number: item.questionNumber || '',
-      questionType: item.questionType || '', difficulty: item.difficulty || 3, question: formatQuestion(item),
-      correctAnswer: item.correctAnswer || '待確認', myAnswer: item.studentAnswer || '',
-      mistake: item.mistake || 'Gemini 依批改記號判斷為錯題，請在桌機確認錯誤原因。',
-      concept: item.concept || '待整理', knowledge: item.knowledge || '待分類',
+      image: storedPageImage,
+      subject: item.subject || '待確認',
+      chapter: item.chapter || '',
+      number: item.questionNumber || '',
+      questionType: item.questionType || '',
+      difficulty: item.difficulty || 3,
+      question: formatQuestion(item),
+      correctAnswer: item.correctAnswer || '待確認',
+      myAnswer: hasStudentAnswer ? item.studentAnswer : '待確認',
+      mistake: hasStudentAnswer && item.mistake
+        ? item.mistake
+        : '尚未確認學生原答案與解題過程，請在桌機確認後再分析錯誤原因。',
+      concept: item.concept || '待整理',
+      knowledge: item.knowledge || '待分類',
       explanation: item.explanation || '待在桌機確認完整解析。',
-      tags: ['整張考卷自動辨識', 'Gemini 自動找錯題', ...(item.tags || [])]
+      tags: ['整張考卷自動辨識', 'Gemini 自動找錯題', '保留原題圖片', ...(item.tags || [])]
     };
   }
 
@@ -41,15 +69,16 @@
       ${detected.map((item, index) => `
         <label class="auto-detected-item">
           <input type="checkbox" data-detected-index="${index}" checked />
-          <span><strong>第 ${escapeHtml(item.questionNumber || '?')} 題｜${escapeHtml(item.subject || '待確認')}</strong><br>${escapeHtml(item.question || '').slice(0,220)}<br><small>學生答案：${escapeHtml(item.studentAnswer || '不清楚')}｜正確答案：${escapeHtml(item.correctAnswer || '待確認')}｜信心值 ${Math.round(Number(item.confidence)||0)}%</small></span>
+          <span><strong>第 ${escapeHtml(item.questionNumber || '?')} 題｜${escapeHtml(item.subject || '待確認')}</strong><br>${escapeHtml(item.question || '').slice(0,220)}<br><small>學生答案：${escapeHtml(item.studentAnswer || '待確認')}｜正確答案：${escapeHtml(item.correctAnswer || '待確認')}｜信心值 ${Math.round(Number(item.confidence)||0)}%</small></span>
         </label>`).join('')}`;
   }
 
   function loadWholePageImage(file) {
     if (!file || !file.type.startsWith('image/')) return;
     const reader = new FileReader();
-    reader.onload = () => {
+    reader.onload = async () => {
       pageImage = String(reader.result || '');
+      storedPageImage = await compressForStorage(pageImage);
       detected = [];
       section.classList.remove('hidden');
       if (document.documentElement.classList.contains('capture-mode') && workspace && !window.__manualFallbackOpen) workspace.classList.add('hidden');
@@ -101,7 +130,7 @@
         addButton.textContent = `☁️ 上傳中 ${i + 1}/${selected.length}`;
       }
       detected = [];
-      results.innerHTML = `<div class="empty compact"><strong>✅ 已加入 ${selected.length} 題錯題</strong><br>確認上方顯示「☁️ 已同步」後，桌機按同步即可閱讀與編輯。</div>`;
+      results.innerHTML = `<div class="empty compact"><strong>✅ 已加入 ${selected.length} 題錯題</strong><br>題目原圖已一併保留；學生答案無法確認時會標示「待確認」。</div>`;
       if (workspace) workspace.classList.add('hidden');
       window.__manualFallbackOpen = false;
     } catch (error) {
