@@ -1,16 +1,17 @@
-const CACHE_NAME = 'ai-mistake-learning-v1.3';
+const CACHE_NAME = 'ai-mistake-learning-v1.3.1';
 const APP_SHELL = [
   './',
   './index.html',
-  './styles.css?v=1.3',
-  './config.js?v=1.3',
-  './ocr-enhance.js?v=1.3',
-  './ocr-postprocess.js?v=1.3',
-  './app.js?v=1.3',
-  './scan.js?v=1.3',
-  './batch-ocr.js?v=1.3',
-  './vision-ai.js?v=1.3',
-  './manifest.webmanifest?v=1.3',
+  './styles.css?v=1.3.1',
+  './config.js?v=1.3.1',
+  './ocr-enhance.js?v=1.3.1',
+  './ocr-postprocess.js?v=1.3.1',
+  './app.js?v=1.3.1',
+  './scan.js?v=1.3.1',
+  './batch-ocr.js?v=1.3.1',
+  './vision-ai.js?v=1.3.1',
+  './mobile-mode.js?v=1.3.1',
+  './manifest.webmanifest?v=1.3.1',
   './app-icon.svg'
 ];
 
