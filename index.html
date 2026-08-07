@@ -9,27 +9,28 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="AI錯題" />
   <title>116 會考 AI 學習系統</title>
-  <link rel="manifest" href="manifest.webmanifest?v=2.0.1" />
+  <link rel="manifest" href="manifest.webmanifest?v=3.0" />
   <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="app-icon.svg" />
-  <link rel="stylesheet" href="styles.css?v=2.0.1" />
+  <link rel="stylesheet" href="styles.css?v=3.0" />
 </head>
 <body>
   <header class="hero">
-    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>手機拍整張考卷，Gemini 自動找出有批改證據的錯題；桌機負責閱讀、整理、類題與複習。</p></div>
+    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>手機拍照與上傳，桌機閱讀、整理、類題與複習。</p></div>
     <button id="addBtn" class="primary">＋ 新增錯題</button>
   </header>
 
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v2.0.1 Gemini 自動找錯題</p><h2>📷 拍攝整張已批改考卷</h2><p>先拍照，再按「AI 自動找錯題」。Gemini 會根據紅筆叉號、扣分與作答記號找出可能錯題；不確定的題目不會自動加入。</p></div>
+        <div><p class="eyebrow dark">v3.0 Capture / Study</p><h2>📷 拍攝整張已批改考卷</h2><p>拍照後由 Gemini 自動找出錯題，勾選確認後直接上傳；手機不需要逐題編輯。</p></div>
         <label class="upload-btn primary">📷 拍考卷<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
       <section id="autoDetectPanel" class="auto-detect-panel hidden">
-        <div class="auto-detect-head"><div><strong>整張考卷模式</strong><div class="hint">適合批改符號清楚的考卷；辨識後請先勾選確認。</div></div><button id="autoDetectBtn" type="button" class="primary">🤖 AI 自動找錯題</button></div>
+        <div class="auto-detect-head"><div><strong>整張考卷模式</strong><div class="hint">Gemini 會依紅筆、扣分與作答記號找出錯題；加入前請先勾選確認。</div></div><button id="autoDetectBtn" type="button" class="primary">🤖 AI 自動找錯題</button></div>
         <div id="autoDetectResults"></div>
+        <button id="manualFallbackBtn" type="button">＋ AI 漏題？手動補一題</button>
       </section>
 
       <div id="scanWorkspace" class="scan-workspace hidden">
@@ -42,9 +43,9 @@
             <button id="clearBoxesBtn" type="button">清除全部</button>
           </div>
         </div>
-        <p class="hint">若自動找錯題漏掉或判斷不確定，可手動畫框，再按「🤖 Gemini 智慧分析」。</p>
+        <p class="hint">只有 AI 漏題時才使用：框選完整題目後按「🤖 Gemini 智慧分析」。</p>
         <div id="annotationViewport" class="annotation-viewport"><div id="annotationStage"></div></div>
-        <h3 class="result-title">手動框選錯題</h3>
+        <h3 class="result-title">手動補題</h3>
         <div id="detectedList" class="detected-list"></div>
       </div>
     </section>
@@ -61,13 +62,13 @@
   </form></dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
-  <script src="config.js?v=2.0.1"></script>
-  <script src="app.js?v=2.0.1"></script>
-  <script src="scan.js?v=2.0.1"></script>
-  <script src="no-ocr-mode.js?v=2.0.1"></script>
-  <script src="vision-ai.js?v=2.0.1"></script>
-  <script src="mobile-mode.js?v=2.0.1"></script>
-  <script src="auto-detect.js?v=2.0.1"></script>
-  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=2.0.1').catch(console.error));}</script>
+  <script src="config.js?v=3.0"></script>
+  <script src="app.js?v=3.0"></script>
+  <script src="scan.js?v=3.0"></script>
+  <script src="no-ocr-mode.js?v=3.0"></script>
+  <script src="vision-ai.js?v=3.0"></script>
+  <script src="mobile-mode.js?v=3.0"></script>
+  <script src="auto-detect.js?v=3.0"></script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=3.0').catch(console.error));}</script>
 </body>
 </html>
