@@ -1,6 +1,6 @@
-const CACHE_NAME = 'ai-mistake-learning-v3.1';
+const CACHE_NAME = 'ai-mistake-learning-v3.2';
 const APP_SHELL = [
-  './','./index.html','./styles.css?v=3.1','./config.js?v=3.1','./app.js?v=3.1','./scan.js?v=3.1','./no-ocr-mode.js?v=3.1','./vision-ai.js?v=3.1','./mobile-mode.js?v=3.1','./auto-detect.js?v=3.1','./manifest.webmanifest?v=3.1','./app-icon.svg'
+  './','./index.html','./styles.css?v=3.2','./config.js?v=3.2','./app.js?v=3.2','./ui-v3.2.js?v=3.2','./scan.js?v=3.2','./no-ocr-mode.js?v=3.2','./vision-ai.js?v=3.2','./mobile-mode.js?v=3.2','./auto-detect.js?v=3.2','./manifest.webmanifest?v=3.2','./app-icon.svg'
 ];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE_NAME).map(key=>caches.delete(key)))));self.clients.claim();});
