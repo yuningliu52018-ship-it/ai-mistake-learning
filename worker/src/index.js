@@ -24,11 +24,30 @@ async function handleSync(body,env){
   if(body.action==="syncDelete"){const id=String(body?.id||"").trim(),at=String(body?.deletedAt||new Date().toISOString());if(!id)throw new Error("缺少題目 id");await env.DB.prepare(`INSERT INTO questions(sync_key_hash,id,payload,updated_at,deleted_at) VALUES(?,?,'{}',?,?) ON CONFLICT(sync_key_hash,id) DO UPDATE SET updated_at=excluded.updated_at,deleted_at=excluded.deleted_at WHERE excluded.updated_at>=questions.updated_at`).bind(hash,id,at,at).run();return{deleted:id};}
   throw new Error("Unknown sync action");
 }
-async function callGemini(env,prompt,responseSchema,extraParts=[]){
-  const model=env.GEMINI_MODEL||"gemini-3.6-flash";
+async function callGeminiModel(env,model,prompt,responseSchema,extraParts=[]){
   const endpoint=`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(env.GEMINI_API_KEY)}`;
   const response=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({contents:[{role:"user",parts:[{text:prompt},...extraParts]}],generationConfig:{temperature:.15,responseMimeType:"application/json",responseSchema}})});
-  const raw=await response.json();if(!response.ok)throw new Error(raw?.error?.message||"Unknown Gemini API error");return parseJsonText(extractGeminiText(raw));
+  const raw=await response.json();
+  if(!response.ok){const error=new Error(raw?.error?.message||"Unknown Gemini API error");error.status=response.status;error.code=raw?.error?.status||"";throw error;}
+  const parsed=parseJsonText(extractGeminiText(raw));parsed._modelUsed=model;return parsed;
+}
+async function callGemini(env,prompt,responseSchema,extraParts=[]){
+  const primary=env.GEMINI_MODEL||"gemini-3.6-flash";
+  const fallback=env.GEMINI_FALLBACK_MODEL||"gemini-2.5-flash";
+  const models=[...new Set([primary,fallback].filter(Boolean))];
+  let lastError;
+  for(let i=0;i<models.length;i++){
+    try{return await callGeminiModel(env,models[i],prompt,responseSchema,extraParts);}
+    catch(error){
+      lastError=error;
+      const quotaLike=error?.status===429||String(error?.code||"").toUpperCase()==="RESOURCE_EXHAUSTED"||/quota|rate limit|too many requests/i.test(String(error?.message||""));
+      if(!quotaLike||i===models.length-1)break;
+      console.warn(`Gemini ${models[i]} quota/rate limit reached; falling back to ${models[i+1]}`);
+    }
+  }
+  const quotaLike=lastError?.status===429||String(lastError?.code||"").toUpperCase()==="RESOURCE_EXHAUSTED"||/quota|rate limit|too many requests/i.test(String(lastError?.message||""));
+  if(quotaLike)throw new Error("Gemini 主要與備援模型目前都達到配額或速率限制，已保留已完成頁面；請稍後或配額重置後再繼續。");
+  throw lastError||new Error("Gemini service failed");
 }
 const OPTIONS={type:"OBJECT",properties:{A:{type:"STRING"},B:{type:"STRING"},C:{type:"STRING"},D:{type:"STRING"}},required:["A","B","C","D"]};
 const CROP_BOX={type:"OBJECT",properties:{x:{type:"INTEGER"},y:{type:"INTEGER"},width:{type:"INTEGER"},height:{type:"INTEGER"}},required:["x","y","width","height"]};
