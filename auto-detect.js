@@ -29,7 +29,7 @@
         canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
         canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
         canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
-        resolve(canvas.toDataURL('image/jpeg', 0.62));
+        resolve(canvas.toDataURL('image/jpeg', 0.58));
       };
       image.onerror = () => resolve('');
       image.src = dataUrl;
@@ -38,8 +38,10 @@
 
   function draftFromDetected(item, page) {
     const hasStudentAnswer = Boolean(String(item.studentAnswer || '').trim());
+    const keepImage = item.imageRequired === true;
+    const imageTag = keepImage ? ['保留必要題圖'] : ['文字足夠・不保存原圖'];
     return {
-      image: page.storedImage,
+      image: keepImage ? page.storedImage : '',
       subject: item.subject || '待確認',
       chapter: item.chapter || '',
       number: item.questionNumber || '',
@@ -54,7 +56,7 @@
       concept: item.concept || '待整理',
       knowledge: item.knowledge || '待分類',
       explanation: item.explanation || '待在桌機確認完整解析。',
-      tags: [`批次拍攝第${page.pageNo}頁`, '整張考卷自動辨識', 'Gemini 自動找錯題', '保留原題圖片', ...(item.tags || [])]
+      tags: [`批次拍攝第${page.pageNo}頁`, '整張考卷自動辨識', 'Gemini 自動找錯題', ...imageTag, ...(item.tags || [])]
     };
   }
 
@@ -67,6 +69,12 @@
     if (page.status === 'done') return `✅ 找到 ${page.detected.length} 題`;
     if (page.status === 'error') return '⚠️ 分析失敗';
     return '等待分析';
+  }
+
+  function imagePolicyText(item) {
+    return item.imageRequired === true
+      ? `📎 保留題圖${item.imageReason ? `：${escapeHtml(item.imageReason)}` : ''}`
+      : '📝 文字已足夠，不保存原題圖片';
   }
 
   function render() {
@@ -105,7 +113,7 @@
           ${page.detected.map((item, itemIndex) => `
             <label class="auto-detected-item">
               <input type="checkbox" data-page-index="${pageIndex}" data-item-index="${itemIndex}" checked />
-              <span><strong>第 ${escapeHtml(item.questionNumber || '?')} 題｜${escapeHtml(item.subject || '待確認')}</strong><br>${escapeHtml(item.question || '').slice(0,220)}<br><small>學生答案：${escapeHtml(item.studentAnswer || '待確認')}｜正確答案：${escapeHtml(item.correctAnswer || '待確認')}｜信心值 ${Math.round(Number(item.confidence)||0)}%</small></span>
+              <span><strong>第 ${escapeHtml(item.questionNumber || '?')} 題｜${escapeHtml(item.subject || '待確認')}</strong><br>${escapeHtml(item.question || '').slice(0,220)}<br><small>學生答案：${escapeHtml(item.studentAnswer || '待確認')}｜正確答案：${escapeHtml(item.correctAnswer || '待確認')}｜信心值 ${Math.round(Number(item.confidence)||0)}%</small><br><small>${imagePolicyText(item)}</small></span>
             </label>`).join('')}
         </section>`;
     }).join('');
@@ -146,7 +154,6 @@
     if (document.documentElement.classList.contains('capture-mode') && workspace && !window.__manualFallbackOpen) workspace.classList.add('hidden');
     render();
     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    // 允許 iPhone 再次按「繼續拍」加入下一張，即使檔名相同也會觸發 change。
     input.value = '';
   }
 
@@ -157,7 +164,6 @@
     if (!endpoint) return alert('尚未設定 Gemini API 網址。');
     if (analyzing) return;
     analyzing = true;
-    // 已成功頁保留結果，只重跑尚未分析或失敗頁。
     const targets = pages.filter(page => page.status !== 'done');
     for (const page of targets) {
       page.status = 'analyzing';
@@ -167,7 +173,11 @@
         const response = await fetch(endpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'detectMistakes', image:page.image}) });
         const payload = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(payload.detail || payload.error || `HTTP ${response.status}`);
-        page.detected = Array.isArray(payload.mistakes) ? payload.mistakes : [];
+        page.detected = (Array.isArray(payload.mistakes) ? payload.mistakes : []).map(item => ({
+          ...item,
+          imageRequired: item.imageRequired === true,
+          imageReason: item.imageReason || ''
+        }));
         page.status = 'done';
       } catch (error) {
         console.error(error);
@@ -219,8 +229,9 @@
         await sleep(500);
       }
       const count = selected.length;
+      const keptImages = selected.filter(x => x.item.imageRequired === true).length;
       pages = [];
-      results.innerHTML = `<div class="empty compact"><strong>✅ 已加入 ${count} 題錯題</strong><br>整批考卷已完成；每題都保留原本所在頁面的考卷圖片。</div>`;
+      results.innerHTML = `<div class="empty compact"><strong>✅ 已加入 ${count} 題錯題</strong><br>只有 ${keptImages} 題需要圖片並已保留；其餘 ${count - keptImages} 題只保存文字資料，減少手機與雲端空間使用。</div>`;
       button.disabled = true;
       button.textContent = '🤖 AI 批次找錯題';
       if (workspace) workspace.classList.add('hidden');
