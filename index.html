@@ -9,10 +9,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="AI錯題" />
   <title>116 會考 AI 學習系統</title>
-  <link rel="manifest" href="manifest.webmanifest?v=3.5" />
+  <link rel="manifest" href="manifest.webmanifest?v=3.6" />
   <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="app-icon.svg" />
-  <link rel="stylesheet" href="styles.css?v=3.5" />
+  <link rel="stylesheet" href="styles.css?v=3.6" />
 </head>
 <body>
   <header class="hero">
@@ -23,12 +23,12 @@
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v3.5 Visual Guard</p><h2>📷 批次拍攝已批改考卷</h2><p>純文字題不存圖；題目若含關係圖、曲線圖、座標圖、幾何圖、表格或圖片式選項，系統會強制保留並 Smart Crop。</p></div>
+        <div><p class="eyebrow dark">v3.6 Model Fallback</p><h2>📷 批次拍攝已批改考卷</h2><p>保留 v3.5 Visual Guard 與 Smart Crop；Gemini 主要模型遇到 429／每日配額限制時，會自動切換到 Gemini 2.5 Flash 備援模型。</p></div>
         <label class="upload-btn primary">📷 拍／加入下一張<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
       <section id="autoDetectPanel" class="auto-detect-panel">
-        <div class="auto-detect-head"><div><strong>批次考卷模式</strong><div class="hint">先連續拍完所有頁面，再按「AI 批次找錯題」。v3.5 會額外檢查圖片式選項，避免像關係圖題只留下 (A)(B)(C)(D) 文字。</div></div><button id="autoDetectBtn" type="button" class="primary" disabled>🤖 AI 批次找錯題</button></div>
+        <div class="auto-detect-head"><div><strong>批次考卷模式</strong><div class="hint">先連續拍完所有頁面，再按「AI 批次找錯題」。若主要 Gemini 模型額度暫時用完，v3.6 會自動改用備援模型；兩個模型都受限時才停止。</div></div><button id="autoDetectBtn" type="button" class="primary" disabled>🤖 AI 批次找錯題</button></div>
         <div id="autoDetectResults"></div>
         <button id="manualFallbackBtn" type="button">＋ AI 漏題？手動補一題</button>
       </section>
@@ -62,14 +62,14 @@
   </form></dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
-  <script src="config.js?v=3.5"></script>
-  <script src="app.js?v=3.5"></script>
-  <script src="ui-v3.2.js?v=3.5"></script>
-  <script src="scan.js?v=3.5"></script>
-  <script src="no-ocr-mode.js?v=3.5"></script>
-  <script src="vision-ai.js?v=3.5"></script>
-  <script src="mobile-mode.js?v=3.5"></script>
-  <script src="auto-detect.js?v=3.5"></script>
-  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=3.5').catch(console.error));}</script>
+  <script src="config.js?v=3.6"></script>
+  <script src="app.js?v=3.6"></script>
+  <script src="ui-v3.2.js?v=3.6"></script>
+  <script src="scan.js?v=3.6"></script>
+  <script src="no-ocr-mode.js?v=3.6"></script>
+  <script src="vision-ai.js?v=3.6"></script>
+  <script src="mobile-mode.js?v=3.6"></script>
+  <script src="auto-detect.js?v=3.6"></script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=3.6').catch(console.error));}</script>
 </body>
 </html>
