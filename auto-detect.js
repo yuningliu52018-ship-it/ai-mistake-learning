@@ -19,29 +19,70 @@
     return lines.filter(Boolean).join('\n');
   }
 
-  function compressForStorage(dataUrl) {
-    return new Promise(resolve => {
+  function imageFromDataUrl(dataUrl) {
+    return new Promise((resolve, reject) => {
       const image = new Image();
-      image.onload = () => {
-        const maxWidth = 900;
-        const scale = Math.min(1, maxWidth / image.naturalWidth);
-        const canvas = document.createElement('canvas');
-        canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
-        canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
-        canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
-        resolve(canvas.toDataURL('image/jpeg', 0.58));
-      };
-      image.onerror = () => resolve('');
+      image.onload = () => resolve(image);
+      image.onerror = reject;
       image.src = dataUrl;
     });
   }
 
-  function draftFromDetected(item, page) {
+  async function compressForStorage(dataUrl) {
+    try {
+      const image = await imageFromDataUrl(dataUrl);
+      const maxWidth = 900;
+      const scale = Math.min(1, maxWidth / image.naturalWidth);
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+      canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+      canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+      return canvas.toDataURL('image/jpeg', 0.58);
+    } catch {
+      return '';
+    }
+  }
+
+  function normalizedCropBox(box) {
+    const n = v => Math.max(0, Math.min(1000, Number(v) || 0));
+    const x = n(box?.x), y = n(box?.y);
+    let width = n(box?.width), height = n(box?.height);
+    width = Math.min(width, 1000 - x);
+    height = Math.min(height, 1000 - y);
+    if (width < 40 || height < 40) return null;
+    return { x, y, width, height };
+  }
+
+  async function smartCropForStorage(dataUrl, box) {
+    try {
+      const image = await imageFromDataUrl(dataUrl);
+      const b = normalizedCropBox(box);
+      if (!b) return compressForStorage(dataUrl);
+
+      const sx = Math.round(image.naturalWidth * b.x / 1000);
+      const sy = Math.round(image.naturalHeight * b.y / 1000);
+      const sw = Math.max(1, Math.round(image.naturalWidth * b.width / 1000));
+      const sh = Math.max(1, Math.round(image.naturalHeight * b.height / 1000));
+      const maxWidth = 900;
+      const scale = Math.min(1, maxWidth / sw);
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.max(1, Math.round(sw * scale));
+      canvas.height = Math.max(1, Math.round(sh * scale));
+      canvas.getContext('2d').drawImage(image, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+      return canvas.toDataURL('image/jpeg', 0.58);
+    } catch (error) {
+      console.warn('Smart crop failed, falling back to compressed page', error);
+      return compressForStorage(dataUrl);
+    }
+  }
+
+  async function draftFromDetected(item, page) {
     const hasStudentAnswer = Boolean(String(item.studentAnswer || '').trim());
     const keepImage = item.imageRequired === true;
-    const imageTag = keepImage ? ['保留必要題圖'] : ['文字足夠・不保存原圖'];
+    const croppedImage = keepImage ? await smartCropForStorage(page.image, item.cropBox) : '';
+    const imageTag = keepImage ? ['保留必要題圖', 'Smart Crop 智慧裁切'] : ['文字足夠・不保存原圖'];
     return {
-      image: keepImage ? page.storedImage : '',
+      image: croppedImage,
       subject: item.subject || '待確認',
       chapter: item.chapter || '',
       number: item.questionNumber || '',
@@ -72,9 +113,10 @@
   }
 
   function imagePolicyText(item) {
-    return item.imageRequired === true
-      ? `📎 保留題圖${item.imageReason ? `：${escapeHtml(item.imageReason)}` : ''}`
-      : '📝 文字已足夠，不保存原題圖片';
+    if (item.imageRequired !== true) return '📝 文字已足夠，不保存原題圖片';
+    const b = normalizedCropBox(item.cropBox);
+    const cropText = b ? '✂️ Smart Crop：只保留解題必要區域' : '📎 保留必要題圖';
+    return `${cropText}${item.imageReason ? `｜${escapeHtml(item.imageReason)}` : ''}`;
   }
 
   function render() {
@@ -176,7 +218,8 @@
         page.detected = (Array.isArray(payload.mistakes) ? payload.mistakes : []).map(item => ({
           ...item,
           imageRequired: item.imageRequired === true,
-          imageReason: item.imageReason || ''
+          imageReason: item.imageReason || '',
+          cropBox: item.cropBox || { x:0, y:0, width:0, height:0 }
         }));
         page.status = 'done';
       } catch (error) {
@@ -224,14 +267,15 @@
     window.__batchCapture = true;
     try {
       for (let i = 0; i < selected.length; i++) {
-        addButton.textContent = `☁️ 上傳中 ${i + 1}/${selected.length}`;
-        window.openQuestionFromCrop(draftFromDetected(selected[i].item, selected[i].page));
+        addButton.textContent = `✂️ 裁切並上傳 ${i + 1}/${selected.length}`;
+        const draft = await draftFromDetected(selected[i].item, selected[i].page);
+        window.openQuestionFromCrop(draft);
         await sleep(500);
       }
       const count = selected.length;
       const keptImages = selected.filter(x => x.item.imageRequired === true).length;
       pages = [];
-      results.innerHTML = `<div class="empty compact"><strong>✅ 已加入 ${count} 題錯題</strong><br>只有 ${keptImages} 題需要圖片並已保留；其餘 ${count - keptImages} 題只保存文字資料，減少手機與雲端空間使用。</div>`;
+      results.innerHTML = `<div class="empty compact"><strong>✅ 已加入 ${count} 題錯題</strong><br>${keptImages} 題需要視覺資訊並已智慧裁切保存；其餘 ${count - keptImages} 題只保存文字資料。</div>`;
       button.disabled = true;
       button.textContent = '🤖 AI 批次找錯題';
       if (workspace) workspace.classList.add('hidden');
