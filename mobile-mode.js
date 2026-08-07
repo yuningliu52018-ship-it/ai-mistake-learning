@@ -12,7 +12,7 @@
         if (!form) return;
         form.requestSubmit();
         window.setTimeout(() => {
-          alert('已上傳到雲端待整理區，請到桌機閱讀與編輯。');
+          alert('已加入待同步區。確認上方顯示「☁️ 已同步」後，就能在桌機看到並編輯。');
         }, 150);
       }, 0);
     };
