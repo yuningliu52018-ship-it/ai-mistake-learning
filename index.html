@@ -9,26 +9,26 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="AI錯題" />
   <title>116 會考 AI 學習系統</title>
-  <link rel="manifest" href="manifest.webmanifest?v=3.3.1" />
+  <link rel="manifest" href="manifest.webmanifest?v=3.4" />
   <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="app-icon.svg" />
-  <link rel="stylesheet" href="styles.css?v=3.3.1" />
+  <link rel="stylesheet" href="styles.css?v=3.4" />
 </head>
 <body>
   <header class="hero">
-    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>手機連續拍考卷、批次 AI 找錯題；桌機閱讀、整理、類題與複習。</p></div>
+    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>手機連續拍考卷、AI 找錯題並智慧裁切必要題圖；桌機閱讀、整理、類題與複習。</p></div>
     <button id="addBtn" class="primary">＋ 新增錯題</button>
   </header>
 
   <main>
     <section class="scan-card card">
       <div class="section-head">
-        <div><p class="eyebrow dark">v3.3.1 Smart Image Storage</p><h2>📷 批次拍攝已批改考卷</h2><p>Gemini 逐頁找錯題，只有圖形、圖表、地圖、實驗裝置或其他解題必要視覺資訊才保留原題圖片；純文字題只保存文字。</p></div>
+        <div><p class="eyebrow dark">v3.4 Smart Crop</p><h2>📷 批次拍攝已批改考卷</h2><p>Gemini 逐頁找錯題；純文字題不保存圖片，需要圖形、圖表、表格或閱讀材料時，只裁切並保存解題必要區域。</p></div>
         <label class="upload-btn primary">📷 拍／加入下一張<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
       <section id="autoDetectPanel" class="auto-detect-panel">
-        <div class="auto-detect-head"><div><strong>批次考卷模式</strong><div class="hint">先連續拍完所有頁面，再按「AI 批次找錯題」。Gemini 會逐頁分析，並判斷每題是否真的需要保留圖片。</div></div><button id="autoDetectBtn" type="button" class="primary" disabled>🤖 AI 批次找錯題</button></div>
+        <div class="auto-detect-head"><div><strong>批次考卷模式</strong><div class="hint">先連續拍完所有頁面，再按「AI 批次找錯題」。Gemini 會逐頁分析，並為需要圖片的題目標出 Smart Crop 裁切範圍。</div></div><button id="autoDetectBtn" type="button" class="primary" disabled>🤖 AI 批次找錯題</button></div>
         <div id="autoDetectResults"></div>
         <button id="manualFallbackBtn" type="button">＋ AI 漏題？手動補一題</button>
       </section>
@@ -62,14 +62,14 @@
   </form></dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
-  <script src="config.js?v=3.3.1"></script>
-  <script src="app.js?v=3.3.1"></script>
-  <script src="ui-v3.2.js?v=3.3.1"></script>
-  <script src="scan.js?v=3.3.1"></script>
-  <script src="no-ocr-mode.js?v=3.3.1"></script>
-  <script src="vision-ai.js?v=3.3.1"></script>
-  <script src="mobile-mode.js?v=3.3.1"></script>
-  <script src="auto-detect.js?v=3.3.1"></script>
-  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=3.3.1').catch(console.error));}</script>
+  <script src="config.js?v=3.4"></script>
+  <script src="app.js?v=3.4"></script>
+  <script src="ui-v3.2.js?v=3.4"></script>
+  <script src="scan.js?v=3.4"></script>
+  <script src="no-ocr-mode.js?v=3.4"></script>
+  <script src="vision-ai.js?v=3.4"></script>
+  <script src="mobile-mode.js?v=3.4"></script>
+  <script src="auto-detect.js?v=3.4"></script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=3.4').catch(console.error));}</script>
 </body>
 </html>
