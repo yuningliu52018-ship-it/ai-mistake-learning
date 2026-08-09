@@ -1,8 +1,9 @@
 (() => {
   const input = document.getElementById('artifactInput');
+  const importButton = document.getElementById('artifactImportButton');
   const status = document.getElementById('artifactImportStatus');
   const list = document.getElementById('learningModuleList');
-  if (!input || !status || !list) return;
+  if (!input || !importButton || !status || !list) return;
 
   let modules = [];
   const esc = (value = '') => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -68,6 +69,15 @@
       tags:['互動單元', module.subject || '未分類', module.title, ...(item.tags || [])], image:'', sourceModuleId:module.id, sourceModuleTitle:module.title, createdAt:now, updatedAt:now
     });
   }
+
+  importButton.addEventListener('click', () => {
+    if (!syncKey) {
+      status.textContent = '請先按右上角「☁️ 設定同步」，設定至少 8 個字元的同步碼。';
+      alert('請先按右上角「☁️ 設定同步」，設定至少 8 個字元的同步碼，再匯入 HTML。');
+      return;
+    }
+    input.click();
+  });
 
   input.addEventListener('change', async () => {
     const files = [...input.files];
