@@ -13,6 +13,7 @@
   <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="app-icon.svg" />
   <link rel="stylesheet" href="styles.css?v=3.6" />
+  <link rel="stylesheet" href="modules.css?v=4.0" />
 </head>
 <body>
   <header class="hero">
@@ -21,6 +22,21 @@
   </header>
 
   <main>
+    <section class="artifact-import card">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow dark">Gemini 互動頁批次匯入</p>
+          <h2>把整份互動網頁加入錯題資料庫</h2>
+          <p>可一次選擇多個 Gemini 產生的 HTML。系統會保留原始互動頁，並把其中的錯題與練習題轉成可搜尋、可統計的題目。</p>
+        </div>
+        <label class="upload-btn primary">匯入 HTML
+          <input id="artifactInput" type="file" accept="text/html,.html,.htm" multiple hidden />
+        </label>
+      </div>
+      <div id="artifactImportStatus" class="hint">匯入前請先設定跨裝置同步碼。</div>
+      <div id="learningModuleList" class="module-list"></div>
+    </section>
+
     <section class="scan-card card">
       <div class="section-head">
         <div><p class="eyebrow dark">v3.6 Model Fallback</p><h2>📷 批次拍攝已批改考卷</h2><p>保留 v3.5 Visual Guard 與 Smart Crop；Gemini 主要模型遇到 429／每日配額限制時，會自動切換到 Gemini 2.5 Flash 備援模型。</p></div>
@@ -70,6 +86,7 @@
   <script src="vision-ai.js?v=3.6"></script>
   <script src="mobile-mode.js?v=3.6"></script>
   <script src="auto-detect.js?v=3.6"></script>
-  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=3.6').catch(console.error));}</script>
+  <script src="import-modules.js?v=4.0"></script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=4.0').catch(console.error));}</script>
 </body>
 </html>

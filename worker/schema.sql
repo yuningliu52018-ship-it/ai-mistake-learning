@@ -15,3 +15,19 @@ CREATE TABLE IF NOT EXISTS questions (
 
 CREATE INDEX IF NOT EXISTS idx_questions_sync_updated
 ON questions (sync_key_hash, updated_at);
+
+CREATE TABLE IF NOT EXISTS learning_modules (
+  sync_key_hash TEXT NOT NULL,
+  id TEXT NOT NULL,
+  title TEXT NOT NULL,
+  subject TEXT NOT NULL DEFAULT '',
+  summary TEXT NOT NULL DEFAULT '',
+  html TEXT NOT NULL,
+  question_count INTEGER NOT NULL DEFAULT 0,
+  updated_at TEXT NOT NULL,
+  deleted_at TEXT,
+  PRIMARY KEY (sync_key_hash, id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_learning_modules_sync_updated
+ON learning_modules (sync_key_hash, updated_at);
