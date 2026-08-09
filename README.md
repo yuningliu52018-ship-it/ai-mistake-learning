@@ -12,6 +12,17 @@
 - 瀏覽器 LocalStorage 自動儲存
 - 內建生物錯題範例
 - GitHub Pages 自動部署流程
+- Gemini 互動 HTML 多檔批次匯入
+- 互動學習單元與結構化題目同步保存至 D1
+- 從錯題資料庫重新開啟原始互動頁
+
+## v4.0 資料庫升級
+
+部署新版 Worker 前，先在 `worker` 目錄執行一次：
+
+`npx wrangler d1 execute ai-mistake-learning-db --remote --file=schema.sql`
+
+再執行 `npm run deploy`。`schema.sql` 使用 `CREATE TABLE IF NOT EXISTS`，不會刪除既有錯題。
 
 ## 錯題格式
 
