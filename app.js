@@ -12,7 +12,7 @@ let questions=loadQuestions(),editingId=null,pendingImage="",syncKey=localStorag
 const $=id=>document.getElementById(id),list=$("questionList"),dialog=$("questionDialog"),form=$("questionForm");
 
 function stripOptionLabel(value="",key=""){const text=String(value).trim();const specific=key?new RegExp("^\\s*(?:\\("+key+"\\)|"+key+"[.、:：])\\s*","i"):null;return specific?text.replace(specific,""):text;}
-function cleanDuplicateOptionLabels(value=""){return String(value).replace(/\\(([A-D])\\)\\s*\\(\\1\\)\\s*/gi,"($1) ").replace(/(^|\\n)\\s*([A-D])[.、]\\s*\\2[.、]\\s*/gi,"$1$2. ");}
+function cleanDuplicateOptionLabels(value=""){return String(value).replace(/\(([A-D])\)\s*\(\1\)\s*/gi,"($1) ").replace(/(^|\n)\s*([A-D])[.、]\s*\2[.、]\s*/gi,"$1$2. ");}
 function normalizeQuestion(q){const created=q?.createdAt||new Date().toISOString();return {questionType:"",difficulty:3,...q,question:cleanDuplicateOptionLabels(q?.question||""),createdAt:created,updatedAt:q?.updatedAt||created,difficulty:Math.max(1,Math.min(5,Number(q?.difficulty)||3))};}
 function loadQuestions(){try{const current=JSON.parse(localStorage.getItem(STORAGE_KEY));if(Array.isArray(current))return current.map(normalizeQuestion);const legacy=JSON.parse(localStorage.getItem(LEGACY_KEY));if(Array.isArray(legacy))return legacy.map(q=>normalizeQuestion({image:"",...q}));return starterQuestions;}catch{return starterQuestions;}}
 function saveQuestions({sync=true}={}){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(questions));if(sync)scheduleCloudSync();}catch(error){alert("儲存失敗：圖片可能太大。請重新裁切較小範圍後再試。");throw error;}}
