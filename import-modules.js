@@ -60,7 +60,7 @@
   function toQuestion(item, module, index) {
     const now = new Date().toISOString();
     const options = item.options || {};
-    const stripLabel = (value, key) => String(value || '').trim().replace(new RegExp(`^\\\\s*(?:\\\\(${key}\\\\)|${key}[.、:：])\\\\s*`, 'i'), '');
+    const stripLabel = (value, key) => String(value || '').trim().replace(new RegExp(`^\\s*(?:\\(${key}\\)|${key}[.、:：])\\s*`, 'i'), '');
     const optionText = ['A','B','C','D'].filter(k => options[k]).map(k => `(${k}) ${stripLabel(options[k], k)}`).join('\n');
     return normalizeQuestion({
       id: crypto.randomUUID(), subject:item.subject || module.subject || '未分類', chapter:item.chapter || '', number:item.number || item.questionNumber || `匯入${index + 1}`,
