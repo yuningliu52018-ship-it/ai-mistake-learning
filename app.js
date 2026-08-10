@@ -11,12 +11,14 @@ const starterQuestions = [
 let questions=loadQuestions(),editingId=null,pendingImage="",syncKey=localStorage.getItem(SYNC_KEY_STORAGE)||"",syncTimer=null,syncBusy=false;
 const $=id=>document.getElementById(id),list=$("questionList"),dialog=$("questionDialog"),form=$("questionForm");
 
-function normalizeQuestion(q){const created=q?.createdAt||new Date().toISOString();return {questionType:"",difficulty:3,...q,createdAt:created,updatedAt:q?.updatedAt||created,difficulty:Math.max(1,Math.min(5,Number(q?.difficulty)||3))};}
+function stripOptionLabel(value="",key=""){const text=String(value).trim();const specific=key?new RegExp("^\\s*(?:\\("+key+"\\)|"+key+"[.、:：])\\s*","i"):null;return specific?text.replace(specific,""):text;}
+function cleanDuplicateOptionLabels(value=""){return String(value).replace(/\\(([A-D])\\)\\s*\\(\\1\\)\\s*/gi,"($1) ").replace(/(^|\\n)\\s*([A-D])[.、]\\s*\\2[.、]\\s*/gi,"$1$2. ");}
+function normalizeQuestion(q){const created=q?.createdAt||new Date().toISOString();return {questionType:"",difficulty:3,...q,question:cleanDuplicateOptionLabels(q?.question||""),createdAt:created,updatedAt:q?.updatedAt||created,difficulty:Math.max(1,Math.min(5,Number(q?.difficulty)||3))};}
 function loadQuestions(){try{const current=JSON.parse(localStorage.getItem(STORAGE_KEY));if(Array.isArray(current))return current.map(normalizeQuestion);const legacy=JSON.parse(localStorage.getItem(LEGACY_KEY));if(Array.isArray(legacy))return legacy.map(q=>normalizeQuestion({image:"",...q}));return starterQuestions;}catch{return starterQuestions;}}
 function saveQuestions({sync=true}={}){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(questions));if(sync)scheduleCloudSync();}catch(error){alert("儲存失敗：圖片可能太大。請重新裁切較小範圍後再試。");throw error;}}
 function escapeHtml(value=""){return String(value).replace(/[&<>'"]/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"})[char]);}
 function stars(value){const n=Math.max(1,Math.min(5,Number(value)||3));return "★".repeat(n)+"☆".repeat(5-n);}
-function formatGeneratedQuestion(item){const lines=[String(item.question||"").trim()];for(const key of ["A","B","C","D"]){if(item.options?.[key])lines.push(`(${key}) ${String(item.options[key]).trim()}`);}return lines.filter(Boolean).join("\n");}
+function formatGeneratedQuestion(item){const lines=[String(item.question||"").trim()];for(const key of ["A","B","C","D"]){if(item.options?.[key])lines.push(`(${key}) ${stripOptionLabel(item.options[key],key)}`);}return cleanDuplicateOptionLabels(lines.filter(Boolean).join("\n"));}
 function cloudSafeQuestion(q){const copy={...q};if(String(copy.image||"").length>350000)copy.image="";return copy;}
 function newerQuestion(a,b){return Date.parse(a?.updatedAt||a?.createdAt||0)>=Date.parse(b?.updatedAt||b?.createdAt||0)?a:b;}
 
