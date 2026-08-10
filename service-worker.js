@@ -1,6 +1,6 @@
-const CACHE_NAME = 'ai-mistake-learning-v4.0.1';
+const CACHE_NAME = 'ai-mistake-learning-v4.0.2';
 const APP_SHELL = [
-  './','./index.html','./styles.css?v=3.6','./modules.css?v=4.0.1','./config.js?v=3.6','./app.js?v=3.6','./ui-v3.2.js?v=3.6','./scan.js?v=3.6','./no-ocr-mode.js?v=3.6','./vision-ai.js?v=3.6','./mobile-mode.js?v=3.6','./auto-detect.js?v=3.6','./import-modules.js?v=4.0.1','./manifest.webmanifest?v=3.6','./app-icon.svg'
+  './','./index.html','./styles.css?v=3.6','./modules.css?v=4.0.1','./config.js?v=3.6','./app.js?v=4.0.2','./ui-v3.2.js?v=3.6','./scan.js?v=3.6','./no-ocr-mode.js?v=3.6','./vision-ai.js?v=3.6','./mobile-mode.js?v=3.6','./auto-detect.js?v=3.6','./import-modules.js?v=4.0.2','./manifest.webmanifest?v=3.6','./app-icon.svg'
 ];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE_NAME).map(key=>caches.delete(key)))));self.clients.claim();});
