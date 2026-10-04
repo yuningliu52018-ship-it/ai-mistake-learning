@@ -170,7 +170,7 @@ test('Google-only UI and controls; gallery stays at 29 with one voiced entry; ca
   const root=path.resolve(__dirname,'..'); const read=file=>fs.readFileSync(path.join(root,file),'utf8');
   const html=read('voiced-comic.html');
   for (const id of ['play','pause','stop','replay','repeat','voice-source','speed','mode','playback-status']) assert.match(html,new RegExp(`id="${id}"`));
-  assert.match(html,/Google 線上日語/); assert.match(html,/不會切換成裝置聲音/); assert.match(html,/台詞傳給 Google/);
+  assert.match(html,/<meta name="referrer" content="no-referrer">/); assert.match(html,/Google 線上日語/); assert.match(html,/不會切換成裝置聲音/); assert.match(html,/台詞傳給 Google/);
   assert.match(html,/中文姓氏/); assert.match(html,/不會錄音/); assert.match(html,/無日文台詞/);
   const gallery=read('japanese-comics.html');
   assert.equal((gallery.match(/class="comic-card"/g)||[]).length,29);
@@ -180,7 +180,7 @@ test('Google-only UI and controls; gallery stays at 29 with one voiced entry; ca
   assert.doesNotMatch(js,/speechSynthesis|SpeechSynthesisUtterance|localStorage|getUserMedia|fetch\(/);
   assert.match(js,/pagehide/); assert.match(js,/visibilitychange/); assert.match(js,/popstate/);
   for (const asset of ['voiced-comic.js?v=1.2','voiced-comic.css?v=1.1']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
-  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.2\.2/);
+  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.2\.3/);
   assert.match(js,/service-worker\.js\?v=5\.2\.2/);
 });
 

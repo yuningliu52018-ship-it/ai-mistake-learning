@@ -75,7 +75,7 @@
 
 `voiced-comic.html` 只為第1課「〜てもらえませんか」加入逐格閱讀與日語合成朗讀。沿用既有完整 WebP，29 張漫畫數量不變。可由第1張卡片或放大閱讀工具列進入。
 
-- 沿用原日文網站 `japanese-ai-learning/js/lesson.js` 的 Google Translate 日語線上音源，以 HTML Audio 播放。只在使用者按播放後連線；不產生匯出音檔或錄音。
+- 沿用原日文網站 `japanese-ai-learning/js/lesson.js` 的 Google Translate 日語線上音源，以 HTML Audio 播放，並沿用原網站的 no-referrer 頁面政策。只在使用者按播放後連線；不產生匯出音檔或錄音。
 - 一般 0.95／慢速 0.82；連續聽、逐句跟讀停頓、暫停、停止、重頭播放與本句重播。
 - 姓氏字幕保留「林さん」，送往 Google 朗讀的台詞為「りんさん」。第1格只有中文情境，不添加日文台詞。
 - 使用者按下播放才開始；同一個 Audio 元素用於後續句子。暫停後繼續會從本句重播。
