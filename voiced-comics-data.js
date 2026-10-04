@@ -3188,6 +3188,1536 @@ const comics = [
       }
     ],
     "readingNote": "本張保留教材問答；「東京最熱鬧」是教材示例，不是現況排名。"
+  },
+  {
+    "id": "j2-01-ongoing-work-study",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "工作與學習，也用ています",
+    "label": "初級複習 J2 · 01",
+    "grammar": "ています：持續中的活動",
+    "caption": "這裡的「ています」也可說明持續中的工作、事業或學習。",
+    "image": "assets/japanese-comics/j2-01-ongoing-work-study.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "持續的工作",
+        "crop": "10 134 1004 312",
+        "alt": "第1格：我是老師。我在文化大學教日文。",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "詢問公司業務",
+        "crop": "10 451 1004 313",
+        "alt": "第2格：豐田是做什麼的公司？",
+        "first": 1,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "公司正在經營的事業",
+        "crop": "10 770 1004 310",
+        "alt": "第3格：豐田是汽車公司，製造汽車。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "持續的學習",
+        "crop": "10 1086 1004 307",
+        "alt": "第4格：我在文化大學學日文。",
+        "first": 3,
+        "label": "原句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "わたしはきょうしです。ぶんかだいがくでにほんごをおしえています。",
+        "subtitle": "私は教師です。文化大学で日本語を教えています。",
+        "translation": "我是老師。我在文化大學教日文。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "トヨタはなんのかいしゃですか。",
+        "subtitle": "トヨタは何の会社ですか。",
+        "translation": "豐田是做什麼的公司？",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "トヨタはくるまのかいしゃで、くるまをつくっています。",
+        "subtitle": "トヨタは車の会社で、車を造っています。",
+        "translation": "豐田是汽車公司，製造汽車。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "わたしはぶんかだいがくでにほんごをべんきょうしています。",
+        "subtitle": "私は文化大学で日本語を勉強しています。",
+        "translation": "我在文化大學學日文。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "字幕保留原圖漢字，朗讀依核對過的日文讀音。原句與補充標示依原圖保留。"
+  },
+  {
+    "id": "j2-02-knowing",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "你知道嗎？我不知道",
+    "label": "初級複習 J2 · 02",
+    "grammar": "知っています・知りません",
+    "caption": "一般問答：知道用「知っています」，不知道用「知りません」。",
+    "image": "assets/japanese-comics/j2-02-knowing.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：3句原筆記例句。1格情境／解說不朗讀。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "先向同學詢問",
+        "crop": "7 140 1011 316",
+        "alt": "第1格：想寄信給老師，先問同學。",
+        "first": 0,
+        "label": "情境說明",
+        "skipAudio": true
+      },
+      {
+        "title": "知道地址嗎",
+        "crop": "7 465 1011 317",
+        "alt": "第2格：你知道老師的地址嗎？",
+        "first": 1,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "知道的回答",
+        "crop": "7 789 1011 304",
+        "alt": "第3格：知道。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "不知道的回答",
+        "crop": "7 1101 1011 326",
+        "alt": "第4格：不，我不知道。",
+        "first": 3,
+        "label": "原句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "",
+        "subtitle": "想寄信給老師，先問同學。",
+        "translation": "本格是情境／解說，僅供閱讀，不送出語音。",
+        "speaker": "第1格 · 情境說明",
+        "panel": 0,
+        "sourceKind": "editorial",
+        "sourceLabel": "情境說明",
+        "skipAudio": true
+      },
+      {
+        "text": "せんせいのじゅうしょをしっていますか。",
+        "subtitle": "先生の住所を知っていますか。",
+        "translation": "你知道老師的地址嗎？",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "はい、しっています。",
+        "subtitle": "はい、知っています。",
+        "translation": "知道。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "いえ、しりません。",
+        "subtitle": "いえ、知りません。",
+        "translation": "不，我不知道。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "第1格是情境說明，沒有日文台詞；第3、4格是不同同學的兩種回答，並非同一人先後改口。"
+  },
+  {
+    "id": "j2-03-tie-and-simultaneous",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "打著領帶／一邊打領帶",
+    "label": "初級複習 J2 · 03",
+    "grammar": "て：狀態・ながら：同時動作",
+    "caption": "先看情境：維持的狀態，還是同時進行的動作？",
+    "image": "assets/japanese-comics/j2-03-tie-and-simultaneous.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：2句原筆記例句。2格情境／解說不朗讀。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "打著領帶去公司",
+        "crop": "9 149 1006 321",
+        "alt": "第1格：我每天打著領帶去公司。",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "穿戴的狀態",
+        "crop": "9 480 1006 255",
+        "alt": "第2格：「打著領帶」是去公司時維持的穿戴狀態。",
+        "first": 1,
+        "label": "解說",
+        "skipAudio": true
+      },
+      {
+        "title": "一邊打領帶一邊看鏡子",
+        "crop": "9 744 1006 309",
+        "alt": "第3格：我一邊打領帶，一邊看鏡子。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "同時做兩件事",
+        "crop": "9 1063 1006 327",
+        "alt": "第4格：「ながら」把同一個人同時做的兩件事連起來。",
+        "first": 3,
+        "label": "解說",
+        "skipAudio": true
+      }
+    ],
+    "cues": [
+      {
+        "text": "まいにちネクタイをしてかいしゃにいきます。",
+        "subtitle": "毎日ネクタイをして会社に行きます。",
+        "translation": "我每天打著領帶去公司。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "「打著領帶」是去公司時維持的穿戴狀態。",
+        "translation": "本格是情境／解說，僅供閱讀，不送出語音。",
+        "speaker": "第2格 · 解說",
+        "panel": 1,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      },
+      {
+        "text": "ネクタイをしながらかがみをみています。",
+        "subtitle": "ネクタイをしながら鏡を見ています。",
+        "translation": "我一邊打領帶，一邊看鏡子。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "「ながら」把同一個人同時做的兩件事連起來。",
+        "translation": "本格是情境／解說，僅供閱讀，不送出語音。",
+        "speaker": "第4格 · 解說",
+        "panel": 3,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      }
+    ],
+    "readingNote": "第1格是已打好領帶的狀態；第3格回到出門前，呈現邊打領帶邊看鏡子的動作。第2、4格只供閱讀，不朗讀。"
+  },
+  {
+    "id": "j2-04-te-ta-forms",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "先變て形，再換成た形",
+    "label": "初級複習 J2 · 04",
+    "grammar": "動詞變化",
+    "caption": "た形變化大致同て形：て↔た、で↔だ",
+    "image": "assets/japanese-comics/j2-04-te-ta-forms.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：依原筆記規則延伸的4組補充，並非原筆記逐字例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "行きます的例外",
+        "crop": "11 158 1003 295",
+        "alt": "第1格：去：行きます是例外",
+        "first": 0,
+        "label": "依原筆記規則補充",
+        "skipAudio": false
+      },
+      {
+        "title": "書きます的音便",
+        "crop": "11 463 1003 312",
+        "alt": "第2格：寫：き→いて／いた",
+        "first": 1,
+        "label": "依原筆記規則補充",
+        "skipAudio": false
+      },
+      {
+        "title": "食べます的變化",
+        "crop": "11 784 1003 314",
+        "alt": "第3格：吃：去ます，加て／た",
+        "first": 2,
+        "label": "依原筆記規則補充",
+        "skipAudio": false
+      },
+      {
+        "title": "します的變化",
+        "crop": "11 1106 1003 332",
+        "alt": "第4格：做：して／した",
+        "first": 3,
+        "label": "依原筆記規則補充",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "いきます、いって、いった。",
+        "subtitle": "行きます → 行って → 行った",
+        "translation": "去：行きます是例外",
+        "speaker": "第1格 · 依原筆記規則補充",
+        "panel": 0,
+        "sourceKind": "added",
+        "sourceLabel": "依原筆記規則補充",
+        "skipAudio": false
+      },
+      {
+        "text": "かきます、かいて、かいた。",
+        "subtitle": "書きます → 書いて → 書いた",
+        "translation": "寫：き→いて／いた",
+        "speaker": "第2格 · 依原筆記規則補充",
+        "panel": 1,
+        "sourceKind": "added",
+        "sourceLabel": "依原筆記規則補充",
+        "skipAudio": false
+      },
+      {
+        "text": "たべます、たべて、たべた。",
+        "subtitle": "食べます → 食べて → 食べた",
+        "translation": "吃：去ます，加て／た",
+        "speaker": "第3格 · 依原筆記規則補充",
+        "panel": 2,
+        "sourceKind": "added",
+        "sourceLabel": "依原筆記規則補充",
+        "skipAudio": false
+      },
+      {
+        "text": "します、して、した。",
+        "subtitle": "します → して → した",
+        "translation": "做：して／した",
+        "speaker": "第4格 · 依原筆記規則補充",
+        "panel": 3,
+        "sourceKind": "added",
+        "sourceLabel": "依原筆記規則補充",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "四組變化是依原筆記規則補充，均保留補充標示；箭頭以停頓朗讀。行きます的て形是行って。"
+  },
+  {
+    "id": "j2-05-try-and-return",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "試穿看看，再去打個電話",
+    "label": "初級複習 J2 · 05",
+    "grammar": "てみます・て来ます",
+    "caption": "てみる：試做｜て来る：做完再回來",
+    "image": "assets/japanese-comics/j2-05-try-and-return.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：2句原筆記例句、2句補充例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "可以試穿嗎",
+        "crop": "14 128 997 321",
+        "alt": "第1格：這件大衣可以試穿看看嗎？",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "店員答應",
+        "crop": "14 457 997 322",
+        "alt": "第2格：可以，請試穿。",
+        "first": 1,
+        "label": "情境補充",
+        "skipAudio": false
+      },
+      {
+        "title": "去打電話再回來",
+        "crop": "14 786 997 332",
+        "alt": "第3格：不好意思，我去打個電話就回來。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "在這裡等你",
+        "crop": "14 1124 997 315",
+        "alt": "第4格：好，我等你。",
+        "first": 3,
+        "label": "情境補充",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "このコート、きてみてもいいですか。",
+        "subtitle": "このコート、着てみてもいいですか。",
+        "translation": "這件大衣可以試穿看看嗎？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "はい、どうぞ。",
+        "subtitle": "はい、どうぞ。",
+        "translation": "可以，請試穿。",
+        "speaker": "第2格 · 情境補充",
+        "panel": 1,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充",
+        "skipAudio": false
+      },
+      {
+        "text": "すみません、ちょっとでんわしてきます。",
+        "subtitle": "すみません、ちょっと電話して来ます。",
+        "translation": "不好意思，我去打個電話就回來。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "はい、まっています。",
+        "subtitle": "はい、待っています。",
+        "translation": "好，我等你。",
+        "speaker": "第4格 · 情境補充",
+        "panel": 3,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "字幕保留原圖漢字，朗讀依核對過的日文讀音。原句與補充標示依原圖保留。"
+  },
+  {
+    "id": "j2-06-after-and-first",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "做完之後，先做好再做",
+    "label": "初級複習 J2 · 06",
+    "grammar": "あとで・てから",
+    "caption": "あとで：A之後B｜てから：先完成A，再B",
+    "image": "assets/japanese-comics/j2-06-after-and-first.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：3句原筆記例句、1句補充例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "詢問晚餐時間",
+        "crop": "7 119 1009 331",
+        "alt": "第1格：平常幾點吃晚餐？",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "打工之後吃",
+        "crop": "7 455 1009 321",
+        "alt": "第2格：打工結束後吃。",
+        "first": 1,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "先洗手再吃飯",
+        "crop": "7 781 1009 331",
+        "alt": "第3格：請先洗手再吃飯。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "先把手洗好",
+        "crop": "7 1118 1009 332",
+        "alt": "第4格：好，我先洗手。",
+        "first": 3,
+        "label": "情境補充",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "いつもなんじにばんごはんをたべる？",
+        "subtitle": "いつも何時に晩ごはんを食べる？",
+        "translation": "平常幾點吃晚餐？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "アルバイトのあとでたべる。",
+        "subtitle": "アルバイトのあとで食べる。",
+        "translation": "打工結束後吃。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "てをあらってからごはんをたべてください。",
+        "subtitle": "手を洗ってからご飯を食べてください。",
+        "translation": "請先洗手再吃飯。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "はい、さきにてをあらいます。",
+        "subtitle": "はい、先に手を洗います。",
+        "translation": "好，我先洗手。",
+        "speaker": "第4格 · 情境補充",
+        "panel": 3,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "字幕保留原圖漢字，朗讀依核對過的日文讀音。原句與補充標示依原圖保留。"
+  },
+  {
+    "id": "j2-07-experience",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "做過嗎？一次也沒有！",
+    "label": "初級複習 J2 · 07",
+    "grammar": "たことがあります",
+    "caption": "經驗：たことがある｜一次也沒有：一度もない",
+    "image": "assets/japanese-comics/j2-07-experience.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：2句原筆記例句、2句補充例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "爬過富士山嗎",
+        "crop": "10 132 1005 290",
+        "alt": "第1格：爬過富士山嗎？",
+        "first": 0,
+        "label": "依原句型補充",
+        "skipAudio": false
+      },
+      {
+        "title": "有過一次",
+        "crop": "10 425 1005 299",
+        "alt": "第2格：有，爬過一次。",
+        "first": 1,
+        "label": "依原句型補充",
+        "skipAudio": false
+      },
+      {
+        "title": "吃過臭豆腐嗎",
+        "crop": "10 729 1005 327",
+        "alt": "第3格：佐藤先生，你吃過臭豆腐嗎？",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "一次也沒有",
+        "crop": "10 1060 1005 368",
+        "alt": "第4格：沒有，一次也沒有。很想嚐嚐看。",
+        "first": 3,
+        "label": "原句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "ふじさんにのぼったことがありますか。",
+        "subtitle": "富士山に登ったことがありますか。",
+        "translation": "爬過富士山嗎？",
+        "speaker": "第1格 · 依原句型補充",
+        "panel": 0,
+        "sourceKind": "added",
+        "sourceLabel": "依原句型補充",
+        "skipAudio": false
+      },
+      {
+        "text": "ええ、いちどあります。",
+        "subtitle": "ええ、一度あります。",
+        "translation": "有，爬過一次。",
+        "speaker": "第2格 · 依原句型補充",
+        "panel": 1,
+        "sourceKind": "added",
+        "sourceLabel": "依原句型補充",
+        "skipAudio": false
+      },
+      {
+        "text": "さとうさん、しゅうとうふをたべたことがありますか。",
+        "subtitle": "佐藤さん、臭豆腐を食べたことがありますか。",
+        "translation": "佐藤先生，你吃過臭豆腐嗎？",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "いえ、いちどもありません。ぜひたべたいです。",
+        "subtitle": "いえ、一度もありません。ぜひ食べたいです。",
+        "translation": "沒有，一次也沒有。很想嚐嚐看。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "「臭豆腐」讀しゅうとうふ；富士山問答是依原句型補充，臭豆腐問答保留原筆記例句。"
+  },
+  {
+    "id": "j2-08-representative-actions",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "看電視、做菜，還做了別的",
+    "label": "初級複習 J2 · 08",
+    "grammar": "たり～たりします",
+    "caption": "たり：列舉例子｜時態放最後的します",
+    "image": "assets/japanese-comics/j2-08-representative-actions.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：1句原筆記例句、2句補充例句。1格情境／解說不朗讀。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "昨天做了什麼",
+        "crop": "8 132 1010 293",
+        "alt": "第1格：昨天做了什麼？",
+        "first": 0,
+        "label": "情境補充",
+        "skipAudio": false
+      },
+      {
+        "title": "舉出看電視與做菜",
+        "crop": "8 434 1010 334",
+        "alt": "第2格：昨天看看電視、做做菜等等。",
+        "first": 1,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "列舉代表例子",
+        "crop": "8 778 1010 315",
+        "alt": "第3格：たり只舉代表例，不必把全部活動列完。",
+        "first": 2,
+        "label": "解說",
+        "skipAudio": true
+      },
+      {
+        "title": "今天的代表活動",
+        "crop": "8 1103 1010 319",
+        "alt": "第4格：今天會看看書、聽聽音樂等等。",
+        "first": 3,
+        "label": "情境補充",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "きのうはなにをしましたか。",
+        "subtitle": "昨日は何をしましたか。",
+        "translation": "昨天做了什麼？",
+        "speaker": "第1格 · 情境補充",
+        "panel": 0,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充",
+        "skipAudio": false
+      },
+      {
+        "text": "きのうテレビをみたりりょうりをしたりしました。",
+        "subtitle": "昨日テレビを見たり料理をしたりしました。",
+        "translation": "昨天看看電視、做做菜等等。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "たり只舉代表例，不必把全部活動列完。",
+        "translation": "本格是情境／解說，僅供閱讀，不送出語音。",
+        "speaker": "第3格 · 解說",
+        "panel": 2,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      },
+      {
+        "text": "きょうはほんをよんだり、おんがくをきいたりします。",
+        "subtitle": "今日は本を読んだり、音楽を聞いたりします。",
+        "translation": "今天會看看書、聽聽音樂等等。",
+        "speaker": "第4格 · 情境補充",
+        "panel": 3,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "第3格為解說，只供閱讀；たり列出代表活動，不表示只有圖中的兩件事。"
+  },
+  {
+    "id": "j2-09-giving-objects",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "我送出、他送來、我收到",
+    "label": "初級複習 J2 · 09",
+    "grammar": "あげます・くれます・もらいます",
+    "caption": "あげる：我→他｜くれる：他→我｜もらう：我收到",
+    "image": "assets/japanese-comics/j2-09-giving-objects.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "送禮給老師",
+        "crop": "1 143 1022 311",
+        "alt": "第1格：這是伴手禮。明天要送給老師。",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "別人送我卡片",
+        "crop": "1 460 1022 318",
+        "alt": "第2格：ファン送了我一張卡片。",
+        "first": 1,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "詢問卡片的來源",
+        "crop": "1 783 1022 304",
+        "alt": "第3格：那張卡片是誰送你的？",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "從誰那裡收到",
+        "crop": "1 1093 1022 328",
+        "alt": "第4格：我從ファン那裡收到的。",
+        "first": 3,
+        "label": "原句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "おみやげです。あした、せんせいにあげます。",
+        "subtitle": "お土産です。明日、先生にあげます。",
+        "translation": "這是伴手禮。明天要送給老師。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "ファンはわたしにカードをくれました。",
+        "subtitle": "ファンは私にカードをくれました。",
+        "translation": "ファン送了我一張卡片。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "そのカード、だれにもらいましたか。",
+        "subtitle": "そのカード、誰にもらいましたか。",
+        "translation": "那張卡片是誰送你的？",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "ファンにもらいました。",
+        "subtitle": "ファンにもらいました。",
+        "translation": "我從ファン那裡收到的。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "「ファン」是教材中的人名。授受方向隨說話者而定，配合圖中人物閱讀。"
+  },
+  {
+    "id": "j2-10-giving-actions",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "誰幫誰買了咖啡？",
+    "label": "初級複習 J2 · 10",
+    "grammar": "てあげる・てくれる・てもらう",
+    "caption": "あげる：我幫他｜くれる：他幫我｜もらう：我得到幫助",
+    "image": "assets/japanese-comics/j2-10-giving-actions.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "我要幫同事買",
+        "crop": "7 116 1011 317",
+        "alt": "第1格：我要幫同事買咖啡。",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "誰幫你買",
+        "crop": "7 440 1011 323",
+        "alt": "第2格：誰幫你買了咖啡？",
+        "first": 1,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "同事幫我買",
+        "crop": "7 771 1011 308",
+        "alt": "第3格：同事幫我買的。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "換成もらう說法",
+        "crop": "7 1086 1011 330",
+        "alt": "第4格：我請同事幫我買了咖啡。",
+        "first": 3,
+        "label": "原句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "どうりょうにコーヒーをかってあげます。",
+        "subtitle": "同僚にコーヒーを買ってあげます。",
+        "translation": "我要幫同事買咖啡。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "だれがコーヒーをかってくれましたか。",
+        "subtitle": "誰がコーヒーを買ってくれましたか。",
+        "translation": "誰幫你買了咖啡？",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "どうりょうがかってくれました。",
+        "subtitle": "同僚が買ってくれました。",
+        "translation": "同事幫我買的。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "どうりょうにコーヒーをかってもらいました。",
+        "subtitle": "同僚にコーヒーを買ってもらいました。",
+        "translation": "我請同事幫我買了咖啡。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "第1格是買咖啡之前；第2、3格是收到之後；第4格改用もらう描述同一份幫助。"
+  },
+  {
+    "id": "j2-11-offering-help",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "要借你傘嗎？要我幫忙嗎？",
+    "label": "初級複習 J2 · 11",
+    "grammar": "主動幫忙的～ましょうか",
+    "caption": "主動提議：～ましょうか｜自然表達幫忙的心意",
+    "image": "assets/japanese-comics/j2-11-offering-help.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：2句原筆記例句、2句補充例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "要借你雨傘嗎",
+        "crop": "6 139 1013 314",
+        "alt": "第1格：要借你雨傘嗎？",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "向對方道謝",
+        "crop": "6 463 1013 319",
+        "alt": "第2格：謝謝你。",
+        "first": 1,
+        "label": "情境補充",
+        "skipAudio": false
+      },
+      {
+        "title": "要幫你搬嗎",
+        "crop": "6 791 1013 305",
+        "alt": "第3格：要我幫忙嗎？",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "接受幫助",
+        "crop": "6 1105 1013 334",
+        "alt": "第4格：好，麻煩你了。",
+        "first": 3,
+        "label": "情境補充",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "かさをかしましょうか。",
+        "subtitle": "傘を貸しましょうか。",
+        "translation": "要借你雨傘嗎？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "ありがとうございます。",
+        "subtitle": "ありがとうございます。",
+        "translation": "謝謝你。",
+        "speaker": "第2格 · 情境補充",
+        "panel": 1,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充",
+        "skipAudio": false
+      },
+      {
+        "text": "てつだいましょうか。",
+        "subtitle": "手伝いましょうか。",
+        "translation": "要我幫忙嗎？",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "はい、おねがいします。",
+        "subtitle": "はい、お願いします。",
+        "translation": "好，麻煩你了。",
+        "speaker": "第4格 · 情境補充",
+        "panel": 3,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "字幕保留原圖漢字，朗讀依核對過的日文讀音。原句與補充標示依原圖保留。"
+  },
+  {
+    "id": "j2-12-polite-giving-receiving",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "您給我的幫助，怎麼說更有禮？",
+    "label": "初級複習 J2 · 12",
+    "grammar": "いただく・くださる",
+    "caption": "いただく：我承受恩惠｜くださる：對方給予幫助",
+    "image": "assets/japanese-comics/j2-12-polite-giving-receiving.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "部長給我咖啡",
+        "crop": "7 146 1010 293",
+        "alt": "第1格：部長給了我咖啡。",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "部長幫我買咖啡",
+        "crop": "7 446 1010 303",
+        "alt": "第2格：部長幫我買了咖啡。",
+        "first": 1,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "承蒙老師教我",
+        "crop": "7 756 1010 299",
+        "alt": "第3格：承蒙老師教我日本歌曲。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "老師教了我",
+        "crop": "7 1061 1010 318",
+        "alt": "第4格：老師教了我日本歌曲。",
+        "first": 3,
+        "label": "原句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "ぶちょうがコーヒーをくださいました。",
+        "subtitle": "部長がコーヒーをくださいました。",
+        "translation": "部長給了我咖啡。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "ぶちょうがコーヒーをかってくださいました。",
+        "subtitle": "部長がコーヒーを買ってくださいました。",
+        "translation": "部長幫我買了咖啡。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "せんせいににほんのうたをおしえていただきました。",
+        "subtitle": "先生に日本の歌を教えていただきました。",
+        "translation": "承蒙老師教我日本歌曲。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "せんせいがにほんのうたをおしえてくださいました。",
+        "subtitle": "先生が日本の歌を教えてくださいました。",
+        "translation": "老師教了我日本歌曲。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "いただく側重自己承受恩惠；くださる側重對方給予。兩者皆配合圖中人物關係使用。"
+  },
+  {
+    "id": "j2-13-yaru-register",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "やる怎麼用？也要留意語氣",
+    "label": "初級複習 J2 · 13",
+    "grammar": "やります・てやります",
+    "caption": "看對象與關係，別只背『給』。",
+    "image": "assets/japanese-comics/j2-13-yaru-register.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：2句原筆記例句。2格情境／解說不朗讀。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "給狗飼料",
+        "crop": "7 144 1010 326",
+        "alt": "第1格：餵狗吃飼料。",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "對動植物的用法",
+        "crop": "7 478 1010 266",
+        "alt": "第2格：やる常見於給動植物東西。",
+        "first": 1,
+        "label": "補充說明",
+        "skipAudio": true
+      },
+      {
+        "title": "買手錶給弟弟",
+        "crop": "7 751 1010 320",
+        "alt": "第3格：我買了手錶送給弟弟。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "對人使用的語氣",
+        "crop": "7 1078 1010 318",
+        "alt": "第4格：對人使用，可能有上對下的語感；一般送禮也常用あげる。",
+        "first": 3,
+        "label": "補充說明",
+        "skipAudio": true
+      }
+    ],
+    "cues": [
+      {
+        "text": "いぬにえさをやります。",
+        "subtitle": "犬に餌をやります。",
+        "translation": "餵狗吃飼料。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "やる常見於給動植物東西。",
+        "translation": "本格是情境／解說，僅供閱讀，不送出語音。",
+        "speaker": "第2格 · 補充說明",
+        "panel": 1,
+        "sourceKind": "editorial",
+        "sourceLabel": "補充說明",
+        "skipAudio": true
+      },
+      {
+        "text": "おとうとにとけいをかってやりました。",
+        "subtitle": "弟に時計を買ってやりました。",
+        "translation": "我買了手錶送給弟弟。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "對人使用，可能有上對下的語感；一般送禮也常用あげる。",
+        "translation": "本格是情境／解說，僅供閱讀，不送出語音。",
+        "speaker": "第4格 · 補充說明",
+        "panel": 3,
+        "sourceKind": "editorial",
+        "sourceLabel": "補充說明",
+        "skipAudio": true
+      }
+    ],
+    "readingNote": "第2、4格為補充說明，不朗讀。對人使用やる可能帶有上對下的語感，請留意對象與關係。"
+  },
+  {
+    "id": "j2-14-possessions-no",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "幫她放行李：是「她的」東西",
+    "label": "初級複習 J2 · 14",
+    "grammar": "所屬物的の",
+    "caption": "人の物品を＋てあげる／てくれる",
+    "image": "assets/japanese-comics/j2-14-possessions-no.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：2句原筆記例句。2格情境／解說不朗讀。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "幫老奶奶放好行李",
+        "crop": "7 137 1010 375",
+        "alt": "第1格：我幫那位老奶奶把行李放好了。",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "用の連結物品和主人",
+        "crop": "7 517 1010 228",
+        "alt": "第2格：「她的行李」用の，把物品與主人連起來。",
+        "first": 1,
+        "label": "解說",
+        "skipAudio": true
+      },
+      {
+        "title": "洗全家人的衣服",
+        "crop": "7 750 1010 322",
+        "alt": "第3格：太太會幫全家洗衣服。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "全家人的衣服",
+        "crop": "7 1077 1010 326",
+        "alt": "第4格：家族みんなの服＝全家人的衣服",
+        "first": 3,
+        "label": "解說",
+        "skipAudio": true
+      }
+    ],
+    "cues": [
+      {
+        "text": "おばあさんのにもつをおいてあげました。",
+        "subtitle": "おばあさんの荷物を置いてあげました。",
+        "translation": "我幫那位老奶奶把行李放好了。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "「她的行李」用の，把物品與主人連起來。",
+        "translation": "本格是情境／解說，僅供閱讀，不送出語音。",
+        "speaker": "第2格 · 解說",
+        "panel": 1,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      },
+      {
+        "text": "つまはかぞくみんなのふくをせんたくしてくれます。",
+        "subtitle": "妻は家族みんなの服を洗濯してくれます。",
+        "translation": "太太會幫全家洗衣服。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "家族みんなの服＝全家人的衣服",
+        "translation": "本格是情境／解說，僅供閱讀，不送出語音。",
+        "speaker": "第4格 · 解說",
+        "panel": 3,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      }
+    ],
+    "readingNote": "第2、4格為解說，不朗讀。の連結物品與主人；「荷物」讀にもつ。"
+  },
+  {
+    "id": "j2-15-person-object",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "誰送爸爸回家？人物也會接を",
+    "label": "初級複習 J2 · 15",
+    "grammar": "送る・連れて来る的對象",
+    "caption": "先看動詞，再看人物接哪個助詞。",
+    "image": "assets/japanese-comics/j2-15-person-object.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：3句原筆記例句。1格情境／解說不朗讀。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "誰送爸爸回家",
+        "crop": "7 144 1010 297",
+        "alt": "第1格：誰送爸爸回家的？",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "同事送他回家",
+        "crop": "7 447 1010 302",
+        "alt": "第2格：同事送他回來的。",
+        "first": 1,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "帶女兒來公司",
+        "crop": "7 754 1010 320",
+        "alt": "第3格：我會帶女兒來公司。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "動詞的人物對象",
+        "crop": "7 1081 1010 320",
+        "alt": "第4格：送る、迎える、連れて行く／来る等，對象人物用を。",
+        "first": 3,
+        "label": "解說",
+        "skipAudio": true
+      }
+    ],
+    "cues": [
+      {
+        "text": "だれがちちをうちまでおくってくれた？",
+        "subtitle": "誰が父をうちまで送ってくれた？",
+        "translation": "誰送爸爸回家的？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "どうりょうがおくってくれた。",
+        "subtitle": "同僚が送ってくれた。",
+        "translation": "同事送他回來的。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "むすめをかいしゃへつれてきてやります。",
+        "subtitle": "娘を会社へ連れて来てやります。",
+        "translation": "我會帶女兒來公司。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "送る、迎える、連れて行く／来る等，對象人物用を。",
+        "translation": "本格是情境／解說，僅供閱讀，不送出語音。",
+        "speaker": "第4格 · 解說",
+        "panel": 3,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      }
+    ],
+    "readingNote": "第3格在公司內說明之後要把女兒帶來；第4格為解說，不朗讀。"
+  },
+  {
+    "id": "j2-16-without-doing",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "不看課本答題，不出門看動畫",
+    "label": "初級複習 J2 · 16",
+    "grammar": "ないで：不做A而做B",
+    "caption": "ないで：沒有做A的狀態／不選A而做B",
+    "image": "assets/japanese-comics/j2-16-without-doing.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "不看課本回答",
+        "crop": "10 126 1004 302",
+        "alt": "第1格：請不要看課本，直接回答。",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "不開冷氣睡覺",
+        "crop": "10 432 1004 351",
+        "alt": "第2格：即使夏天，我也不開冷氣睡覺。",
+        "first": 1,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "星期天去哪裡",
+        "crop": "10 788 1004 309",
+        "alt": "第3格：星期天有出去嗎？",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "沒出門在家看動畫",
+        "crop": "10 1101 1004 338",
+        "alt": "第4格：沒有，哪裡都沒去，一直在家看動畫。",
+        "first": 3,
+        "label": "原句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "きょうかしょをみないでこたえてください。",
+        "subtitle": "教科書を見ないで答えてください。",
+        "translation": "請不要看課本，直接回答。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "なつでも、エアコンをつけないでねます。",
+        "subtitle": "夏でも、エアコンをつけないで寝ます。",
+        "translation": "即使夏天，我也不開冷氣睡覺。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "にちようびどこかいきましたか。",
+        "subtitle": "日曜日どこか行きましたか。",
+        "translation": "星期天有出去嗎？",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "いえ、どこもいかないで、ずっとうちでアニメをみていました。",
+        "subtitle": "いえ、どこも行かないで、ずっとうちでアニメを見ていました。",
+        "translation": "沒有，哪裡都沒去，一直在家看動畫。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "字幕保留原圖漢字，朗讀依核對過的日文讀音。原句與補充標示依原圖保留。"
+  },
+  {
+    "id": "j2-17-person-ni",
+    "lesson": "j2",
+    "series": "beginner-review",
+    "title": "向誰請教？信寫給誰？",
+    "label": "初級複習 J2 · 17",
+    "grammar": "對象的に",
+    "caption": "向誰／給誰：人に｜先看原動詞的接法",
+    "image": "assets/japanese-comics/j2-17-person-ni.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J2：3句原筆記例句、1句補充例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "信寫給誰",
+        "crop": "8 125 1009 309",
+        "alt": "第1格：信要寫給誰？",
+        "first": 0,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "寫信給老師",
+        "crop": "8 446 1009 321",
+        "alt": "第2格：寫給老師。",
+        "first": 1,
+        "label": "情境補充",
+        "skipAudio": false
+      },
+      {
+        "title": "向老師請教",
+        "crop": "8 776 1009 308",
+        "alt": "第3格：向老師請教。",
+        "first": 2,
+        "label": "原句",
+        "skipAudio": false
+      },
+      {
+        "title": "向老師學日文",
+        "crop": "8 1095 1009 321",
+        "alt": "第4格：我向老師學了日文。",
+        "first": 3,
+        "label": "原句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "だれにてがみをかきますか。",
+        "subtitle": "誰に手紙を書きますか。",
+        "translation": "信要寫給誰？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "せんせいにかきます。",
+        "subtitle": "先生に書きます。",
+        "translation": "寫給老師。",
+        "speaker": "第2格 · 情境補充",
+        "panel": 1,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充",
+        "skipAudio": false
+      },
+      {
+        "text": "せんせいにききます。",
+        "subtitle": "先生に聞きます。",
+        "translation": "向老師請教。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "わたしはせんせいににほんごをならいました。",
+        "subtitle": "私は先生に日本語を習いました。",
+        "translation": "我向老師學了日文。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "第2格為情境補充。人物接に或を須看原動詞的接法，不能只用「人物」一概判斷。"
   }
 ];
 if(typeof module!=='undefined' && module.exports) module.exports = comics;
