@@ -46,6 +46,6 @@ for (const [id, editions] of Object.entries(require('../comic-language-variants.
 console.log('PASS every published English gallery variant, correct descriptions and return to Japanese');
 
 filters.find(x=>x.dataset.filter==='all').fire('click');
-open(cards.findIndex(c=>c.dataset.comic==='j3-01-plain-verb-forms'));assert.equal(elements['viewer-language-switch'].hidden,true);assert.ok(!elements['viewer-language-note'].textContent.includes('兩版'));assert.ok(!elements['viewer-voice'].href.includes('lang=en'));close();
-open(cards.findIndex(c=>c.dataset.comic==='j2-17-person-ni'));elements['viewer-language-en'].fire('click');elements['viewer-next'].fire('click');assert.equal(elements['viewer-language-switch'].hidden,true);assert.ok(!location.href.includes('lang=en'));assert.match(elements['viewer-image'].src,/j3-01-plain-verb-forms.webp$/);close();
-console.log('PASS J3 Japanese-only gallery and adjacent English to Japanese transition');
+open(cards.findIndex(c=>c.dataset.comic==='j3-01-plain-verb-forms'));assert.equal(elements['viewer-language-switch'].hidden,false);elements['viewer-language-en'].fire('click');assert.ok(location.href.includes('lang=en'));assert.match(elements['viewer-image'].src,/j3-01-plain-verb-forms-en.webp$/);assert.ok(elements['viewer-voice'].href.includes('lang=en'));close();
+open(cards.findIndex(c=>c.dataset.comic==='j2-17-person-ni'));elements['viewer-language-en'].fire('click');elements['viewer-next'].fire('click');assert.equal(elements['viewer-language-switch'].hidden,false);assert.ok(location.href.includes('lang=en'));assert.match(elements['viewer-image'].src,/j3-01-plain-verb-forms-en.webp$/);elements['viewer-prev'].fire('click');assert.match(elements['viewer-image'].src,/j2-17-person-ni-en.webp$/);close();
+console.log('PASS J3 bilingual gallery and English-preserving J2/J3 boundary navigation');

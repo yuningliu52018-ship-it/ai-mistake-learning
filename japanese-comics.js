@@ -164,6 +164,6 @@
   window.addEventListener('hashchange', syncLocation);
   syncLocation();
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.7.75').catch(console.error));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.8.75').catch(console.error));
   }
 })();

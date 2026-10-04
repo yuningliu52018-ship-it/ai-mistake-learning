@@ -5070,6 +5070,1491 @@ const variants = {
         }
       ]
     }
+  },
+  "j3-01-plain-verb-forms": {
+    "en": {
+      "language": "en",
+      "title": "做、不做、沒做，英文怎麼說？",
+      "grammar": "I＋原形動詞／don’t＋原形／didn’t＋原形",
+      "caption": "本張四句的主語都是 I：肯定句用原形動詞，現在否定用 don’t＋原形，過去否定用 didn’t＋原形。第三人稱單數另有變化。第4句的 do 是「做」的意思。",
+      "image": "assets/japanese-comics/j3-01-plain-verb-forms-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依 J3 日文漫畫的情境重新設計自然英文例句與中文文法解說，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "朗讀只讀四格的英文台詞，中文翻譯、文法標示與情境物件文字不朗讀。",
+      "panels": [
+        {
+          "title": "平常會做",
+          "crop": "10 146 1004 303",
+          "alt": "英文第1格：女子在書店挑書，說自己每週買書。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "平常不做",
+          "crop": "10 456 1004 311",
+          "alt": "英文第2格：男子吃蔬菜餐，說自己不吃肉。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "過去沒做",
+          "crop": "10 773 1004 316",
+          "alt": "英文第3格：今天在車站見面的女子，說昨天沒有來這裡。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "do 也能當動詞",
+          "crop": "10 1095 1004 299",
+          "alt": "英文第4格：女子在桌前做功課，說自己每天做功課。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I buy books every week.",
+          "subtitle": "I buy books every week.",
+          "translation": "我每週都買書。",
+          "speaker": "買書的女子",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I don’t eat meat.",
+          "subtitle": "I don’t eat meat.",
+          "translation": "我不吃肉。",
+          "speaker": "用餐的男子",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I didn’t come here yesterday.",
+          "subtitle": "I didn’t come here yesterday.",
+          "translation": "我昨天沒有來這裡。",
+          "speaker": "車站的女子",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I do my homework every day.",
+          "subtitle": "I do my homework every day.",
+          "translation": "我每天都做功課。",
+          "speaker": "做功課的女子",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "j3-02-koto-ability": {
+    "en": {
+      "language": "en",
+      "title": "聊聊興趣，也能說會做",
+      "grammar": "動名詞作主詞／can＋原形動詞",
+      "caption": "Reading 是動名詞，能把「閱讀」當作一件事，放在主詞位置。can 後接原形動詞，表達能力或可以做的事。",
+      "image": "assets/japanese-comics/j3-02-koto-ability-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依 J3 日文漫畫的情境重新設計自然英文例句與中文文法解說，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第4格為靜音解說。朗讀只讀英文台詞，中文翻譯、文法標示與情境物件文字不朗讀。",
+      "panels": [
+        {
+          "title": "詢問興趣",
+          "crop": "11 138 1003 336",
+          "alt": "英文第1格：左側女子詢問右側朋友的興趣。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "動名詞作主詞",
+          "crop": "11 482 1003 320",
+          "alt": "英文第2格：右側女子捧著書，回答閱讀是自己的興趣。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "可以借書",
+          "crop": "11 811 1003 385",
+          "alt": "英文第3格：左側女子在圖書館借書櫃台說可以向圖書館借書。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "靜音文法整理",
+          "crop": "11 1204 1003 320",
+          "alt": "英文第4格：書本和借書卡旁整理動名詞與 can 的用法，不朗讀。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ],
+      "cues": [
+        {
+          "text": "What’s your hobby?",
+          "subtitle": "What’s your hobby?",
+          "translation": "你的興趣是什麼？",
+          "speaker": "左側黃衣女子",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Reading is my hobby.",
+          "subtitle": "Reading is my hobby.",
+          "translation": "閱讀是我的興趣。",
+          "speaker": "右側藍綠衣女子",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "You can borrow books from the library.",
+          "subtitle": "You can borrow books from the library.",
+          "translation": "你可以向圖書館借書。",
+          "speaker": "左側借書的女子",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "reading＝閱讀這件事\ncan＋原形動詞＝能夠／可以",
+          "translation": "reading＝閱讀這件事\ncan＋原形動詞＝能夠／可以",
+          "speaker": "解說",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ]
+    }
+  },
+  "j3-03-before": {
+    "en": {
+      "language": "en",
+      "title": "事情之前，還是多久以前？",
+      "grammar": "before＋子句或名詞／時間長度＋ago",
+      "caption": "before 表達某件事或某個活動之前；ago 放在時間長度後面，從現在往前算。不要把所有「前」都直接換成同一個英文字。",
+      "image": "assets/japanese-comics/j3-03-before-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依 J3 日文漫畫的情境重新設計自然英文例句與中文文法解說，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第4格為靜音解說。朗讀只讀英文台詞，中文翻譯、文法標示與情境物件文字不朗讀。",
+      "panels": [
+        {
+          "title": "先做功課",
+          "crop": "10 144 1004 296",
+          "alt": "英文第1格：成人學員在家做作業，左側朋友提醒看電視前先做功課。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "出門前看新聞",
+          "crop": "10 451 1004 315",
+          "alt": "英文第2格：男子出門上班前看新聞。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "一個月以前",
+          "crop": "10 775 1004 354",
+          "alt": "英文第3格：女子在台灣與朋友談起一個月前抵達的事。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "靜音用法整理",
+          "crop": "11 1138 1003 385",
+          "alt": "英文第4格：電視、餐點與月曆圖示整理 before 和 ago 的差別，不朗讀。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ],
+      "cues": [
+        {
+          "text": "Please do your homework before you watch TV.",
+          "subtitle": "Please do your homework before you watch TV.",
+          "translation": "看電視之前，請先做功課。",
+          "speaker": "左側藍綠衣女子",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I watch the news before I leave home.",
+          "subtitle": "I watch the news before I leave home.",
+          "translation": "我出門前會看新聞。",
+          "speaker": "看新聞的男子",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I came to Taiwan a month ago.",
+          "subtitle": "I came to Taiwan a month ago.",
+          "translation": "我一個月前來到台灣。",
+          "speaker": "左側藍綠衣女子",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "before＋子句：某件事之前\nbefore＋名詞：某個活動之前\n時間長度＋ago：多久以前",
+          "translation": "before＋子句：某件事之前\nbefore＋名詞：某個活動之前\n時間長度＋ago：多久以前",
+          "speaker": "解說",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ]
+    }
+  },
+  "j3-04-must-or-not-needed": {
+    "en": {
+      "language": "en",
+      "title": "一定要做，還是可以不用做？",
+      "grammar": "have to＋原形動詞／don’t have to＋原形動詞",
+      "caption": "have to 表達必須做；don’t have to 表達沒有必要，做或不做都可以。don’t have to 不等於 mustn’t（禁止）。",
+      "image": "assets/japanese-comics/j3-04-must-or-not-needed-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依 J3 日文漫畫的情境重新設計自然英文例句與中文文法解說，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第4格為靜音解說。朗讀只讀英文台詞，中文翻譯、文法標示與情境物件文字不朗讀。",
+      "panels": [
+        {
+          "title": "有截止日的義務",
+          "crop": "2 136 1020 308",
+          "alt": "英文第1格：女子看著明天截止的作業，說自己必須繳交。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "該回家了",
+          "crop": "2 449 1020 329",
+          "alt": "英文第2格：咖啡店裡的男子看時間，準備回家。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "今天不用交",
+          "crop": "2 785 1020 325",
+          "alt": "英文第3格：老師指出另一份報告下週才截止，學生今天不必交。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "靜音辨別不必",
+          "crop": "2 1116 1020 402",
+          "alt": "英文第4格：兩個綠勾表示今天交或不交都可以，並區分 mustn’t 的禁止意思，不朗讀。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ],
+      "cues": [
+        {
+          "text": "I have to hand in my homework by tomorrow.",
+          "subtitle": "I have to hand in my homework by tomorrow.",
+          "translation": "我最晚明天必須交作業。",
+          "speaker": "看作業的女子",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "It’s getting late. I have to go home soon.",
+          "subtitle": "It’s getting late. I have to go home soon.",
+          "translation": "天色晚了，我得快點回家。",
+          "speaker": "準備離席的男子",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "The report is due next week. You don’t have to hand it in today.",
+          "subtitle": "The report is due next week. You don’t have to hand it in today.",
+          "translation": "報告下週截止，你今天不用交。",
+          "speaker": "左側老師",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "don’t have to＝不必\n今天交也可以／今天不交也可以\n不等於 mustn’t（禁止）",
+          "translation": "don’t have to＝不必\n今天交也可以／今天不交也可以\n不等於 mustn’t（禁止）",
+          "speaker": "解說",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ]
+    }
+  },
+  "j3-05-advice": {
+    "en": {
+      "language": "en",
+      "title": "做比較好，還是不要做比較好？",
+      "grammar": "should＋原形動詞／shouldn’t＋原形動詞",
+      "caption": "用 should＋原形動詞提出肯定建議，用 shouldn’t＋原形動詞建議不要做。這裡表達建議，不把日文的動詞變化直接套進英文。",
+      "image": "assets/japanese-comics/j3-05-advice-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依 J3 日文漫畫的情境重新設計自然英文例句與中文文法解說，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第2、4格為靜音解說。朗讀只讀英文台詞，中文翻譯、文法標示與情境物件文字不朗讀。",
+      "panels": [
+        {
+          "title": "建議搭電車",
+          "crop": "11 142 1002 350",
+          "alt": "英文第1格：兩位成人討論動物園交通圖，右側女子建議搭電車。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "靜音肯定建議",
+          "crop": "12 501 1001 269",
+          "alt": "英文第2格：男子拿車票，旁邊卡片解說 should＋原形動詞，不朗讀。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "建議不要抽菸",
+          "crop": "12 778 1001 333",
+          "alt": "英文第3格：左側女子勸男子不要抽菸，香菸未點燃。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "靜音否定建議",
+          "crop": "12 1121 1001 299",
+          "alt": "英文第4格：卡片解說 shouldn’t＋原形動詞，旁邊有走路與休息的成人插畫，不朗讀。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ],
+      "cues": [
+        {
+          "text": "There’s no parking near the zoo. We should take the train.",
+          "subtitle": "There’s no parking near the zoo. We should take the train.",
+          "translation": "動物園附近沒有停車場，我們應該搭電車。",
+          "speaker": "右側藍綠衣女子",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "should＋原形動詞\n表示建議：做比較好",
+          "translation": "should＋原形動詞\n表示建議：做比較好",
+          "speaker": "解說",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "You shouldn’t smoke.",
+          "subtitle": "You shouldn’t smoke.",
+          "translation": "你最好不要抽菸。",
+          "speaker": "左側藍綠衣女子",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "shouldn’t＋原形動詞\n表示建議：最好不要做",
+          "translation": "shouldn’t＋原形動詞\n表示建議：最好不要做",
+          "speaker": "解說",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ]
+    }
+  },
+  "j3-06-when": {
+    "en": {
+      "language": "en",
+      "title": "什麼時候？英文用 when 和 while",
+      "grammar": "when＋子句／while＋進行中的動作",
+      "caption": "when 可接某種情況或事件發生的時刻；while 在本例接進行式，表達工作進行期間。句子的時態仍依實際時間決定。",
+      "image": "assets/japanese-comics/j3-06-when-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依 J3 日文漫畫的情境重新設計自然英文例句與中文文法解說，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第4格先讀左側工作情境，再讀右側有空情境。朗讀只讀英文台詞，中文解說與文法標示不朗讀。",
+      "panels": [
+        {
+          "title": "有空的時候",
+          "crop": "10 144 1005 283",
+          "alt": "英文第1格：電影院前的男子說自己有空會看電影。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "事件發生時",
+          "crop": "10 435 1005 307",
+          "alt": "英文第2格：女子在院子裡回想地震發生時所在的位置。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "小時候",
+          "crop": "11 751 1004 319",
+          "alt": "英文第3格：成年女子看著虛構童年照片，說小時候住在日本。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "when 與 while",
+          "crop": "11 1076 1004 354",
+          "alt": "英文第4格：左半格女子說工作時不吃東西；右半格女子說有空會看韓劇，依左至右朗讀。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "When I have time, I watch movies.",
+          "subtitle": "When I have time, I watch movies.",
+          "translation": "我有空時會看電影。",
+          "speaker": "右側男子",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I was in the garden when the earthquake happened.",
+          "subtitle": "I was in the garden when the earthquake happened.",
+          "translation": "地震發生時，我在院子裡。",
+          "speaker": "院子裡的女子",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I lived in Japan when I was a child.",
+          "subtitle": "I lived in Japan when I was a child.",
+          "translation": "我小時候住在日本。",
+          "speaker": "看照片的女子",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I don’t eat while I’m working.",
+          "subtitle": "I don’t eat while I’m working.",
+          "translation": "我工作時不吃東西。",
+          "speaker": "左側辦公女子",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "When I’m free, I watch Korean dramas.",
+          "subtitle": "When I’m free, I watch Korean dramas.",
+          "translation": "我有空時會看韓劇。",
+          "speaker": "右側看劇女子",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "j3-07-plain-adjective-noun": {
+    "en": {
+      "language": "en",
+      "title": "現在與過去，肯定與否定",
+      "grammar": "be + 形容詞／名詞；am／is／are、was／were、not",
+      "caption": "四格是不同情境的說法示例。be 後面可接形容詞或名詞。否定在 be 後加 not；過去式用 was／were。I’m 是 I am 的縮寫，wasn’t 是 was not 的縮寫。",
+      "image": "assets/japanese-comics/j3-07-plain-adjective-noun-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依原日文漫畫的場景與主題設計自然英文例句，並非日文教材原句或逐字文法對應。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "朗讀只讀畫面中的英文台詞；中文解說與文法標示不朗讀。",
+      "panels": [
+        {
+          "title": "現在肯定",
+          "crop": "9 157 1007 287",
+          "alt": "英文第1格：現在肯定。I’m well today.",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "現在否定",
+          "crop": "9 451 1007 307",
+          "alt": "英文第2格：現在否定。I’m not well today.",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "過去肯定",
+          "crop": "9 765 1007 279",
+          "alt": "英文第3格：過去肯定。I was well yesterday.",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "過去否定",
+          "crop": "9 1051 1007 317",
+          "alt": "英文第4格：過去否定。I wasn’t well yesterday.",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I’m well today.",
+          "subtitle": "I’m well today.",
+          "translation": "我今天精神很好。",
+          "speaker": "健行的女子",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I’m not well today.",
+          "subtitle": "I’m not well today.",
+          "translation": "我今天不太舒服。",
+          "speaker": "休息的女子",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I was well yesterday.",
+          "subtitle": "I was well yesterday.",
+          "translation": "我昨天精神很好。",
+          "speaker": "看照片的女子",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I wasn’t well yesterday.",
+          "subtitle": "I wasn’t well yesterday.",
+          "translation": "我昨天不太舒服。",
+          "speaker": "回想昨天的朋友",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "j3-08-plain-connections": {
+    "en": {
+      "language": "en",
+      "title": "轉折與原因，英文怎麼接？",
+      "grammar": "but／although／because／so",
+      "caption": "but 表轉折；although 引出讓步。because 後接原因，so 後接結果。這些連接詞各有句型，不是日文敬體與常體的對應變化。",
+      "image": "assets/japanese-comics/j3-08-plain-connections-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依原日文漫畫的場景與主題設計自然英文例句，並非日文教材原句或逐字文法對應。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "朗讀只讀畫面中的英文台詞；中文解說與文法標示不朗讀。",
+      "panels": [
+        {
+          "title": "用 but 表轉折",
+          "crop": "10 151 1004 298",
+          "alt": "英文第1格：用 but 表轉折。It’s delicious, but it’s expensive.",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "用 although 引出讓步",
+          "crop": "10 454 1004 307",
+          "alt": "英文第2格：用 although 引出讓步。Although it’s delicious, it’s expensive.",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "because 後接原因",
+          "crop": "10 767 1004 322",
+          "alt": "英文第3格：because 後接原因。I won’t sing because I’m not good at it.",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "so 後接結果",
+          "crop": "10 1093 1004 312",
+          "alt": "英文第4格：so 後接結果。I’m not good at singing, so I won’t sing.",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "It’s delicious, but it’s expensive.",
+          "subtitle": "It’s delicious, but it’s expensive.",
+          "translation": "很好吃，但是很貴。",
+          "speaker": "穿黃衣的女子",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Although it’s delicious, it’s expensive.",
+          "subtitle": "Although it’s delicious, it’s expensive.",
+          "translation": "雖然很好吃，卻很貴。",
+          "speaker": "穿藍綠衣的女子",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I won’t sing because I’m not good at it.",
+          "subtitle": "I won’t sing because I’m not good at it.",
+          "translation": "我不唱，因為我不擅長唱歌。",
+          "speaker": "穿黃衣的女子",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I’m not good at singing, so I won’t sing.",
+          "subtitle": "I’m not good at singing, so I won’t sing.",
+          "translation": "我不擅長唱歌，所以我不唱。",
+          "speaker": "穿藍綠衣的女子",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "j3-09-casual-questions": {
+    "en": {
+      "language": "en",
+      "title": "咖啡怎麼樣？想吃哪一個？",
+      "grammar": "How is…?／Which would you like…?／both",
+      "caption": "How is…? 可詢問感想；Which would you like…? 用來詢問選擇。both 表示兩者都。用自然英文練習朋友間的問答。",
+      "image": "assets/japanese-comics/j3-09-casual-questions-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依原日文漫畫的場景與主題設計自然英文例句，並非日文教材原句或逐字文法對應。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "朗讀只讀畫面中的英文台詞；中文解說與文法標示不朗讀。",
+      "panels": [
+        {
+          "title": "詢問咖啡的感想",
+          "crop": "17 183 990 293",
+          "alt": "英文第1格：詢問咖啡的感想。How’s the coffee from the convenience store?",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "說出自己的感想",
+          "crop": "17 487 990 257",
+          "alt": "英文第2格：說出自己的感想。It’s cheap, but I don’t think it tastes good.",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "詢問兩者間的選擇",
+          "crop": "17 754 990 312",
+          "alt": "英文第3格：詢問兩者間的選擇。Which would you like, curry or sushi?",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "兩個都想要",
+          "crop": "17 1076 990 330",
+          "alt": "英文第4格：兩個都想要。I’d like both!",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "How’s the coffee from the convenience store?",
+          "subtitle": "How’s the coffee from the convenience store?",
+          "translation": "便利商店的咖啡怎麼樣？",
+          "speaker": "男子・提問",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "It’s cheap, but I don’t think it tastes good.",
+          "subtitle": "It’s cheap, but I don’t think it tastes good.",
+          "translation": "很便宜，但我覺得不好喝。",
+          "speaker": "女子・回答",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Which would you like, curry or sushi?",
+          "subtitle": "Which would you like, curry or sushi?",
+          "translation": "咖哩和壽司，你想吃哪一個？",
+          "speaker": "男子・提問",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I’d like both!",
+          "subtitle": "I’d like both!",
+          "translation": "兩個我都想吃！",
+          "speaker": "女子・回答",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "j3-10-modifiers-time": {
+    "en": {
+      "language": "en",
+      "title": "明天要吃的，昨天吃過的",
+      "grammar": "名詞 + that 關係子句；will eat／ate",
+      "caption": "英文關係子句放在名詞後，說明是哪一個。will eat 配合 tomorrow 表未來；ate 配合 yesterday 表過去。這裡的 that 在子句中作受詞，可省略。",
+      "image": "assets/japanese-comics/j3-10-modifiers-time-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依原日文漫畫的場景與主題設計自然英文例句，並非日文教材原句或逐字文法對應。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "朗讀只讀畫面中的英文台詞；中文解說與文法標示不朗讀。第2、4格是靜音解說，只有第1、3格朗讀。",
+      "panels": [
+        {
+          "title": "明天要吃的麵包",
+          "crop": "12 179 1000 283",
+          "alt": "英文第1格：明天要吃的麵包。This is the bread that I’ll eat tomorrow.",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "關係子句放在名詞後",
+          "crop": "12 471 1000 289",
+          "alt": "英文第2格：關係子句放在名詞後。英文先說名詞，再接關係子句，說明是哪一個。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "昨天吃過的麵包",
+          "crop": "12 770 1000 299",
+          "alt": "英文第3格：昨天吃過的麵包。This is the bread that I ate yesterday.",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "時態表達時間",
+          "crop": "12 1078 1000 302",
+          "alt": "英文第4格：時態表達時間。ate 表示過去；will eat 表示未來。關係子句都放在名詞後。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ],
+      "cues": [
+        {
+          "text": "This is the bread that I’ll eat tomorrow.",
+          "subtitle": "This is the bread that I’ll eat tomorrow.",
+          "translation": "這是我明天要吃的麵包。",
+          "speaker": "女子・介紹明天的麵包",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "英文先說名詞，再接關係子句，說明是哪一個。",
+          "translation": "英文先說名詞，再接關係子句，說明是哪一個。",
+          "speaker": "解說",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "This is the bread that I ate yesterday.",
+          "subtitle": "This is the bread that I ate yesterday.",
+          "translation": "這是我昨天吃的麵包。",
+          "speaker": "男子・展示昨天的照片",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "ate 表示過去；will eat 表示未來。關係子句都放在名詞後。",
+          "translation": "ate 表示過去；will eat 表示未來。關係子句都放在名詞後。",
+          "speaker": "解說",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ]
+    }
+  },
+  "j3-11-modifiers-in-life": {
+    "en": {
+      "language": "en",
+      "title": "哪一支錶？哪一個人？",
+      "grammar": "名詞 + that／who 關係子句；have plans to + 原形動詞",
+      "caption": "用 that／who 關係子句放在名詞後，補充是哪個物品、地方或人。have plans to go 用不定詞說明計畫內容，並不是關係子句。",
+      "image": "assets/japanese-comics/j3-11-modifiers-in-life-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；依原日文漫畫的場景與主題設計自然英文例句，並非日文教材原句或逐字文法對應。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "朗讀只讀畫面中的英文台詞；中文解說與文法標示不朗讀。",
+      "panels": [
+        {
+          "title": "去年買的手錶",
+          "crop": "15 142 995 296",
+          "alt": "英文第1格：去年買的手錶。This is the watch that I bought last year.",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "常去的圖書館",
+          "crop": "15 448 995 315",
+          "alt": "英文第2格：常去的圖書館。The library that I often visit is quiet.",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "穿紅衣的人",
+          "crop": "15 774 995 317",
+          "alt": "英文第3格：穿紅衣的人。Do you know the person who is wearing red?",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "明天逛街的計畫",
+          "crop": "15 1103 995 324",
+          "alt": "英文第4格：明天逛街的計畫。I have plans to go shopping with her tomorrow.",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "This is the watch that I bought last year.",
+          "subtitle": "This is the watch that I bought last year.",
+          "translation": "這是我去年買的手錶。",
+          "speaker": "展示手錶的男子",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "The library that I often visit is quiet.",
+          "subtitle": "The library that I often visit is quiet.",
+          "translation": "我常去的圖書館很安靜。",
+          "speaker": "介紹圖書館的女子",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Do you know the person who is wearing red?",
+          "subtitle": "Do you know the person who is wearing red?",
+          "translation": "你認識穿紅衣服的那個人嗎？",
+          "speaker": "指向紅衣人的男子",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I have plans to go shopping with her tomorrow.",
+          "subtitle": "I have plans to go shopping with her tomorrow.",
+          "translation": "我計畫明天和她去逛街。",
+          "speaker": "看行程表的男子",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "j3-12-modifier-subject": {
+    "en": {
+      "title": "媽媽做的麵包，老師畫的畫",
+      "grammar": "名詞＋關係子句",
+      "caption": "英文先放名詞，再接修飾它的關係子句。本例中的 my mother 和 my teacher 是子句的主語；省略的關係代名詞是受詞。",
+      "language": "en",
+      "image": "assets/japanese-comics/j3-12-modifier-subject-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，也不把日文接續規則直接套用於英文。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第1、3格朗讀英文對話；第2、4格為靜音解說。標題、中文、文法圖解與背景文字不朗讀。",
+      "panels": [
+        {
+          "title": "媽媽做的麵包",
+          "crop": "11 148 1003 313",
+          "alt": "英文第1格：成年女兒說「This is the bread my mother made.」；這是媽媽做的麵包。",
+          "first": 0,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "找出修飾子句",
+          "crop": "12 466 1002 285",
+          "alt": "英文第2格：my mother made 修飾 bread；my mother 是 made 的主語。",
+          "first": 1,
+          "label": "解說",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "老師畫的那幅畫",
+          "crop": "13 755 1001 346",
+          "alt": "英文第3格：成年學員說「The picture my teacher painted is over there.」；老師畫的畫在那邊。",
+          "first": 2,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "整個名詞片語",
+          "crop": "13 1105 1001 299",
+          "alt": "英文第4格：先組好「名詞＋修飾子句」，再放進整句。",
+          "first": 3,
+          "label": "解說",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ],
+      "cues": [
+        {
+          "text": "This is the bread my mother made.",
+          "subtitle": "This is the bread my mother made.",
+          "translation": "這是媽媽做的麵包。",
+          "speaker": "成年女兒",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "my mother made 修飾 bread；my mother 是 made 的主語。",
+          "translation": "my mother made 修飾 bread；my mother 是 made 的主語。",
+          "speaker": "解說",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "The picture my teacher painted is over there.",
+          "subtitle": "The picture my teacher painted is over there.",
+          "translation": "老師畫的畫在那邊。",
+          "speaker": "成年學員",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "先組好「名詞＋修飾子句」，再放進整句。",
+          "translation": "先組好「名詞＋修飾子句」，再放進整句。",
+          "speaker": "解說",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ]
+    }
+  },
+  "j3-13-quoting": {
+    "en": {
+      "title": "我說過什麼？他剛才怎麼說？",
+      "grammar": "said / told：轉述說過的話",
+      "caption": "said 後面可直接接說話內容；told 後面要先接人，再接內容。that 常可省略。本例用 was 轉述當時的話。",
+      "language": "en",
+      "image": "assets/japanese-comics/j3-13-quoting-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，也不把日文接續規則直接套用於英文。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第1、3、4格朗讀英文對話；第2格為靜音解說。標題、中文、文法圖解與背景文字不朗讀。",
+      "panels": [
+        {
+          "title": "回想課堂發表",
+          "crop": "8 128 1008 306",
+          "alt": "英文第1格：成年學員說「In class, I said that Japanese is useful.」；上課時，我說日文很有用。",
+          "first": 0,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "said 與 told",
+          "crop": "8 440 1008 295",
+          "alt": "英文第2格：said 後接內容；told 後先接人，再接內容。",
+          "first": 1,
+          "label": "解說",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "問他說了什麼",
+          "crop": "8 740 1008 302",
+          "alt": "英文第3格：左側同事說「What did he say?」；他怎麼說的？",
+          "first": 2,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "轉述會議時間",
+          "crop": "9 1046 1007 361",
+          "alt": "英文第4格：右側同事說「He told me the meeting was at six.」；他告訴我，會議在六點。",
+          "first": 3,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "In class, I said that Japanese is useful.",
+          "subtitle": "In class, I said that Japanese is useful.",
+          "translation": "上課時，我說日文很有用。",
+          "speaker": "成年學員",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "said 後接內容；told 後先接人，再接內容。",
+          "translation": "said 後接內容；told 後先接人，再接內容。",
+          "speaker": "解說",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "What did he say?",
+          "subtitle": "What did he say?",
+          "translation": "他怎麼說的？",
+          "speaker": "左側同事",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "He told me the meeting was at six.",
+          "subtitle": "He told me the meeting was at six.",
+          "translation": "他告訴我，會議在六點。",
+          "speaker": "右側同事",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "j3-14-thoughts": {
+    "en": {
+      "title": "我想他回家了，也覺得你人很好",
+      "grammar": "I think… / What do you think of…?",
+      "caption": "I think＋句子可表達推測或意見；What do you think of…? 用來詢問看法。英文依語境選擇時態，不套用日文的接續規則。",
+      "language": "en",
+      "image": "assets/japanese-comics/j3-14-thoughts-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，也不把日文接續規則直接套用於英文。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "只朗讀對話框中的英文；標題、中文解說、文法圖解與背景文字不朗讀。",
+      "panels": [
+        {
+          "title": "推測同事回家了",
+          "crop": "9 131 1007 308",
+          "alt": "英文第1格：青綠上衣同事說「I think Mr. Wang has already gone home.」；我想王先生已經回家了。",
+          "first": 0,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "表達自己的意見",
+          "crop": "9 445 1007 328",
+          "alt": "英文第2格：成年學員說「I think Japanese is useful.」；我覺得日文很有用。",
+          "first": 1,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "詢問對方的看法",
+          "crop": "9 778 1007 330",
+          "alt": "英文第3格：左側朋友說「What do you think of me?」；你覺得我是怎樣的人？",
+          "first": 2,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "回答自己的看法",
+          "crop": "9 1112 1007 346",
+          "alt": "英文第4格：右側朋友說「I think you’re funny, kind, and a good person.」；我覺得你有趣、親切，是個好人。",
+          "first": 3,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I think Mr. Wang has already gone home.",
+          "subtitle": "I think Mr. Wang has already gone home.",
+          "translation": "我想王先生已經回家了。",
+          "speaker": "青綠上衣同事",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I think Japanese is useful.",
+          "subtitle": "I think Japanese is useful.",
+          "translation": "我覺得日文很有用。",
+          "speaker": "成年學員",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "What do you think of me?",
+          "subtitle": "What do you think of me?",
+          "translation": "你覺得我是怎樣的人？",
+          "speaker": "左側朋友",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I think you’re funny, kind, and a good person.",
+          "subtitle": "I think you’re funny, kind, and a good person.",
+          "translation": "我覺得你有趣、親切，是個好人。",
+          "speaker": "右側朋友",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "j3-15-volitional-forms": {
+    "en": {
+      "title": "一起去吧！用英文提議與表達意願",
+      "grammar": "Let's… / I'll…",
+      "caption": "Let's＋原形動詞用來提議一起做某事；I'll＋原形動詞可表達當下的意願或承諾。這是情境改編，不把日文意向形當成英文的動詞變化。",
+      "language": "en",
+      "image": "assets/japanese-comics/j3-15-volitional-forms-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，也不把日文接續規則直接套用於英文。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "只朗讀對話框中的英文；標題、中文解說、文法圖解與背景文字不朗讀。",
+      "panels": [
+        {
+          "title": "提議一起出發",
+          "crop": "0 143 1024 314",
+          "alt": "英文第1格：青綠上衣朋友說「Let’s go!」；我們走吧！",
+          "first": 0,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "提議開始用餐",
+          "crop": "0 464 1024 308",
+          "alt": "英文第2格：芥黃上衣朋友說「Let’s eat!」；我們開動吧！",
+          "first": 1,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "表達自己的意願",
+          "crop": "0 777 1024 317",
+          "alt": "英文第3格：青綠上衣朋友說「I’ll come back tomorrow.」；我明天會再來。",
+          "first": 2,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "提議一起準備",
+          "crop": "0 1099 1024 339",
+          "alt": "英文第4格：芥黃上衣朋友說「Let’s set up the room together.」；我們一起布置場地吧！",
+          "first": 3,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Let’s go!",
+          "subtitle": "Let’s go!",
+          "translation": "我們走吧！",
+          "speaker": "青綠上衣朋友",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Let’s eat!",
+          "subtitle": "Let’s eat!",
+          "translation": "我們開動吧！",
+          "speaker": "芥黃上衣朋友",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I’ll come back tomorrow.",
+          "subtitle": "I’ll come back tomorrow.",
+          "translation": "我明天會再來。",
+          "speaker": "青綠上衣朋友",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Let’s set up the room together.",
+          "subtitle": "Let’s set up the room together.",
+          "translation": "我們一起布置場地吧！",
+          "speaker": "芥黃上衣朋友",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "j3-16-intentions-plans-schedule": {
+    "en": {
+      "title": "明天做什麼？打算與時刻表",
+      "grammar": "going to / plan to / 現在簡單式",
+      "caption": "be going to＋原形與 plan to＋原形都可表達打算；時刻表中的固定時間可用現在簡單式。這些說法不是固定的確定度階梯。",
+      "language": "en",
+      "image": "assets/japanese-comics/j3-16-intentions-plans-schedule-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，也不把日文接續規則直接套用於英文。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "只朗讀對話框中的英文；標題、中文解說、文法圖解與背景文字不朗讀。",
+      "panels": [
+        {
+          "title": "詢問明天的打算",
+          "crop": "5 141 1014 273",
+          "alt": "英文第1格：左側朋友說「What are you going to do tomorrow?」；你明天打算做什麼？",
+          "first": 0,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "用 going to 表達打算",
+          "crop": "5 418 1014 310",
+          "alt": "英文第2格：右側朋友說「I’m going to see a movie.」；我打算去看電影。",
+          "first": 1,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "用 plan to 說同樣的打算",
+          "crop": "5 733 1014 284",
+          "alt": "英文第3格：右側朋友說「I plan to see a movie.」；我計畫去看電影。",
+          "first": 2,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "說出電影開演時間",
+          "crop": "5 1021 1014 342",
+          "alt": "英文第4格：右側朋友說「The movie starts at four.」；電影四點開演。",
+          "first": 3,
+          "label": "情境",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "What are you going to do tomorrow?",
+          "subtitle": "What are you going to do tomorrow?",
+          "translation": "你明天打算做什麼？",
+          "speaker": "左側朋友",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I’m going to see a movie.",
+          "subtitle": "I’m going to see a movie.",
+          "translation": "我打算去看電影。",
+          "speaker": "右側朋友",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I plan to see a movie.",
+          "subtitle": "I plan to see a movie.",
+          "translation": "我計畫去看電影。",
+          "speaker": "右側朋友",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "The movie starts at four.",
+          "subtitle": "The movie starts at four.",
+          "translation": "電影四點開演。",
+          "speaker": "右側朋友",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
   }
 };
 if(typeof module!=="undefined" && module.exports) module.exports = variants;
