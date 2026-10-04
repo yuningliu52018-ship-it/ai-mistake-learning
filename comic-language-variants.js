@@ -1909,6 +1909,593 @@ const variants = {
       ]
     }
   },
+  "l5-01-demonstratives": {
+    "en": {
+      "language": "en",
+      "title": "接住剛才的話題",
+      "grammar": "there / that + 名詞",
+      "caption": "用 there 接回前文的地點，用 that singer 接回剛提到的歌手。",
+      "image": "assets/japanese-comics/l5-01-demonstratives-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。Ado 沿用歌手的羅馬字姓名；第4格是角色提出的疑問，不是對國籍的事實陳述。",
+      "panels": [
+        {
+          "title": "提起一家餐廳",
+          "crop": "15 133 490 578",
+          "alt": "英文第1格：短髮女子提起一家滷肉飯店，兩人在咖啡館聊天。 英文台詞：Do you know that braised pork rice place?",
+          "first": 0,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "接回那個地方",
+          "crop": "519 133 490 578",
+          "alt": "英文第2格：紅衣女子接回那家餐廳，說那裡的食物很好吃。 英文台詞：Yes. The food there is delicious!",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "換個新話題",
+          "crop": "15 724 490 572",
+          "alt": "英文第3格：短髮女子拿著手機，提起 Ado 的歌曲。 英文台詞：Ado’s songs are amazing.",
+          "first": 2,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "接回那位歌手",
+          "crop": "519 724 490 572",
+          "alt": "英文第4格：紅衣女子接回 Ado 這位歌手，詢問是否來自台灣。 英文台詞：Ado? Is that singer from Taiwan?",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Do you know that braised pork rice place?",
+          "subtitle": "Do you know that braised pork rice place?",
+          "translation": "你知道那家滷肉飯店嗎？",
+          "speaker": "短髮女生 · 提問",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Yes. The food there is delicious!",
+          "subtitle": "Yes. The food there is delicious!",
+          "translation": "知道，那裡的食物很好吃！",
+          "speaker": "紅衣女生 · 回應",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Ado’s songs are amazing.",
+          "subtitle": "Ado’s songs are amazing.",
+          "translation": "Ado 的歌很棒。",
+          "speaker": "短髮女生 · 新話題",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Ado? Is that singer from Taiwan?",
+          "subtitle": "Ado? Is that singer from Taiwan?",
+          "translation": "Ado？那位歌手是台灣人嗎？",
+          "speaker": "紅衣女生 · 詢問",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l5-02-tentative": {
+    "en": {
+      "language": "en",
+      "title": "是不是在包包裡？",
+      "grammar": "Could it be…? / Maybe you should…",
+      "caption": "Could it be…? 提出可能性；Maybe you should… 用較委婉的方式給建議。",
+      "image": "assets/japanese-comics/l5-02-tentative-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。",
+      "panels": [
+        {
+          "title": "找不到錢包",
+          "crop": "15 157 490 564",
+          "alt": "英文第1格：青綠外套的女子摸著口袋，以為把錢包忘在家裡。 英文台詞：I left my wallet at home!",
+          "first": 0,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "委婉猜測",
+          "crop": "519 157 490 564",
+          "alt": "英文第2格：橘紅外套的女子指著包包，委婉推測錢包可能在裡面。 英文台詞：Could it be in your bag?",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "打開看看",
+          "crop": "15 733 490 573",
+          "alt": "英文第3格：青綠外套的女子打開包包，開心地找到錢包。 英文台詞：Found it!",
+          "first": 2,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "提出建議",
+          "crop": "519 733 490 573",
+          "alt": "英文第4格：橘紅外套的女子對看來疲倦的朋友建議稍微休息。 英文台詞：You look tired. Maybe you should take a break.",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I left my wallet at home!",
+          "subtitle": "I left my wallet at home!",
+          "translation": "我把錢包忘在家裡了！",
+          "speaker": "短髮女生 · 慌張",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Could it be in your bag?",
+          "subtitle": "Could it be in your bag?",
+          "translation": "會不會在你的包包裡？",
+          "speaker": "紅衣女生 · 猜測",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Found it!",
+          "subtitle": "Found it!",
+          "translation": "找到了！",
+          "speaker": "短髮女生 · 找到錢包",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "You look tired. Maybe you should take a break.",
+          "subtitle": "You look tired. Maybe you should take a break.",
+          "translation": "你看起來累了，也許該休息一下。",
+          "speaker": "紅衣女生 · 建議",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l5-03-location": {
+    "en": {
+      "language": "en",
+      "title": "轉過去，就在那裡",
+      "grammar": "turn left at / right there / just outside",
+      "caption": "用 at 指出轉彎的位置；right there 強調就在那裡；just outside 表示就在外面。",
+      "image": "assets/japanese-comics/l5-03-location-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。",
+      "panels": [
+        {
+          "title": "在路口左轉",
+          "crop": "17 146 489 593",
+          "alt": "英文第1格：青綠外套的女子來到紅綠燈路口，箭頭提示向左轉。 本格為無聲情境或解說。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "說明位置",
+          "crop": "519 146 487 593",
+          "alt": "英文第2格：女子在郵局前說明，郵局位於紅綠燈左轉後的地方。 英文台詞：Turn left at the traffic lights. The post office is right there.",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "走出車站",
+          "crop": "17 754 489 607",
+          "alt": "英文第3格：橘紅外套的女子剛走出車站出口，準備停下等人。 本格為無聲情境或解說。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "說明等候地點",
+          "crop": "519 754 487 607",
+          "alt": "英文第4格：橘紅外套的女子在車站出口外打電話，告訴對方自己正在等。 英文台詞：I’m waiting just outside the station exit.",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "",
+          "subtitle": "先走到紅綠燈，再向左轉。",
+          "translation": "先走到紅綠燈，再向左轉。",
+          "speaker": "情境說明",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "Turn left at the traffic lights. The post office is right there.",
+          "subtitle": "Turn left at the traffic lights. The post office is right there.",
+          "translation": "在紅綠燈左轉，郵局就在那裡。",
+          "speaker": "短髮女生 · 說明路線",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "走出車站出口，再停下來等。",
+          "translation": "走出車站出口，再停下來等。",
+          "speaker": "情境說明",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "I’m waiting just outside the station exit.",
+          "subtitle": "I’m waiting just outside the station exit.",
+          "translation": "我就在車站出口外面等。",
+          "speaker": "紅衣女生 · 通電話",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l5-04-attempt": {
+    "en": {
+      "language": "en",
+      "title": "正要、試著、不肯",
+      "grammar": "be about to / try to / won't",
+      "caption": "be about to 表示正要；try to 表示嘗試；won't 在貓不過來的情境表示不肯。",
+      "image": "assets/japanese-comics/l5-04-attempt-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。第4格為三種意思的無聲整理；won’t 在此表示不肯，不應一律當作單純未來式。",
+      "panels": [
+        {
+          "title": "正要出門",
+          "crop": "11 127 498 583",
+          "alt": "英文第1格：青綠外套的女子在家門口翻找包包，正要出門時才發現沒有鑰匙。 英文台詞：I was about to leave when I realized my keys were missing.",
+          "first": 0,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "有試著吃",
+          "crop": "519 127 496 583",
+          "alt": "英文第2格：青綠外套的女子拿著臭豆腐，說自己試著吃了但還是沒辦法。 英文台詞：I tried to eat it, but I just couldn’t.",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "就是不肯",
+          "crop": "11 723 498 587",
+          "alt": "英文第3格：青綠外套的女子向貓招手，但貓背對著她，不肯過來。 英文台詞：I keep calling, but the cat won’t come over.",
+          "first": 2,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "分清三種意思",
+          "crop": "519 723 496 587",
+          "alt": "英文第4格：女子看著門和鑰匙、臭豆腐與貓的三張圖卡，對照正要開始、努力嘗試和沒有意願。 本格為無聲情境或解說。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": true
+        }
+      ],
+      "cues": [
+        {
+          "text": "I was about to leave when I realized my keys were missing.",
+          "subtitle": "I was about to leave when I realized my keys were missing.",
+          "translation": "我正要出門，才發現鑰匙不見了。",
+          "speaker": "短髮女生 · 心裡想",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I tried to eat it, but I just couldn’t.",
+          "subtitle": "I tried to eat it, but I just couldn’t.",
+          "translation": "我試著吃了，但真的沒辦法。",
+          "speaker": "短髮女生 · 說明嘗試",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I keep calling, but the cat won’t come over.",
+          "subtitle": "I keep calling, but the cat won’t come over.",
+          "translation": "我一直叫牠，但貓就是不肯過來。",
+          "speaker": "短髮女生 · 描述貓",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "正要開始／努力嘗試／沒有意願",
+          "translation": "正要開始／努力嘗試／沒有意願",
+          "speaker": "無聲整理",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ]
+    }
+  },
+  "l5-05-inference": {
+    "en": {
+      "language": "en",
+      "title": "推測，還是心裡自問？",
+      "grammar": "probably / I think… / I wonder if…",
+      "caption": "probably 表示大概；I think 引出看法；I wonder if 表達心裡不確定的疑問。",
+      "image": "assets/japanese-comics/l5-05-inference-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。第4格是角色心中的擔心，並未斷言對方真的討厭她。",
+      "panels": [
+        {
+          "title": "根據預報推測",
+          "crop": "13 165 490 538",
+          "alt": "英文第1格：青綠外套的女子看著手機和明天的天氣預報，推測明天會是陰天。 英文台詞：It’ll probably be cloudy tomorrow.",
+          "first": 0,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "說出個人看法",
+          "crop": "514 165 499 538",
+          "alt": "英文第2格：青綠外套的女子和朋友談到一名打呵欠的上班族，認為他工作太忙而不能好好休息。 英文台詞：I think he’s too busy to get enough rest.",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "等不到回覆",
+          "crop": "13 711 490 601",
+          "alt": "英文第3格：青綠外套的女子看著一直沒有回覆的訊息，心裡問為什麼。 本格為無聲情境或解說。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "心裡的疑問",
+          "crop": "514 711 499 601",
+          "alt": "英文第4格：青綠外套的女子望著手機，心裡懷疑對方是不是已經討厭自己。 英文台詞：He hasn’t replied. I wonder if he dislikes me now.",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "It’ll probably be cloudy tomorrow.",
+          "subtitle": "It’ll probably be cloudy tomorrow.",
+          "translation": "明天大概會是陰天。",
+          "speaker": "短髮女生 · 天氣推測",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I think he’s too busy to get enough rest.",
+          "subtitle": "I think he’s too busy to get enough rest.",
+          "translation": "我想他忙得沒辦法好好休息。",
+          "speaker": "短髮女生 · 看法",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "訊息一直沒有回覆……",
+          "translation": "訊息一直沒有回覆……",
+          "speaker": "情境說明",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "He hasn’t replied. I wonder if he dislikes me now.",
+          "subtitle": "He hasn’t replied. I wonder if he dislikes me now.",
+          "translation": "他還沒回覆，我在想他是不是已經不喜歡我了。",
+          "speaker": "短髮女生 · 心裡想",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l5-06-particles": {
+    "en": {
+      "language": "en",
+      "title": "用英文補充名詞資訊",
+      "grammar": "with / online / for / from…to…",
+      "caption": "英文可用介系詞片語放在名詞後面補充關係；online booking 則用 online 放在 booking 前。",
+      "image": "assets/japanese-comics/l5-06-particles-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。with、for、from…to… 放在名詞後補充關係；online booking 的 online 則放在名詞前，並不套用日文「助詞＋の」。",
+      "panels": [
+        {
+          "title": "和誰一起",
+          "crop": "12 185 500 581",
+          "alt": "英文第1格：青綠外套的女子和家人在旅行景點開心合影，回想家族旅行。 英文台詞：The trip with my family was fun.",
+          "first": 0,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "什麼方式",
+          "crop": "521 185 490 581",
+          "alt": "英文第2格：青綠外套的女子用筆電在網路上預約，旁邊有完成預約的圖示。 英文台詞：Online booking is convenient.",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "送給誰",
+          "crop": "12 777 500 594",
+          "alt": "英文第3格：男子手拿包好的禮物，心中想著橘紅外套的女子。 英文台詞：I bought a gift for her.",
+          "first": 2,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "從哪裡到哪裡",
+          "crop": "521 777 490 594",
+          "alt": "英文第4格：青綠外套的女子站在車站旁，望向通往家的昏暗小路。 英文台詞：The path from the station to my home is dark and dangerous.",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "The trip with my family was fun.",
+          "subtitle": "The trip with my family was fun.",
+          "translation": "和家人一起的旅行很開心。",
+          "speaker": "短髮女生 · 回想旅行",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Online booking is convenient.",
+          "subtitle": "Online booking is convenient.",
+          "translation": "線上預約很方便。",
+          "speaker": "短髮女生 · 網路預約",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I bought a gift for her.",
+          "subtitle": "I bought a gift for her.",
+          "translation": "我買了一份要送給她的禮物。",
+          "speaker": "男子 · 看著禮物",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "The path from the station to my home is dark and dangerous.",
+          "subtitle": "The path from the station to my home is dark and dangerous.",
+          "translation": "從車站到我家的路很暗，也很危險。",
+          "speaker": "短髮女生 · 看著小路",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "supplement-indirect-request": {
+    "en": {
+      "language": "en",
+      "title": "轉述別人的叮嚀",
+      "grammar": "tell + 人 + (not) to + 原形動詞",
+      "caption": "用 tell someone to do… 轉述要求做某事，not to do… 轉述要求不要做某事。",
+      "image": "assets/japanese-comics/supplement-indirect-request-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫相同情境練習自然英文，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第3格是靜音文法整理；第4格為學生的轉述旁白，不是老師在說 My teacher。醫療情境僅供語言學習。",
+      "panels": [
+        {
+          "title": "醫生直接叮嚀",
+          "crop": "18 153 989 276",
+          "alt": "第1格：醫生向病人說請不要再喝更多酒。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "轉述醫生的話",
+          "crop": "18 437 989 316",
+          "alt": "第2格：米色襯衫男子向朋友轉述醫生的叮嚀。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "轉述否定要求",
+          "crop": "18 759 989 260",
+          "alt": "第3格：直接要求和轉述的無聲卡片對照，說明 not to 的位置。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "轉述老師要求",
+          "crop": "18 1026 989 252",
+          "alt": "第4格：男學生旁白轉述老師要求交作業，教師在黑板前說明。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Please don’t drink any more alcohol.",
+          "subtitle": "Please don’t drink any more alcohol.",
+          "translation": "請不要再喝更多酒了。",
+          "speaker": "醫生 · 直接叮嚀",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "The doctor told me not to drink any more alcohol.",
+          "subtitle": "The doctor told me not to drink any more alcohol.",
+          "translation": "醫生叮嚀我不要再喝更多酒。",
+          "speaker": "男子 · 轉述醫生叮嚀",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "tell + 人 + not to + 原形動詞",
+          "translation": "用 tell + 人 + not to + 原形動詞，轉述不要做某件事的要求。",
+          "speaker": "文法整理 · 不朗讀",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "My teacher told me to hand in my homework.",
+          "subtitle": "My teacher told me to hand in my homework.",
+          "translation": "老師叫我交作業。",
+          "speaker": "男學生 · 旁白轉述",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
   "j1-01-existence": {
     "en": {
       "language": "en",
