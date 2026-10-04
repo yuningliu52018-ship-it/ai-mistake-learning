@@ -21,7 +21,7 @@
       this.Audio = Audio; this.audio = null; this.detachAudio = null;
       this.onChange = onChange; this.clock = clock;
       this.index = 0; this.state = 'idle'; this.rate = 0.95; this.practice = false;
-      this.message = ''; this.seconds = 0; this.generation = 0;
+      this.message = ''; this.diagnostic = ''; this.seconds = 0; this.generation = 0;
       this.timer = null; this.ticker = null; this.single = false;
     }
     emit() { this.onChange(this); }
@@ -42,7 +42,7 @@
     fail(message) { this.cancel(); this.state = 'error'; this.message = message; this.emit(); }
     select(index) {
       if (!Number.isInteger(index) || !CUES[index]) return;
-      this.cancel(); this.index = index; this.state = 'idle'; this.message = ''; this.emit();
+      this.cancel(); this.index = index; this.state = 'idle'; this.message = ''; this.diagnostic = ''; this.emit();
     }
     stop() { this.select(0); }
     pause(message = '已暫停。按「繼續」會從本句重播。') {
@@ -55,7 +55,7 @@
     }
     play({ restart = false, single = false } = {}) {
       if (ACTIVE.has(this.state) && !restart && !single) return;
-      this.cancel(); this.single = single;
+      this.cancel(); this.single = single; this.diagnostic = '';
       if (restart || (this.state === 'ended' && !single)) this.index = 0;
       if (this.index === 0) this.index = 1;
       if (typeof this.Audio !== 'function') {
@@ -74,6 +74,8 @@
       const failed = error => {
         if (!live() || finished) return;
         finished = true;
+        // Keep browser-provided media diagnostics visible for troubleshooting.
+        this.diagnostic = [error?.name, audio.error?.code ? `MediaError ${audio.error.code}` : '', audio.error?.message || error?.message].filter(Boolean).join(' · ').slice(0, 400);
         this.fail(error?.name === 'NotAllowedError'
           ? '瀏覽器尚未允許 Google 語音播放。請按「重試播放」啟動本句；若仍無法播放，請用 Safari／Chrome 開啟。'
           : 'Google 語音載入失敗。請確認網路後按「重試播放」。已停在本句，不會改用裝置聲音。');
@@ -169,6 +171,8 @@
     // Avoid announcing the same status repeatedly on countdown timer ticks.
     if (statusNode.textContent !== status) statusNode.textContent = status;
     statusNode.dataset.state = player.state;
+    byId('audio-error-detail').textContent = player.diagnostic ? `瀏覽器回報：${player.diagnostic}` : '';
+    byId('audio-error-detail').hidden = !player.diagnostic;
     byId('play').disabled = !ready || active;
     byId('play').textContent = player.state === 'paused' ? '▶ 繼續' : player.state === 'error' ? '▶ 重試播放' : player.state === 'ended' ? '▶ 再播放一次' : '▶ 播放';
     byId('pause').disabled = !active;
@@ -199,5 +203,5 @@
   picture.onerror = () => { imageReady = false; byId('image-error').hidden = false; player.fail('漫畫圖片無法載入。請連線後重新整理。'); };
   picture.src = 'assets/japanese-comics/l1-01-polite-request.webp';
   render();
-  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.2.1').catch(console.error));
+  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.2.2').catch(console.error));
 })();

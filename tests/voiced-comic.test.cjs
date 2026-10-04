@@ -179,9 +179,9 @@ test('Google-only UI and controls; gallery stays at 29 with one voiced entry; ca
   assert.match(js,/translate_tts\?ie=UTF-8&tl=ja&client=tw-ob&q=/);
   assert.doesNotMatch(js,/speechSynthesis|SpeechSynthesisUtterance|localStorage|getUserMedia|fetch\(/);
   assert.match(js,/pagehide/); assert.match(js,/visibilitychange/); assert.match(js,/popstate/);
-  for (const asset of ['voiced-comic.js?v=1.1','voiced-comic.css?v=1.1']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
-  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.2\.1/);
-  assert.match(js,/service-worker\.js\?v=5\.2\.1/);
+  for (const asset of ['voiced-comic.js?v=1.2','voiced-comic.css?v=1.1']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
+  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.2\.2/);
+  assert.match(js,/service-worker\.js\?v=5\.2\.2/);
 });
 
 test('duplicate playing cannot extend watchdog; plain play after ended begins again', () => {
@@ -189,4 +189,10 @@ test('duplicate playing cannot extend watchdog; plain play after ended begins ag
   assert.equal(h.player.state,'error'); assert.equal(h.player.index,1);
   h.player.select(4); h.player.play(); h.start(); h.end(); h.tick(650);
   assert.equal(h.player.state,'ended'); h.player.play(); assert.equal(h.player.index,1);
+});
+
+test('browser media diagnostic survives cleanup and is cleared for next attempt', () => {
+  const h=setup(); h.player.play(); h.player.audio.error={code:4,message:'Unsupported source'}; h.error();
+  assert.match(h.player.diagnostic,/MediaError 4.*Unsupported source/);
+  h.player.play(); assert.equal(h.player.diagnostic,''); h.error(); h.player.stop(); assert.equal(h.player.diagnostic,'');
 });
