@@ -166,22 +166,22 @@ test('repeat after completed run keeps the last sentence; explicit restart begin
   assert.equal(h.player.index,4); assert.equal(new URL(h.played.at(-1).src).searchParams.get('q'),'写真を撮ってもらえませんか。');
   h.start(); h.end(); h.player.play({restart:true}); assert.equal(h.player.index,1);
 });
-test('Google-only UI and controls; gallery stays at 29 with all voiced entries; cache versions match', () => {
+test('Google-only UI and controls; gallery stays at 42 with all voiced entries; cache versions match', () => {
   const root=path.resolve(__dirname,'..'); const read=file=>fs.readFileSync(path.join(root,file),'utf8');
   const html=read('voiced-comic.html');
   for (const id of ['play','pause','stop','replay','repeat','voice-source','speed','mode','playback-status']) assert.match(html,new RegExp(`id="${id}"`));
   assert.match(html,/<meta name="referrer" content="no-referrer">/); assert.match(html,/Google 線上日語/); assert.match(html,/不會切換成裝置聲音/); assert.match(html,/台詞傳給 Google/);
   assert.match(read('voiced-comics-data.js'),/中文姓氏/); assert.match(html,/不會錄音/); assert.match(html,/無日文台詞/);
   const gallery=read('japanese-comics.html');
-  assert.equal((gallery.match(/class="comic-card"/g)||[]).length,29);
-  assert.equal((gallery.match(/class="voice-entry"/g)||[]).length,29);
+  assert.equal((gallery.match(/class="comic-card"/g)||[]).length,42);
+  assert.equal((gallery.match(/class="voice-entry"/g)||[]).length,42);
   const js=read('voiced-comic.js');
   assert.match(js,/translate_tts\?ie=UTF-8&tl=ja&client=tw-ob&q=/);
   assert.doesNotMatch(js,/speechSynthesis|SpeechSynthesisUtterance|localStorage|getUserMedia|fetch\(/);
   assert.match(js,/pagehide/); assert.match(js,/visibilitychange/); assert.match(js,/popstate/);
-  for (const asset of ['voiced-comic.js?v=2.2','voiced-comic.css?v=2.2']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
-  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.3\.2/);
-  assert.match(js,/service-worker\.js\?v=5\.3\.2/);
+  for (const asset of ['voiced-comic.js?v=2.3','voiced-comic.css?v=2.2']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
+  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.4\.0/);
+  assert.match(js,/service-worker\.js\?v=5\.4\.0/);
 });
 
 test('duplicate playing cannot extend watchdog; plain play after ended begins again', () => {
@@ -220,9 +220,9 @@ for (const comic of COMICS) {
     h.player.select(-1);h.player.select(999);assert.equal(h.player.index,comic.panels.at(-1).first);
   });
 }
-test('all 29 configs align exactly with gallery and preserve dimensions, cue maps and labels', () => {
+test('all 42 configs align exactly with gallery and preserve dimensions, cue maps and labels', () => {
   const root=path.resolve(__dirname,'..'), html=fs.readFileSync(path.join(root,'japanese-comics.html'),'utf8');
-  const ids=[...html.matchAll(/data-comic="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(COMICS.map(c=>c.id),ids);assert.equal(new Set(ids).size,29);
+  const ids=[...html.matchAll(/data-comic="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(COMICS.map(c=>c.id),ids);assert.equal(new Set(ids).size,42);
   for(const c of COMICS){
     assert.equal(c.panels.length,4);assert.ok(c.provenance);assert.ok(c.caption);assert.ok(c.grammar);assert.ok(c.label);assert.ok(fs.statSync(path.join(root,c.image)).size);
     assert.ok(html.includes(`href="voiced-comic.html?comic=${c.id}"`));

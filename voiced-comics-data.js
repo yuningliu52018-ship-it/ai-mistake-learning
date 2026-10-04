@@ -2113,8 +2113,1083 @@ const comics = [
         "panel": 3
       }
     ]
+  },
+  {
+    "id": "j1-01-existence",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "東西在哪裡？誰在教室？",
+    "label": "初級複習 J1 · 01",
+    "grammar": "あります・います",
+    "caption": "問東西在哪裡用あります，問誰在場用います。",
+    "image": "assets/japanese-comics/j1-01-existence.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "詢問書的位置",
+        "crop": "12 134 1002 307",
+        "alt": "第1格：書在哪裡？",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "書在桌上",
+        "crop": "12 450 1002 301",
+        "alt": "第2格：在桌上。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "詢問教室裡的人",
+        "crop": "12 762 1002 290",
+        "alt": "第3格：教室裡有誰？",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "老師在裡面",
+        "crop": "12 1063 1002 356",
+        "alt": "第4格：老師在裡面。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "ほんはどこにありますか。",
+        "subtitle": "本はどこにありますか。",
+        "translation": "書在哪裡？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "つくえのうえにあります。",
+        "subtitle": "机の上にあります。",
+        "translation": "在桌上。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "きょうしつにだれがいますか。",
+        "subtitle": "教室に誰がいますか。",
+        "translation": "教室裡有誰？",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "せんせいがいます。",
+        "subtitle": "先生がいます。",
+        "translation": "老師在裡面。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "台詞與原筆記例句標示依原圖保留；字幕保留漢字，朗讀使用已核對的日文讀音。"
+  },
+  {
+    "id": "j1-02-time-date",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "約好日期，也要聽對時間",
+    "label": "初級複習 J1 · 02",
+    "grammar": "時間・日期讀法",
+    "caption": "在約時間的情境裡，練習四月四日、四時與九時的讀音。",
+    "image": "assets/japanese-comics/j1-02-time-date.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：依時間與日期讀法延伸的4句情境補充，並非原筆記逐字例句。",
+    "panels": [
+      {
+        "title": "確認日期",
+        "crop": "7 122 1011 305",
+        "alt": "第1格：是四月四日嗎？",
+        "first": 0,
+        "label": "情境補充"
+      },
+      {
+        "title": "確認下午四點",
+        "crop": "7 437 1011 303",
+        "alt": "第2格：對，下午四點。",
+        "first": 1,
+        "label": "情境補充"
+      },
+      {
+        "title": "不是九點",
+        "crop": "7 749 1011 318",
+        "alt": "第3格：不是九點，對吧。",
+        "first": 2,
+        "label": "情境補充"
+      },
+      {
+        "title": "約好四點見",
+        "crop": "7 1076 1011 401",
+        "alt": "第4格：對，四點見吧。",
+        "first": 3,
+        "label": "情境補充"
+      }
+    ],
+    "cues": [
+      {
+        "text": "しがつよっかですか。",
+        "subtitle": "四月四日ですか。",
+        "translation": "是四月四日嗎？",
+        "speaker": "第1格 · 情境補充例句",
+        "panel": 0,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充例句"
+      },
+      {
+        "text": "はい。ごごよじです。",
+        "subtitle": "はい。午後四時です。",
+        "translation": "對，下午四點。",
+        "speaker": "第2格 · 情境補充例句",
+        "panel": 1,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充例句"
+      },
+      {
+        "text": "くじじゃありませんね。",
+        "subtitle": "九時じゃありませんね。",
+        "translation": "不是九點，對吧。",
+        "speaker": "第3格 · 情境補充例句",
+        "panel": 2,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充例句"
+      },
+      {
+        "text": "はい、よじにあいましょう。",
+        "subtitle": "はい、四時に会いましょう。",
+        "translation": "對，四點見吧。",
+        "speaker": "第4格 · 情境補充例句",
+        "panel": 3,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充例句"
+      }
+    ],
+    "readingNote": "日期「四月四日」讀しがつよっか；「四時」讀よじ，「九時」讀くじ。本張四句均為情境補充例句。"
+  },
+  {
+    "id": "j1-03-counters",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "有幾個？吃了幾個？",
+    "label": "初級複習 J1 · 03",
+    "grammar": "量詞＋あります・動作",
+    "caption": "用いくつ詢問數量，量詞直接接存在或動作。",
+    "image": "assets/japanese-comics/j1-03-counters.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "詢問紅筆數量",
+        "crop": "6 144 1012 291",
+        "alt": "第1格：紅筆有幾枝？",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "有兩枝",
+        "crop": "6 440 1012 299",
+        "alt": "第2格：有兩枝。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "早餐吃了什麼",
+        "crop": "6 745 1012 302",
+        "alt": "第3格：今天早上吃了什麼？",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "吃了兩個麵包",
+        "crop": "6 1052 1012 360",
+        "alt": "第4格：吃了兩個麵包。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "あかいペンはいくつありますか。",
+        "subtitle": "赤いペンはいくつありますか。",
+        "translation": "紅筆有幾枝？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "ふたつあります。",
+        "subtitle": "2つあります。",
+        "translation": "有兩枝。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "けさ、なにをたべましたか。",
+        "subtitle": "けさ、何を食べましたか。",
+        "translation": "今天早上吃了什麼？",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "パンをふたつたべました。",
+        "subtitle": "パンを2つ食べました。",
+        "translation": "吃了兩個麵包。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "「2つ」讀ふたつ。字幕保留原圖數字。"
+  },
+  {
+    "id": "j1-04-duration-frequency",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "多久一次？要花多久？",
+    "label": "初級複習 J1 · 04",
+    "grammar": "時間長度・頻率",
+    "caption": "分清花費的時間長度，以及一段時間內的次數。",
+    "image": "assets/japanese-comics/j1-04-duration-frequency.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "詢問花費多久",
+        "crop": "9 134 1006 320",
+        "alt": "第1格：從台灣到日本要花多久？",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "三個小時",
+        "crop": "9 464 1006 257",
+        "alt": "第2格：搭飛機要三個小時。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "一小時五次",
+        "crop": "9 730 1006 331",
+        "alt": "第3格：一小時傳五次LINE給他。",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "一個月兩次",
+        "crop": "9 1071 1006 373",
+        "alt": "第4格：一個月看兩次電影。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "たいわんからにほんまで、どのくらいかかりますか。",
+        "subtitle": "台湾から日本まで、どのくらいかかりますか。",
+        "translation": "從台灣到日本要花多久？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "ひこうきでさんじかんかかります。",
+        "subtitle": "飛行機で3時間かかります。",
+        "translation": "搭飛機要三個小時。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "いちじかんにごかい、かれにラインをします。",
+        "subtitle": "1時間に5回、彼にラインをします。",
+        "translation": "一小時傳五次LINE給他。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "いっかげつににかい、えいがをみます。",
+        "subtitle": "1か月に2回、映画を見ます。",
+        "translation": "一個月看兩次電影。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "「1か月」讀いっかげつ；此處飛行時間沿用教材情境，不代表實際航班時間。"
+  },
+  {
+    "id": "j1-05-quantity-limits",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "大約、只有、少得可惜",
+    "label": "初級複習 J1 · 05",
+    "grammar": "ぐらい・だけ・しか",
+    "caption": "ぐらい表示大約，だけ限定數量，しか搭配否定。",
+    "image": "assets/japanese-comics/j1-05-quantity-limits.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：5句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "每天睡多久",
+        "crop": "0 122 1024 311",
+        "alt": "第1格：每天睡幾個小時？",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "大約八小時",
+        "crop": "0 442 1024 310",
+        "alt": "第2格：大約睡八小時。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "午休休息多久",
+        "crop": "0 763 1024 289",
+        "alt": "第3格：午休休息了多久？",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "只有三十分與五分鐘",
+        "crop": "0 1063 1024 391",
+        "alt": "第4格：只休息了三十分鐘。 只休息了五分鐘。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "まいにち、なんじかんねますか。",
+        "subtitle": "毎日、何時間寝ますか。",
+        "translation": "每天睡幾個小時？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "はちじかんぐらいねます。",
+        "subtitle": "8時間ぐらい寝ます。",
+        "translation": "大約睡八小時。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "ひるやすみ、どのくらいやすみましたか。",
+        "subtitle": "昼休み、どのくらい休みましたか。",
+        "translation": "午休休息了多久？",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "さんじゅっぷんだけやすみました。",
+        "subtitle": "30分だけ休みました。",
+        "translation": "只休息了三十分鐘。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "ごふんしかやすみませんでした。",
+        "subtitle": "5分しか休みませんでした。",
+        "translation": "只休息了五分鐘。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "「30分」讀さんじゅっぷん，「5分」讀ごふん。第4格有兩句，依左、右順序分開朗讀。"
+  },
+  {
+    "id": "j1-06-quantity-emphasis",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "竟然五個，至少這麼多",
+    "label": "初級複習 J1 · 06",
+    "grammar": "數量＋も・は",
+    "caption": "數量加も表示超過預期，加は表示最低限度。",
+    "image": "assets/japanese-comics/j1-06-quantity-emphasis.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "吃了五個蛋糕",
+        "crop": "0 131 1024 335",
+        "alt": "第1格：我吃了五個蛋糕喔。",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "竟然五個",
+        "crop": "0 479 1024 283",
+        "alt": "第2格：哇，竟然吃了五個！",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "詢問新車費用",
+        "crop": "0 774 1024 330",
+        "alt": "第3格：新車要花多少錢？",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "至少九十萬日圓",
+        "crop": "0 1116 1024 336",
+        "alt": "第4格：至少要九十萬日圓。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "ケーキをいつつたべましたよ。",
+        "subtitle": "ケーキを5つ食べましたよ。",
+        "translation": "我吃了五個蛋糕喔。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "へえ、いつつもたべましたか！",
+        "subtitle": "へ～5つも食べましたか！",
+        "translation": "哇，竟然吃了五個！",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "あたらしいくるまはいくらかかりますか。",
+        "subtitle": "新しい車はいくらかかりますか。",
+        "translation": "新車要花多少錢？",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "きゅうじゅうまんえんはかかります。",
+        "subtitle": "90万円はかかります。",
+        "translation": "至少要九十萬日圓。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "「5つ」讀いつつ，「90万円」讀きゅうじゅうまんえん。價格是教材例句。"
+  },
+  {
+    "id": "j1-07-adjective-negative",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "不熱，也不是很有名",
+    "label": "初級複習 J1 · 07",
+    "grammar": "い・な形容詞否定",
+    "caption": "從天氣與歌手的對話，練習い・な形容詞否定。",
+    "image": "assets/japanese-comics/j1-07-adjective-negative.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "九月的天氣",
+        "crop": "0 162 1024 330",
+        "alt": "第1格：九月的日本熱嗎？",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "不太熱",
+        "crop": "0 501 1024 251",
+        "alt": "第2格：不，不太熱。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "詢問歌手知名度",
+        "crop": "0 760 1024 330",
+        "alt": "第3格：那位歌手有名嗎？",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "一點也不出名",
+        "crop": "0 1097 1024 325",
+        "alt": "第4格：不，一點也不出名。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "くがつのにほんはあついですか。",
+        "subtitle": "9月の日本は暑いですか。",
+        "translation": "九月的日本熱嗎？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "いえ、あまりあつくないです。",
+        "subtitle": "いえ、あまり暑くないです。",
+        "translation": "不，不太熱。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "あのかしゅはゆうめいですか。",
+        "subtitle": "あの歌手は有名ですか。",
+        "translation": "那位歌手有名嗎？",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "いえ、ぜんぜんゆうめいじゃありません。",
+        "subtitle": "いえ、全然有名じゃありません。",
+        "translation": "不，一點也不出名。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "「9月」讀くがつ；天氣敘述為教材對話情境。"
+  },
+  {
+    "id": "j1-08-adjective-past",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "昨天忙嗎？祭典熱鬧嗎？",
+    "label": "初級複習 J1 · 08",
+    "grammar": "形容詞過去式",
+    "caption": "用昨天與祭典的情境，練習形容詞過去肯定與否定。",
+    "image": "assets/japanese-comics/j1-08-adjective-past.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "昨天很忙",
+        "crop": "13 158 999 284",
+        "alt": "第1格：昨天很忙。",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "昨天不忙",
+        "crop": "13 451 999 305",
+        "alt": "第2格：昨天不忙。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "祭典很熱鬧",
+        "crop": "13 765 999 321",
+        "alt": "第3格：祭典很熱鬧。",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "祭典不熱鬧",
+        "crop": "13 1094 999 354",
+        "alt": "第4格：祭典不熱鬧。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "きのう、いそがしかったです。",
+        "subtitle": "昨日、忙しかったです。",
+        "translation": "昨天很忙。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "きのう、いそがしくなかったです。",
+        "subtitle": "昨日、忙しくなかったです。",
+        "translation": "昨天不忙。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "まつりはにぎやかでした。",
+        "subtitle": "祭りはにぎやかでした。",
+        "translation": "祭典很熱鬧。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "まつりはにぎやかじゃありませんでした。",
+        "subtitle": "祭りはにぎやかじゃありませんでした。",
+        "translation": "祭典不熱鬧。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "台詞與原筆記例句標示依原圖保留；字幕保留漢字，朗讀使用已核對的日文讀音。"
+  },
+  {
+    "id": "j1-09-adjective-link",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "又冷又有風，還能怎麼說？",
+    "label": "初級複習 J1 · 09",
+    "grammar": "くて・で 連接",
+    "caption": "い形容詞用くて，な形容詞與名詞用で連接。",
+    "image": "assets/japanese-comics/j1-09-adjective-link.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "北海道的旅行",
+        "crop": "1 140 1022 306",
+        "alt": "第1格：北海道怎麼樣？",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "風強又冷",
+        "crop": "1 454 1022 305",
+        "alt": "第2格：風很強，也很冷。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "台北101的特色",
+        "crop": "1 768 1022 346",
+        "alt": "第3格：台北101很高、很有名，交通也便利。",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "四十歲與單身",
+        "crop": "1 1122 1022 303",
+        "alt": "第4格：那個人四十歲，目前單身。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "ほっかいどうはどうでしたか。",
+        "subtitle": "北海道はどうでしたか。",
+        "translation": "北海道怎麼樣？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "かぜがつよくて、さむかったです。",
+        "subtitle": "風が強くて、寒かったです。",
+        "translation": "風很強，也很冷。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "たいぺいいちまるいちはたかくて、ゆうめいで、こうつうもべんりです。",
+        "subtitle": "台北101は高くて、有名で、交通も便利です。",
+        "translation": "台北101很高、很有名，交通也便利。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "あのひとはよんじゅっさいで、どくしんです。",
+        "subtitle": "あの人は40歳で、独身です。",
+        "translation": "那個人四十歲，目前單身。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "「台北101」讀たいぺいいちまるいち；「40歳」讀よんじゅっさい。"
+  },
+  {
+    "id": "j1-10-topic-part",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "大象的鼻子，她的眼睛",
+    "label": "初級複習 J1 · 10",
+    "grammar": "全體は＋部分が",
+    "caption": "先用は提出整體，再用が描述某個部分的特徵。",
+    "image": "assets/japanese-comics/j1-10-topic-part.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：2句原筆記例句、2句情境補充。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "這是什麼動物",
+        "crop": "13 127 999 319",
+        "alt": "第1格：這是什麼動物？",
+        "first": 0,
+        "label": "情境補充"
+      },
+      {
+        "title": "大象的鼻子",
+        "crop": "13 455 999 326",
+        "alt": "第2格：大象的鼻子很長。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "她是什麼樣的人",
+        "crop": "13 788 999 318",
+        "alt": "第3格：她是什麼樣的人？",
+        "first": 2,
+        "label": "情境補充"
+      },
+      {
+        "title": "她的眼睛",
+        "crop": "13 1113 999 327",
+        "alt": "第4格：她的眼睛很大。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "このどうぶつはなんですか。",
+        "subtitle": "この動物は何ですか。",
+        "translation": "這是什麼動物？",
+        "speaker": "第1格 · 情境補充",
+        "panel": 0,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充"
+      },
+      {
+        "text": "ぞうははながながいです。",
+        "subtitle": "象は鼻が長いです。",
+        "translation": "大象的鼻子很長。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "かのじょはどんなひとですか。",
+        "subtitle": "彼女はどんな人ですか。",
+        "translation": "她是什麼樣的人？",
+        "speaker": "第3格 · 情境補充",
+        "panel": 2,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充"
+      },
+      {
+        "text": "かのじょはめがおおきいです。",
+        "subtitle": "彼女は目が大きいです。",
+        "translation": "她的眼睛很大。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "台詞與原筆記例句標示依原圖保留；字幕保留漢字，朗讀使用已核對的日文讀音。"
+  },
+  {
+    "id": "j1-11-become-make",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "變成這樣，還是把它變好？",
+    "label": "初級複習 J1 · 11",
+    "grammar": "なる・する",
+    "caption": "なる說狀態轉變，する說自己動手改變。",
+    "image": "assets/japanese-comics/j1-11-become-make.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：3句原筆記例句、1句情境補充。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "頭髮變長了",
+        "crop": "8 133 1009 307",
+        "alt": "第1格：頭髮變長了。",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "想把頭髮剪短",
+        "crop": "8 448 1009 325",
+        "alt": "第2格：頭髮變長了，所以想剪短。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "房間變乾淨了",
+        "crop": "8 781 1009 333",
+        "alt": "第3格：房間變乾淨了。",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "自己動手整理",
+        "crop": "8 1122 1009 352",
+        "alt": "第4格：我要把房間整理乾淨。",
+        "first": 3,
+        "label": "情境補充"
+      }
+    ],
+    "cues": [
+      {
+        "text": "かみがながくなりました。",
+        "subtitle": "髪が長くなりました。",
+        "translation": "頭髮變長了。",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "かみがながくなりましたから、みじかくしたいです。",
+        "subtitle": "髪が長くなりましたから、短くしたいです。",
+        "translation": "頭髮變長了，所以想剪短。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "へやがきれいになりました。",
+        "subtitle": "部屋がきれいになりました。",
+        "translation": "房間變乾淨了。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "へやをきれいにします。",
+        "subtitle": "部屋をきれいにします。",
+        "translation": "我要把房間整理乾淨。",
+        "speaker": "第4格 · 情境補充",
+        "panel": 3,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充"
+      }
+    ],
+    "readingNote": "第4格是另一天的情境補充，用する表示主動改變。"
+  },
+  {
+    "id": "j1-12-comparison",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "哪個比較難？兩個都難！",
+    "label": "初級複習 J1 · 12",
+    "grammar": "より・のほうが・どちらも",
+    "caption": "用どちら提問，再用のほうが、より比較兩者。",
+    "image": "assets/japanese-comics/j1-12-comparison.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "哪個比較難",
+        "crop": "11 157 1003 301",
+        "alt": "第1格：日文和英文，哪個比較難？",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "日文比較難",
+        "crop": "11 468 1003 294",
+        "alt": "第2格：日文比較難。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "兩個都難",
+        "crop": "11 772 1003 283",
+        "alt": "第3格：兩個都難。",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "用より再說一次",
+        "crop": "11 1065 1003 326",
+        "alt": "第4格：比起英文，日文更難。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "にほんごとえいごとどちらがむずかしいですか。",
+        "subtitle": "日本語と英語とどちらが難しいですか。",
+        "translation": "日文和英文，哪個比較難？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "にほんごのほうがむずかしいです。",
+        "subtitle": "日本語のほうが難しいです。",
+        "translation": "日文比較難。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "どちらもむずかしいです。",
+        "subtitle": "どちらも難しいです。",
+        "translation": "兩個都難。",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "えいごよりにほんごのほうがむずかしいです。",
+        "subtitle": "英語より日本語のほうが難しいです。",
+        "translation": "比起英文，日文更難。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "第3格是另一位角色的意見；第4格重述第2格的比較。"
+  },
+  {
+    "id": "j1-13-superlative",
+    "lesson": "j1",
+    "series": "beginner-review",
+    "title": "最喜歡哪個？哪裡最熱鬧？",
+    "label": "初級複習 J1 · 13",
+    "grammar": "範圍で＋いちばん",
+    "caption": "用で圈出比較範圍，再用いちばん說最喜歡或最突出。",
+    "image": "assets/japanese-comics/j1-13-superlative.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J1：4句原筆記例句。中文翻譯與重點整理為學習輔助。",
+    "panels": [
+      {
+        "title": "最喜歡的水果",
+        "crop": "11 111 1003 308",
+        "alt": "第1格：水果中最喜歡什麼？",
+        "first": 0,
+        "label": "原句"
+      },
+      {
+        "title": "最喜歡蘋果",
+        "crop": "11 428 1003 297",
+        "alt": "第2格：最喜歡蘋果。",
+        "first": 1,
+        "label": "原句"
+      },
+      {
+        "title": "哪裡最熱鬧",
+        "crop": "11 735 1003 369",
+        "alt": "第3格：日本哪裡最熱鬧？",
+        "first": 2,
+        "label": "原句"
+      },
+      {
+        "title": "教材裡的回答",
+        "crop": "11 1114 1003 345",
+        "alt": "第4格：東京最熱鬧。",
+        "first": 3,
+        "label": "原句"
+      }
+    ],
+    "cues": [
+      {
+        "text": "くだものでなにがいちばんすきですか。",
+        "subtitle": "果物で何がいちばん好きですか。",
+        "translation": "水果中最喜歡什麼？",
+        "speaker": "第1格 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "りんごがいちばんすきです。",
+        "subtitle": "リンゴがいちばん好きです。",
+        "translation": "最喜歡蘋果。",
+        "speaker": "第2格 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "にほんでどこがいちばんにぎやかですか。",
+        "subtitle": "日本でどこがいちばんにぎやかですか。",
+        "translation": "日本哪裡最熱鬧？",
+        "speaker": "第3格 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      },
+      {
+        "text": "とうきょうがいちばんにぎやかです。",
+        "subtitle": "東京がいちばんにぎやかです。",
+        "translation": "東京最熱鬧。",
+        "speaker": "第4格 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句"
+      }
+    ],
+    "readingNote": "本張保留教材問答；「東京最熱鬧」是教材示例，不是現況排名。"
   }
 ];
-if(typeof module !== "undefined" && module.exports) module.exports = comics;
+if(typeof module!=='undefined' && module.exports) module.exports = comics;
 else root.VOICED_COMICS = comics;
 })(globalThis);
