@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="description" content="跟著四格漫畫練習〜てもらえませんか。日語合成朗讀、慢速播放與逐句跟讀。">
+  <title>請對方幫個忙・有聲漫畫｜Eva的資料庫</title>
+  <link rel="icon" href="app-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="voiced-comic.css?v=1.0">
+  <script src="voiced-comic.js?v=1.0" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#player">跳到播放器</a>
+  <header class="site-header"><a href="japanese-comics.html?lesson=l1">← 日文文法漫畫</a><a href="index.html">Eva的資料庫</a></header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">LISTEN · READ · SAY IT</p>
+      <div class="intro-title"><h1>請對方幫個忙</h1><span class="edition">第1課 · 有聲漫畫 01</span></div>
+      <p class="grammar" lang="ja">〜てもらえませんか</p>
+      <p class="intro-copy">先看情境，再聽一句、跟著說一句。<br class="mobile-break">把禮貌的請求，練成自然的對話。</p>
+    </section>
+    <section id="player" class="player" aria-label="日語有聲漫畫播放器" tabindex="-1">
+      <div class="scene-column">
+        <div class="scene-heading"><p id="panel-label">第 1 格 / 4 · 筆記抄不完</p><span id="scene-badge">情境</span></div>
+        <div class="scene-frame">
+          <svg id="panel-image" viewBox="8 102 1010 287" role="img" aria-label="第1格：同學在教室裡來不及抄完筆記。">
+            <image href="assets/japanese-comics/l1-01-polite-request.webp" x="0" y="0" width="1024" height="1536"/>
+          </svg>
+          <p id="image-error" hidden>漫畫圖片無法載入，請連線後重新整理。</p>
+        </div>
+        <div id="caption" class="caption" aria-live="off">
+          <p id="speaker" class="speaker">情境開場 · 無日文台詞</p>
+          <p id="subtitle" class="subtitle">糟了，筆記抄不完……</p>
+          <p id="translation" class="translation">先看看兩位同學，再按播放，聽她怎麼開口。</p>
+        </div>
+        <nav class="panel-nav" aria-label="選擇漫畫格數">
+          <button type="button" data-panel="0" aria-current="step"><span>01</span>情境</button>
+          <button type="button" data-panel="1"><span>02</span>請求</button>
+          <button type="button" data-panel="2"><span>03</span>回應</button>
+          <button type="button" data-panel="3"><span>04</span>活用</button>
+        </nav>
+      </div>
+      <div class="control-column">
+        <div class="control-heading"><span class="sound-icon" aria-hidden="true">♪</span><div><h2>一起開口說</h2><p>日語合成朗讀 · 手動開始</p></div></div>
+        <div class="settings">
+          <label for="voice">日語聲音</label><select id="voice" aria-describedby="voice-help"><option value="">正在尋找日語聲音…</option></select>
+          <p id="voice-help">聲音由你的瀏覽器與裝置提供，部分聲音需要網路。</p>
+          <div class="setting-row"><label for="speed">語速</label><select id="speed"><option value="0.95">一般</option><option value="0.82">慢速</option></select></div>
+          <div class="setting-row"><label for="mode">練習方式</label><select id="mode"><option value="listen">連續聽</option><option value="practice">逐句跟讀</option></select></div>
+        </div>
+        <div id="playback-status" class="playback-status" role="status" aria-live="polite">正在準備漫畫與日語聲音…</div>
+        <p id="practice-countdown" aria-hidden="true" hidden></p>
+        <div class="primary-controls"><button id="play" class="primary" type="button" disabled>▶ 播放</button><button id="pause" type="button" disabled>Ⅱ 暫停</button></div>
+        <div class="secondary-controls"><button id="stop" type="button" disabled>■ 停止</button><button id="replay" type="button" disabled>↻ 重頭播放</button></div>
+        <button id="repeat" class="repeat" type="button" disabled>再聽本句</button>
+        <p class="control-note">第 1 格是情境，朗讀從第 2 格開始。暫停後繼續，會從本句重播；切換格數會停止聲音。</p>
+        <details class="audio-help"><summary>沒有聽到聲音？</summary><p>請確認裝置音量，並按一次「播放」。可改選上方的日語聲音，再按「再聽本句」。</p><p>若清單沒有日語聲音，請先在裝置的語音設定加入日語，或用 Safari／Chrome 開啟此頁。可按下方按鈕重新偵測；不同瀏覽器提供的聲音可能不同。</p><button type="button" id="refresh-voices">重新偵測日語聲音</button><p>播放受瀏覽器、語音服務與網路狀態影響。此頁不會錄音，也不會評分發音。</p></details>
+      </div>
+    </section>
+    <section class="script-section" aria-labelledby="script-title"><div class="section-heading"><h2 id="script-title">把這四句，說順一點。</h2><p>點選一句，再按播放。中文姓氏「林」讀作 <span lang="ja">りん</span>。</p></div>
+      <ol class="script-list">
+        <li><button type="button" data-cue="1"><span class="line-number">01</span><span><span class="line-ja" lang="ja"><ruby>林<rt>りん</rt></ruby>さん、ノートを見せてもらえませんか。</span><span class="line-zh">林同學，可以讓我看一下筆記嗎？</span></span><span class="line-role">請求</span></button></li>
+        <li><button type="button" data-cue="2"><span class="line-number">02</span><span><span class="line-ja" lang="ja">どうぞ。</span><span class="line-zh">請用。</span></span><span class="line-role">林同學</span></button></li>
+        <li><button type="button" data-cue="3"><span class="line-number">03</span><span><span class="line-ja" lang="ja">ありがとうございます。</span><span class="line-zh">謝謝你。</span></span><span class="line-role">道謝</span></button></li>
+        <li><button type="button" data-cue="4"><span class="line-number">04</span><span><span class="line-ja" lang="ja">写真を撮ってもらえませんか。</span><span class="line-zh">可以幫我拍照嗎？</span></span><span class="line-role">補充例句</span></button></li>
+      </ol>
+    </section>
+    <aside class="grammar-note"><p class="eyebrow">記住這個接法</p><p><span lang="ja">動詞て形 ＋ <strong>もらえませんか</strong></span></p><p>請對方幫忙做一件事。<span lang="ja">見せて</span> → 讓我看；<span lang="ja">撮って</span> → 幫我拍。</p></aside>
+    <noscript><p class="fallback">請啟用 JavaScript 以使用朗讀。仍可閱讀上方台詞，或開啟完整漫畫。</p></noscript>
+  </main>
+  <footer><a href="japanese-comics.html?lesson=l1#comic=l1-01-polite-request">閱讀完整漫畫 ↗</a><span>看一張，記一個用法。</span></footer>
+</body>
+</html>
