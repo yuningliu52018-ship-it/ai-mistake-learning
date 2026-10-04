@@ -176,12 +176,12 @@ test('Google-only UI and controls; gallery stays at 42 with all voiced entries; 
   assert.equal((gallery.match(/class="comic-card"/g)||[]).length,42);
   assert.equal((gallery.match(/class="voice-entry"/g)||[]).length,42);
   const js=read('voiced-comic.js');
-  assert.match(js,/translate_tts\?ie=UTF-8&tl=ja&client=tw-ob&q=/);
+  assert.match(js,/translate_tts\?ie=UTF-8&tl=\$\{this.language\}&client=tw-ob&q=/);
   assert.doesNotMatch(js,/speechSynthesis|SpeechSynthesisUtterance|localStorage|getUserMedia|fetch\(/);
   assert.match(js,/pagehide/); assert.match(js,/visibilitychange/); assert.match(js,/popstate/);
-  for (const asset of ['voiced-comic.js?v=2.3','voiced-comic.css?v=2.2']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
-  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.4\.0/);
-  assert.match(js,/service-worker\.js\?v=5\.4\.0/);
+  for (const asset of ['voiced-comic.js?v=2.4','voiced-comic.css?v=2.4']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
+  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.5\.0/);
+  assert.match(js,/service-worker\.js\?v=5\.5\.0/);
 });
 
 test('duplicate playing cannot extend watchdog; plain play after ended begins again', () => {
@@ -236,4 +236,24 @@ test('confirmed difficult readings keep original visible subtitles',()=>{
   for(const [visible,spoken] of [['林さん','りんさん'],['王さん','おうさん'],['阿斗','あど'],['鬍鬚張','ひげちょう'],['滷肉飯','ルーローハン']]){
     const found=cues.filter(c=>c.subtitle.includes(visible));assert.ok(found.length,visible);found.forEach(c=>assert.ok(c.text.includes(spoken),visible));
   }
+});
+
+const {resolveComic,VARIANTS}=require('../voiced-comic.js');
+const english=resolveComic(COMICS[0],'en');
+test('exact approved English art text and one variant, preserving all 42 Japanese comics',()=>{
+ assert.deepEqual(Object.keys(VARIANTS),['l1-01-polite-request']);assert.equal(COMICS.length,42);
+ assert.deepEqual(english.cues.map(c=>c.subtitle),['Oh no, I can’t keep up!','Could you show me your notes?','Sure. Here you go.','Thanks!','Excuse me. Could you take a photo of us?']);
+ assert.equal(english.cues[2].panel,english.cues[3].panel);assert.match(english.caption,/could 不是在說過去/);
+});
+for(const phase of ['starting','speaking','gap','paused','error','ended'])test(`language switch during ${phase} cancels sources, callbacks and timers; no stale advance`,()=>{
+ const h=setup({comic:english});h.player.configure({practice:true,rate:.82});h.player.play();const old=h.played[0];
+ if(phase==='speaking'||phase==='gap')h.start();if(phase==='gap')h.end();if(phase==='paused')h.player.pause();if(phase==='error')h.error();if(phase==='ended'){h.player.select(4);h.player.play();h.start();h.end();h.tick(2500)}
+ h.player.setComic(COMICS[0]);const count=h.played.length;
+ assert.equal(h.player.language,'ja');assert.equal(h.tasks.size,0);assert.equal(h.player.index,0);assert.equal(h.player.state,'idle');assert.equal(old.audio.src,'');assert.equal(h.player.rate,.82);assert.equal(h.player.practice,true);
+ old.callbacks.playing();old.callbacks.ended();old.callbacks.error({});old.reject({name:'AbortError'});h.tick(60000);assert.equal(h.played.length,count);assert.equal(h.player.index,0);
+ h.player.setComic(english);h.player.play();assert.equal(new URL(h.played.at(-1).src).searchParams.get('tl'),'en');assert.equal(h.constructs,1);
+});
+test('English full run and repeat use Google en for all five ordered cues',()=>{
+ const h=setup({comic:english});h.player.play();for(let i=0;i<5;i++){assert.equal(h.player.index,i);assert.equal(new URL(h.played.at(-1).src).searchParams.get('tl'),'en');h.start();h.end();h.tick(650)}assert.equal(h.player.state,'ended');assert.equal(h.constructs,1);
+ h.player.play({single:true});assert.equal(h.player.index,4);h.start();h.end();assert.equal(h.player.state,'paused');h.player.play({restart:true});assert.equal(h.player.index,0);
 });

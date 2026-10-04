@@ -1,0 +1,40 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert').strict;
+const root=require('path').resolve(__dirname,'..');
+const html=fs.readFileSync(root+'/japanese-comics.html','utf8');
+class El {
+ constructor(id=''){this.id=id;this.dataset={};this.hidden=false;this.isConnected=true;this.attrs={};this.listeners={};this.textContent='';const values=new Set();this.classList={add:x=>values.add(x),remove:x=>values.delete(x),toggle:x=>{if(values.has(x)){values.delete(x);return false;}values.add(x);return true;},contains:x=>values.has(x)};}
+ addEventListener(name,fn){(this.listeners[name]??=[]).push(fn)}
+ fire(name,e={}){e.currentTarget=this;e.target??=this;e.preventDefault??=()=>{};for(const f of this.listeners[name]||[])f(e);}
+ setAttribute(k,v){this.attrs[k]=v}getAttribute(k){return this.attrs[k]}
+ focus(){document.activeElement=this}scrollTo(x,y){this.scrollLeft=x;this.scrollTop=y}
+ closest(selector){return selector==='[hidden]'&&this.card?.hidden?this.card:null;}
+ showModal(){this.open=true}close(){this.open=false}
+}
+const ids=['comic-viewer','viewer-stage','viewer-image','viewer-zoom','viewer-close','viewer-prev','viewer-next','viewer-title','viewer-label','viewer-position','viewer-original','viewer-error','result-count','viewer-voice','viewer-language-switch','viewer-language-ja','viewer-language-en','viewer-language-note'];const elements=Object.fromEntries(ids.map(id=>[id,new El(id)]));elements['comic-viewer'].open=false;
+const cards=[...html.matchAll(/<article class="comic-card" data-lesson="(.*?)" data-comic="(.*?)">([\s\S]*?)<\/article>/g)].map(([,lesson,comic,body])=>{const c=new El();c.dataset={lesson,comic};const a=new El();a.card=c;a.dataset.open=comic;a.href='https://example.test/assets/japanese-comics/'+comic+'.png';const h=new El();h.textContent=body.match(/<h2>(.*?)<\/h2>/)[1];const l=new El();l.textContent=body.match(/<p class="lesson-label">(.*?)<\/p>/)[1];const image=new El();image.alt=body.match(/alt="(.*?)"/)[1];c.querySelector=s=>({'h2':h,'.lesson-label':l,'img':image,'a':a,'[data-open]':a})[s];return c;});
+const filters=['all','l1','l2','supplement'].map(f=>{const e=new El();e.dataset.filter=f;return e});
+const document={body:new El(),activeElement:null,getElementById:id=>elements[id],querySelectorAll:s=>s==='[data-comic]'?cards:filters};
+let entry=0;let historyEntries=[{url:'https://example.test/japanese-comics.html',state:null}];const queued=[];const location={get href(){return historyEntries[entry].url;}};const window=new El();
+const history={go(n){queued.push(()=>{entry=Math.max(0,Math.min(historyEntries.length-1,entry+n));window.fire('popstate');window.fire('hashchange')})},get state(){return historyEntries[entry].state},pushState(state,x,url){historyEntries=historyEntries.slice(0,entry+1);historyEntries.push({state,url:String(url)});entry++},replaceState(state,x,url){historyEntries[entry]={state,url:String(url)}},back(){queued.push(()=>{if(entry>0){entry--;window.fire('popstate');window.fire('hashchange')}})},forward(){if(entry<historyEntries.length-1){entry++;window.fire('popstate');window.fire('hashchange')}}};
+const flush=()=>{while(queued.length)queued.shift()()};vm.runInNewContext(fs.readFileSync(root+'/japanese-comics.js','utf8'),{COMIC_LANGUAGE_VARIANTS:require(root+"/comic-language-variants.js"),document,window,location,history,URL,Set,console,navigator:{}});
+const open=id=>cards[id].querySelector('a').fire('click');const close=()=>{elements['viewer-close'].fire('click');flush()};
+for(const [f,n] of [['all',42],['l1',5],['l2',4],['supplement',1],['all',42]]){filters.find(x=>x.dataset.filter===f).fire('click');assert.equal(cards.filter(c=>!c.hidden).length,n)}
+console.log('PASS simulated filter counts and URL state');
+for(let i=0;i<50;i++){open(i%10);assert(elements['comic-viewer'].open);assert.equal(elements['viewer-title'].textContent,cards[i%10].querySelector('h2').textContent);close();assert(!elements['comic-viewer'].open);assert.equal(document.activeElement,cards[i%10].querySelector('a'));assert(!document.body.classList.contains('viewer-open'))}
+console.log('PASS 50 simulated open/close cycles and trigger focus intent');
+open(2);elements['viewer-close'].fire('click');elements['viewer-close'].fire('click');assert.equal(queued.length,1);flush();assert(!elements['comic-viewer'].open);history.forward();assert(elements['comic-viewer'].open);assert.equal(elements['viewer-position'].textContent,'3 / 42');history.back();flush();assert(!elements['comic-viewer'].open);
+console.log('PASS double-close guard and Back/Forward state');
+open(0);assert(elements['viewer-prev'].disabled);for(let i=0;i<50;i++)elements['viewer-next'].fire('click');assert.equal(elements['viewer-position'].textContent,'42 / 42');assert(elements['viewer-next'].disabled);for(let i=0;i<50;i++)elements['viewer-prev'].fire('click');assert.equal(elements['viewer-position'].textContent,'1 / 42');close();
+console.log('PASS navigation bounds without wrapping');
+open(0);elements['viewer-zoom'].fire('click');assert(elements['viewer-stage'].classList.contains('zoomed'));elements['comic-viewer'].fire('keydown',{target:elements['viewer-stage'],key:'ArrowRight'});assert.equal(elements['viewer-position'].textContent,'1 / 42');elements['viewer-next'].fire('click');assert(!elements['viewer-stage'].classList.contains('zoomed'));close();
+console.log('PASS zoom preserves arrow-scroll behavior and next resets zoom');
+history.pushState(null,'','https://example.test/japanese-comics.html#comic=l2-04-mitai');window.fire('hashchange');assert(elements['comic-viewer'].open);const count=historyEntries.length;close();assert(!elements['comic-viewer'].open);assert.equal(historyEntries.length,count);assert(!location.href.includes('#'));
+console.log('PASS direct hash closes with replaceState instead of leaving page');
+
+open(0);elements['viewer-language-en'].fire('click');assert(location.href.includes('lang=en'));assert.equal(elements['viewer-language-en'].attrs['aria-pressed'],'true');assert.match(elements['viewer-image'].src,/-en.webp$/);assert.match(elements['viewer-voice'].href,/lang=en/);
+history.back();flush();assert(!location.href.includes('lang=en'));assert.doesNotMatch(elements['viewer-image'].src,/-en.webp$/);history.forward();assert.match(elements['viewer-image'].src,/-en.webp$/);
+elements['viewer-language-ja'].fire('click');elements['viewer-language-en'].fire('click');close();assert(!elements['comic-viewer'].open);assert(!location.href.includes('#comic='));
+for(let i=0;i<15;i++){open(0);elements['viewer-language-en'].fire('click');close();assert(!elements['comic-viewer'].open)}
+open(0);elements['viewer-language-en'].fire('click');elements['viewer-next'].fire('click');assert.equal(elements['viewer-language-switch'].hidden,true);assert(!location.href.includes('lang=en'));assert.doesNotMatch(elements['viewer-voice'].href,/lang=en/);close();
+history.pushState(null,'','https://example.test/japanese-comics.html?lesson=l1&lang=en#comic=l1-01-polite-request');window.fire('popstate');assert.match(elements['viewer-image'].src,/-en.webp$/);close();assert(!location.href.includes('lang=en'));assert(!location.href.includes('#comic='));
+console.log('PASS bilingual reader deep links, Back/Forward, repeated switch/close, adjacent Japanese-only card');

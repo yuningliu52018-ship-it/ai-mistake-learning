@@ -12,6 +12,8 @@
   const knownFilters = new Set(filters.map(button => button.dataset.filter));
   let visible = cards;
   let selected = null;
+  let selectedLanguage = 'ja';
+  const variants = globalThis.COMIC_LANGUAGE_VARIANTS || {};
   let trigger = null;
   let closing = false;
 
@@ -23,22 +25,30 @@
   }
 
   function renderSelection(card) {
-    const changed = selected !== card.dataset.comic;
+    const language = new URL(location.href).searchParams.get('lang') === 'en' && variants[card.dataset.comic]?.en ? 'en' : 'ja';
+    const variant = variants[card.dataset.comic]?.[language];
+    const changed = selected !== card.dataset.comic || language !== selectedLanguage;
+    selectedLanguage = language;
+    const languageQuery = language === 'en' ? '&lang=en' : '';
     selected = card.dataset.comic;
     document.getElementById('viewer-voice').hidden = false;
-    document.getElementById('viewer-voice').href = `voiced-comic.html?comic=${encodeURIComponent(selected)}`;
-    document.getElementById('viewer-title').textContent = card.querySelector('h2').textContent;
+    document.getElementById('viewer-voice').href = `voiced-comic.html?comic=${encodeURIComponent(selected)}${languageQuery}`;
+    document.getElementById('viewer-title').textContent = variant?.title || card.querySelector('h2').textContent;
     document.getElementById('viewer-label').textContent = card.querySelector('.lesson-label').textContent;
     const index = visible.indexOf(card);
     document.getElementById('viewer-position').textContent = `${index + 1} / ${visible.length}`;
     previous.disabled = index <= 0;
     next.disabled = index >= visible.length - 1;
-    document.getElementById('viewer-original').href = card.querySelector('a').href;
+    document.getElementById('viewer-original').href = variant?.image || card.querySelector('a').href;
+    document.getElementById('viewer-language-switch').hidden = !variants[selected]?.en;
+    document.getElementById('viewer-language-ja').setAttribute('aria-pressed', String(language === 'ja'));
+    document.getElementById('viewer-language-en').setAttribute('aria-pressed', String(language === 'en'));
+    document.getElementById('viewer-language-note').textContent = variant ? `${variant.grammar}：${variant.caption}` : '〜てもらえませんか：把直接的要求，換成更有禮貌的請求。兩版都有中文解說。';
     if (changed) {
       document.getElementById('viewer-error').hidden = true;
       picture.hidden = false;
-      picture.alt = card.querySelector('img').alt;
-      picture.src = `assets/japanese-comics/${selected}.webp`;
+      picture.alt = variant ? `英文情境改編：${variant.title}，Could you + 原形動詞禮貌請求四格漫畫，含中文翻譯。` : card.querySelector('img').alt;
+      picture.src = variant?.image || `assets/japanese-comics/${selected}.webp`;
       resetZoom();
     }
     if (!dialog.open) {
@@ -62,7 +72,7 @@
     if (card) {
       renderSelection(card);
     } else {
-      selected = null;
+      selected = null; selectedLanguage = 'ja';
       if (dialog.open) dialog.close();
       document.body.classList.remove('viewer-open');
       resetZoom();
@@ -76,7 +86,8 @@
     trigger = element;
     const url = new URL(location.href);
     url.hash = `comic=${card.dataset.comic}`;
-    history.pushState({ comicViewer: true }, '', url);
+    url.searchParams.delete('lang');
+    history.pushState({ comicViewer: true, viewerDepth: 1 }, '', url);
     syncLocation();
   }
 
@@ -84,10 +95,11 @@
     if (!dialog.open || closing) return;
     closing = true;
     if (history.state?.comicViewer) {
-      history.back();
+      if ((history.state.viewerDepth || 1) > 1) history.go(-history.state.viewerDepth); else history.back();
     } else {
       const url = new URL(location.href);
       url.hash = '';
+      url.searchParams.delete('lang');
       history.replaceState(null, '', url);
       syncLocation();
     }
@@ -99,6 +111,7 @@
     if (!card) return;
     const url = new URL(location.href);
     url.hash = `comic=${card.dataset.comic}`;
+    url.searchParams.delete('lang');
     history.replaceState(history.state, '', url);
     renderSelection(card);
   }
@@ -114,9 +127,18 @@
     if (button.dataset.filter === 'all') url.searchParams.delete('lesson');
     else url.searchParams.set('lesson', button.dataset.filter);
     url.hash = '';
+    url.searchParams.delete('lang');
     history.pushState(null, '', url);
     syncLocation();
   }));
+  for (const language of ['ja', 'en']) document.getElementById(`viewer-language-${language}`).addEventListener('click', () => {
+    if (!selected || language === selectedLanguage || !variants[selected]?.en) return;
+    const url = new URL(location.href);
+    if (language === 'en') url.searchParams.set('lang', 'en'); else url.searchParams.delete('lang');
+    const state = history.state?.comicViewer ? { ...history.state, viewerDepth: (history.state.viewerDepth || 1) + 1 } : null;
+    history.pushState(state, '', url);
+    syncLocation();
+  });
   close.addEventListener('click', closeViewer);
   dialog.addEventListener('cancel', event => { event.preventDefault(); closeViewer(); });
   dialog.addEventListener('click', event => { if (event.target === dialog) closeViewer(); });
@@ -141,6 +163,6 @@
   window.addEventListener('hashchange', syncLocation);
   syncLocation();
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.4.0').catch(console.error));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.5.0').catch(console.error));
   }
 })();

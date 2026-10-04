@@ -11,3 +11,11 @@
 .comic-card{display:flex;flex-direction:column}
 .comic-card .comic-open{height:auto;flex:1 0 auto}
 .voice-entry{flex:none;min-height:46px;display:flex;align-items:center;justify-content:center}
+
+/* One comic, two image-and-audio language variants. */
+.language-switch{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 20px;padding:12px;background:#edf0e5;border:1px solid #d7ddce;border-radius:12px}
+.language-switch button{min-height:44px;min-width:82px;border:1px solid #c8cebe;border-radius:8px;padding:9px 15px;background:#fffdf7;color:#35472e;font:inherit;font-size:.8rem;font-weight:650}
+.language-switch button[aria-pressed="true"],#comic-viewer .language-switch button[aria-pressed="true"]{background:#365b45;border-color:#365b45;color:#fff}
+.language-switch span,.language-switch p{font-size:.75rem;line-height:1.7;color:#636b5e;margin:0;flex:1 1 220px}
+#viewer-language-switch{margin:10px 22px 0;flex:none}
+@media(max-width:600px){#viewer-language-switch{margin:10px 14px 0}.language-switch span,.language-switch p{flex-basis:100%}}

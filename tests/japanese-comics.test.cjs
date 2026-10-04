@@ -101,6 +101,6 @@ test('all 42 cards share the first comic layout, with audio links outside the im
     assert.equal((card.match(/class="voice-entry"/g)||[]).length,1,id);
     assert.match(card,new RegExp('<\\/a>\\s*<a class="voice-entry" href="voiced-comic.html\\?comic='+id+'"'));
   }
-  assert.match(html,/japanese-comics\.css\?v=5\.4/);
-  assert.match(fs.readFileSync(path.join(root,'service-worker.js'),'utf8'),/japanese-comics\.css\?v=5\.4/);
+  assert.match(html,/japanese-comics\.css\?v=5\.6/);
+  assert.match(fs.readFileSync(path.join(root,'service-worker.js'),'utf8'),/japanese-comics\.css\?v=5\.6/);
 });

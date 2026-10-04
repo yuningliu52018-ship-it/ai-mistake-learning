@@ -7,8 +7,9 @@
   <meta name="theme-color" content="#f7f4ed">
   <title>日文文法漫畫｜Eva的資料庫</title>
   <link rel="icon" href="app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="japanese-comics.css?v=5.4">
-  <script src="japanese-comics.js?v=5.5" defer></script>
+  <link rel="stylesheet" href="japanese-comics.css?v=5.6">
+  <script src="comic-language-variants.js?v=1" defer></script>
+  <script src="japanese-comics.js?v=5.6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#comic-grid">跳到漫畫列表</a>
@@ -31,14 +32,14 @@
       </nav>
       <p id="result-count" role="status" aria-live="polite">顯示全部 42 張</p>
     </div>
-    <p class="reading-tip">42 張皆可聽日語、逐句跟讀。點選漫畫即可放大。放大後可切換前後張，或開啟完整原圖 WebP 細看。</p>
+    <p class="reading-tip">42 張皆可聽日語、逐句跟讀；第一張「委婉地拜託別人」可切換日文版／英文版。點選漫畫即可放大。放大後可切換前後張，或開啟完整原圖 WebP 細看。</p>
     <section id="comic-grid" class="comic-grid" aria-label="日文文法漫畫" tabindex="-1">
       <article class="comic-card" data-lesson="l1" data-comic="l1-01-polite-request">
         <a class="comic-open" href="assets/japanese-comics/l1-01-polite-request.webp" data-open="l1-01-polite-request" aria-haspopup="dialog" aria-label="放大閱讀：委婉地拜託別人">
           <div class="thumbnail"><img src="assets/japanese-comics/l1-01-polite-request-thumb.webp" width="480" height="720" alt="第1課 · 01，委婉地拜託別人：〜てもらえませんか四格漫畫" loading="eager" decoding="async"><span class="open-hint" aria-hidden="true">↗ 放大閱讀</span></div>
           <div class="card-body"><p class="lesson-label">第1課 · 01</p><h2>委婉地拜託別人</h2><p class="grammar" lang="ja">〜てもらえませんか</p><p class="card-description">把直接的要求，換成更有禮貌的請求。</p><span class="topic-tag">禮貌請求</span></div>
         </a>
-        <a class="voice-entry" href="voiced-comic.html?comic=l1-01-polite-request">♪ 有聲漫畫 · 聽日語、跟著說 ↗</a>
+        <a class="voice-entry" href="voiced-comic.html?comic=l1-01-polite-request">♪ 有聲漫畫 · 日文／英文切換 ↗</a>
       </article>
       <article class="comic-card" data-lesson="l1" data-comic="l1-02-simile">
         <a class="comic-open" href="assets/japanese-comics/l1-02-simile.webp" data-open="l1-02-simile" aria-haspopup="dialog" aria-label="放大閱讀：像夏天一樣">
@@ -336,6 +337,7 @@
     <div class="viewer-shell">
       <header class="viewer-header"><div><p id="viewer-label"></p><h2 id="viewer-title"></h2></div><button id="viewer-close" type="button" aria-label="關閉漫畫，返回列表" autofocus>關閉 ✕</button></header>
       <div class="viewer-tools"><div class="page-controls"><button id="viewer-prev" type="button" aria-label="上一張漫畫">← 上一張</button><span id="viewer-position" aria-live="polite"></span><button id="viewer-next" type="button" aria-label="下一張漫畫">下一張 →</button></div><div class="image-controls"><button id="viewer-zoom" type="button" aria-pressed="false">放大細看</button><a id="viewer-voice" href="voiced-comic.html" hidden>♪ 有聲漫畫</a><a id="viewer-original" target="_blank" rel="noopener">完整原圖 WebP ↗</a></div></div>
+      <div id="viewer-language-switch" class="language-switch" role="group" aria-label="選擇漫畫語言" hidden><button id="viewer-language-ja" type="button" aria-pressed="true">日文版</button><button id="viewer-language-en" type="button" aria-pressed="false">英文版</button><p id="viewer-language-note"></p></div>
       <p id="viewer-help">可用 ← → 切換，Esc 關閉；手機可雙指縮放。放大細看後，可上下左右捲動。</p>
       <div id="viewer-stage" tabindex="0" role="region" aria-label="漫畫圖片，可捲動閱讀"><img id="viewer-image" width="1024" height="1536" alt=""><p id="viewer-error" hidden>圖片暫時無法載入，請使用上方「完整原圖 WebP」，或連線後重試。</p></div>
     </div>
