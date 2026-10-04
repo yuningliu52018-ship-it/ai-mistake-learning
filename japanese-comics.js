@@ -43,7 +43,7 @@
     document.getElementById('viewer-language-switch').hidden = !variants[selected]?.en;
     document.getElementById('viewer-language-ja').setAttribute('aria-pressed', String(language === 'ja'));
     document.getElementById('viewer-language-en').setAttribute('aria-pressed', String(language === 'en'));
-    document.getElementById('viewer-language-note').textContent = variant ? `${variant.grammar}：${variant.caption}` : `${card.querySelector('.grammar').textContent}：${card.querySelector('.card-description').textContent}｜兩版都有中文解說。`;
+    document.getElementById('viewer-language-note').textContent = variant ? `${variant.grammar}：${variant.caption}` : `${card.querySelector('.grammar').textContent}：${card.querySelector('.card-description').textContent}${variants[selected]?.en ? '｜兩版都有中文解說。' : '｜含中文解說。'}`;
     if (changed) {
       document.getElementById('viewer-error').hidden = true;
       picture.hidden = false;
@@ -65,7 +65,7 @@
     visible = cards.filter(card => filter === 'all' || card.dataset.lesson === filter);
     cards.forEach(card => { card.hidden = !visible.includes(card); });
     filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
-    const label = { all: '全部', l1: '第1課', l2: '第2課', l3: '第3課', l4: '第4課', l5: '第5課', supplement: '跨課補充', j1: '初級複習 J1', j2: '初級複習 J2' }[filter];
+    const label = { all: '全部', l1: '第1課', l2: '第2課', l3: '第3課', l4: '第4課', l5: '第5課', supplement: '跨課補充', j1: '初級複習 J1', j2: '初級複習 J2', j3: '初級複習 J3' }[filter];
     document.getElementById('result-count').textContent = `顯示${label} ${visible.length} 張`;
     const id = url.hash.startsWith('#comic=') ? url.hash.slice(7) : '';
     const card = visible.find(item => item.dataset.comic === id);
@@ -164,6 +164,6 @@
   window.addEventListener('hashchange', syncLocation);
   syncLocation();
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.6.59').catch(console.error));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.7.75').catch(console.error));
   }
 })();

@@ -4718,6 +4718,1456 @@ const comics = [
       }
     ],
     "readingNote": "第2格為情境補充。人物接に或を須看原動詞的接法，不能只用「人物」一概判斷。"
+  },
+  {
+    "id": "j3-01-plain-verb-forms",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "動詞換成常體：做、不做、沒做",
+    "label": "初級複習 J3 · 01",
+    "grammar": "動詞原形・ない形・なかった形",
+    "caption": "先認動詞類別，再對照做、不做與沒做。",
+    "image": "assets/japanese-comics/j3-01-plain-verb-forms.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "買う的變化",
+        "crop": "8 144 1007 310",
+        "alt": "第1格：第1類：買／不買／沒有買",
+        "first": 0,
+        "label": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "title": "食べる的變化",
+        "crop": "9 463 1006 312",
+        "alt": "第2格：第2類：吃／不吃／沒有吃",
+        "first": 1,
+        "label": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "title": "来る的變化",
+        "crop": "9 784 1007 314",
+        "alt": "第3格：第3類：きます・くる・こない",
+        "first": 2,
+        "label": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "title": "する的變化",
+        "crop": "9 1107 1006 317",
+        "alt": "第4格：第3類：做／不做／沒有做",
+        "first": 3,
+        "label": "依原規則補充",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "かいます、かう、かわない、かわなかった。",
+        "subtitle": "買います → 買う → 買わない → 買わなかった",
+        "translation": "第1類：買／不買／沒有買",
+        "speaker": "變化卡 · 依原規則補充",
+        "panel": 0,
+        "sourceKind": "added",
+        "sourceLabel": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "text": "たべます、たべる、たべない、たべなかった。",
+        "subtitle": "食べます → 食べる → 食べない → 食べなかった",
+        "translation": "第2類：吃／不吃／沒有吃",
+        "speaker": "變化卡 · 依原規則補充",
+        "panel": 1,
+        "sourceKind": "added",
+        "sourceLabel": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "text": "きます、くる、こない、こなかった。",
+        "subtitle": "来ます → 来る → 来ない → 来なかった",
+        "translation": "第3類：きます・くる・こない",
+        "speaker": "變化卡 · 依原規則補充",
+        "panel": 2,
+        "sourceKind": "added",
+        "sourceLabel": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "text": "します、する、しない、しなかった。",
+        "subtitle": "します → する → しない → しなかった",
+        "translation": "第3類：做／不做／沒有做",
+        "speaker": "變化卡 · 依原規則補充",
+        "panel": 3,
+        "sourceKind": "added",
+        "sourceLabel": "依原規則補充",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "變化卡按四個形式朗讀；来ます／来る／来ない／来なかった讀きます／くる／こない／こなかった。"
+  },
+  {
+    "id": "j3-02-koto-ability",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "把動作變成一件事，也能說會做",
+    "label": "初級複習 J3 · 02",
+    "grammar": "こと・ことができます",
+    "caption": "把動作當成一件事，也能說明可以做什麼。",
+    "image": "assets/japanese-comics/j3-02-koto-ability.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "詢問興趣",
+        "crop": "11 136 1003 338",
+        "alt": "第1格：興趣是什麼？",
+        "first": 0,
+        "label": "情境補充",
+        "skipAudio": false
+      },
+      {
+        "title": "閱讀這件事",
+        "crop": "11 481 1003 321",
+        "alt": "第2格：我的興趣是看書。",
+        "first": 1,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "可以借書",
+        "crop": "11 811 1003 385",
+        "alt": "第3格：可以在圖書館借書。",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "名詞化與能力",
+        "crop": "11 1204 1003 320",
+        "alt": "第4格：読むこと＝閱讀這件事；借りることができる＝可以借書。",
+        "first": 3,
+        "label": "解說",
+        "skipAudio": true
+      }
+    ],
+    "cues": [
+      {
+        "text": "しゅみはなんですか。",
+        "subtitle": "趣味は何ですか。",
+        "translation": "興趣是什麼？",
+        "speaker": "詢問興趣 · 情境補充",
+        "panel": 0,
+        "sourceKind": "added",
+        "sourceLabel": "情境補充",
+        "skipAudio": false
+      },
+      {
+        "text": "わたしのしゅみはほんをよむことです。",
+        "subtitle": "私の趣味は本を読むことです。",
+        "translation": "我的興趣是看書。",
+        "speaker": "閱讀這件事 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "としょかんでほんをかりることができます。",
+        "subtitle": "図書館で本を借りることができます。",
+        "translation": "可以在圖書館借書。",
+        "speaker": "可以借書 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "読むこと＝閱讀這件事；借りることができる＝可以借書。",
+        "translation": "本格為解說，僅供閱讀，不朗讀。",
+        "speaker": "解說 · 解說",
+        "panel": 3,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      }
+    ],
+    "readingNote": "第4格為解說，僅供閱讀，不朗讀。"
+  },
+  {
+    "id": "j3-03-before",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "先做哪件事？まえに看接法",
+    "label": "初級複習 J3 · 03",
+    "grammar": "まえに",
+    "caption": "動詞、名詞與時間長度，接法各有不同。",
+    "image": "assets/japanese-comics/j3-03-before.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "看電視之前",
+        "crop": "10 143 1004 297",
+        "alt": "第1格：看電視之前，請先做功課。",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "出門之前",
+        "crop": "11 451 1003 316",
+        "alt": "第2格：每天早上出門前看新聞。",
+        "first": 1,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "一個月以前",
+        "crop": "11 775 1003 354",
+        "alt": "第3格：一個月前來到台灣。",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "三種接法",
+        "crop": "12 1138 1003 386",
+        "alt": "第4格：動詞原形＋前に／名詞の前に／時間長度＋前に。",
+        "first": 3,
+        "label": "解說",
+        "skipAudio": true
+      }
+    ],
+    "cues": [
+      {
+        "text": "テレビをみるまえにしゅくだいをしてください。",
+        "subtitle": "テレビを見るまえに宿題をしてください。",
+        "translation": "看電視之前，請先做功課。",
+        "speaker": "看電視之前 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "まいあさでかけるまえにニュースをみます。",
+        "subtitle": "毎朝出かけるまえにニュースを見ます。",
+        "translation": "每天早上出門前看新聞。",
+        "speaker": "出門之前 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "いっかげつまえにたいわんへきました。",
+        "subtitle": "一か月まえに台湾へ来ました。",
+        "translation": "一個月前來到台灣。",
+        "speaker": "一個月以前 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "動詞原形＋前に／名詞の前に／時間長度＋前に。",
+        "translation": "本格為解說，僅供閱讀，不朗讀。",
+        "speaker": "解說 · 解說",
+        "panel": 3,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      }
+    ],
+    "readingNote": "第4格為解說，僅供閱讀。例句中的まえ保留原圖寫法。"
+  },
+  {
+    "id": "j3-04-must-or-not-needed",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "一定要、該做了，也可以不用做",
+    "label": "初級複習 J3 · 04",
+    "grammar": "なければならない・ないと・なくてもいい",
+    "caption": "區分必須做、口語提醒與不必做。",
+    "image": "assets/japanese-comics/j3-04-must-or-not-needed.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "必須交作業",
+        "crop": "2 135 1021 309",
+        "alt": "第1格：最晚明天必須交作業。",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "差不多該回去",
+        "crop": "2 450 1021 328",
+        "alt": "第2格：已經很晚了，差不多該回去了。",
+        "first": 1,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "今天不必交",
+        "crop": "2 784 1020 326",
+        "alt": "第3格：報告下週才截止，今天不用交。",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "不必不是禁止",
+        "crop": "1 1116 1022 419",
+        "alt": "第4格：なくてもいい＝不做也可以；不是「不能做」。",
+        "first": 3,
+        "label": "解說",
+        "skipAudio": true
+      }
+    ],
+    "cues": [
+      {
+        "text": "あしたまでにしゅくだいをださなければなりません。",
+        "subtitle": "明日までに宿題を出さなければなりません。",
+        "translation": "最晚明天必須交作業。",
+        "speaker": "必須交作業 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "もうおそいですね。そろそろかえらないと。",
+        "subtitle": "もう遅いですね。そろそろ帰らないと。",
+        "translation": "已經很晚了，差不多該回去了。",
+        "speaker": "差不多該回去 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "レポートのしめきりはらいしゅうですから、きょうださなくてもいいです。",
+        "subtitle": "レポートの締め切りは来週ですから、今日出さなくてもいいです。",
+        "translation": "報告下週才截止，今天不用交。",
+        "speaker": "今天不必交 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "なくてもいい＝不做也可以；不是「不能做」。",
+        "translation": "本格為解說，僅供閱讀，不朗讀。",
+        "speaker": "解說 · 解說",
+        "panel": 3,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      }
+    ],
+    "readingNote": "第4格僅供閱讀。今日不用交和明天必須交分屬不同情境。"
+  },
+  {
+    "id": "j3-05-advice",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "做比較好，還是不要做比較好？",
+    "label": "初級複習 J3 · 05",
+    "grammar": "たほうがいい・ないほうがいい",
+    "caption": "用た形和ない形分別表達做或不做的建議。",
+    "image": "assets/japanese-comics/j3-05-advice.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "搭電車較好",
+        "crop": "10 142 1004 350",
+        "alt": "第1格：動物園附近沒有停車場，搭電車去比較好。",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "肯定建議的接法",
+        "crop": "10 500 1004 270",
+        "alt": "第2格：肯定建議：動詞た形＋ほうがいい。",
+        "first": 1,
+        "label": "解說",
+        "skipAudio": true
+      },
+      {
+        "title": "最好不要抽菸",
+        "crop": "10 777 1004 337",
+        "alt": "第3格：最好不要抽菸。",
+        "first": 2,
+        "label": "原句節選",
+        "skipAudio": false
+      },
+      {
+        "title": "否定建議的接法",
+        "crop": "10 1121 1004 306",
+        "alt": "第4格：否定建議：動詞ない形＋ほうがいい。",
+        "first": 3,
+        "label": "解說",
+        "skipAudio": true
+      }
+    ],
+    "cues": [
+      {
+        "text": "どうぶつえんのちかくにちゅうしゃじょうがないから、でんしゃでいったほうがいいよ。",
+        "subtitle": "動物園の近くに駐車場がないから、電車で行ったほうがいいよ。",
+        "translation": "動物園附近沒有停車場，搭電車去比較好。",
+        "speaker": "搭電車較好 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "肯定建議：動詞た形＋ほうがいい。",
+        "translation": "本格為解說，僅供閱讀，不朗讀。",
+        "speaker": "解說 · 解說",
+        "panel": 1,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      },
+      {
+        "text": "すわないほうがいいです。",
+        "subtitle": "吸わないほうがいいです。",
+        "translation": "最好不要抽菸。",
+        "speaker": "最好不要抽菸 · 原句節選",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原句節選",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "否定建議：動詞ない形＋ほうがいい。",
+        "translation": "本格為解說，僅供閱讀，不朗讀。",
+        "speaker": "解說 · 解說",
+        "panel": 3,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      }
+    ],
+    "readingNote": "第2、4格為解說，不朗讀。文法示例不代替實際交通或醫療建議。"
+  },
+  {
+    "id": "j3-06-when",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "什麼時候？とき前面怎麼接",
+    "label": "初級複習 J3 · 06",
+    "grammar": "とき",
+    "caption": "動詞、名詞、い形與な形，各有不同接法。",
+    "image": "assets/japanese-comics/j3-06-when.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "有時間時",
+        "crop": "10 140 1004 289",
+        "alt": "第1格：有時間時看電影。",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "地震發生時",
+        "crop": "10 436 1004 305",
+        "alt": "第2格：地震發生時，我在院子裡。",
+        "first": 1,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "小時候",
+        "crop": "10 749 1004 325",
+        "alt": "第3格：小時候住在日本。",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "忙碌與有空",
+        "crop": "10 1080 1004 354",
+        "alt": "第4格：忙的時候不吃飯。\n有空時看韓劇。",
+        "first": 3,
+        "label": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "じかんがあるとき、えいがをみます。",
+        "subtitle": "時間があるとき、映画を見ます。",
+        "translation": "有時間時看電影。",
+        "speaker": "有時間時 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "じしんがあったとき、わたしはにわにいました。",
+        "subtitle": "地震があったとき、私は庭にいました。",
+        "translation": "地震發生時，我在院子裡。",
+        "speaker": "地震發生時 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "こどものとき、にほんにすんでいました。",
+        "subtitle": "子供のとき、日本に住んでいました。",
+        "translation": "小時候住在日本。",
+        "speaker": "小時候 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "いそがしいとき、ごはんをたべません。",
+        "subtitle": "忙しいとき、ごはんを食べません。",
+        "translation": "忙的時候不吃飯。",
+        "speaker": "忙碌與有空 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "ひまなとき、かんこくドラマをみます。",
+        "subtitle": "暇なとき、韓国ドラマを見ます。",
+        "translation": "有空時看韓劇。",
+        "speaker": "忙碌與有空 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "第4格左右兩句依序分開朗讀。忙碌不吃飯是原句情境，不是生活建議。"
+  },
+  {
+    "id": "j3-07-plain-adjective-noun",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "元気です換常體，要看現在與過去",
+    "label": "初級複習 J3 · 07",
+    "grammar": "な形容詞・名詞の常体",
+    "caption": "用元気對照現在、過去的肯定與否定。",
+    "image": "assets/japanese-comics/j3-07-plain-adjective-noun.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "現在肯定",
+        "crop": "8 156 1008 302",
+        "alt": "第1格：現在肯定：有精神",
+        "first": 0,
+        "label": "原筆記變化例",
+        "skipAudio": false
+      },
+      {
+        "title": "現在否定",
+        "crop": "8 463 1008 337",
+        "alt": "第2格：現在否定：沒有精神",
+        "first": 1,
+        "label": "原筆記變化例",
+        "skipAudio": false
+      },
+      {
+        "title": "過去肯定",
+        "crop": "8 805 1008 304",
+        "alt": "第3格：過去肯定：之前有精神",
+        "first": 2,
+        "label": "原筆記變化例",
+        "skipAudio": false
+      },
+      {
+        "title": "過去否定",
+        "crop": "8 1114 1008 315",
+        "alt": "第4格：過去否定：之前沒有精神",
+        "first": 3,
+        "label": "原筆記變化例",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "げんきです、げんきだ。",
+        "subtitle": "元気です → 元気だ",
+        "translation": "現在肯定：有精神",
+        "speaker": "變化卡 · 原筆記變化例",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記變化例",
+        "skipAudio": false
+      },
+      {
+        "text": "げんきではありません、げんきじゃない。",
+        "subtitle": "元気ではありません → 元気じゃない",
+        "translation": "現在否定：沒有精神",
+        "speaker": "變化卡 · 原筆記變化例",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記變化例",
+        "skipAudio": false
+      },
+      {
+        "text": "げんきでした、げんきだった。",
+        "subtitle": "元気でした → 元気だった",
+        "translation": "過去肯定：之前有精神",
+        "speaker": "變化卡 · 原筆記變化例",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記變化例",
+        "skipAudio": false
+      },
+      {
+        "text": "げんきではありませんでした、げんきじゃなかった。",
+        "subtitle": "元気ではありませんでした → 元気じゃなかった",
+        "translation": "過去否定：之前沒有精神",
+        "speaker": "變化卡 · 原筆記變化例",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記變化例",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "變化卡成對朗讀，不讀箭頭。實際會話是否使用だ要看語境。"
+  },
+  {
+    "id": "j3-08-plain-connections",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "雖然好吃但很貴，因為不擅長就不唱",
+    "label": "初級複習 J3 · 08",
+    "grammar": "けど・から",
+    "caption": "用けど說轉折，用だから說原因。",
+    "image": "assets/japanese-comics/j3-08-plain-connections.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "敬體的轉折",
+        "crop": "10 152 1004 298",
+        "alt": "第1格：很好吃，但是很貴。",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "常體的轉折",
+        "crop": "10 454 1004 308",
+        "alt": "第2格：好吃，但很貴。",
+        "first": 1,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "敬體的原因",
+        "crop": "10 767 1004 323",
+        "alt": "第3格：因為不擅長唱歌，所以不唱。",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "常體的原因",
+        "crop": "10 1094 1004 330",
+        "alt": "第4格：因為唱得不好，所以不唱。",
+        "first": 3,
+        "label": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "おいしいですが、たかいです。",
+        "subtitle": "おいしいですが、高いです。",
+        "translation": "很好吃，但是很貴。",
+        "speaker": "敬體的轉折 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "おいしいけど、たかい。",
+        "subtitle": "おいしいけど、高い。",
+        "translation": "好吃，但很貴。",
+        "speaker": "常體的轉折 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "うたがへたですから、うたいません。",
+        "subtitle": "歌が下手ですから、歌いません。",
+        "translation": "因為不擅長唱歌，所以不唱。",
+        "speaker": "敬體的原因 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "うたがへただから、うたわない。",
+        "subtitle": "歌が下手だから、歌わない。",
+        "translation": "因為唱得不好，所以不唱。",
+        "speaker": "常體的原因 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "每兩格是同一意思的敬體與常體對照。"
+  },
+  {
+    "id": "j3-09-casual-questions",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "咖啡怎麼樣？咖哩和壽司想吃哪個？",
+    "label": "初級複習 J3 · 09",
+    "grammar": "どう？・どっち？",
+    "caption": "在親近的會話裡詢問感想與選擇。",
+    "image": "assets/japanese-comics/j3-09-casual-questions.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "咖啡怎麼樣",
+        "crop": "17 180 990 297",
+        "alt": "第1格：便利商店的咖啡怎麼樣？",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "回答咖啡感想",
+        "crop": "17 487 990 260",
+        "alt": "第2格：便宜，但我覺得不好喝。",
+        "first": 1,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "想吃哪一個",
+        "crop": "17 755 990 316",
+        "alt": "第3格：咖哩和壽司想吃哪個？",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "兩個都想吃",
+        "crop": "17 1080 990 340",
+        "alt": "第4格：兩個都想吃。",
+        "first": 3,
+        "label": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "コンビニのコーヒーはどう？",
+        "subtitle": "コンビニのコーヒーはどう？",
+        "translation": "便利商店的咖啡怎麼樣？",
+        "speaker": "咖啡怎麼樣 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "やすいけどおいしくないとおもう。",
+        "subtitle": "安いけどおいしくないと思う。",
+        "translation": "便宜，但我覺得不好喝。",
+        "speaker": "回答咖啡感想 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "カレーとすし、どっちがたべたい？",
+        "subtitle": "カレーと寿司、どっちが食べたい？",
+        "translation": "咖哩和壽司想吃哪個？",
+        "speaker": "想吃哪一個 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "どっちもたべたい。",
+        "subtitle": "どっちも食べたい。",
+        "translation": "兩個都想吃。",
+        "speaker": "兩個都想吃 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "親近的問答要看場合與對象；疑問語氣依原句朗讀。"
+  },
+  {
+    "id": "j3-10-modifiers-time",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "明天要吃的麵包，昨天吃過的麵包",
+    "label": "初級複習 J3 · 10",
+    "grammar": "動詞常体＋名詞",
+    "caption": "食べる與食べた，分別描述將做和已做的動作。",
+    "image": "assets/japanese-comics/j3-10-modifiers-time.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "明天要吃的麵包",
+        "crop": "12 212 999 282",
+        "alt": "第1格：這是明天要吃的麵包。",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "修飾語放前面",
+        "crop": "12 504 999 257",
+        "alt": "第2格：食べる放在パン前面，說明是哪個麵包。",
+        "first": 1,
+        "label": "解說",
+        "skipAudio": true
+      },
+      {
+        "title": "昨天吃的麵包",
+        "crop": "12 772 999 298",
+        "alt": "第3格：昨天吃的麵包就是這個。",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "時間的對照",
+        "crop": "13 1081 998 321",
+        "alt": "第4格：食べた表示那次動作已發生；修飾語在名詞前。",
+        "first": 3,
+        "label": "解說",
+        "skipAudio": true
+      }
+    ],
+    "cues": [
+      {
+        "text": "これはあしたたべるパンです。",
+        "subtitle": "これは明日食べるパンです。",
+        "translation": "這是明天要吃的麵包。",
+        "speaker": "明天要吃的麵包 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "食べる放在パン前面，說明是哪個麵包。",
+        "translation": "本格為解說，僅供閱讀，不朗讀。",
+        "speaker": "解說 · 解說",
+        "panel": 1,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      },
+      {
+        "text": "きのうたべたパンはこれです。",
+        "subtitle": "昨日食べたパンはこれです。",
+        "translation": "昨天吃的麵包就是這個。",
+        "speaker": "昨天吃的麵包 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "食べた表示那次動作已發生；修飾語在名詞前。",
+        "translation": "本格為解說，僅供閱讀，不朗讀。",
+        "speaker": "解說 · 解說",
+        "panel": 3,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      }
+    ],
+    "readingNote": "第2、4格為解說，不朗讀。"
+  },
+  {
+    "id": "j3-11-modifiers-in-life",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "買過的錶、常去的館、穿紅衣的人",
+    "label": "初級複習 J3 · 11",
+    "grammar": "名詞修飾",
+    "caption": "先說明是哪一個，再接錶、圖書館、人或約定。",
+    "image": "assets/japanese-comics/j3-11-modifiers-in-life.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "去年買的錶",
+        "crop": "15 139 995 299",
+        "alt": "第1格：這是去年在百貨公司買的手錶。",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "常去的圖書館",
+        "crop": "15 448 995 316",
+        "alt": "第2格：常去的圖書館人少又安靜。",
+        "first": 1,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "穿紅衣的人",
+        "crop": "15 774 995 318",
+        "alt": "第3格：你認識穿紅衣服的人嗎？",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "明天購物的約定",
+        "crop": "16 1102 993 334",
+        "alt": "第4格：約好明天和她去逛街。",
+        "first": 3,
+        "label": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "これはきょねん、デパートでかったとけいです。",
+        "subtitle": "これは去年、デパートで買った時計です。",
+        "translation": "這是去年在百貨公司買的手錶。",
+        "speaker": "去年買的錶 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "よくいくとしょかんはひとがすくなくてしずかです。",
+        "subtitle": "よく行く図書館は人が少なくて静かです。",
+        "translation": "常去的圖書館人少又安靜。",
+        "speaker": "常去的圖書館 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "あかいふくをきているひとをしっていますか。",
+        "subtitle": "赤い服を着ている人を知っていますか。",
+        "translation": "你認識穿紅衣服的人嗎？",
+        "speaker": "穿紅衣的人 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "あした、かのじょとかいものにいくやくそくがあります。",
+        "subtitle": "明日、彼女と買い物に行く約束があります。",
+        "translation": "約好明天和她去逛街。",
+        "speaker": "明天購物的約定 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "依四格順序朗讀；人物與場景是教材例句的虛構示意。"
+  },
+  {
+    "id": "j3-12-modifier-subject",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "媽媽做的麵包，老師畫的畫",
+    "label": "初級複習 J3 · 12",
+    "grammar": "修飾句中的が",
+    "caption": "先組好誰做的加名詞，再放進完整句子。",
+    "image": "assets/japanese-comics/j3-12-modifier-subject.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "媽媽做的麵包",
+        "crop": "12 149 1000 312",
+        "alt": "第1格：這是媽媽做的麵包。",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "修飾句的主語",
+        "crop": "13 469 999 282",
+        "alt": "第2格：【母が作った】修飾パン，が指出這個動作的主語。",
+        "first": 1,
+        "label": "解說",
+        "skipAudio": true
+      },
+      {
+        "title": "老師畫的畫",
+        "crop": "14 756 998 346",
+        "alt": "第3格：老師畫的畫是那一幅。",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "先組好再造句",
+        "crop": "14 1110 997 295",
+        "alt": "第4格：先組好「誰做的＋名詞」，再放進整個句子。",
+        "first": 3,
+        "label": "解說",
+        "skipAudio": true
+      }
+    ],
+    "cues": [
+      {
+        "text": "これはははがつくったパンです。",
+        "subtitle": "これは母が作ったパンです。",
+        "translation": "這是媽媽做的麵包。",
+        "speaker": "媽媽做的麵包 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "【母が作った】修飾パン，が指出這個動作的主語。",
+        "translation": "本格為解說，僅供閱讀，不朗讀。",
+        "speaker": "解說 · 解說",
+        "panel": 1,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      },
+      {
+        "text": "せんせいがかいたえはあれです。",
+        "subtitle": "先生が描いた絵はあれです。",
+        "translation": "老師畫的畫是那一幅。",
+        "speaker": "老師畫的畫 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "先組好「誰做的＋名詞」，再放進整個句子。",
+        "translation": "本格為解說，僅供閱讀，不朗讀。",
+        "speaker": "解說 · 解說",
+        "panel": 3,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      }
+    ],
+    "readingNote": "第2、4格不朗讀。描いた在這裡讀かいた，字幕保留原圖漢字。"
+  },
+  {
+    "id": "j3-13-quoting",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "我說過什麼？他剛才怎麼說？",
+    "label": "初級複習 J3 · 13",
+    "grammar": "と言いました・と言っていました",
+    "caption": "引用的內容放在と前面，也能轉述當時的話。",
+    "image": "assets/japanese-comics/j3-13-quoting.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "說過自己的想法",
+        "crop": "9 129 1007 304",
+        "alt": "第1格：上課時，我說日文很有用。",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "引用內容放前面",
+        "crop": "9 443 1007 291",
+        "alt": "第2格：引用的內容放在と前面，這裡用常體。",
+        "first": 1,
+        "label": "解說",
+        "skipAudio": true
+      },
+      {
+        "title": "詢問他說什麼",
+        "crop": "10 744 1005 298",
+        "alt": "第3格：他怎麼說的？",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "轉述開會時間",
+        "crop": "10 1050 1005 357",
+        "alt": "第4格：他說六點開會。",
+        "first": 3,
+        "label": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "じゅぎょうちゅう、わたしはにほんごはやくにたつといいました。",
+        "subtitle": "授業中、私は日本語は役に立つと言いました。",
+        "translation": "上課時，我說日文很有用。",
+        "speaker": "說過自己的想法 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "",
+        "subtitle": "引用的內容放在と前面，這裡用常體。",
+        "translation": "本格為解說，僅供閱讀，不朗讀。",
+        "speaker": "解說 · 解說",
+        "panel": 1,
+        "sourceKind": "editorial",
+        "sourceLabel": "解說",
+        "skipAudio": true
+      },
+      {
+        "text": "なんといっていましたか。",
+        "subtitle": "何と言っていましたか。",
+        "translation": "他怎麼說的？",
+        "speaker": "詢問他說什麼 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "ろくじにかいぎするといっていました。",
+        "subtitle": "6時に会議すると言っていました。",
+        "translation": "他說六點開會。",
+        "speaker": "轉述開會時間 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "第2格為解說，不朗讀。6時讀ろくじ。"
+  },
+  {
+    "id": "j3-14-thoughts",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "我想他回去了，也覺得你人很好",
+    "label": "初級複習 J3 · 14",
+    "grammar": "と思います",
+    "caption": "用常體表達推測、意見與對人的看法。",
+    "image": "assets/japanese-comics/j3-14-thoughts.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "推測已經回去",
+        "crop": "11 125 1004 312",
+        "alt": "第1格：我想王先生已經回去了。",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "表達日文的用途",
+        "crop": "11 447 1004 323",
+        "alt": "第2格：我覺得日文很有用。",
+        "first": 1,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "詢問對方看法",
+        "crop": "11 780 1004 326",
+        "alt": "第3格：你覺得我是怎樣的人？",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "回答人物印象",
+        "crop": "11 1115 1004 340",
+        "alt": "第4格：我覺得你有趣、親切，是個好人。",
+        "first": 3,
+        "label": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "おうさんはもうかえったとおもいます。",
+        "subtitle": "王さんはもう帰ったと思います。",
+        "translation": "我想王先生已經回去了。",
+        "speaker": "推測已經回去 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "にほんごはやくにたつとおもいます。",
+        "subtitle": "日本語は役に立つと思います。",
+        "translation": "我覺得日文很有用。",
+        "speaker": "表達日文的用途 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "ぼくのこと、どうおもいますか。",
+        "subtitle": "僕のこと、どう思いますか。",
+        "translation": "你覺得我是怎樣的人？",
+        "speaker": "詢問對方看法 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "おもしろくてしんせつで、いいひとだとおもいますよ。",
+        "subtitle": "面白くて親切で、いい人だと思いますよ。",
+        "translation": "我覺得你有趣、親切，是個好人。",
+        "speaker": "回答人物印象 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "王さん讀おうさん；最後一句保留よ，字幕和朗讀一致。"
+  },
+  {
+    "id": "j3-15-volitional-forms",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "行こう、食べよう：意向形怎麼變",
+    "label": "初級複習 J3 · 15",
+    "grammar": "意向形",
+    "caption": "依動詞類別練習行こう、食べよう、来よう與しよう。",
+    "image": "assets/japanese-comics/j3-15-volitional-forms.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "第1類的意向形",
+        "crop": "1 140 1022 316",
+        "alt": "第1格：第1類：去吧／我來去",
+        "first": 0,
+        "label": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "title": "第2類的意向形",
+        "crop": "1 466 1022 302",
+        "alt": "第2格：第2類：吃吧／來吃",
+        "first": 1,
+        "label": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "title": "来よう",
+        "crop": "1 778 1022 314",
+        "alt": "第3格：第3類：来よう讀こよう",
+        "first": 2,
+        "label": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "title": "しよう",
+        "crop": "1 1103 1022 334",
+        "alt": "第4格：第3類：做吧／來做",
+        "first": 3,
+        "label": "依原規則補充",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "いきます、いこう。",
+        "subtitle": "行きます → 行こう",
+        "translation": "第1類：去吧／我來去",
+        "speaker": "變化卡 · 依原規則補充",
+        "panel": 0,
+        "sourceKind": "added",
+        "sourceLabel": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "text": "たべます、たべよう。",
+        "subtitle": "食べます → 食べよう",
+        "translation": "第2類：吃吧／來吃",
+        "speaker": "變化卡 · 依原規則補充",
+        "panel": 1,
+        "sourceKind": "added",
+        "sourceLabel": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "text": "きます、こよう。",
+        "subtitle": "来ます → 来よう",
+        "translation": "第3類：来よう讀こよう",
+        "speaker": "變化卡 · 依原規則補充",
+        "panel": 2,
+        "sourceKind": "added",
+        "sourceLabel": "依原規則補充",
+        "skipAudio": false
+      },
+      {
+        "text": "します、しよう。",
+        "subtitle": "します → しよう",
+        "translation": "第3類：做吧／來做",
+        "speaker": "變化卡 · 依原規則補充",
+        "panel": 3,
+        "sourceKind": "added",
+        "sourceLabel": "依原規則補充",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "四格都是依原規則補充的變化卡。来よう讀こよう；意向形不等於命令形。"
+  },
+  {
+    "id": "j3-16-intentions-plans-schedule",
+    "lesson": "j3",
+    "series": "beginner-review",
+    "title": "明天做什麼？想法、打算、已排定",
+    "label": "初級複習 J3 · 16",
+    "grammar": "ようと思う・つもり・予定",
+    "caption": "以同一看電影情境對照想法、打算與排定的安排。",
+    "image": "assets/japanese-comics/j3-16-intentions-plans-schedule.webp",
+    "width": 1024,
+    "height": 1536,
+    "provenance": "初級文法複習 J3；原筆記例句、原句節選、依原規則補充與情境補充沿用圖上標示；解說格僅供閱讀。",
+    "panels": [
+      {
+        "title": "明天做什麼",
+        "crop": "6 142 1012 270",
+        "alt": "第1格：明天要做什麼？",
+        "first": 0,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "正在想去看電影",
+        "crop": "6 422 1012 304",
+        "alt": "第2格：嗯……我在想去看電影。",
+        "first": 1,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "打算看電影",
+        "crop": "6 735 1012 279",
+        "alt": "第3格：我打算看電影。",
+        "first": 2,
+        "label": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "title": "預定四點看電影",
+        "crop": "6 1025 1012 336",
+        "alt": "第4格：預定下午四點看電影。",
+        "first": 3,
+        "label": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "cues": [
+      {
+        "text": "あしたなにする？",
+        "subtitle": "明日何する？",
+        "translation": "明天要做什麼？",
+        "speaker": "明天做什麼 · 原筆記例句",
+        "panel": 0,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "うん、えいがをみようとおもってる。",
+        "subtitle": "うん…映画を見ようと思ってる。",
+        "translation": "嗯……我在想去看電影。",
+        "speaker": "正在想去看電影 · 原筆記例句",
+        "panel": 1,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "えいがをみるつもりだ。",
+        "subtitle": "映画を見るつもりだ。",
+        "translation": "我打算看電影。",
+        "speaker": "打算看電影 · 原筆記例句",
+        "panel": 2,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      },
+      {
+        "text": "ごごよじにえいがをみるよていだ。",
+        "subtitle": "午後4時に映画を見る予定だ。",
+        "translation": "預定下午四點看電影。",
+        "speaker": "預定四點看電影 · 原筆記例句",
+        "panel": 3,
+        "sourceKind": "original",
+        "sourceLabel": "原筆記例句",
+        "skipAudio": false
+      }
+    ],
+    "readingNote": "這是情境語感對照，並非固定的確定度或時間規則。午後4時讀ごごよじ。"
   }
 ];
 if(typeof module!=='undefined' && module.exports) module.exports = comics;
