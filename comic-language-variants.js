@@ -3913,6 +3913,1163 @@ const variants = {
         }
       ]
     }
+  },
+  "j2-05-try-and-return": {
+    "en": {
+      "language": "en",
+      "title": "試穿看看，再去打個電話",
+      "grammar": "try on / be right back",
+      "caption": "try on 是試穿；be right back 表示很快回來；Could I...? 可以客氣地詢問能否做某事。",
+      "image": "assets/japanese-comics/j2-05-try-and-return-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "按四格順序朗讀。第3格是離開去打電話並表示會很快回來。",
+      "panels": [
+        {
+          "title": "詢問能否試穿",
+          "crop": "14 129 996 318",
+          "alt": "英文第1格：Could I try on this coat? 這件大衣可以試穿看看嗎？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "店員答應",
+          "crop": "14 457 996 322",
+          "alt": "英文第2格：Of course. Go ahead. 當然，請試穿。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "打電話再回來",
+          "crop": "14 785 996 330",
+          "alt": "英文第3格：Excuse me. I’ll make a quick phone call and be right back. 不好意思，我去打個電話，馬上回來。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "朋友等候",
+          "crop": "14 1125 996 307",
+          "alt": "英文第4格：Okay. I’ll wait here. 好，我在這裡等你。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "cues": [
+        {
+          "text": "Could I try on this coat?",
+          "subtitle": "Could I try on this coat?",
+          "translation": "這件大衣可以試穿看看嗎？",
+          "speaker": "顧客",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Of course. Go ahead.",
+          "subtitle": "Of course. Go ahead.",
+          "translation": "當然，請試穿。",
+          "speaker": "店員",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Excuse me. I’ll make a quick phone call and be right back.",
+          "subtitle": "Excuse me. I’ll make a quick phone call and be right back.",
+          "translation": "不好意思，我去打個電話，馬上回來。",
+          "speaker": "顧客",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Okay. I’ll wait here.",
+          "subtitle": "Okay. I’ll wait here.",
+          "translation": "好，我在這裡等你。",
+          "speaker": "朋友",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ]
+    }
+  },
+  "j2-06-after-and-first": {
+    "en": {
+      "language": "en",
+      "title": "做完之後，先做好再做",
+      "grammar": "after / before / first",
+      "caption": "after 表示在……之後；before 表示在……之前；first 表示先做。",
+      "image": "assets/japanese-comics/j2-06-after-and-first-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "第1格由黃衣女子提問，第2格由藍綠衣女子回答。第4格的 them 指雙手。",
+      "panels": [
+        {
+          "title": "詢問晚餐時間",
+          "crop": "8 120 1007 329",
+          "alt": "英文第1格：When do you usually have dinner? 你通常什麼時候吃晚餐？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "下班之後",
+          "crop": "8 456 1007 320",
+          "alt": "英文第2格：I eat after work. 我下班後吃。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "飯前先洗手",
+          "crop": "8 782 1007 329",
+          "alt": "英文第3格：Please wash your hands before you eat. 請先洗手再吃飯。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "先做的動作",
+          "crop": "8 1119 1007 329",
+          "alt": "英文第4格：Okay. I’ll wash them first. 好，我會先洗手。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "cues": [
+        {
+          "text": "When do you usually have dinner?",
+          "subtitle": "When do you usually have dinner?",
+          "translation": "你通常什麼時候吃晚餐？",
+          "speaker": "朋友 · 黃色上衣",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I eat after work.",
+          "subtitle": "I eat after work.",
+          "translation": "我下班後吃。",
+          "speaker": "朋友 · 藍綠上衣",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Please wash your hands before you eat.",
+          "subtitle": "Please wash your hands before you eat.",
+          "translation": "請先洗手再吃飯。",
+          "speaker": "朋友 · 黃色上衣",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Okay. I’ll wash them first.",
+          "subtitle": "Okay. I’ll wash them first.",
+          "translation": "好，我會先洗手。",
+          "speaker": "朋友 · 藍綠上衣",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ]
+    }
+  },
+  "j2-07-experience": {
+    "en": {
+      "language": "en",
+      "title": "做過嗎？一次也沒有！",
+      "grammar": "Have you ever...?",
+      "caption": "Have you ever + 過去分詞...? 詢問經驗；once 是一次，never 是從未。",
+      "image": "assets/japanese-comics/j2-07-experience-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "第2格 Yes, once. 簡答爬山經驗；第4格說從未吃過，接著表達想試試看。",
+      "panels": [
+        {
+          "title": "曾爬過富士山嗎",
+          "crop": "11 134 1003 287",
+          "alt": "英文第1格：Have you ever climbed Mount Fuji? 你爬過富士山嗎？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "有一次經驗",
+          "crop": "11 426 1003 298",
+          "alt": "英文第2格：Yes, once. 有，一次。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "曾吃過臭豆腐嗎",
+          "crop": "11 729 1003 326",
+          "alt": "英文第3格：Mr. Sato, have you ever tried stinky tofu? 佐藤先生，你吃過臭豆腐嗎？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "從未嘗試",
+          "crop": "11 1062 1003 364",
+          "alt": "英文第4格：No, never. I’d love to try it. 沒有，從來沒有。我很想試試看。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "cues": [
+        {
+          "text": "Have you ever climbed Mount Fuji?",
+          "subtitle": "Have you ever climbed Mount Fuji?",
+          "translation": "你爬過富士山嗎？",
+          "speaker": "朋友",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Yes, once.",
+          "subtitle": "Yes, once.",
+          "translation": "有，一次。",
+          "speaker": "佐藤先生",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Mr. Sato, have you ever tried stinky tofu?",
+          "subtitle": "Mr. Sato, have you ever tried stinky tofu?",
+          "translation": "佐藤先生，你吃過臭豆腐嗎？",
+          "speaker": "朋友",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "No, never. I’d love to try it.",
+          "subtitle": "No, never. I’d love to try it.",
+          "translation": "沒有，從來沒有。我很想試試看。",
+          "speaker": "佐藤先生",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ]
+    }
+  },
+  "j2-08-representative-actions": {
+    "en": {
+      "language": "en",
+      "title": "看電視、做菜，還做了別的",
+      "grammar": "and / among other things",
+      "caption": "and 連接活動；among other things 表示只列出部分事情，除此之外還有別的。",
+      "image": "assets/japanese-comics/j2-08-representative-actions-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "第3格是解說，不朗讀。第2格用過去式，第4格用 will 表示今天的安排。",
+      "panels": [
+        {
+          "title": "昨天做了什麼",
+          "crop": "7 133 1010 291",
+          "alt": "英文第1格：What did you do yesterday? 你昨天做了什麼？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "列舉部分活動",
+          "crop": "7 433 1010 334",
+          "alt": "英文第2格：I watched TV and cooked, among other things. 我看了電視、做了菜，還做了別的事。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "還有其他事情",
+          "crop": "7 777 1010 318",
+          "alt": "英文第3格：among other things 表示「除此之外還有別的事」。",
+          "first": 2,
+          "label": "解說",
+          "skipAudio": true
+        },
+        {
+          "title": "今天的活動",
+          "crop": "7 1105 1010 318",
+          "alt": "英文第4格：I’ll read and listen to music today, among other things. 我今天會看書、聽音樂，還會做其他事。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "cues": [
+        {
+          "text": "What did you do yesterday?",
+          "subtitle": "What did you do yesterday?",
+          "translation": "你昨天做了什麼？",
+          "speaker": "朋友 · 黃色上衣",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I watched TV and cooked, among other things.",
+          "subtitle": "I watched TV and cooked, among other things.",
+          "translation": "我看了電視、做了菜，還做了別的事。",
+          "speaker": "朋友 · 藍綠上衣",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "",
+          "subtitle": "among other things 表示「除此之外還有別的事」。",
+          "translation": "本格為情境／解說，僅供閱讀，不朗讀。",
+          "speaker": "解說",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "I’ll read and listen to music today, among other things.",
+          "subtitle": "I’ll read and listen to music today, among other things.",
+          "translation": "我今天會看書、聽音樂，還會做其他事。",
+          "speaker": "朋友 · 藍綠上衣",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ]
+    }
+  },
+  "j2-09-giving-objects": {
+    "en": {
+      "language": "en",
+      "title": "我送出、他送來、我收到",
+      "grammar": "give / get / from",
+      "caption": "give 表示給，get 在這裡表示收到，from 標示來源。give 本身不區分日文あげる／くれる的視角。",
+      "image": "assets/japanese-comics/j2-09-giving-objects-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "Fan 是情境人物名。第2格用 gave 描述送禮的人，第4格用 got...from 描述收禮的人。",
+      "panels": [
+        {
+          "title": "準備送禮",
+          "crop": "1 159 1022 304",
+          "alt": "英文第1格：This is a souvenir. I’ll give it to my teacher tomorrow. 這是伴手禮。我明天會送給老師。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "同學送來卡片",
+          "crop": "1 470 1022 312",
+          "alt": "英文第2格：Fan gave me a card. Fan 送了我一張卡片。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "詢問卡片來源",
+          "crop": "1 788 1022 297",
+          "alt": "英文第3格：Who did you get that card from? 那張卡片是誰送你的？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "收到的視角",
+          "crop": "1 1091 1022 319",
+          "alt": "英文第4格：I got it from Fan. 我從 Fan 那裡收到的。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "cues": [
+        {
+          "text": "This is a souvenir. I’ll give it to my teacher tomorrow.",
+          "subtitle": "This is a souvenir. I’ll give it to my teacher tomorrow.",
+          "translation": "這是伴手禮。我明天會送給老師。",
+          "speaker": "同學 · 藍綠上衣",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Fan gave me a card.",
+          "subtitle": "Fan gave me a card.",
+          "translation": "Fan 送了我一張卡片。",
+          "speaker": "同學 · 藍綠上衣",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Who did you get that card from?",
+          "subtitle": "Who did you get that card from?",
+          "translation": "那張卡片是誰送你的？",
+          "speaker": "同學 · 黃色上衣",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I got it from Fan.",
+          "subtitle": "I got it from Fan.",
+          "translation": "我從 Fan 那裡收到的。",
+          "speaker": "同學 · 藍綠上衣",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ]
+    }
+  },
+  "j2-10-giving-actions": {
+    "en": {
+      "language": "en",
+      "title": "誰幫誰買了咖啡？",
+      "grammar": "buy someone something / for",
+      "caption": "buy someone something 與 buy something for someone 都可表示買某物給某人；ask someone to do something 表示提出請求。",
+      "image": "assets/japanese-comics/j2-10-giving-actions-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "第4格明確加入「曾請求」的意思；ask 不等同於日文てもらう的所有用法，也不能單憑 asked 推定事情已完成。",
+      "panels": [
+        {
+          "title": "準備買咖啡",
+          "crop": "7 126 1011 313",
+          "alt": "英文第1格：I’ll buy my coworker a coffee. 我會幫同事買杯咖啡。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "誰買了咖啡",
+          "crop": "7 445 1011 317",
+          "alt": "英文第2格：Who bought you that coffee? 誰幫你買了那杯咖啡？",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "同事幫忙買的",
+          "crop": "7 767 1011 312",
+          "alt": "英文第3格：My coworker bought it for me. 我的同事幫我買的。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "說明曾提出請求",
+          "crop": "7 1084 1011 329",
+          "alt": "英文第4格：I asked my coworker to buy me a coffee. 我請同事幫我買杯咖啡。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "cues": [
+        {
+          "text": "I’ll buy my coworker a coffee.",
+          "subtitle": "I’ll buy my coworker a coffee.",
+          "translation": "我會幫同事買杯咖啡。",
+          "speaker": "同事 A · 藍綠上衣",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Who bought you that coffee?",
+          "subtitle": "Who bought you that coffee?",
+          "translation": "誰幫你買了那杯咖啡？",
+          "speaker": "同事 C · 戴眼鏡",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "My coworker bought it for me.",
+          "subtitle": "My coworker bought it for me.",
+          "translation": "我的同事幫我買的。",
+          "speaker": "同事 B · 黃色上衣",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I asked my coworker to buy me a coffee.",
+          "subtitle": "I asked my coworker to buy me a coffee.",
+          "translation": "我請同事幫我買杯咖啡。",
+          "speaker": "同事 B · 黃色上衣",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ]
+    }
+  },
+  "j2-11-offering-help": {
+    "en": {
+      "language": "en",
+      "title": "要借你傘嗎？要我幫忙嗎？",
+      "grammar": "Would you like...? / Can I...?",
+      "caption": "Would you like to...? 可詢問意願；Can I help you with that? 可主動表示想幫忙。",
+      "image": "assets/japanese-comics/j2-11-offering-help-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "borrow 是借入；第1格是持傘的人問對方要不要借用自己的傘。第3格的 that 指搬箱子這件事。",
+      "panels": [
+        {
+          "title": "主動借出雨傘",
+          "crop": "6 139 1013 315",
+          "alt": "英文第1格：Would you like to borrow my umbrella? 你想借我的雨傘嗎？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "接受並道謝",
+          "crop": "6 463 1013 320",
+          "alt": "英文第2格：Thank you. 謝謝你。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "主動幫忙搬箱",
+          "crop": "6 790 1013 306",
+          "alt": "英文第3格：Can I help you with that? 要我幫你搬嗎？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "接受幫忙",
+          "crop": "6 1105 1013 334",
+          "alt": "英文第4格：Yes, please. 好，麻煩你了。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "cues": [
+        {
+          "text": "Would you like to borrow my umbrella?",
+          "subtitle": "Would you like to borrow my umbrella?",
+          "translation": "你想借我的雨傘嗎？",
+          "speaker": "朋友 · 藍綠上衣",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Thank you.",
+          "subtitle": "Thank you.",
+          "translation": "謝謝你。",
+          "speaker": "朋友 · 黃色上衣",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Can I help you with that?",
+          "subtitle": "Can I help you with that?",
+          "translation": "要我幫你搬嗎？",
+          "speaker": "朋友 · 藍綠上衣",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Yes, please.",
+          "subtitle": "Yes, please.",
+          "translation": "好，麻煩你了。",
+          "speaker": "朋友 · 黃色上衣",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ]
+    }
+  },
+  "j2-12-polite-giving-receiving": {
+    "en": {
+      "language": "en",
+      "title": "感謝別人的幫助，怎麼說？",
+      "grammar": "Thank you for... / grateful",
+      "caption": "Thank you for 後面可以接名詞或 V-ing；be grateful for 表示感謝。英文禮貌用詞不等同日文敬語變化。",
+      "image": "assets/japanese-comics/j2-12-polite-giving-receiving-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "第1、2格向主管道謝；第3、4格談到老師的幫助。his 指男性老師。",
+      "panels": [
+        {
+          "title": "感謝給予咖啡",
+          "crop": "7 145 1010 295",
+          "alt": "英文第1格：Thank you for the coffee. 謝謝您的咖啡。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "感謝買咖啡的幫忙",
+          "crop": "7 447 1010 303",
+          "alt": "英文第2格：Thank you for buying me coffee. 謝謝您幫我買咖啡。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "老師教歌曲",
+          "crop": "7 756 1010 299",
+          "alt": "英文第3格：My teacher taught me a Japanese song. 老師教了我一首日本歌曲。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "表達感激",
+          "crop": "7 1061 1010 319",
+          "alt": "英文第4格：I’m grateful for his help. 我很感謝他的幫助。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "cues": [
+        {
+          "text": "Thank you for the coffee.",
+          "subtitle": "Thank you for the coffee.",
+          "translation": "謝謝您的咖啡。",
+          "speaker": "同事 · 藍綠上衣",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Thank you for buying me coffee.",
+          "subtitle": "Thank you for buying me coffee.",
+          "translation": "謝謝您幫我買咖啡。",
+          "speaker": "同事 · 藍綠上衣",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "My teacher taught me a Japanese song.",
+          "subtitle": "My teacher taught me a Japanese song.",
+          "translation": "老師教了我一首日本歌曲。",
+          "speaker": "學生 · 黃色上衣",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I’m grateful for his help.",
+          "subtitle": "I’m grateful for his help.",
+          "translation": "我很感謝他的幫助。",
+          "speaker": "學生 · 黃色上衣",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ]
+    }
+  },
+  "j2-13-yaru-register": {
+    "en": {
+      "language": "en",
+      "title": "餵狗、送禮，英文怎麼說？",
+      "grammar": "feed / buy someone something",
+      "caption": "feed the dog 是餵狗；water the plants 是澆花。buy someone something 是買某物給某人，本身沒有上對下的語氣。",
+      "image": "assets/japanese-comics/j2-13-yaru-register-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "第2、4格是解說，不朗讀。英文 feed、give、buy 不等同於日文やる的語氣；弟弟的年齡是場景設定，brother 本身不分兄弟長幼。",
+      "panels": [
+        {
+          "title": "餵狗",
+          "crop": "7 145 1009 325",
+          "alt": "英文第1格：I feed my dog. 我餵狗。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "餵食與澆花",
+          "crop": "7 478 1009 266",
+          "alt": "英文第2格：feed the dog＝餵狗；water the plants＝澆花。",
+          "first": 1,
+          "label": "解說",
+          "skipAudio": true
+        },
+        {
+          "title": "買手錶送弟弟",
+          "crop": "7 751 1009 321",
+          "alt": "英文第3格：I bought my brother a watch. 我買了一支手錶送給弟弟。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "英文語氣提醒",
+          "crop": "7 1078 1009 319",
+          "alt": "英文第4格：buy someone something＝買某物給某人；本身沒有上對下的語氣。",
+          "first": 3,
+          "label": "解說",
+          "skipAudio": true
+        }
+      ],
+      "cues": [
+        {
+          "text": "I feed my dog.",
+          "subtitle": "I feed my dog.",
+          "translation": "我餵狗。",
+          "speaker": "飼主",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "",
+          "subtitle": "feed the dog＝餵狗；water the plants＝澆花。",
+          "translation": "本格為情境／解說，僅供閱讀，不朗讀。",
+          "speaker": "解說",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "I bought my brother a watch.",
+          "subtitle": "I bought my brother a watch.",
+          "translation": "我買了一支手錶送給弟弟。",
+          "speaker": "哥哥",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "",
+          "subtitle": "buy someone something＝買某物給某人；本身沒有上對下的語氣。",
+          "translation": "本格為情境／解說，僅供閱讀，不朗讀。",
+          "speaker": "解說",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ]
+    }
+  },
+  "j2-14-possessions-no": {
+    "en": {
+      "language": "en",
+      "title": "她的行李、全家人的衣服",
+      "grammar": "her / possessive 's",
+      "caption": "her + 名詞表示她的物品；our family’s clothes 是我們全家人的衣服，family’s 使用所有格。",
+      "image": "assets/japanese-comics/j2-14-possessions-no-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "第1格是幫忙者的旁白；第2、4格是解說，不朗讀。put 的原形與過去式拼法相同。",
+      "panels": [
+        {
+          "title": "幫她放行李",
+          "crop": "7 137 1010 375",
+          "alt": "英文第1格：I put her luggage on the bench. 我把她的行李放在長椅上。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "她的行李",
+          "crop": "7 518 1010 227",
+          "alt": "英文第2格：her luggage＝她的行李；her 表示物品屬於她。",
+          "first": 1,
+          "label": "解說",
+          "skipAudio": true
+        },
+        {
+          "title": "全家人的衣服",
+          "crop": "7 751 1010 321",
+          "alt": "英文第3格：My wife washes our family’s clothes. 太太會洗我們全家人的衣服。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "所有格表示所屬",
+          "crop": "7 1078 1010 324",
+          "alt": "英文第4格：our family's clothes＝我們全家人的衣服；family's 表示所屬。",
+          "first": 3,
+          "label": "解說",
+          "skipAudio": true
+        }
+      ],
+      "cues": [
+        {
+          "text": "I put her luggage on the bench.",
+          "subtitle": "I put her luggage on the bench.",
+          "translation": "我把她的行李放在長椅上。",
+          "speaker": "幫忙者 · 旁白",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "",
+          "subtitle": "her luggage＝她的行李；her 表示物品屬於她。",
+          "translation": "本格為情境／解說，僅供閱讀，不朗讀。",
+          "speaker": "解說",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "My wife washes our family’s clothes.",
+          "subtitle": "My wife washes our family’s clothes.",
+          "translation": "太太會洗我們全家人的衣服。",
+          "speaker": "丈夫",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "",
+          "subtitle": "our family's clothes＝我們全家人的衣服；family's 表示所屬。",
+          "translation": "本格為情境／解說，僅供閱讀，不朗讀。",
+          "speaker": "解說",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ]
+    }
+  },
+  "j2-15-person-object": {
+    "en": {
+      "language": "en",
+      "title": "誰送爸爸回家？帶誰來公司？",
+      "grammar": "bring + 人 + 地點",
+      "caption": "bring 後面可接人物受詞，再接地點；bring 的過去式是 brought。home 作方向副詞時前面不加 to。",
+      "image": "assets/japanese-comics/j2-15-person-object-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "第3格是在公司內談之後把女兒帶來。第4格為解說，不朗讀。英文靠動詞搭配表達，不套用日文助詞。",
+      "panels": [
+        {
+          "title": "誰送爸爸回家",
+          "crop": "7 155 1010 299",
+          "alt": "英文第1格：Who brought Dad home? 誰送爸爸回家的？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "同事送他回家",
+          "crop": "7 458 1010 300",
+          "alt": "英文第2格：His coworker brought him home. 他的同事送他回來的。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "帶女兒來公司",
+          "crop": "7 763 1010 321",
+          "alt": "英文第3格：I’ll bring my daughter to the office. 我會帶女兒來公司。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "人物受詞與地點",
+          "crop": "7 1090 1010 412",
+          "alt": "英文第4格：bring + 人 + to + 地點；home 前通常不加 to。",
+          "first": 3,
+          "label": "解說",
+          "skipAudio": true
+        }
+      ],
+      "cues": [
+        {
+          "text": "Who brought Dad home?",
+          "subtitle": "Who brought Dad home?",
+          "translation": "誰送爸爸回家的？",
+          "speaker": "家人 · 女子",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "His coworker brought him home.",
+          "subtitle": "His coworker brought him home.",
+          "translation": "他的同事送他回來的。",
+          "speaker": "家人 · 男子",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I’ll bring my daughter to the office.",
+          "subtitle": "I’ll bring my daughter to the office.",
+          "translation": "我會帶女兒來公司。",
+          "speaker": "父親 · 在公司內說",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "",
+          "subtitle": "bring + 人 + to + 地點；home 前通常不加 to。",
+          "translation": "本格為情境／解說，僅供閱讀，不朗讀。",
+          "speaker": "解說",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        }
+      ]
+    }
+  },
+  "j2-16-without-doing": {
+    "en": {
+      "language": "en",
+      "title": "不看課本答題，不出門看動畫",
+      "grammar": "without / instead of",
+      "caption": "without + V-ing 表示沒有做某事；instead of + V-ing 表示不做某事而改做別的。",
+      "image": "assets/japanese-comics/j2-16-without-doing-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "第2格為可朗讀的情境旁白。第4格用 instead of going out 說明選擇在家看動畫。",
+      "panels": [
+        {
+          "title": "不看課本回答",
+          "crop": "11 127 1003 300",
+          "alt": "英文第1格：Please answer without looking at your textbook. 請不要看課本，直接回答。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "不開冷氣睡覺",
+          "crop": "11 434 1003 347",
+          "alt": "英文第2格：Even in summer, I sleep without turning on the air conditioner. 即使夏天，我也不開冷氣睡覺。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "詢問星期天",
+          "crop": "11 788 1003 307",
+          "alt": "英文第3格：Did you go anywhere on Sunday? 你星期天有出去嗎？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "留在家看動畫",
+          "crop": "11 1104 1003 327",
+          "alt": "英文第4格：No. I stayed home and watched anime instead of going out. 沒有。我留在家看動畫，沒有出門。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "cues": [
+        {
+          "text": "Please answer without looking at your textbook.",
+          "subtitle": "Please answer without looking at your textbook.",
+          "translation": "請不要看課本，直接回答。",
+          "speaker": "老師",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Even in summer, I sleep without turning on the air conditioner.",
+          "subtitle": "Even in summer, I sleep without turning on the air conditioner.",
+          "translation": "即使夏天，我也不開冷氣睡覺。",
+          "speaker": "女子 · 旁白",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Did you go anywhere on Sunday?",
+          "subtitle": "Did you go anywhere on Sunday?",
+          "translation": "你星期天有出去嗎？",
+          "speaker": "朋友 · 藍綠上衣",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "No. I stayed home and watched anime instead of going out.",
+          "subtitle": "No. I stayed home and watched anime instead of going out.",
+          "translation": "沒有。我留在家看動畫，沒有出門。",
+          "speaker": "朋友 · 黃色上衣",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ]
+    }
+  },
+  "j2-17-person-ni": {
+    "en": {
+      "language": "en",
+      "title": "向誰請教？信寫給誰？",
+      "grammar": "write to / ask / learn from",
+      "caption": "write to someone、ask someone、learn from someone 的接法不同；英文要看動詞搭配。",
+      "image": "assets/japanese-comics/j2-17-person-ni-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用原漫畫的場景與人物，改以自然英文練習，並非日文教材原句或原筆記英文例句。",
+      "readingNote": "第3格是學習者旁白，不是直接對老師說的話。四格皆有完整英文情境句可朗讀。",
+      "panels": [
+        {
+          "title": "正在寫信給誰",
+          "crop": "8 125 1009 310",
+          "alt": "英文第1格：Who are you writing to? 你在寫信給誰？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "寫信給老師",
+          "crop": "8 444 1009 322",
+          "alt": "英文第2格：I’m writing to my teacher. 我在寫信給老師。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "打算向老師請教",
+          "crop": "8 775 1009 310",
+          "alt": "英文第3格：I’ll ask my teacher. 我要向老師請教。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "title": "向老師學日文",
+          "crop": "8 1093 1009 322",
+          "alt": "英文第4格：I learned Japanese from my teacher. 我向老師學了日文。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "cues": [
+        {
+          "text": "Who are you writing to?",
+          "subtitle": "Who are you writing to?",
+          "translation": "你在寫信給誰？",
+          "speaker": "同學 · 黃色上衣",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I’m writing to my teacher.",
+          "subtitle": "I’m writing to my teacher.",
+          "translation": "我在寫信給老師。",
+          "speaker": "同學 · 藍綠上衣",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I’ll ask my teacher.",
+          "subtitle": "I’ll ask my teacher.",
+          "translation": "我要向老師請教。",
+          "speaker": "學習者旁白",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I learned Japanese from my teacher.",
+          "subtitle": "I learned Japanese from my teacher.",
+          "translation": "我向老師學了日文。",
+          "speaker": "同學 · 藍綠上衣",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ]
+    }
   }
 };
 if(typeof module!=="undefined" && module.exports) module.exports = variants;
