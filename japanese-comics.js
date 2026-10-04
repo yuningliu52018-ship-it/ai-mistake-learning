@@ -43,7 +43,7 @@
     document.getElementById('viewer-language-switch').hidden = !variants[selected]?.en;
     document.getElementById('viewer-language-ja').setAttribute('aria-pressed', String(language === 'ja'));
     document.getElementById('viewer-language-en').setAttribute('aria-pressed', String(language === 'en'));
-    document.getElementById('viewer-language-note').textContent = variant ? `${variant.grammar}：${variant.caption}` : `${card.querySelector('.grammar').textContent}：${card.querySelector('.card-description').textContent}兩版都有中文解說。`;
+    document.getElementById('viewer-language-note').textContent = variant ? `${variant.grammar}：${variant.caption}` : `${card.querySelector('.grammar').textContent}：${card.querySelector('.card-description').textContent}｜兩版都有中文解說。`;
     if (changed) {
       document.getElementById('viewer-error').hidden = true;
       picture.hidden = false;
@@ -164,6 +164,6 @@
   window.addEventListener('hashchange', syncLocation);
   syncLocation();
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.6.28').catch(console.error));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.6.39').catch(console.error));
   }
 })();

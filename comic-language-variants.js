@@ -468,6 +468,376 @@ const variants = {
       ]
     }
   },
+  "l2-01-tara": {
+    "en": {
+      "language": "en",
+      "title": "做了，才發現",
+      "grammar": "when／after + 子句",
+      "caption": "用 when 交代事情發生的時間，用 after 表示先後；這兩個例子都在敘述已經發生的事。",
+      "image": "assets/japanese-comics/l2-01-tara-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫相同情境練習自然英文，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第1、2格是無聲情境；第4格讀畫面旁白，不把它當成醫生建議。when、after 的時態依語境決定，本圖是過去事件。",
+      "panels": [
+        {
+          "title": "先到圖書館",
+          "crop": "11 146 496 595",
+          "alt": "第1格：女子抱著書走到圖書館，沒有英文人物台詞。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "到了才發現沒開",
+          "crop": "518 146 496 595",
+          "alt": "第2格：女子看見 CLOSED 告示，發現圖書館今天沒開。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "敘述剛才的發現",
+          "crop": "11 754 496 630",
+          "alt": "第3格：女子說到了圖書館才發現沒開。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "吃藥之後的結果",
+          "crop": "518 754 496 630",
+          "alt": "第4格：女子服藥前後的圖示，旁白說頭痛之後消失了。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "",
+          "subtitle": "我走到圖書館。",
+          "translation": "先到圖書館，再看後續發現。",
+          "speaker": "情境 · 不朗讀",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "",
+          "subtitle": "到了，才發現今天沒開！",
+          "translation": "到了才發現圖書館沒開；CLOSED 是門上的告示。",
+          "speaker": "情境 · 不朗讀",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "When I got to the library, I found it was closed.",
+          "subtitle": "When I got to the library, I found it was closed.",
+          "translation": "到了圖書館，我才發現沒開。",
+          "speaker": "女子 · 描述發現",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "After I took the medicine, my headache went away.",
+          "subtitle": "After I took the medicine, my headache went away.",
+          "translation": "吃藥之後，我的頭痛消失了。",
+          "speaker": "女子 · 旁白描述結果",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l2-02-definition": {
+    "en": {
+      "language": "en",
+      "title": "這是什麼意思？",
+      "grammar": "What is…?／What does…mean?／It means…",
+      "caption": "詢問事物可用 What is…?；詢問詞義用 What does…mean?，再用 It means… 解釋。",
+      "image": "assets/japanese-comics/l2-02-definition-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫相同情境練習自然英文，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "ji pai 是雞排的拼音式名稱，保留畫面拼法；英文語音的發音可能與中文不同。朗讀只讀四格對話，不讀頁尾問句公式。",
+      "panels": [
+        {
+          "title": "雞排是什麼",
+          "crop": "14 144 507 579",
+          "alt": "第1格：男子在夜市問攤販 ji pai 是什麼。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "解釋台式雞排",
+          "crop": "530 144 483 579",
+          "alt": "第2格：攤販拿著大塊雞排解釋。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "詢問口語詞義",
+          "crop": "14 738 492 642",
+          "alt": "第3格：男子拿著史萊姆玩具，問 gross 是什麼意思。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "解釋噁心的意思",
+          "crop": "515 738 498 642",
+          "alt": "第4格：女子說 gross 表示 disgusting，並標示為口語用法。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "What is ji pai?",
+          "subtitle": "What is ji pai?",
+          "translation": "雞排是什麼？",
+          "speaker": "男子 · 詢問事物",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "It’s a large Taiwanese fried chicken cutlet.",
+          "subtitle": "It’s a large Taiwanese fried chicken cutlet.",
+          "translation": "這是一大塊台式炸雞排。",
+          "speaker": "攤販 · 解釋事物",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "What does ‘gross’ mean?",
+          "subtitle": "What does ‘gross’ mean?",
+          "translation": "gross 是什麼意思？",
+          "speaker": "男子 · 詢問詞義",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "It means disgusting.",
+          "subtitle": "It means disgusting.",
+          "translation": "意思是令人噁心的。",
+          "speaker": "女子 · 解釋詞義",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l2-03-content": {
+    "en": {
+      "language": "en",
+      "title": "新聞說了什麼？",
+      "grammar": "a report that + 子句／hear (that) + 子句",
+      "caption": "用 that 後面的完整句子補充報導或消息內容；I heard that… 表示我聽說……。",
+      "image": "assets/japanese-comics/l2-03-content-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫相同情境練習自然英文，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第1格讀電視顯示的英文標題；第2格只有文法示意，保持靜音。畫面新聞為語言學習情境。",
+      "panels": [
+        {
+          "title": "看見新聞內容",
+          "crop": "12 146 530 614",
+          "alt": "第1格：女子早餐時看電視，電視顯示詐騙電話正在增加的學習情境標題。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "用子句說明內容",
+          "crop": "552 146 462 614",
+          "alt": "第2格：把 scam calls are increasing 透過 that 接到 a report 的無聲文法示意。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "今天早上看到報導",
+          "crop": "12 771 503 652",
+          "alt": "第3格：女子告訴男子，她今早看到詐騙電話增加的報導。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "聽說明天放假",
+          "crop": "524 771 490 652",
+          "alt": "第4格：戴眼鏡的男子說聽說明天放假。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Scam calls are increasing.",
+          "subtitle": "Scam calls are increasing.",
+          "translation": "詐騙電話正在增加。",
+          "speaker": "電視標題 · 學習情境",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "a report that + 完整句子",
+          "translation": "that 後接完整句子，用來說明報導的內容。",
+          "speaker": "文法示意 · 不朗讀",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "This morning, I saw a report that scam calls are increasing.",
+          "subtitle": "This morning, I saw a report that scam calls are increasing.",
+          "translation": "今天早上，我看到詐騙電話增加的報導。",
+          "speaker": "女子 · 轉述報導",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I heard that we have tomorrow off.",
+          "subtitle": "I heard that we have tomorrow off.",
+          "translation": "我聽說我們明天放假。",
+          "speaker": "男子 · 轉述消息",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l2-04-mitai": {
+    "en": {
+      "language": "en",
+      "title": "口語的「像……一樣」",
+      "grammar": "look like／feel like／名詞 + like",
+      "caption": "like 可表示喜歡，也可表示像或舉例；用風景、甜點、炎熱房間練習自然說法。",
+      "image": "assets/japanese-comics/l2-04-mitai-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫相同情境練習自然英文，並非日文教材原句或原有英文教材。",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編",
+      "readingNote": "第1格女子讚嘆，第2格男子回答 Yes。第3格第一個 like 表示喜歡，第二個 like 表示像……這類。",
+      "panels": [
+        {
+          "title": "欣賞湖畔風景",
+          "crop": "10 110 499 513",
+          "alt": "第1格：黃外套女子讚嘆風景真漂亮。",
+          "first": 0,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "像一幅畫",
+          "crop": "519 110 496 513",
+          "alt": "第2格：藍襯衫男子回應風景看起來像一幅畫。",
+          "first": 1,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "喜歡這類甜點",
+          "crop": "10 629 499 554",
+          "alt": "第3格：女子拿著菜單，說她喜歡鬆餅和布丁這類甜點。",
+          "first": 2,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "房間像三溫暖",
+          "crop": "519 629 496 554",
+          "alt": "第4格：男子在炎熱房間裡把房間比作三溫暖。",
+          "first": 3,
+          "label": "英文情境改編",
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "This view is beautiful!",
+          "subtitle": "This view is beautiful!",
+          "translation": "這片風景真漂亮！",
+          "speaker": "女子 · 讚嘆風景",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Yes, it looks like a painting.",
+          "subtitle": "Yes, it looks like a painting.",
+          "translation": "是啊，它看起來像一幅畫。",
+          "speaker": "男子 · 比喻風景",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I like desserts like pancakes and pudding.",
+          "subtitle": "I like desserts like pancakes and pudding.",
+          "translation": "我喜歡鬆餅和布丁這類甜點。",
+          "speaker": "女子 · 分享喜好並舉例",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "This room feels like a sauna!",
+          "subtitle": "This room feels like a sauna!",
+          "translation": "這個房間感覺像三溫暖！",
+          "speaker": "男子 · 比喻炎熱",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
   "l3-01-permission": {
     "en": {
       "language": "en",
@@ -953,6 +1323,585 @@ const variants = {
           "subtitle": "I have so much work. I probably can’t make it to the reunion tomorrow.",
           "translation": "我工作太多，明天大概沒辦法參加同學會。",
           "speaker": "短髮女生 · 說明情況",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l4-01-reporting": {
+    "en": {
+      "language": "en",
+      "title": "轉述消息與確認",
+      "grammar": "The forecast says… / …, right?",
+      "caption": "先交代消息來源；重述對方的需求並加上 right?，確認理解是否正確。",
+      "image": "assets/japanese-comics/l4-01-reporting-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。",
+      "panels": [
+        {
+          "title": "收到消息",
+          "crop": "11 172 497 562",
+          "alt": "英文第1格：短髮女子坐在窗邊，查看手機上的下雨預報。 本格為無聲情境或解說。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "轉述預報",
+          "crop": "519 172 495 562",
+          "alt": "英文第2格：短髮女子向朋友轉述天氣預報，窗外正在下雨。 英文台詞：The forecast says it’s going to rain today.",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "提出換貨",
+          "crop": "11 748 497 579",
+          "alt": "英文第3格：短髮顧客拿著 M 號褲子，向店員提出換成 L 號的要求。 英文台詞：I’d like to exchange these for a large.",
+          "first": 2,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "重述確認",
+          "crop": "519 748 495 579",
+          "alt": "英文第4格：店員拿著 L 號褲子，重述顧客的換貨要求。 英文台詞：You’d like a large, right?",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "",
+          "subtitle": "從天氣預報得知消息。",
+          "translation": "從天氣預報得知消息。",
+          "speaker": "情境說明",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "The forecast says it’s going to rain today.",
+          "subtitle": "The forecast says it’s going to rain today.",
+          "translation": "天氣預報說今天會下雨。",
+          "speaker": "短髮女生 · 轉述消息",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I’d like to exchange these for a large.",
+          "subtitle": "I’d like to exchange these for a large.",
+          "translation": "我想把這件換成大號。",
+          "speaker": "短髮顧客 · 換貨",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "You’d like a large, right?",
+          "subtitle": "You’d like a large, right?",
+          "translation": "你想換成大號，對嗎？",
+          "speaker": "紅衣店員 · 確認需求",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l4-02-explanation": {
+    "en": {
+      "language": "en",
+      "title": "為什麼呢？",
+      "grammar": "Why…? / Because… / be allowed",
+      "caption": "Why 詢問原因，Because 引出理由；not allowed 表示不被允許。",
+      "image": "assets/japanese-comics/l4-02-explanation-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。",
+      "panels": [
+        {
+          "title": "追問原因",
+          "crop": "11 157 497 558",
+          "alt": "英文第1格：紅色外套女子拿著麥克風，問短髮朋友為什麼不唱歌。 英文台詞：Why aren’t you singing?",
+          "first": 0,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "說明理由",
+          "crop": "519 157 495 558",
+          "alt": "英文第2格：短髮女子不好意思地解釋自己不擅長唱歌。 英文台詞：Because I’m not a good singer.",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "詢問許可",
+          "crop": "11 725 497 525",
+          "alt": "英文第3格：短髮女子在禁菸標誌旁，詢問可否抽菸。 英文台詞：Can I smoke here?",
+          "first": 2,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "提醒規定",
+          "crop": "519 725 495 525",
+          "alt": "英文第4格：紅衣女子指向禁菸標誌，提醒朋友這裡禁止抽菸。 英文台詞：No. Smoking isn’t allowed here.",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Why aren’t you singing?",
+          "subtitle": "Why aren’t you singing?",
+          "translation": "你為什麼不唱歌呢？",
+          "speaker": "紅衣女生 · 詢問原因",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Because I’m not a good singer.",
+          "subtitle": "Because I’m not a good singer.",
+          "translation": "因為我不擅長唱歌。",
+          "speaker": "短髮女生 · 說明理由",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Can I smoke here?",
+          "subtitle": "Can I smoke here?",
+          "translation": "這裡可以抽菸嗎？",
+          "speaker": "短髮女生 · 詢問許可",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "No. Smoking isn’t allowed here.",
+          "subtitle": "No. Smoking isn’t allowed here.",
+          "translation": "不行，這裡禁止吸菸。",
+          "speaker": "紅衣女生 · 提醒規定",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l4-03-contractions": {
+    "en": {
+      "language": "en",
+      "title": "聊天常用的英文縮寫",
+      "grammar": "I've / I'm / I'll / don't",
+      "caption": "英文縮寫把常一起使用的字合併，撇號標示省略的字母；與日文縮約規則不同。",
+      "image": "assets/japanese-comics/l4-03-contractions-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。",
+      "panels": [
+        {
+          "title": "不小心吃光",
+          "crop": "17 179 488 502",
+          "alt": "英文第1格：短髮女子看著吃空的甜點杯，驚覺自己吃掉了甜點。 英文台詞：Oh no! I’ve eaten it all.",
+          "first": 0,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "喝完了飲料",
+          "crop": "519 179 488 502",
+          "alt": "英文第2格：紅衣女子拿著空飲料杯，向短髮朋友道歉。 英文台詞：I’m sorry. I’ve finished your drink.",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "先預習功課",
+          "crop": "17 694 488 548",
+          "alt": "英文第3格：短髮女子翻開日文課本，在上課前先預習。 英文台詞：I’ll prepare for my Japanese class.",
+          "first": 2,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "電腦還在用",
+          "crop": "519 694 488 548",
+          "alt": "英文第4格：紅衣女子伸手碰電腦，短髮女子抬手表示自己還在使用。 英文台詞：Don’t turn it off! I’m still using it.",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Oh no! I’ve eaten it all.",
+          "subtitle": "Oh no! I’ve eaten it all.",
+          "translation": "糟了！我把它吃光了。",
+          "speaker": "短髮女生 · 驚訝",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I’m sorry. I’ve finished your drink.",
+          "subtitle": "I’m sorry. I’ve finished your drink.",
+          "translation": "抱歉，我把你的飲料喝完了。",
+          "speaker": "紅衣女生 · 道歉",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "I’ll prepare for my Japanese class.",
+          "subtitle": "I’ll prepare for my Japanese class.",
+          "translation": "我會先為日文課做準備。",
+          "speaker": "短髮女生 · 計畫",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Don’t turn it off! I’m still using it.",
+          "subtitle": "Don’t turn it off! I’m still using it.",
+          "translation": "先別關！我還在用。",
+          "speaker": "短髮女生 · 提醒",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l4-04-causative-passive": {
+    "en": {
+      "language": "en",
+      "title": "被朋友推著唱歌",
+      "grammar": "make + 人 + 原形動詞",
+      "caption": "make someone do something 可表示強迫某人做事；這裡用來描述朋友催她唱歌。",
+      "image": "assets/japanese-comics/l4-04-causative-passive-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。",
+      "panels": [
+        {
+          "title": "一起去唱歌",
+          "crop": "13 140 493 613",
+          "alt": "英文第1格：三位朋友一起走進卡拉 OK 店。 本格為無聲情境或解說。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "朋友催促",
+          "crop": "519 140 492 613",
+          "alt": "英文第2格：紅衣朋友遞出麥克風，要求短髮女子用日文唱歌。 英文台詞：Come on! Sing in Japanese!",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "不情願地唱",
+          "crop": "13 766 493 582",
+          "alt": "英文第3格：短髮女子拿起麥克風唱歌，兩位朋友在旁鼓掌。 本格為無聲情境或解說。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "描述這段經驗",
+          "crop": "519 766 492 582",
+          "alt": "英文第4格：短髮女子拿著麥克風，說明自己總被要求唱日文歌。 英文台詞：They always make me sing in Japanese at karaoke.",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "",
+          "subtitle": "三位朋友一起來唱卡拉 OK。",
+          "translation": "三位朋友一起來唱卡拉 OK。",
+          "speaker": "情境說明",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "Come on! Sing in Japanese!",
+          "subtitle": "Come on! Sing in Japanese!",
+          "translation": "來嘛！用日文唱吧！",
+          "speaker": "紅衣朋友 · 催促",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "雖然有點不情願，她還是唱了。",
+          "translation": "雖然有點不情願，她還是唱了。",
+          "speaker": "情境說明",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "They always make me sing in Japanese at karaoke.",
+          "subtitle": "They always make me sing in Japanese at karaoke.",
+          "translation": "唱卡拉 OK 時，他們總要我用日文唱歌。",
+          "speaker": "短髮女生 · 描述經驗",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l4-05-writing": {
+    "en": {
+      "language": "en",
+      "title": "把日常寫成文章",
+      "grammar": "used to / once / while",
+      "caption": "用 used to 或 once 描述過去；while 在此連接兩個形成對照的生活資訊。",
+      "image": "assets/japanese-comics/l4-05-writing-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。",
+      "panels": [
+        {
+          "title": "走訪老建築",
+          "crop": "14 157 492 593",
+          "alt": "英文第1格：兩位女子參訪老建築，短髮女子拿著導覽資料介紹。 英文台詞：This used to be a museum.",
+          "first": 0,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "寫進筆記",
+          "crop": "518 157 495 593",
+          "alt": "英文第2格：短髮女子坐在咖啡店寫筆記，以書面語描述建築過去的身分。 英文台詞：This building was once a museum.",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "兩地生活",
+          "crop": "14 760 492 551",
+          "alt": "英文第3格：住在台灣的短髮女子透過視訊，和住在東京的家人通話。 本格為無聲情境或解說。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "連接兩件事",
+          "crop": "518 760 495 551",
+          "alt": "英文第4格：短髮女子把家人的居住地和自己的工作地，連成完整句子。 英文台詞：My family lives in Tokyo, while I work in Taiwan.",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "This used to be a museum.",
+          "subtitle": "This used to be a museum.",
+          "translation": "這裡以前是一座博物館。",
+          "speaker": "短髮女生 · 介紹建築",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "This building was once a museum.",
+          "subtitle": "This building was once a museum.",
+          "translation": "這棟建築曾是一座博物館。",
+          "speaker": "短髮女生 · 讀出筆記",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "家人住在東京；我在台灣工作。",
+          "translation": "家人住在東京；我在台灣工作。",
+          "speaker": "情境說明",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "My family lives in Tokyo, while I work in Taiwan.",
+          "subtitle": "My family lives in Tokyo, while I work in Taiwan.",
+          "translation": "我的家人住在東京，而我在台灣工作。",
+          "speaker": "短髮女生 · 讀出筆記",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l4-06-feelings": {
+    "en": {
+      "language": "en",
+      "title": "說感受，也看表現",
+      "grammar": "feel / seem / seem eager to",
+      "caption": "feel 說感受；seem 表示根據表現推測。英文不需要套用日文描述他人感情的詞尾。",
+      "image": "assets/japanese-comics/l4-06-feelings-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。",
+      "panels": [
+        {
+          "title": "自己的感受",
+          "crop": "12 160 495 540",
+          "alt": "英文第1格：男子在咖啡店獨坐，看起來很失落，說自己感到寂寞。 英文台詞：I feel lonely.",
+          "first": 0,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "觀察別人",
+          "crop": "518 160 495 540",
+          "alt": "英文第2格：短髮女子和紅衣朋友談到後方獨坐的王先生，描述他分手後的寂寞表現。 英文台詞：Mr. Wang seems lonely after his breakup.",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "詢問意願",
+          "crop": "12 712 495 593",
+          "alt": "英文第3格：辦公室裡同事收拾離開，短髮女子詢問大家是否想準時回家。 英文台詞：Does everyone want to leave on time?",
+          "first": 2,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "看出意願",
+          "crop": "518 712 495 593",
+          "alt": "英文第4格：紅衣女子回答朋友，大家都表現出想準時回家的意願。 英文台詞：Yes. They all seem eager to leave.",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I feel lonely.",
+          "subtitle": "I feel lonely.",
+          "translation": "我覺得很寂寞。",
+          "speaker": "男子 · 自述感受",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Mr. Wang seems lonely after his breakup.",
+          "subtitle": "Mr. Wang seems lonely after his breakup.",
+          "translation": "王先生分手後，顯得很寂寞。",
+          "speaker": "短髮女生 · 描述觀察",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Does everyone want to leave on time?",
+          "subtitle": "Does everyone want to leave on time?",
+          "translation": "大家都想準時下班嗎？",
+          "speaker": "短髮女生 · 詢問",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "Yes. They all seem eager to leave.",
+          "subtitle": "Yes. They all seem eager to leave.",
+          "translation": "對啊，他們看起來都很想離開。",
+          "speaker": "紅衣女生 · 描述觀察",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ]
+    }
+  },
+  "l4-07-nominalization": {
+    "en": {
+      "language": "en",
+      "title": "把理解的事說清楚",
+      "grammar": "realize that + 子句 / learn that + 子句",
+      "caption": "that 子句說明理解或學到的完整內容；內容本身有主詞與動詞。",
+      "image": "assets/japanese-comics/l4-07-nominalization-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；沿用日文版人物與情境，英文台詞及中文解說另行改寫，並非日文教材原句或原始英文出處。",
+      "readingNote": "英文朗讀僅包含圖中的英文對話；中文解說及文法標籤不朗讀。四格依左上、右上、左下、右下順序。",
+      "panels": [
+        {
+          "title": "開始留學",
+          "crop": "12 178 496 542",
+          "alt": "英文第1格：短髮女子帶著行李搬進住處，準備開始獨自留學生活。 本格為無聲情境或解說。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "理解家事辛苦",
+          "crop": "519 178 495 542",
+          "alt": "英文第2格：短髮女子拿著滿滿的洗衣籃，在廚房前體會到家事的辛苦。 英文台詞：I’ve realized that housework is hard.",
+          "first": 1,
+          "label": "英文情境改編"
+        },
+        {
+          "title": "看著帳單",
+          "crop": "12 731 496 524",
+          "alt": "英文第3格：短髮女子對著帳單、收據和錢包，思考日常生活的各種花費。 本格為無聲情境或解說。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "title": "學到生活現實",
+          "crop": "519 731 495 524",
+          "alt": "英文第4格：短髮女子回想獨自生活的經驗，理解各種事情都要花錢。 英文台詞：I’ve learned that everything costs money.",
+          "first": 3,
+          "label": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "",
+          "subtitle": "第一次自己住，開始獨立生活。",
+          "translation": "第一次自己住，開始獨立生活。",
+          "speaker": "情境說明",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "I’ve realized that housework is hard.",
+          "subtitle": "I’ve realized that housework is hard.",
+          "translation": "我體會到做家事很辛苦。",
+          "speaker": "短髮女生 · 心裡想",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "text": "",
+          "subtitle": "買菜、水電、生活用品，都要花錢。",
+          "translation": "買菜、水電、生活用品，都要花錢。",
+          "speaker": "情境說明",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": true
+        },
+        {
+          "text": "I’ve learned that everything costs money.",
+          "subtitle": "I’ve learned that everything costs money.",
+          "translation": "我才知道原來什麼都要花錢。",
+          "speaker": "短髮女生 · 心裡想",
           "panel": 3,
           "sourceKind": "adapted",
           "sourceLabel": "英文情境改編"
