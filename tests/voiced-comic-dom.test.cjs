@@ -55,5 +55,14 @@ test('English deep link, switching and Back/Forward synchronize image, script, v
  for(let i=0;i<20;i++){ids['language-en'].fire('click');ids['language-ja'].fire('click')}p.flushImages();assert.equal(ids['panel-nav'].children.length,4);assert.equal(ids['script-list'].children.length,4);assert.equal(p.timers.size,0);
 });
 test('Unsupported English variants cannot alter any other Japanese route',()=>{
- for(const c of comics.slice(1)){const p=page(c.id,{language:'en'});assert.equal(p.ids['language-switch'].hidden,true);assert.equal(p.image.attrs.href,c.image);p.ids.play.fire('click');assert.equal(new URL(p.played.at(-1)).searchParams.get('tl'),'ja')}
+ for(const c of comics.filter(c=>!require("../comic-language-variants.js")[c.id]?.en)){const p=page(c.id,{language:'en'});assert.equal(p.ids['language-switch'].hidden,true);assert.equal(p.image.attrs.href,c.image);p.ids.play.fire('click');assert.equal(new URL(p.played.at(-1)).searchParams.get('tl'),'ja')}
+});
+
+for(const [id, {en}] of Object.entries(require('../comic-language-variants.js'))) test(`${id}: English DOM panels, exact cues, cancellation and language-aware links`,()=>{
+ const p=page(id,{language:'en'}),{ids}=p;assert.equal(ids['page-title'].textContent,en.title);assert.equal(p.image.attrs.href,en.image);assert.equal(p.played.length,0);assert.equal(ids['language-switch'].hidden,false);assert.equal(ids['script-list'].children.length,en.cues.filter(c=>c.text).length);
+ for(let i=0;i<4;i++){ids['panel-nav'].children[i].fire('click');assert.equal(ids['panel-image'].attrs.viewBox,en.panels[i].crop);assert.equal(ids.subtitle.textContent,en.cues[en.panels[i].first].subtitle)}
+ ids.play.fire('click');assert.equal(new URL(p.played.at(-1)).searchParams.get('tl'),'en');ids['language-ja'].fire('click');p.flushImages();assert.equal(p.timers.size,0);assert.equal(ids['playback-status'].dataset.state,'idle');
+ p.history.back();p.flushImages();assert.equal(p.image.attrs.href,en.image);assert.equal(p.played.length,1);p.history.forward();p.flushImages();assert.equal(ids['language-ja'].attrs['aria-pressed'],'true');
+ ids['language-en'].fire('click');p.flushImages();const pos=comics.findIndex(c=>c.id===id);for(const [name,offset] of [['previous-comic',-1],['next-comic',1]]){const dest=comics[pos+offset];if(dest)assert.equal(ids[name].href.endsWith('&lang=en'),!!require('../comic-language-variants.js')[dest.id]?.en)}
+ ids['comic-select'].fire('change',{target:{value:id}});assert.ok(p.location.href.endsWith('&lang=en'));assert.equal(p.timers.size,0);
 });

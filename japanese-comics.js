@@ -43,11 +43,11 @@
     document.getElementById('viewer-language-switch').hidden = !variants[selected]?.en;
     document.getElementById('viewer-language-ja').setAttribute('aria-pressed', String(language === 'ja'));
     document.getElementById('viewer-language-en').setAttribute('aria-pressed', String(language === 'en'));
-    document.getElementById('viewer-language-note').textContent = variant ? `${variant.grammar}：${variant.caption}` : '〜てもらえませんか：把直接的要求，換成更有禮貌的請求。兩版都有中文解說。';
+    document.getElementById('viewer-language-note').textContent = variant ? `${variant.grammar}：${variant.caption}` : `${card.querySelector('.grammar').textContent}：${card.querySelector('.card-description').textContent}兩版都有中文解說。`;
     if (changed) {
       document.getElementById('viewer-error').hidden = true;
       picture.hidden = false;
-      picture.alt = variant ? `英文情境改編：${variant.title}，Could you + 原形動詞禮貌請求四格漫畫，含中文翻譯。` : card.querySelector('img').alt;
+      picture.alt = variant ? `英文情境改編：${variant.title}，${variant.grammar}四格漫畫，含中文翻譯。` : card.querySelector('img').alt;
       picture.src = variant?.image || `assets/japanese-comics/${selected}.webp`;
       resetZoom();
     }
@@ -111,7 +111,8 @@
     if (!card) return;
     const url = new URL(location.href);
     url.hash = `comic=${card.dataset.comic}`;
-    url.searchParams.delete('lang');
+    if (selectedLanguage === 'en' && variants[card.dataset.comic]?.en) url.searchParams.set('lang', 'en');
+    else url.searchParams.delete('lang');
     history.replaceState(history.state, '', url);
     renderSelection(card);
   }
@@ -163,6 +164,6 @@
   window.addEventListener('hashchange', syncLocation);
   syncLocation();
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.5.1').catch(console.error));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.6.5').catch(console.error));
   }
 })();

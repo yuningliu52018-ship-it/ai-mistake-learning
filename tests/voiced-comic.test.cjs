@@ -179,9 +179,8 @@ test('Google-only UI and controls; gallery stays at 59 with all voiced entries; 
   assert.match(js,/translate_tts\?ie=UTF-8&tl=\$\{this.language\}&client=tw-ob&q=/);
   assert.doesNotMatch(js,/speechSynthesis|SpeechSynthesisUtterance|localStorage|getUserMedia|fetch\(/);
   assert.match(js,/pagehide/); assert.match(js,/visibilitychange/); assert.match(js,/popstate/);
-  for (const asset of ['voiced-comic.js?v=2.5','voiced-comic.css?v=2.4']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
-  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.5\.1/);
-  assert.match(js,/service-worker\.js\?v=5\.5\.1/);
+  for (const asset of [html.match(/src="(voiced-comic.js\?v=[\d.]+)"/)[1],'voiced-comic.css?v=2.4']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
+  const cacheVersion=js.match(/service-worker\.js\?v=([\d.]+)/)[1];assert.ok(read('service-worker.js').includes('ai-mistake-learning-v'+cacheVersion));
 });
 
 test('duplicate playing cannot extend watchdog; plain play after ended begins again', () => {
@@ -240,8 +239,8 @@ test('confirmed difficult readings keep original visible subtitles',()=>{
 
 const {resolveComic,VARIANTS}=require('../voiced-comic.js');
 const english=resolveComic(COMICS[0],'en');
-test('exact approved English art text and one variant, preserving all 59 Japanese comics',()=>{
- assert.deepEqual(Object.keys(VARIANTS),['l1-01-polite-request']);assert.equal(COMICS.length,59);
+test('exact approved first English art text remains unchanged, preserving all 59 Japanese comics',()=>{
+ assert.ok(VARIANTS['l1-01-polite-request']);assert.equal(COMICS.length,59);
  assert.deepEqual(english.cues.map(c=>c.subtitle),['Oh no, I can’t keep up!','Could you show me your notes?','Sure. Here you go.','Thanks!','Excuse me. Could you take a photo of us?']);
  assert.equal(english.cues[2].panel,english.cues[3].panel);assert.match(english.caption,/could 不是在說過去/);
 });
@@ -256,4 +255,9 @@ for(const phase of ['starting','speaking','gap','paused','error','ended'])test(`
 test('English full run and repeat use Google en for all five ordered cues',()=>{
  const h=setup({comic:english});h.player.play();for(let i=0;i<5;i++){assert.equal(h.player.index,i);assert.equal(new URL(h.played.at(-1).src).searchParams.get('tl'),'en');h.start();h.end();h.tick(650)}assert.equal(h.player.state,'ended');assert.equal(h.constructs,1);
  h.player.play({single:true});assert.equal(h.player.index,4);h.start();h.end();assert.equal(h.player.state,'paused');h.player.play({restart:true});assert.equal(h.player.index,0);
+});
+
+for(const [id, {en}] of Object.entries(VARIANTS))test(`${id}: entire English run maps every audible cue to Google en`,()=>{
+ const base=COMICS.find(c=>c.id===id),variant=resolveComic(base,'en');const h=setup({comic:variant});const spoken=en.cues.map((q,i)=>q.text?i:-1).filter(i=>i>=0);h.player.play();
+ for(const i of spoken){assert.equal(h.player.index,i);let url=new URL(h.played.at(-1).src);assert.equal(url.searchParams.get('tl'),'en');assert.equal(url.searchParams.get('q'),en.cues[i].text);h.start();h.end();h.tick(650)}assert.equal(h.player.state,'ended');assert.equal(h.constructs,1);
 });

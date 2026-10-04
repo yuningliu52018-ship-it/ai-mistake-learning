@@ -29,7 +29,7 @@ test('all local homepage resources and service-worker shell entries exist', () =
  assert.match(sw, /eva-theme\.css\?v=5\.0/);
  assert.match(sw, /assets\/eva-reading-corner\.svg/);
  assert.match(home,/service-worker\.js\?v=5\.2\.0/);
- assert.match(read('japanese-comics.js'),/service-worker\.js\?v=5\.5\.1/);
+ const galleryVersion=read('japanese-comics.js').match(/service-worker\.js\?v=([\d.]+)/)[1];assert.ok(sw.includes('ai-mistake-learning-v'+galleryVersion));assert.ok(read('voiced-comic.js').includes('service-worker.js?v='+galleryVersion));
 });
 test('presentation keeps capture behavior and reduced-motion accessibility', () => {
  assert.match(read('eva-theme.css'), /prefers-reduced-motion:reduce/);

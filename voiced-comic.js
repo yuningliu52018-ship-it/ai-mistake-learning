@@ -221,7 +221,11 @@
   byId('repeat').addEventListener('click', () => player.play({ single: true }));
   byId('speed').addEventListener('change', event => player.configure({ rate: Number(event.target.value) }));
   byId('mode').addEventListener('change', event => player.configure({ practice: event.target.value === 'practice' }));
-  byId('comic-select').addEventListener('change', event => { player.stop(); location.href = `voiced-comic.html?comic=${encodeURIComponent(event.target.value)}`; });
+  byId('comic-select').addEventListener('change', event => {
+    const id = event.target.value;
+    const languageQuery = player.language === 'en' && VARIANTS?.[id]?.en ? '&lang=en' : '';
+    player.stop(); location.href = `voiced-comic.html?comic=${encodeURIComponent(id)}${languageQuery}`;
+  });
   document.querySelectorAll('a').forEach(link => link.addEventListener('click', () => player.stop()));
   window.addEventListener('pagehide', () => player.stop());
   window.addEventListener('popstate', syncLanguage);
@@ -236,6 +240,10 @@
     imageReady = false;
     player.setComic(comic);
     const languageQuery = player.language === 'en' ? '&lang=en' : '';
+    for (const [id, offset] of [['previous-comic', -1], ['next-comic', 1]]) {
+      const destination = COMICS[position + offset];
+      if (destination) byId(id).href = `voiced-comic.html?comic=${destination.id}${player.language === 'en' && VARIANTS?.[destination.id]?.en ? '&lang=en' : ''}`;
+    }
     document.title = `${comic.title}・有聲漫畫｜Eva的資料庫`;
     byId('page-title').textContent = comic.title;
     byId('edition').textContent = `${comic.label} · 有聲漫畫`;
@@ -297,5 +305,5 @@
     syncLanguage();
   });
   syncLanguage();
-  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.5.1').catch(console.error));
+  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.6.5').catch(console.error));
 })();
