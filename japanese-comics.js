@@ -25,7 +25,8 @@
   function renderSelection(card) {
     const changed = selected !== card.dataset.comic;
     selected = card.dataset.comic;
-    document.getElementById('viewer-voice').hidden = selected !== 'l1-01-polite-request';
+    document.getElementById('viewer-voice').hidden = false;
+    document.getElementById('viewer-voice').href = `voiced-comic.html?comic=${encodeURIComponent(selected)}`;
     document.getElementById('viewer-title').textContent = card.querySelector('h2').textContent;
     document.getElementById('viewer-label').textContent = card.querySelector('.lesson-label').textContent;
     const index = visible.indexOf(card);
@@ -140,6 +141,6 @@
   window.addEventListener('hashchange', syncLocation);
   syncLocation();
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.2.0').catch(console.error));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.3.0').catch(console.error));
   }
 })();

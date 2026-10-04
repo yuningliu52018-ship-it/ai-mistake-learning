@@ -2,22 +2,13 @@
  * No device-voice fallback, recording, or audio export. */
 (() => {
   'use strict';
-  const PANELS = [
-    { title: '筆記抄不完', crop: '8 102 1010 287', alt: '第1格：同學在教室裡來不及抄完筆記。', first: 0 },
-    { title: '委婉地請求', crop: '8 399 1010 319', alt: '第2格：同學請林同學讓她看筆記。', first: 1 },
-    { title: '答應與道謝', crop: '8 726 1010 302', alt: '第3格：林同學借出筆記，另一位同學道謝。', first: 2 },
-    { title: '換個情境試試', crop: '8 1038 1010 399', alt: '第4格：旅行時，請別人幫忙拍照的補充例句。', first: 4 }
-  ];
-  const CUES = [
-    { panel: 0, text: '', subtitle: '糟了，筆記抄不完……', translation: '先看看兩位同學，再按播放，聽她怎麼開口。', speaker: '情境開場 · 無日文台詞' },
-    { panel: 1, text: 'りんさん、ノートを見せてもらえませんか。', subtitle: '林さん、ノートを見せてもらえませんか。', translation: '林同學，可以讓我看一下筆記嗎？', speaker: '同學 · 禮貌請求' },
-    { panel: 2, text: 'どうぞ。', subtitle: 'どうぞ。', translation: '請用。', speaker: '林同學 · 答應' },
-    { panel: 2, text: 'ありがとうございます。', subtitle: 'ありがとうございます。', translation: '謝謝你。', speaker: '同學 · 道謝' },
-    { panel: 3, text: '写真を撮ってもらえませんか。', subtitle: '写真を撮ってもらえませんか。', translation: '可以幫我拍照嗎？', speaker: '活用例句 · 補充' }
-  ];
+  const COMICS = typeof module !== 'undefined' && module.exports ? require('./voiced-comics-data.js') : globalThis.VOICED_COMICS;
+  const DEFAULT = COMICS[0];
+  const CUES = DEFAULT.cues, PANELS = DEFAULT.panels;
   const ACTIVE = new Set(['starting', 'speaking', 'gap']);
   class ComicPlayer {
-    constructor({ Audio, onChange = () => {}, clock = globalThis }) {
+    constructor({ Audio, comic = DEFAULT, onChange = () => {}, clock = globalThis }) {
+      this.comic = comic; this.cues = comic.cues; this.panels = comic.panels;
       this.Audio = Audio; this.audio = null; this.detachAudio = null;
       this.onChange = onChange; this.clock = clock;
       this.index = 0; this.state = 'idle'; this.rate = 0.95; this.practice = false;
@@ -41,7 +32,7 @@
     }
     fail(message) { this.cancel(); this.state = 'error'; this.message = message; this.emit(); }
     select(index) {
-      if (!Number.isInteger(index) || !CUES[index]) return;
+      if (!Number.isInteger(index) || !this.cues[index]) return;
       this.cancel(); this.index = index; this.state = 'idle'; this.message = ''; this.diagnostic = ''; this.emit();
     }
     stop() { this.select(0); }
@@ -57,7 +48,11 @@
       if (ACTIVE.has(this.state) && !restart && !single) return;
       this.cancel(); this.single = single; this.diagnostic = '';
       if (restart || (this.state === 'ended' && !single)) this.index = 0;
-      if (this.index === 0) this.index = 1;
+      if (!this.cues[this.index].text) {
+        const next = this.cues.findIndex((cue, index) => index >= this.index && cue.text);
+        this.index = next >= 0 ? next : this.cues.findIndex(cue => cue.text);
+      }
+      if (this.index < 0) { this.index = 0; this.fail('這張漫畫沒有可朗讀的日文台詞。'); return; }
       if (typeof this.Audio !== 'function') {
         this.fail('這個瀏覽器不支援音訊播放。請用 Safari 或 Chrome 開啟此頁。'); return;
       }
@@ -106,8 +101,9 @@
         this.timer = this.clock.setTimeout(() => {
           if (!live()) return;
           this.clearTimers();
-          if (this.index === CUES.length - 1) { this.state = 'ended'; this.message = '四句都練完了！可以重頭再聽一次。'; this.emit(); }
-          else { ++this.index; this.state = 'idle'; this.play(); }
+          const next = this.cues.findIndex((cue, index) => index > this.index && cue.text);
+          if (next < 0) { this.state = 'ended'; this.message = `${this.cues.filter(cue => cue.text).length} 句都練完了！可以重頭再聽一次。`; this.emit(); }
+          else { this.index = next; this.state = 'idle'; this.play(); }
         }, duration);
       };
       this.detachAudio = () => {
@@ -127,7 +123,7 @@
       try {
         audio.preload = 'auto';
         // This is the same URL and Japanese voice method used by the original site.
-        audio.src = `https://translate.google.com/translate_tts?ie=UTF-8&tl=ja&client=tw-ob&q=${encodeURIComponent(CUES[this.index].text)}`;
+        audio.src = `https://translate.google.com/translate_tts?ie=UTF-8&tl=ja&client=tw-ob&q=${encodeURIComponent(this.cues[this.index].text)}`;
         audio.playbackRate = this.rate;
         audio.preservesPitch = true;
         // Call play() directly in the click handler, not after fetch/canplay awaits.
@@ -136,18 +132,74 @@
       } catch (error) { failed(error); }
     }
   }
-  if (typeof module !== 'undefined' && module.exports) module.exports = { ComicPlayer, CUES, PANELS };
+  if (typeof module !== 'undefined' && module.exports) module.exports = { ComicPlayer, CUES, PANELS, COMICS };
   if (typeof document === 'undefined') return;
   const byId = id => document.getElementById(id);
+  const requested = new URLSearchParams(location.search).get('comic') || DEFAULT.id;
+  const comic = COMICS.find(item => item.id === requested);
+  if (!comic) {
+    byId('page-title').textContent = '找不到這張有聲漫畫';
+    byId('intro-copy').textContent = '請返回日文文法漫畫，選擇想練習的一張。';
+    for (const id of ['comic-navigation', 'player', 'script-section', 'grammar-note']) byId(id).hidden = true;
+    byId('edition').hidden = true; byId('grammar').hidden = true;
+    byId('full-comic').href = 'japanese-comics.html';
+    byId('full-image').hidden = true;
+    return;
+  }
+  const cues = comic.cues, panels = comic.panels;
+  const spoken = cues.map((cue, index) => cue.text ? index : -1).filter(index => index >= 0);
+  document.title = `${comic.title}・有聲漫畫｜Eva的資料庫`;
+  byId('page-title').textContent = comic.title;
+  byId('edition').textContent = `${comic.label} · 有聲漫畫`;
+  byId('grammar').textContent = comic.grammar;
+  byId('intro-copy').textContent = comic.caption;
+  byId('back-gallery').href = `japanese-comics.html?lesson=${comic.lesson}`;
+  byId('full-comic').href = `japanese-comics.html?lesson=${comic.lesson}#comic=${comic.id}`;
+  byId('full-image').href = comic.image;
+  byId('grammar-summary').textContent = comic.grammar;
+  byId('grammar-explanation').textContent = comic.caption;
+  byId('provenance').textContent = comic.provenance;
+  byId('reading-notes').textContent = comic.readingNote || '台詞依原圖排列；原句、補充例句與對話的標示沿用原漫畫。';
+  byId('script-title').textContent = `把這 ${spoken.length} 句，說順一點。`;
+  const imageElement = byId('panel-image').querySelector('image');
+  imageElement.setAttribute('href', comic.image);
+  imageElement.setAttribute('width', comic.width); imageElement.setAttribute('height', comic.height);
+  const position = COMICS.indexOf(comic);
+  COMICS.forEach(item => {
+    const option = document.createElement('option'); option.value = item.id;
+    option.textContent = `${item.label} · ${item.title}`; option.selected = item === comic;
+    byId('comic-select').append(option);
+  });
+  for (const [id, offset] of [['previous-comic', -1], ['next-comic', 1]]) {
+    const destination = COMICS[position + offset];
+    byId(id).hidden = !destination;
+    if (destination) byId(id).href = `voiced-comic.html?comic=${destination.id}`;
+  }
+  byId('comic-position').textContent = `${position + 1} / ${COMICS.length}`;
+  const make = (tag, className, text) => { const element = document.createElement(tag); if (className) element.className = className; if (text) element.textContent = text; return element; };
+  panels.forEach((panel, index) => {
+    const button = make('button', '', ''); button.type = 'button'; button.dataset.panel = index;
+    button.append(make('span', '', String(index + 1).padStart(2, '0')), document.createTextNode((panel.label || `第${index + 1}格`).replace('OneNote ', '').replace('補充對話', '對話').replace('補充例句', '活用')));
+    byId('panel-nav').append(button);
+  });
+  spoken.forEach((index, number) => {
+    const cue = cues[index], item = make('li'), button = make('button'); button.type = 'button'; button.dataset.cue = index;
+    const content = make('span'), japanese = make('span', 'line-ja', cue.subtitle); japanese.lang = 'ja';
+    content.append(japanese, make('span', 'line-zh', cue.translation));
+    button.append(make('span', 'line-number', String(number + 1).padStart(2, '0')), content, make('span', 'line-role', `第${cue.panel + 1}格`));
+    item.append(button); byId('script-list').append(item);
+  });
   let imageReady = false;
   const audioSupported = typeof window.Audio === 'function';
-  const player = new ComicPlayer({ Audio: window.Audio, onChange: render });
+  const player = new ComicPlayer({ Audio: window.Audio, comic, onChange: render });
   function render() {
-    const cue = CUES[player.index], panel = PANELS[cue.panel], active = ACTIVE.has(player.state);
-    byId('panel-label').textContent = `第 ${cue.panel + 1} 格 / 4 · ${panel.title}`;
+    const cue = cues[player.index], panel = panels[cue.panel], active = ACTIVE.has(player.state);
+    byId('panel-label').textContent = `第 ${cue.panel + 1} 格 / ${panels.length} · ${panel.title}`;
     byId('panel-image').setAttribute('viewBox', panel.crop);
     byId('panel-image').setAttribute('aria-label', panel.alt);
-    byId('scene-badge').textContent = cue.panel === 3 ? '補充例句' : cue.panel === 0 ? '情境' : '日語對話';
+    const crop = panel.crop.split(' ').map(Number);
+    byId('scene-frame').style.aspectRatio = `${crop[2]} / ${crop[3]}`;
+    byId('scene-badge').textContent = panel.label || (cue.text ? '日語台詞' : '情境／圖解');
     byId('speaker').textContent = cue.speaker;
     byId('subtitle').textContent = cue.subtitle;
     byId('subtitle').lang = cue.text ? 'ja' : 'zh-Hant';
@@ -162,13 +214,12 @@
     });
     const ready = imageReady && audioSupported;
     let status = player.message;
-    if (!status) status = !imageReady ? '正在載入漫畫…' : !audioSupported ? '這個瀏覽器不支援音訊，可閱讀台詞或改用 Safari／Chrome。' : player.index === 0 ? '準備好了。按「播放」，從第 2 格開始聽。' : '已選好這一句。按「播放」開始。';
-    if (player.state === 'speaking') status = `Google 日語 · 正在朗讀第 ${player.index} / 4 句`;
+    if (!status) status = !imageReady ? '正在載入漫畫…' : !audioSupported ? '這個瀏覽器不支援音訊，可閱讀台詞或改用 Safari／Chrome。' : cue.text ? '已選好這一句。按「播放」開始。' : '此格是情境／圖解。按「播放」會從接下來的日文開始；若沒有下一句，從第一句開始。';
+    if (player.state === 'speaking') status = `Google 日語 · 正在朗讀第 ${spoken.indexOf(player.index) + 1} / ${spoken.length} 句`;
     if (player.state === 'gap' && player.practice) status = '換你說 · 試著把剛才的一句說出來。';
     byId('practice-countdown').textContent = player.state === 'gap' && player.practice ? `還有 ${player.seconds} 秒` : '';
     byId('practice-countdown').hidden = !(player.state === 'gap' && player.practice);
     const statusNode = byId('playback-status');
-    // Avoid announcing the same status repeatedly on countdown timer ticks.
     if (statusNode.textContent !== status) statusNode.textContent = status;
     statusNode.dataset.state = player.state;
     byId('audio-error-detail').textContent = player.diagnostic ? `瀏覽器回報：${player.diagnostic}` : '';
@@ -176,9 +227,9 @@
     byId('play').disabled = !ready || active;
     byId('play').textContent = player.state === 'paused' ? '▶ 繼續' : player.state === 'error' ? '▶ 重試播放' : player.state === 'ended' ? '▶ 再播放一次' : '▶ 播放';
     byId('pause').disabled = !active;
-    byId('stop').disabled = player.index === 0 && !active;
+    byId('stop').disabled = player.index === 0 && player.state === 'idle';
     byId('replay').disabled = !ready;
-    byId('repeat').disabled = !ready || player.index === 0;
+    byId('repeat').disabled = !ready || !cue.text;
   }
   byId('play').addEventListener('click', () => player.play());
   byId('pause').addEventListener('click', () => player.pause());
@@ -187,7 +238,9 @@
   byId('repeat').addEventListener('click', () => player.play({ single: true }));
   byId('speed').addEventListener('change', event => player.configure({ rate: Number(event.target.value) }));
   byId('mode').addEventListener('change', event => player.configure({ practice: event.target.value === 'practice' }));
-  document.querySelectorAll('[data-panel]').forEach(button => button.addEventListener('click', () => player.select(PANELS[Number(button.dataset.panel)].first)));
+  byId('comic-select').addEventListener('change', event => { player.stop(); location.href = `voiced-comic.html?comic=${encodeURIComponent(event.target.value)}`; });
+  document.querySelectorAll('a').forEach(link => link.addEventListener('click', () => player.stop()));
+  document.querySelectorAll('[data-panel]').forEach(button => button.addEventListener('click', () => player.select(panels[Number(button.dataset.panel)].first)));
   document.querySelectorAll('[data-cue]').forEach(button => button.addEventListener('click', () => {
     player.select(Number(button.dataset.cue));
     byId('player').scrollIntoView({ block: 'start', behavior: 'instant' });
@@ -201,7 +254,7 @@
   const picture = new Image();
   picture.onload = () => { imageReady = true; byId('image-error').hidden = true; render(); };
   picture.onerror = () => { imageReady = false; byId('image-error').hidden = false; player.fail('漫畫圖片無法載入。請連線後重新整理。'); };
-  picture.src = 'assets/japanese-comics/l1-01-polite-request.webp';
+  picture.src = comic.image;
   render();
-  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.2.2').catch(console.error));
+  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.3.0').catch(console.error));
 })();

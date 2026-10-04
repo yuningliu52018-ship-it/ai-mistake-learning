@@ -2,8 +2,8 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const { ComicPlayer, CUES, PANELS } = require('../voiced-comic.js');
-function setup({ supports = true, constructorThrows = false, playThrows = false, legacy = false } = {}) {
+const { ComicPlayer, CUES, PANELS, COMICS } = require('../voiced-comic.js');
+function setup({ supports = true, constructorThrows = false, playThrows = false, legacy = false, comic } = {}) {
   let now = 0, id = 0, constructs = 0;
   const tasks = new Map();
   const clock = {
@@ -39,7 +39,7 @@ function setup({ supports = true, constructorThrows = false, playThrows = false,
       if (!legacy) return { catch(fn) { session.reject = fn; } };
     }
   }
-  const player = new ComicPlayer({ Audio: supports ? Audio : undefined, clock });
+  const player = new ComicPlayer({ Audio: supports ? Audio : undefined, clock, comic });
   return { player, tick, played, tasks, get constructs() { return constructs; },
     start() { played.at(-1).callbacks.playing(); }, end() { played.at(-1).callbacks.ended(); },
     error() { played.at(-1).callbacks.error({}); } };
@@ -166,22 +166,22 @@ test('repeat after completed run keeps the last sentence; explicit restart begin
   assert.equal(h.player.index,4); assert.equal(new URL(h.played.at(-1).src).searchParams.get('q'),'写真を撮ってもらえませんか。');
   h.start(); h.end(); h.player.play({restart:true}); assert.equal(h.player.index,1);
 });
-test('Google-only UI and controls; gallery stays at 29 with one voiced entry; cache versions match', () => {
+test('Google-only UI and controls; gallery stays at 29 with all voiced entries; cache versions match', () => {
   const root=path.resolve(__dirname,'..'); const read=file=>fs.readFileSync(path.join(root,file),'utf8');
   const html=read('voiced-comic.html');
   for (const id of ['play','pause','stop','replay','repeat','voice-source','speed','mode','playback-status']) assert.match(html,new RegExp(`id="${id}"`));
   assert.match(html,/<meta name="referrer" content="no-referrer">/); assert.match(html,/Google 線上日語/); assert.match(html,/不會切換成裝置聲音/); assert.match(html,/台詞傳給 Google/);
-  assert.match(html,/中文姓氏/); assert.match(html,/不會錄音/); assert.match(html,/無日文台詞/);
+  assert.match(read('voiced-comics-data.js'),/中文姓氏/); assert.match(html,/不會錄音/); assert.match(html,/無日文台詞/);
   const gallery=read('japanese-comics.html');
   assert.equal((gallery.match(/class="comic-card"/g)||[]).length,29);
-  assert.equal((gallery.match(/class="voice-entry"/g)||[]).length,1);
+  assert.equal((gallery.match(/class="voice-entry"/g)||[]).length,29);
   const js=read('voiced-comic.js');
   assert.match(js,/translate_tts\?ie=UTF-8&tl=ja&client=tw-ob&q=/);
   assert.doesNotMatch(js,/speechSynthesis|SpeechSynthesisUtterance|localStorage|getUserMedia|fetch\(/);
   assert.match(js,/pagehide/); assert.match(js,/visibilitychange/); assert.match(js,/popstate/);
-  for (const asset of ['voiced-comic.js?v=1.2','voiced-comic.css?v=1.1']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
-  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.2\.3/);
-  assert.match(js,/service-worker\.js\?v=5\.2\.2/);
+  for (const asset of ['voiced-comic.js?v=2.0','voiced-comic.css?v=2.0']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
+  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.3\.0/);
+  assert.match(js,/service-worker\.js\?v=5\.3\.0/);
 });
 
 test('duplicate playing cannot extend watchdog; plain play after ended begins again', () => {
@@ -195,4 +195,45 @@ test('browser media diagnostic survives cleanup and is cleared for next attempt'
   const h=setup(); h.player.play(); h.player.audio.error={code:4,message:'Unsupported source'}; h.error();
   assert.match(h.player.diagnostic,/MediaError 4.*Unsupported source/);
   h.player.play(); assert.equal(h.player.diagnostic,''); h.error(); h.player.stop(); assert.equal(h.player.diagnostic,'');
+});
+
+for (const comic of COMICS) {
+  test(`${comic.id}: full ordered run covers every audible cue, skips only visual cues, retains repeat/restart`, () => {
+    const h=setup({comic}); const audible=comic.cues.map((c,i)=>c.text?i:-1).filter(i=>i>=0);
+    assert.ok(audible.length); h.player.play();
+    for(const i of audible){assert.equal(h.player.index,i);assert.equal(new URL(h.played.at(-1).src).searchParams.get('q'),comic.cues[i].text);h.start();h.tick(1000);h.end();h.tick(650)}
+    assert.equal(h.player.state,'ended'); assert.equal(h.constructs,1); assert.equal(h.played.length,audible.length);
+    assert.match(h.player.message,new RegExp(`${audible.length} 句`));
+    h.player.play({single:true});assert.equal(h.player.index,audible.at(-1));h.start();h.end();h.tick(5000);assert.equal(h.player.state,'paused');
+    h.player.play({restart:true});assert.equal(h.player.index,audible[0]);h.player.stop();assert.equal(h.player.index,0);assert.equal(h.tasks.size,0);
+  });
+  test(`${comic.id}: every panel/cue selection, cancellation, slow, practice and errors`, () => {
+    const h=setup({comic});
+    for(let i=0;i<comic.cues.length;i++){
+      h.player.select(i);assert.equal(h.player.index,i);h.player.configure({rate:.82,practice:true});h.player.play();
+      const expected=comic.cues.findIndex((c,j)=>j>=i&&c.text);assert.equal(h.player.index,expected>=0?expected:comic.cues.findIndex(c=>c.text));
+      assert.equal(h.played.at(-1).rate,.82);const old=h.played.at(-1);h.start();h.tick(2000);h.end();assert.equal(h.player.state,'gap');
+      h.player.pause();h.tick(60000);assert.equal(h.player.state,'paused');old.callbacks.ended();old.reject({name:'AbortError'});assert.equal(h.player.state,'paused');
+      h.player.play();h.error();const selected=h.player.index;h.tick(60000);assert.equal(h.player.state,'error');assert.equal(h.player.index,selected);h.player.stop();
+    }
+    for(const p of comic.panels){h.player.select(p.first);assert.equal(h.player.index,p.first)}
+    h.player.select(-1);h.player.select(999);assert.equal(h.player.index,comic.panels.at(-1).first);
+  });
+}
+test('all 29 configs align exactly with gallery and preserve dimensions, cue maps and labels', () => {
+  const root=path.resolve(__dirname,'..'), html=fs.readFileSync(path.join(root,'japanese-comics.html'),'utf8');
+  const ids=[...html.matchAll(/data-comic="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(COMICS.map(c=>c.id),ids);assert.equal(new Set(ids).size,29);
+  for(const c of COMICS){
+    assert.equal(c.panels.length,4);assert.ok(c.provenance);assert.ok(c.caption);assert.ok(c.grammar);assert.ok(c.label);assert.ok(fs.statSync(path.join(root,c.image)).size);
+    assert.ok(html.includes(`href="voiced-comic.html?comic=${c.id}"`));
+    let previous=-1;
+    c.panels.forEach((p,i)=>{const [x,y,w,h]=p.crop.split(' ').map(Number);assert.ok([x,y,w,h].every(Number.isFinite));assert.ok(x>=0&&y>=0&&w>0&&h>0&&x+w<=c.width&&y+h<=c.height,`${c.id} crop ${i}`);assert.ok(p.first>previous);previous=p.first;assert.equal(c.cues[p.first].panel,i);assert.ok(p.alt&&p.title)});
+    c.cues.forEach((q,i)=>{assert.ok(Number.isInteger(q.panel)&&q.panel>=0&&q.panel<4);assert.ok(q.subtitle&&q.translation&&q.speaker);assert.equal(typeof q.text,'string');assert.ok(q.text.length<200,`${c.id} TTS request size`);assert.ok(q.panel===(c.cues[i-1]?.panel||0)||q.panel>(c.cues[i-1]?.panel||0));});
+  }
+});
+test('confirmed difficult readings keep original visible subtitles',()=>{
+  const cues=COMICS.flatMap(c=>c.cues);
+  for(const [visible,spoken] of [['林さん','りんさん'],['王さん','おうさん'],['阿斗','あど'],['鬍鬚張','ひげちょう'],['滷肉飯','ルーローハン']]){
+    const found=cues.filter(c=>c.subtitle.includes(visible));assert.ok(found.length,visible);found.forEach(c=>assert.ok(c.text.includes(spoken),visible));
+  }
 });
