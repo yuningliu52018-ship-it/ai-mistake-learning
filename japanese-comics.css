@@ -2,7 +2,12 @@
 /* Shared Eva library identity. */
 .site-header{font-size:.8rem}.back-home{font-weight:600}.intro{padding-top:42px}.intro h1{font-weight:650;letter-spacing:.01em;font-size:clamp(2rem,4vw,3rem)}.reading-note{border-radius:14px;transform:none;background:#edf0e3}.note-number{font-weight:400}.comic-card{border-radius:14px}.eyebrow{font-weight:550}.site-header>span{font-size:.75rem}@media(max-width:600px){.intro{padding-top:30px}.intro h1{font-size:2.2rem}.site-header>span{font-size:.67rem}.reading-note{border-radius:12px}.back-home{font-size:.75rem}}
 
-/* One requested voiced-comic demo; separate from the image-reader action. */
+/* Every comic has the same separate image-reader and voiced-player actions. */
 .voice-entry{display:block;margin:0 20px 20px;padding:12px 10px;text-align:center;border:1px solid #c8cebe;border-radius:8px;color:#425d3a;background:#edf0e3;text-decoration:none;font-size:.8rem;font-weight:650}.voice-entry:hover{background:#e2e8d8}.voice-entry:focus-visible{outline:3px solid #bc743e;outline-offset:4px}#viewer-voice{min-height:44px;border:1px solid #c8cebe;border-radius:7px;background:#edf0e3;color:#35472e;padding:8px 12px;font-size:.8rem;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}#viewer-voice[hidden]{display:none}.image-controls{flex-wrap:wrap}
 
-.comic-card[data-comic="l1-01-polite-request"] .comic-open{height:auto}
+/* Keep the audio entry inside every card, aligned across each grid row.
+ * The old first-comic-only override left the other 28 image links at
+ * height:100%, pushing their audio entries into the card's clipped area. */
+.comic-card{display:flex;flex-direction:column}
+.comic-card .comic-open{height:auto;flex:1 0 auto}
+.voice-entry{flex:none;min-height:46px;display:flex;align-items:center;justify-content:center}

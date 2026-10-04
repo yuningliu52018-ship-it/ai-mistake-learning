@@ -257,5 +257,5 @@
   picture.onerror = () => { imageReady = false; byId('image-error').hidden = false; player.fail('漫畫圖片無法載入。請連線後重新整理。'); };
   picture.src = comic.image;
   render();
-  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.3.1').catch(console.error));
+  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.3.2').catch(console.error));
 })();

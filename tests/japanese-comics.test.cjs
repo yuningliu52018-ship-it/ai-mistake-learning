@@ -88,3 +88,19 @@ test('service worker shares full-image cache keys and does not cache cross-origi
   assert.equal((await sw.fetch('assets/japanese-comics/l1-01-polite-request.webp', 'navigate')).status, 200);
   assert.equal(sw.entries.size, 1);
 });
+
+
+test('all 29 cards share the first comic layout, with audio links outside the image link', () => {
+  const css=fs.readFileSync(path.join(root,'japanese-comics.css'),'utf8');
+  assert.match(css,/\.comic-card\{display:flex;flex-direction:column\}/);
+  assert.match(css,/\.comic-card \.comic-open\{height:auto;flex:1 0 auto\}/);
+  assert.doesNotMatch(css,/data-comic="l1-01-polite-request"/);
+  const cards=[...html.matchAll(/<article class="comic-card"[^>]*data-comic="([^"]+)"[^>]*>([\s\S]*?)<\/article>/g)];
+  assert.equal(cards.length,29);
+  for(const [,id,card] of cards){
+    assert.equal((card.match(/class="voice-entry"/g)||[]).length,1,id);
+    assert.match(card,new RegExp('<\\/a>\\s*<a class="voice-entry" href="voiced-comic.html\\?comic='+id+'"'));
+  }
+  assert.match(html,/japanese-comics\.css\?v=5\.4/);
+  assert.match(fs.readFileSync(path.join(root,'service-worker.js'),'utf8'),/japanese-comics\.css\?v=5\.4/);
+});
