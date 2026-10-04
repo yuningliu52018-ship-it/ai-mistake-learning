@@ -14,6 +14,7 @@
   <link rel="apple-touch-icon" href="app-icon.svg" />
   <link rel="stylesheet" href="styles.css?v=3.6" />
   <link rel="stylesheet" href="modules.css?v=4.0.1" />
+  <link rel="stylesheet" href="comics-entry.css?v=1" />
 </head>
 <body>
   <header class="hero">
@@ -22,6 +23,11 @@
   </header>
 
   <main>
+    <section class="comics-entry card" aria-labelledby="comics-entry-title">
+      <div><h2 id="comics-entry-title">日文文法漫畫</h2><p>用情境記住句型：第1課 5 張、第2課 4 張、跨課補充 1 張。</p></div>
+      <a href="japanese-comics.html">開始看漫畫 ↗</a>
+    </section>
+
     <section class="artifact-import card">
       <div class="section-head">
         <div>
@@ -86,6 +92,6 @@
   <script src="mobile-mode.js?v=3.6"></script>
   <script src="auto-detect.js?v=3.6"></script>
   <script src="import-modules.js?v=4.0.3"></script>
-  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=4.0.3').catch(console.error));}</script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=4.1.0').catch(console.error));}</script>
 </body>
 </html>
