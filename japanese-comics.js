@@ -53,7 +53,7 @@
     visible = cards.filter(card => filter === 'all' || card.dataset.lesson === filter);
     cards.forEach(card => { card.hidden = !visible.includes(card); });
     filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
-    const label = { all: '全部', l1: '第1課', l2: '第2課', supplement: '跨課補充' }[filter];
+    const label = { all: '全部', l1: '第1課', l2: '第2課', l3: '第3課', supplement: '跨課補充' }[filter];
     document.getElementById('result-count').textContent = `顯示${label} ${visible.length} 張`;
     const id = url.hash.startsWith('#comic=') ? url.hash.slice(7) : '';
     const card = visible.find(item => item.dataset.comic === id);
@@ -139,6 +139,6 @@
   window.addEventListener('hashchange', syncLocation);
   syncLocation();
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=4.1.0').catch(console.error));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.0.0').catch(console.error));
   }
 })();

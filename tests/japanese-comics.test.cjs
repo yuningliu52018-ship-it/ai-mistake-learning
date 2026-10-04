@@ -6,10 +6,12 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const html = fs.readFileSync(path.join(root, 'japanese-comics.html'), 'utf8');
 
-test('gallery has exactly five L1, four L2 and one separate supplement', () => {
+test('gallery has exactly five L1, four L2, six L3 and one separate supplement', () => {
   assert.equal((html.match(/data-lesson="l1"/g) || []).length, 5);
   assert.equal((html.match(/data-lesson="l2"/g) || []).length, 4);
   assert.equal((html.match(/data-lesson="supplement"/g) || []).length, 1);
+  assert.equal((html.match(/data-lesson="l3"/g) || []).length, 6);
+  assert.match(html, /原句與補充例句分開標示/);
   assert.match(html, /原例句來自第3課/);
   assert.doesNotMatch(html, /onenote:|sharepoint\.com|1drv\.ms/i);
 });

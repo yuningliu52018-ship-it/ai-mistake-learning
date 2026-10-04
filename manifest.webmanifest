@@ -1,12 +1,12 @@
 {
-  "name": "116 會考 AI 學習系統",
-  "short_name": "AI錯題",
-  "description": "拍攝考卷、Gemini 智慧分析、建立錯題與類題練習。",
+  "name": "Eva的資料庫",
+  "short_name": "Eva的資料庫",
+  "description": "收藏日文漫畫、互動教材與錯題筆記，依自己的步調慢慢學習。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f5f7fb",
-  "theme_color": "#2563eb",
+  "background_color": "#f7f4ed",
+  "theme_color": "#f7f4ed",
   "orientation": "portrait-primary",
   "icons": [
     {

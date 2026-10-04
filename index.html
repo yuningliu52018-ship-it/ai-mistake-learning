@@ -3,37 +3,60 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="116 會考 AI 學習系統錯題資料庫" />
-  <meta name="theme-color" content="#2563eb" />
+  <meta name="description" content="Eva的資料庫：收藏日文文法漫畫、互動教材與錯題筆記，依自己的步調慢慢學習。" />
+  <meta name="theme-color" content="#f7f4ed" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="AI錯題" />
-  <title>116 會考 AI 學習系統</title>
-  <link rel="manifest" href="manifest.webmanifest?v=3.6" />
+  <meta name="apple-mobile-web-app-title" content="Eva的資料庫" />
+  <title>Eva的資料庫｜慢慢學，慢慢收藏</title>
+  <link rel="manifest" href="manifest.webmanifest?v=5.0" />
   <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="app-icon.svg" />
   <link rel="stylesheet" href="styles.css?v=3.6" />
   <link rel="stylesheet" href="modules.css?v=4.0.1" />
   <link rel="stylesheet" href="comics-entry.css?v=1" />
+  <link rel="stylesheet" href="eva-theme.css?v=5.0" />
 </head>
 <body>
+  <a class="skip-link" href="#resources">跳到學習資源</a>
   <header class="hero">
-    <div><p class="eyebrow">116 會考 AI 學習系統</p><h1>錯題資料庫</h1><p>手機連續拍考卷、AI 找錯題並保留必要視覺資訊；桌機閱讀、整理、類題與複習。</p></div>
-    <button id="addBtn" class="primary">＋ 新增錯題</button>
+    <a class="brand" href="./index.html" aria-label="Eva的資料庫首頁"><span class="brand-mark" aria-hidden="true">e.</span><span>Eva’s little library</span></a>
+    <div class="hero-content">
+      <div class="hero-copy"><p class="eyebrow">留一點空間，給每天的好奇</p><h1>Eva的資料庫</h1><p class="hero-description">把學過的，慢慢收藏。<br>漫畫、教材與練習，都在這裡等你翻開。</p><a class="quiet-link" href="#resources">今天，想從哪裡開始？ <span aria-hidden="true">↓</span></a></div>
+      <img class="hero-illustration" src="assets/eva-reading-corner.svg" width="360" height="260" alt="" aria-hidden="true" />
+    </div>
   </header>
 
   <main>
-    <section class="comics-entry card" aria-labelledby="comics-entry-title">
-      <div><h2 id="comics-entry-title">日文文法漫畫</h2><p>用情境記住句型：第1課 5 張、第2課 4 張、跨課補充 1 張。</p></div>
-      <a href="japanese-comics.html">開始看漫畫 ↗</a>
+    <section id="resources" class="resource-section" aria-labelledby="resources-title">
+      <div class="section-heading"><h2 id="resources-title">我的學習收藏</h2><p>挑一份想看的，照自己的步調來。</p></div>
+      <nav class="resource-grid" aria-label="學習資源入口">
+        <section class="comics-entry resource-card" aria-labelledby="comics-entry-title">
+          <span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="20" rx="4"/><path d="M12 25l-4 4v-5M10 11h12M10 17h7"/></svg></span>
+          <h3 id="comics-entry-title">日文文法漫畫</h3><p>把句型放進生活情境，<br>一張一張輕鬆讀。</p><a href="japanese-comics.html">翻開漫畫 <span aria-hidden="true">↗</span></a>
+        </section>
+        <section class="resource-card interactive-entry">
+          <span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="5" width="24" height="18" rx="3"/><path d="M12 28h8M16 23v5M14 11l6 3-6 4z"/></svg></span>
+          <h3>互動學習單元</h3><p>收藏互動教材，<br>隨時回來練習。</p><a href="#learning-resources">查看學習單元 <span aria-hidden="true">↓</span></a>
+        </section>
+        <section class="resource-card review-entry">
+          <span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 8C12 5 8 5 4 7v19c4-2 8-2 12 1 4-3 8-3 12-1V7c-4-2-8-2-12 1v19M8 12h4M8 17h4M20 12h4M20 17h4"/></svg></span>
+          <h3>錯題與複習</h3><p>留下思考的線索，<br>把觀念慢慢理清。</p><a href="#review-resources">查看複習區 <span aria-hidden="true">↓</span></a>
+        </section>
+        <section class="resource-card capture-entry">
+          <span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M10 8l2-3h8l2 3h5v19H5V8z"/><circle cx="16" cy="17" r="5"/></svg></span>
+          <h3>拍照建檔</h3><p>收好已批改的考卷，<br>整理成之後的練習。</p><a href="#capture-resources">加入考卷 <span aria-hidden="true">↓</span></a>
+        </section>
+      </nav>
     </section>
 
-    <section class="artifact-import card">
+    <section id="learning-resources" class="artifact-import card" aria-labelledby="learning-title">
+
       <div class="section-head">
         <div>
-          <p class="eyebrow dark">Gemini 互動頁批次匯入</p>
-          <h2>把整份互動網頁加入錯題資料庫</h2>
-          <p>可一次選擇多個 Gemini 產生的 HTML。系統會保留原始互動頁，並把其中的錯題與練習題轉成可搜尋、可統計的題目。</p>
+          <p class="eyebrow dark">互動教材收藏</p>
+          <h2 id="learning-title">互動學習單元</h2>
+          <p>匯入 Gemini 產生的 HTML，保留完整互動頁；其中的錯題與練習題，也能加入複習。可一次選擇多個檔案。</p>
         </div>
         <button id="artifactImportButton" class="upload-btn primary" type="button">匯入 HTML</button>
         <input id="artifactInput" type="file" accept="text/html,.html,.htm" multiple hidden />
@@ -42,14 +65,14 @@
       <div id="learningModuleList" class="module-list"></div>
     </section>
 
-    <section class="scan-card card">
+    <section id="capture-resources" class="scan-card card" aria-labelledby="capture-title">
       <div class="section-head">
-        <div><p class="eyebrow dark">v3.6 Model Fallback</p><h2>📷 批次拍攝已批改考卷</h2><p>保留 v3.5 Visual Guard 與 Smart Crop；Gemini 主要模型遇到 429／每日配額限制時，會自動切換到 Gemini 2.5 Flash 備援模型。</p></div>
+        <div><p class="eyebrow dark">把紙上的練習收進來</p><h2 id="capture-title">拍照整理考卷</h2><p>先拍下已批改的考卷，再交給 AI 協助找出錯題。需要的題目圖片也會一起保留。</p></div>
         <label class="upload-btn primary">📷 拍／加入下一張<input id="paperInput" type="file" accept="image/*" capture="environment" hidden /></label>
       </div>
 
       <section id="autoDetectPanel" class="auto-detect-panel">
-        <div class="auto-detect-head"><div><strong>批次考卷模式</strong><div class="hint">先連續拍完所有頁面，再按「AI 批次找錯題」。若主要 Gemini 模型額度暫時用完，v3.6 會自動改用備援模型；兩個模型都受限時才停止。</div></div><button id="autoDetectBtn" type="button" class="primary" disabled>🤖 AI 批次找錯題</button></div>
+        <div class="auto-detect-head"><div><strong>批次考卷模式</strong><div class="hint">先加入所有頁面，再按「AI 批次找錯題」。主要模型額度受限時會自動改用備援模型。</div></div><button id="autoDetectBtn" type="button" class="primary" disabled>🤖 AI 批次找錯題</button></div>
         <div id="autoDetectResults"></div>
         <button id="manualFallbackBtn" type="button">＋ AI 漏題？手動補一題</button>
       </section>
@@ -71,9 +94,14 @@
       </div>
     </section>
 
-    <section class="study-only toolbar card"><input id="searchInput" type="search" placeholder="搜尋題目、觀念、知識點、題型…" /><select id="subjectFilter"><option value="all">全部科目</option></select><select id="statusFilter"><option value="all">全部狀態</option><option value="待複習">待複習</option><option value="複習中">複習中</option><option value="已掌握">已掌握</option></select><button id="randomBtn">隨機重做一題</button></section>
+    <section id="review-resources" class="review-section" aria-labelledby="review-title">
+      <div class="section-heading"><div><p class="eyebrow dark">把觀念慢慢理清</p><h2 id="review-title">錯題與複習</h2><p>搜尋、整理，或挑一題重新想想。</p></div><button id="addBtn" class="primary study-only" type="button">＋ 新增錯題</button></div>
+      <p class="mobile-review-note">目前是手機拍照模式，可先在「拍照建檔」整理考卷；完整錯題閱讀、編輯與類題練習，請在桌機開啟。</p>
+    <section class="study-only toolbar card" aria-label="搜尋與篩選錯題"><input id="searchInput" type="search" aria-label="搜尋錯題" placeholder="搜尋題目、觀念、知識點、題型…" /><select id="subjectFilter" aria-label="依科目篩選"><option value="all">全部科目</option></select><select id="statusFilter" aria-label="依複習狀態篩選"><option value="all">全部狀態</option><option value="待複習">待複習</option><option value="複習中">複習中</option><option value="已掌握">已掌握</option></select><button id="randomBtn">隨機重做一題</button></section>
     <section id="stats" class="study-only stats"></section><section id="questionList" class="study-only question-list"></section>
+    </section>
   </main>
+  <footer class="site-footer"><span>Eva的資料庫</span><span>慢慢學，也是一種前進。</span><a href="#resources">回到學習收藏 ↑</a></footer>
 
   <dialog id="questionDialog"><form id="questionForm" method="dialog"><div class="dialog-head"><h2 id="dialogTitle">新增錯題</h2><button type="button" id="closeBtn" class="icon-btn" aria-label="關閉">×</button></div><input type="hidden" id="questionId" />
     <div class="grid two">
@@ -92,6 +120,6 @@
   <script src="mobile-mode.js?v=3.6"></script>
   <script src="auto-detect.js?v=3.6"></script>
   <script src="import-modules.js?v=4.0.3"></script>
-  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=4.1.0').catch(console.error));}</script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=5.0.0').catch(console.error));}</script>
 </body>
 </html>
