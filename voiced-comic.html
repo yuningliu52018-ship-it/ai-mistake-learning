@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f7f4ed">
-  <meta name="description" content="跟著四格漫畫練習〜てもらえませんか。日語合成朗讀、慢速播放與逐句跟讀。">
+  <meta name="description" content="跟著四格漫畫練習〜てもらえませんか。Google 日語朗讀、慢速播放與逐句跟讀。">
   <title>請對方幫個忙・有聲漫畫｜Eva的資料庫</title>
   <link rel="icon" href="app-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="voiced-comic.css?v=1.0">
-  <script src="voiced-comic.js?v=1.0" defer></script>
+  <link rel="stylesheet" href="voiced-comic.css?v=1.1">
+  <script src="voiced-comic.js?v=1.1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#player">跳到播放器</a>
@@ -42,10 +42,10 @@
         </nav>
       </div>
       <div class="control-column">
-        <div class="control-heading"><span class="sound-icon" aria-hidden="true">♪</span><div><h2>一起開口說</h2><p>日語合成朗讀 · 手動開始</p></div></div>
+        <div class="control-heading"><span class="sound-icon" aria-hidden="true">♪</span><div><h2>一起開口說</h2><p>Google 日語朗讀 · 手動開始</p></div></div>
         <div class="settings">
-          <label for="voice">日語聲音</label><select id="voice" aria-describedby="voice-help"><option value="">正在尋找日語聲音…</option></select>
-          <p id="voice-help">聲音由你的瀏覽器與裝置提供，部分聲音需要網路。</p>
+          <p id="voice-source" class="voice-source">Google 線上日語</p>
+          <p id="voice-help">沿用原日文網站的 Google 朗讀方式。需要網路；載入失敗會提示，不會切換成裝置聲音。</p>
           <div class="setting-row"><label for="speed">語速</label><select id="speed"><option value="0.95">一般</option><option value="0.82">慢速</option></select></div>
           <div class="setting-row"><label for="mode">練習方式</label><select id="mode"><option value="listen">連續聽</option><option value="practice">逐句跟讀</option></select></div>
         </div>
@@ -55,7 +55,7 @@
         <div class="secondary-controls"><button id="stop" type="button" disabled>■ 停止</button><button id="replay" type="button" disabled>↻ 重頭播放</button></div>
         <button id="repeat" class="repeat" type="button" disabled>再聽本句</button>
         <p class="control-note">第 1 格是情境，朗讀從第 2 格開始。暫停後繼續，會從本句重播；切換格數會停止聲音。</p>
-        <details class="audio-help"><summary>沒有聽到聲音？</summary><p>請確認裝置音量，並按一次「播放」。可改選上方的日語聲音，再按「再聽本句」。</p><p>若清單沒有日語聲音，請先在裝置的語音設定加入日語，或用 Safari／Chrome 開啟此頁。可按下方按鈕重新偵測；不同瀏覽器提供的聲音可能不同。</p><button type="button" id="refresh-voices">重新偵測日語聲音</button><p>播放受瀏覽器、語音服務與網路狀態影響。此頁不會錄音，也不會評分發音。</p></details>
+        <details class="audio-help"><summary>沒有聽到聲音？</summary><p>請確認網路與裝置音量，並按一次「播放」。若看到錯誤，請按「重試播放」重新載入本句。</p><p>在 iPhone 上請直接用 Safari 開啟；如果連續播放被瀏覽器擋住，再按一次「重試播放」即可重新嘗試本句。</p><p>Google 線上語音無法載入時，會停在目前這句，不會自動改用 iPhone 或其他裝置聲音。這個來源的可用性受 Google 服務與網路狀態影響。</p><p>按播放會將畫面中的日文台詞傳給 Google 產生語音。此頁不會錄音，也不會評分發音。</p></details>
       </div>
     </section>
     <section class="script-section" aria-labelledby="script-title"><div class="section-heading"><h2 id="script-title">把這四句，說順一點。</h2><p>點選一句，再按播放。中文姓氏「林」讀作 <span lang="ja">りん</span>。</p></div>
