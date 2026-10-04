@@ -1,7 +1,7 @@
-const CACHE_NAME = 'ai-mistake-learning-v5.3.0';
+const CACHE_NAME = 'ai-mistake-learning-v5.3.1';
 const APP_SHELL = [
   './','./index.html','./styles.css?v=3.6','./modules.css?v=4.0.1','./config.js?v=3.6','./app.js?v=4.0.3','./ui-v3.2.js?v=3.6','./scan.js?v=3.6','./no-ocr-mode.js?v=3.6','./vision-ai.js?v=3.6','./mobile-mode.js?v=3.6','./auto-detect.js?v=3.6','./import-modules.js?v=4.0.3','./manifest.webmanifest?v=5.0','./app-icon.svg','./eva-theme.css?v=5.0','./assets/eva-reading-corner.svg',
-  './comics-entry.css?v=1','./japanese-comics.html','./japanese-comics.css?v=5.2','./japanese-comics.js?v=5.3', './voiced-comic.html', './voiced-comic.css?v=2.0', './voiced-comic.js?v=2.0', './voiced-comics-data.js?v=2.0'
+  './comics-entry.css?v=1','./japanese-comics.html','./japanese-comics.css?v=5.2','./japanese-comics.js?v=5.3', './voiced-comic.html', './voiced-comic.css?v=2.1', './voiced-comic.js?v=2.1', './voiced-comics-data.js?v=2.0'
 ];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));

@@ -179,6 +179,7 @@
   const make = (tag, className, text) => { const element = document.createElement(tag); if (className) element.className = className; if (text) element.textContent = text; return element; };
   panels.forEach((panel, index) => {
     const button = make('button', '', ''); button.type = 'button'; button.dataset.panel = index;
+    button.setAttribute('aria-label', `第 ${index + 1} 格：${panel.title}`);
     button.append(make('span', '', String(index + 1).padStart(2, '0')), document.createTextNode((panel.label || `第${index + 1}格`).replace('OneNote ', '').replace('補充對話', '對話').replace('補充例句', '活用')));
     byId('panel-nav').append(button);
   });
@@ -256,5 +257,5 @@
   picture.onerror = () => { imageReady = false; byId('image-error').hidden = false; player.fail('漫畫圖片無法載入。請連線後重新整理。'); };
   picture.src = comic.image;
   render();
-  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.3.0').catch(console.error));
+  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.3.1').catch(console.error));
 })();

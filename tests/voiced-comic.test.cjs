@@ -179,9 +179,9 @@ test('Google-only UI and controls; gallery stays at 29 with all voiced entries; 
   assert.match(js,/translate_tts\?ie=UTF-8&tl=ja&client=tw-ob&q=/);
   assert.doesNotMatch(js,/speechSynthesis|SpeechSynthesisUtterance|localStorage|getUserMedia|fetch\(/);
   assert.match(js,/pagehide/); assert.match(js,/visibilitychange/); assert.match(js,/popstate/);
-  for (const asset of ['voiced-comic.js?v=2.0','voiced-comic.css?v=2.0']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
-  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.3\.0/);
-  assert.match(js,/service-worker\.js\?v=5\.3\.0/);
+  for (const asset of ['voiced-comic.js?v=2.1','voiced-comic.css?v=2.1']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
+  assert.match(read('service-worker.js'),/ai-mistake-learning-v5\.3\.1/);
+  assert.match(js,/service-worker\.js\?v=5\.3\.1/);
 });
 
 test('duplicate playing cannot extend watchdog; plain play after ended begins again', () => {
