@@ -3,27 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Eva的資料庫：收藏日文雙語漫畫與互動教材，依自己的步調慢慢學習。" />
+  <meta name="description" content="Eva的資料庫：收藏日文／英文雙語漫畫，依自己的步調慢慢學習。" />
   <meta name="theme-color" content="#f7f4ed" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Eva的資料庫" />
   <title>Eva的資料庫｜慢慢學，慢慢收藏</title>
-  <link rel="manifest" href="manifest.webmanifest?v=5.9" />
+  <link rel="manifest" href="manifest.webmanifest?v=5.9.1" />
   <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="app-icon.svg" />
   <link rel="stylesheet" href="styles.css?v=3.6" />
-  <link rel="stylesheet" href="modules.css?v=4.0.1" />
   <link rel="stylesheet" href="comics-entry.css?v=1" />
-  <link rel="stylesheet" href="eva-theme.css?v=5.9" />
+  <link rel="stylesheet" href="eva-theme.css?v=5.9.1" />
 </head>
 <body>
   <a class="skip-link" href="#resources">跳到學習資源</a>
   <header class="hero">
     <a class="brand" href="./index.html" aria-label="Eva的資料庫首頁"><span class="brand-mark" aria-hidden="true">e.</span><span>Eva’s little library</span></a>
-    <button id="syncBtn" type="button">☁️ 設定同步</button>
     <div class="hero-content">
-      <div class="hero-copy"><p class="eyebrow">留一點空間，給每天的好奇</p><h1>Eva的資料庫</h1><p class="hero-description">把學過的，慢慢收藏。<br>日文／英文雙語漫畫與教材，隨時翻一翻。</p><a class="quiet-link" href="#resources">今天，想從哪裡開始？ <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-copy"><p class="eyebrow">留一點空間，給每天的好奇</p><h1>Eva的資料庫</h1><p class="hero-description">把學過的，慢慢收藏。<br>日文／英文雙語漫畫，隨時翻一翻。</p><a class="quiet-link" href="#resources">今天，想從哪裡開始？ <span aria-hidden="true">↓</span></a></div>
       <img class="hero-illustration" src="assets/eva-reading-corner.svg" width="360" height="260" alt="" aria-hidden="true" />
     </div>
   </header>
@@ -36,32 +34,11 @@
           <span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="20" rx="4"/><path d="M12 25l-4 4v-5M10 11h12M10 17h7"/></svg></span>
           <h3 id="comics-entry-title">日文雙語漫畫</h3><p>把句型放進生活情境，<br>一張一張輕鬆讀。</p><a href="japanese-comics.html">翻開漫畫 <span aria-hidden="true">↗</span></a>
         </section>
-        <section class="resource-card interactive-entry">
-          <span class="resource-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="4" y="5" width="24" height="18" rx="3"/><path d="M12 28h8M16 23v5M14 11l6 3-6 4z"/></svg></span>
-          <h3>互動學習單元</h3><p>收藏互動教材，<br>隨時回來練習。</p><a href="#learning-resources">查看學習單元 <span aria-hidden="true">↓</span></a>
-        </section>
       </nav>
-    </section>
-
-    <section id="learning-resources" class="artifact-import card" aria-labelledby="learning-title">
-
-      <div class="section-head">
-        <div>
-          <p class="eyebrow dark">互動教材收藏</p>
-          <h2 id="learning-title">互動學習單元</h2>
-          <p>匯入 Gemini 產生的 HTML，保留完整互動頁；隨時開啟原始互動內容。可一次選擇多個檔案。</p>
-        </div>
-        <button id="artifactImportButton" class="upload-btn primary" type="button">匯入 HTML</button>
-        <input id="artifactInput" type="file" accept="text/html,.html,.htm" multiple hidden />
-      </div>
-      <div id="artifactImportStatus" class="hint">匯入前請先設定跨裝置同步碼。</div>
-      <div id="learningModuleList" class="module-list"></div>
     </section>
 
   </main>
   <footer class="site-footer"><span>Eva的資料庫</span><span>慢慢學，也是一種前進。</span><a href="#resources">回到學習收藏 ↑</a></footer>
-  <script src="config.js?v=3.6"></script>
-  <script src="import-modules.js?v=5.9"></script>
-  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=5.9.0').catch(console.error));}</script>
+  <script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=5.9.1').catch(console.error));}</script>
 </body>
 </html>

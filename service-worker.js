@@ -1,6 +1,6 @@
-const CACHE_NAME = 'ai-mistake-learning-v5.9.0';
+const CACHE_NAME = 'ai-mistake-learning-v5.9.1';
 const APP_SHELL = [
-  './','./index.html','./styles.css?v=3.6','./modules.css?v=4.0.1','./config.js?v=3.6','./import-modules.js?v=5.9','./manifest.webmanifest?v=5.9','./app-icon.svg','./eva-theme.css?v=5.9','./assets/eva-reading-corner.svg',
+  './','./index.html','./styles.css?v=3.6','./manifest.webmanifest?v=5.9.1','./app-icon.svg','./eva-theme.css?v=5.9.1','./assets/eva-reading-corner.svg',
   './comics-entry.css?v=1','./japanese-comics.html','./japanese-comics.css?v=5.6','./japanese-comics.js?v=6.150', './voiced-comic.html', './voiced-comic.css?v=2.4', './voiced-comic.js?v=3.150', './voiced-comics-data.js?v=2.150', './comic-language-variants.js?v=2.150'
 ];
 self.addEventListener('install', event => {
