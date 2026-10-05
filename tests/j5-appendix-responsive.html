@@ -34,13 +34,14 @@ async function check(frame) {
     if (doc.fonts) await doc.fonts.ready;
     await new Promise(resolve => frame.contentWindow.requestAnimationFrame(() => frame.contentWindow.requestAnimationFrame(resolve)));
     const issues = [];
+    const viewportWidth = frame.contentWindow.innerWidth;
     const actualWidth = doc.documentElement.clientWidth;
     const scrollWidth = Math.max(doc.documentElement.scrollWidth, doc.body.scrollWidth);
     const rows = [...doc.querySelectorAll('.study-row')];
     const controls = [...doc.querySelectorAll('button, select')];
     const playButtons = [...doc.querySelectorAll('[data-play]')];
     const details = [...doc.querySelectorAll('details')];
-    if (actualWidth !== width) issues.push(`實際 viewport ${actualWidth}px，預期 ${width}px`);
+    if (viewportWidth !== width) issues.push(`實際 viewport ${viewportWidth}px，預期 ${width}px`);
     if (scrollWidth > actualWidth + 1) issues.push(`橫向溢出 ${scrollWidth - actualWidth}px`);
     if (rows.length !== 30 || playButtons.length !== 60 || details.length !== 6) issues.push('區塊、句子或朗讀按鈕數量不符');
     if (details.some(d => !d.open)) issues.push('有區塊尚未展開');
@@ -52,7 +53,7 @@ async function check(frame) {
     if (outside.length) issues.push(`${outside.length} 個文字／控制元件超出欄位或 viewport`);
     if (playButtons.some(b => b.getAttribute('aria-pressed') === 'true')) issues.push('重新檢查後仍顯示播放中');
     if (doc.querySelector('audio[autoplay]')) issues.push('發現自動播放標記');
-    const report = { width, actualWidth, scrollWidth, sections: details.length, rows: rows.length, playButtons: playButtons.length, controls: controls.length, minControlWidth: Math.min(...controls.map(el => el.getBoundingClientRect().width)), minControlHeight: Math.min(...controls.map(el => el.getBoundingClientRect().height)), issues, checkedAt: new Date().toISOString() };
+    const report = { width, viewportWidth, actualWidth, scrollWidth, sections: details.length, rows: rows.length, playButtons: playButtons.length, controls: controls.length, minControlWidth: Math.min(...controls.map(el => el.getBoundingClientRect().width)), minControlHeight: Math.min(...controls.map(el => el.getBoundingClientRect().height)), issues, checkedAt: new Date().toISOString() };
     results[width] = report;
     out.className = issues.length ? 'fail' : 'pass';
     out.textContent = `${issues.length ? '未通過' : '通過'}：${width}px\n6 組表／${rows.length} 組日英對照／${playButtons.length} 個朗讀按鈕\n頁面寬 ${scrollWidth}px；最小點擊高度 ${report.minControlHeight}px${issues.length ? '\n' + issues.join('\n') : '\n未發現橫向溢出或小於 44px 的控制元件。'}`;
