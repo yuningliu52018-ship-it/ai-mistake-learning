@@ -166,15 +166,15 @@ test('repeat after completed run keeps the last sentence; explicit restart begin
   assert.equal(h.player.index,4); assert.equal(new URL(h.played.at(-1).src).searchParams.get('q'),'写真を撮ってもらえませんか。');
   h.start(); h.end(); h.player.play({restart:true}); assert.equal(h.player.index,1);
 });
-test('Google-only UI and controls; gallery stays at 128 with all voiced entries; cache versions match', () => {
+test('Google-only UI and controls; gallery stays at 150 with all voiced entries; cache versions match', () => {
   const root=path.resolve(__dirname,'..'); const read=file=>fs.readFileSync(path.join(root,file),'utf8');
   const html=read('voiced-comic.html');
   for (const id of ['play','pause','stop','replay','repeat','voice-source','speed','mode','playback-status']) assert.match(html,new RegExp(`id="${id}"`));
   assert.match(html,/<meta name="referrer" content="no-referrer">/); assert.match(html,/Google 線上日語/); assert.match(html,/不會切換成裝置聲音/); assert.match(html,/台詞傳給 Google/);
   assert.match(read('voiced-comics-data.js'),/中文姓氏/); assert.match(html,/不會錄音/); assert.match(html,/無日文台詞/);
   const gallery=read('japanese-comics.html');
-  assert.equal((gallery.match(/class="comic-card"/g)||[]).length,128);
-  assert.equal((gallery.match(/class="voice-entry"/g)||[]).length,128);
+  assert.equal((gallery.match(/class="comic-card"/g)||[]).length,150);
+  assert.equal((gallery.match(/class="voice-entry"/g)||[]).length,150);
   const js=read('voiced-comic.js');
   assert.match(js,/translate_tts\?ie=UTF-8&tl=\$\{this.language\}&client=tw-ob&q=/);
   assert.doesNotMatch(js,/speechSynthesis|SpeechSynthesisUtterance|localStorage|getUserMedia|fetch\(/);
@@ -219,9 +219,9 @@ for (const comic of COMICS) {
     h.player.select(-1);h.player.select(999);assert.equal(h.player.index,comic.panels.at(-1).first);
   });
 }
-test('all 128 configs align exactly with gallery and preserve dimensions, cue maps and labels', () => {
+test('all 150 configs align exactly with gallery and preserve dimensions, cue maps and labels', () => {
   const root=path.resolve(__dirname,'..'), html=fs.readFileSync(path.join(root,'japanese-comics.html'),'utf8');
-  const ids=[...html.matchAll(/data-comic="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(COMICS.map(c=>c.id),ids);assert.equal(new Set(ids).size,128);
+  const ids=[...html.matchAll(/data-comic="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(COMICS.map(c=>c.id),ids);assert.equal(new Set(ids).size,150);
   for(const c of COMICS){
     assert.equal(c.panels.length,4);assert.ok(c.provenance);assert.ok(c.caption);assert.ok(c.grammar);assert.ok(c.label);assert.ok(fs.statSync(path.join(root,c.image)).size);
     assert.ok(html.includes(`href="voiced-comic.html?comic=${c.id}"`));
@@ -240,7 +240,7 @@ test('confirmed difficult readings keep original visible subtitles',()=>{
 const {resolveComic,VARIANTS}=require('../voiced-comic.js');
 const english=resolveComic(COMICS[0],'en');
 test('exact approved first English art text remains unchanged, preserving all 59 Japanese comics',()=>{
- assert.ok(VARIANTS['l1-01-polite-request']);assert.equal(COMICS.length,128);
+ assert.ok(VARIANTS['l1-01-polite-request']);assert.equal(COMICS.length,150);
  assert.deepEqual(english.cues.map(c=>c.subtitle),['Oh no, I can’t keep up!','Could you show me your notes?','Sure. Here you go.','Thanks!','Excuse me. Could you take a photo of us?']);
  assert.equal(english.cues[2].panel,english.cues[3].panel);assert.match(english.caption,/could 不是在說過去/);
 });

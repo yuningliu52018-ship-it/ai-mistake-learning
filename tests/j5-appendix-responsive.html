@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>J5 補充表｜窄螢幕檢查</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:20px;background:#f4f3ed;color:#203b38;font:16px/1.6 system-ui,sans-serif}h1{font-size:24px;margin:0 0 8px}p{max-width:900px}button{padding:10px 18px;min-height:44px;font:inherit;border:1px solid #718b80;border-radius:8px;background:white;color:inherit;cursor:pointer}button:focus-visible{outline:3px solid #c47231}#frames{display:flex;flex-wrap:wrap;align-items:start;gap:24px;margin-top:20px}.case{max-width:100%;overflow:auto}h2{font-size:18px;margin:0 0 8px}iframe{display:block;height:760px;border:0;outline:1px solid #809a8b;background:white}output{display:block;white-space:pre-wrap;font-size:14px;max-width:390px;margin:12px 0}.pass{color:#12623b}.fail{color:#a33224}.note{font-size:14px;color:#526b62}
+</style>
+</head>
+<body>
+<h1>J5 補充朗讀表：320 / 390px 檢查</h1>
+<p>這個測試頁載入同站的正式補充表，自動展開所有區塊，檢查橫向溢出、按鈕尺寸與內容數量。它不會自動播放語音。重新檢查時會先停止正在播放的語音。</p>
+<p class="note">請在已部署的網站開啟本頁。畫面尺寸檢查不能證明 Google 音源實際可播放，也不能代替真實手機上的操作與聆聽。</p>
+<button id="recheck" type="button">重新檢查兩個尺寸</button>
+<div id="frames">
+<section class="case"><h2>320px</h2><iframe title="J5 補充表 320px" data-width="320" width="320" src="../j5-appendix.html"></iframe><output aria-live="polite">正在載入…</output></section>
+<section class="case"><h2>390px</h2><iframe title="J5 補充表 390px" data-width="390" width="390" src="../j5-appendix.html"></iframe><output aria-live="polite">正在載入…</output></section>
+</div>
+<script>
+'use strict';
+const frames = [...document.querySelectorAll('iframe')];
+const results = {};
+window.J5_RESPONSIVE_QA = results;
+async function check(frame) {
+  const out = frame.nextElementSibling;
+  const width = Number(frame.dataset.width);
+  try {
+    const doc = frame.contentDocument;
+    if (!doc || !doc.querySelector('#tables')) throw new Error('找不到補充表，請確認部署路徑。');
+    doc.getElementById('stop').click();
+    if (doc.getElementById('expand').getAttribute('aria-expanded') !== 'true') doc.getElementById('expand').click();
+    if (doc.fonts) await doc.fonts.ready;
+    await new Promise(resolve => frame.contentWindow.requestAnimationFrame(() => frame.contentWindow.requestAnimationFrame(resolve)));
+    const issues = [];
+    const actualWidth = doc.documentElement.clientWidth;
+    const scrollWidth = Math.max(doc.documentElement.scrollWidth, doc.body.scrollWidth);
+    const rows = [...doc.querySelectorAll('.study-row')];
+    const controls = [...doc.querySelectorAll('button, select')];
+    const playButtons = [...doc.querySelectorAll('[data-play]')];
+    const details = [...doc.querySelectorAll('details')];
+    if (actualWidth !== width) issues.push(`實際 viewport ${actualWidth}px，預期 ${width}px`);
+    if (scrollWidth > actualWidth + 1) issues.push(`橫向溢出 ${scrollWidth - actualWidth}px`);
+    if (rows.length !== 30 || playButtons.length !== 60 || details.length !== 6) issues.push('區塊、句子或朗讀按鈕數量不符');
+    if (details.some(d => !d.open)) issues.push('有區塊尚未展開');
+    const small = controls.filter(el => { const r = el.getBoundingClientRect(); return r.width < 44 || r.height < 44; });
+    if (small.length) issues.push(`${small.length} 個按鈕／選單未達 44px 點擊尺寸`);
+    const outside = [...doc.querySelectorAll('.foreign, .row-actions, .rules, summary, button, select')].filter(el => {
+      const r = el.getBoundingClientRect(); return r.left < -1 || r.right > actualWidth + 1 || el.scrollWidth > el.clientWidth + 1;
+    });
+    if (outside.length) issues.push(`${outside.length} 個文字／控制元件超出欄位或 viewport`);
+    if (playButtons.some(b => b.getAttribute('aria-pressed') === 'true')) issues.push('重新檢查後仍顯示播放中');
+    if (doc.querySelector('audio[autoplay]')) issues.push('發現自動播放標記');
+    const report = { width, actualWidth, scrollWidth, sections: details.length, rows: rows.length, playButtons: playButtons.length, controls: controls.length, minControlWidth: Math.min(...controls.map(el => el.getBoundingClientRect().width)), minControlHeight: Math.min(...controls.map(el => el.getBoundingClientRect().height)), issues, checkedAt: new Date().toISOString() };
+    results[width] = report;
+    out.className = issues.length ? 'fail' : 'pass';
+    out.textContent = `${issues.length ? '未通過' : '通過'}：${width}px\n6 組表／${rows.length} 組日英對照／${playButtons.length} 個朗讀按鈕\n頁面寬 ${scrollWidth}px；最小點擊高度 ${report.minControlHeight}px${issues.length ? '\n' + issues.join('\n') : '\n未發現橫向溢出或小於 44px 的控制元件。'}`;
+  } catch (error) {
+    results[width] = { width, issues: [error.message], checkedAt: new Date().toISOString() };
+    out.className = 'fail'; out.textContent = error.message;
+  }
+}
+for (const frame of frames) frame.addEventListener('load', () => check(frame));
+document.getElementById('recheck').addEventListener('click', () => frames.forEach(check));
+</script>
+</body>
+</html>

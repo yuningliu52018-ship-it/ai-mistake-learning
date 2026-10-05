@@ -65,7 +65,7 @@
     visible = cards.filter(card => filter === 'all' || card.dataset.lesson === filter);
     cards.forEach(card => { card.hidden = !visible.includes(card); });
     filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
-    const label = { all: '全部', l1: '第1課', l2: '第2課', l3: '第3課', l4: '第4課', l5: '第5課', supplement: '跨課補充', j1: '初級複習 J1', j2: '初級複習 J2', j3: '初級複習 J3', j4: '初級複習 J4', j5: '初級複習 J5' }[filter];
+    const label = { all: '全部', l1: '第1課', l2: '第2課', l3: '第3課', l4: '第4課', l5: '第5課', supplement: '跨課補充', j1: '初級複習 J1', j2: '初級複習 J2', j3: '初級複習 J3', j4: '初級複習 J4', j5: '初級複習 J5', j6: '初級複習 J6' }[filter];
     document.getElementById('result-count').textContent = `顯示${label} ${visible.length} 張`;
     const id = url.hash.startsWith('#comic=') ? url.hash.slice(7) : '';
     const card = visible.find(item => item.dataset.comic === id);
@@ -164,6 +164,6 @@
   window.addEventListener('hashchange', syncLocation);
   syncLocation();
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.8.128').catch(console.error));
+    window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.8.150').catch(console.error));
   }
 })();

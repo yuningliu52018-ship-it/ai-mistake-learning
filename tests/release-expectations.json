@@ -1,8 +1,9 @@
 {
-  "total": 128,
+  "total": 150,
   "addedLessons": {
     "j4": 33,
-    "j5": 20
+    "j5": 20,
+    "j6": 22
   },
   "baselineCommit": "58e041ecdf67d0f504a069fecd3a5a2625ec848b"
 }

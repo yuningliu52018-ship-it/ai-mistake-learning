@@ -28,7 +28,7 @@ test('all local homepage resources and service-worker shell entries exist', () =
  for (const [, url] of sw.matchAll(/'\.\/([^']+)'/g)) assert.ok(fs.existsSync(path.join(root, url.split('?')[0])), url);
  assert.match(sw, /eva-theme\.css\?v=5\.0/);
  assert.match(sw, /assets\/eva-reading-corner\.svg/);
- assert.ok(home.includes('service-worker.js?v=5.8.128'));
+ assert.ok(home.includes('service-worker.js?v=5.8.150'));
  const galleryVersion=read('japanese-comics.js').match(/service-worker\.js\?v=([\d.]+)/)[1];assert.ok(sw.includes('ai-mistake-learning-v'+galleryVersion));assert.ok(read('voiced-comic.js').includes('service-worker.js?v='+galleryVersion));
 });
 test('presentation keeps capture behavior and reduced-motion accessibility', () => {
