@@ -5,7 +5,24 @@
   const list = document.getElementById('learningModuleList');
   if (!input || !importButton || !status || !list) return;
 
+  const AI_ENDPOINT = window.AI_MISTAKE_CONFIG?.visionEndpoint || '';
+  const SYNC_KEY_STORAGE = 'aiMistakeLearning.syncKey.v1';
+  let syncKey = localStorage.getItem(SYNC_KEY_STORAGE) || '';
   let modules = [];
+  const syncButton = document.getElementById('syncBtn');
+  const updateSyncButton = () => { if (syncButton) syncButton.textContent = syncKey ? '☁️ 變更同步碼' : '☁️ 設定同步'; };
+  syncButton?.addEventListener('click', () => {
+    const value = prompt('輸入至少 8 個字元的同步碼；其他裝置使用相同的碼即可查看教材。', syncKey);
+    if (value === null) return;
+    const next = value.trim();
+    if (next.length < 8) return alert('同步碼至少需要 8 個字元。');
+    localStorage.setItem(SYNC_KEY_STORAGE, next);
+    syncKey = next;
+    modules = [];
+    updateSyncButton();
+    loadModules();
+  });
+  updateSyncButton();
   const esc = (value = '') => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
   async function api(action, data = {}) {
@@ -26,7 +43,7 @@
         <span class="module-subject">${esc(module.subject || '未分類')}</span>
         <h3>${esc(module.title || '未命名學習單元')}</h3>
         <p>${esc(module.summary || '')}</p>
-        <small>${Number(module.questionCount) || 0} 題已納入錯題資料庫</small>
+
         <div class="module-actions">
           <button class="primary" data-open-module="${esc(module.id)}">開啟互動頁</button>
           <button data-delete-module="${esc(module.id)}">刪除單元</button>
@@ -57,20 +74,6 @@
     dialog.showModal();
   }
 
-  function toQuestion(item, module, index) {
-    const now = new Date().toISOString();
-    const options = item.options || {};
-    const stripLabel = (value, key) => String(value || '').trim().replace(new RegExp(`^\\s*(?:\\(${key}\\)|${key}[.、:：])\\s*`, 'i'), '');
-    const optionText = ['A','B','C','D'].filter(k => options[k]).map(k => `(${k}) ${stripLabel(options[k], k)}`).join('\n');
-    return normalizeQuestion({
-      id: crypto.randomUUID(), subject:item.subject || module.subject || '未分類', chapter:item.chapter || '', number:item.number || item.questionNumber || `匯入${index + 1}`,
-      status:'待複習', questionType:item.questionType || '互動單元匯入', difficulty:Number(item.difficulty) || 3,
-      question:[item.question || '待補題目', optionText].filter(Boolean).join('\n'), correctAnswer:item.correctAnswer || '待確認', myAnswer:item.myAnswer || item.studentAnswer || '',
-      mistake:item.mistake || '由 Gemini 互動頁批次匯入，請複習後補充錯誤原因。', concept:item.concept || '', knowledge:item.knowledge || '', explanation:item.explanation || '',
-      tags:['互動單元', module.subject || '未分類', module.title, ...(item.tags || [])], image:'', sourceModuleId:module.id, sourceModuleTitle:module.title, createdAt:now, updatedAt:now
-    });
-  }
-
   importButton.addEventListener('click', () => {
     if (!syncKey) {
       status.textContent = '請先按右上角「☁️ 設定同步」，設定至少 8 個字元的同步碼。';
@@ -85,7 +88,7 @@
     if (!files.length) return;
     if (!syncKey) { input.value = ''; return alert('請先按頁面上方「設定同步」並輸入至少 8 個字元的同步碼。'); }
     input.disabled = true;
-    let imported = 0, importedQuestions = 0;
+    let imported = 0;
     try {
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
@@ -96,15 +99,11 @@
         const now = new Date().toISOString();
         const module = {id:crypto.randomUUID(), title:parsed.module?.title || file.name, subject:parsed.module?.subject || '未分類', summary:parsed.module?.summary || '', html, questionCount:(parsed.questions || []).length, createdAt:now, updatedAt:now};
         await api('modulePush', {module});
-        const additions = (parsed.questions || []).map((q, index) => toQuestion(q, module, index));
-        for (let start = 0; start < additions.length; start += 10) await api('syncPush', {questions:additions.slice(start, start + 10)});
-        questions = [...additions, ...questions];
-        saveQuestions({sync:false});
         modules.unshift(module);
-        imported++; importedQuestions += additions.length;
+        imported++;
       }
-      render(); renderModules();
-      status.textContent = `完成：已匯入 ${imported} 個互動單元與 ${importedQuestions} 題。`;
+      renderModules();
+      status.textContent = `完成：已匯入 ${imported} 個互動單元。`;
     } catch (error) {
       status.textContent = `匯入中止：${error.message}`;
       alert(`互動頁匯入失敗：${error.message}`);
@@ -115,7 +114,7 @@
     const openId = event.target.dataset?.openModule;
     if (openId) return openModule(modules.find(x => x.id === openId));
     const deleteId = event.target.dataset?.deleteModule;
-    if (!deleteId || !confirm('確定刪除這個互動單元嗎？已匯入的個別題目仍會保留。')) return;
+    if (!deleteId || !confirm('確定刪除這個互動單元嗎？')) return;
     try { await api('moduleDelete', {id:deleteId, deletedAt:new Date().toISOString()}); modules = modules.filter(x => x.id !== deleteId); renderModules(); }
     catch (error) { alert(`刪除失敗：${error.message}`); }
   });

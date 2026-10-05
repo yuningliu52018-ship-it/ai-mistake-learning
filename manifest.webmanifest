@@ -1,7 +1,7 @@
 {
   "name": "Eva的資料庫",
   "short_name": "Eva的資料庫",
-  "description": "收藏日文漫畫、互動教材與錯題筆記，依自己的步調慢慢學習。",
+  "description": "收藏日文／英文雙語漫畫與互動教材，依自己的步調慢慢學習。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
