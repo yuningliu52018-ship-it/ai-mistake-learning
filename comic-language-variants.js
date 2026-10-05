@@ -1,4 +1,4 @@
-/* English scene adaptations; all original Japanese data stays unchanged. */
+/* Reviewed English situational adaptations; Japanese originals remain separate. */
 (function(root){
 "use strict";
 const variants = {
@@ -6554,6 +6554,3633 @@ const variants = {
           "sourceLabel": "英文情境改編"
         }
       ]
+    }
+  },
+  "j4-01-explanatory-n": {
+    "en": {
+      "title": "怎麼了？說明背後的原因",
+      "grammar": "What’s wrong?：關心狀況｜since：從某時起",
+      "caption": "What’s wrong?：關心狀況｜since：從某時起",
+      "image": "assets/japanese-comics/j4-01-explanatory-n-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "15 158 995 317",
+          "alt": "英文第1格：你不唱歌嗎？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "15 481 995 319",
+          "alt": "英文第2格：因為我不太會唱歌。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "16 805 994 301",
+          "alt": "英文第3格：你怎麼了？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "15 1109 995 316",
+          "alt": "英文第4格：從早上開始就頭痛。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Aren’t you going to sing?",
+          "subtitle": "Aren’t you going to sing?",
+          "translation": "你不唱歌嗎？",
+          "speaker": "woman_mustard",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I’m not very good at singing.",
+          "subtitle": "I’m not very good at singing.",
+          "translation": "因為我不太會唱歌。",
+          "speaker": "man_teal",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "What’s wrong?",
+          "subtitle": "What’s wrong?",
+          "translation": "你怎麼了？",
+          "speaker": "woman_mustard",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I’ve had a headache since this morning.",
+          "subtitle": "I’ve had a headache since this morning.",
+          "translation": "從早上開始就頭痛。",
+          "speaker": "man_teal",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-02-request-ndesuga": {
+    "en": {
+      "title": "先說明情況，再開口請求",
+      "grammar": "Could I…?／Could you…?：委婉請求",
+      "caption": "Could I…?／Could you…?：委婉請求",
+      "image": "assets/japanese-comics/j4-02-request-ndesuga-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "14 90 996 304",
+          "alt": "英文第1格：我忘了帶筆記，可以借我嗎？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "14 402 996 317",
+          "alt": "英文第2格：好，請用。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "14 727 996 328",
+          "alt": "英文第3格：不好意思，我想去金閣寺，可以教我怎麼搭公車嗎？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "14 1063 996 361",
+          "alt": "英文第4格：好的，我來為您說明。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I forgot my notebook. Could I borrow yours?",
+          "subtitle": "I forgot my notebook. Could I borrow yours?",
+          "translation": "我忘了帶筆記，可以借我嗎？",
+          "speaker": "woman_mustard",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Sure. Here you go.",
+          "subtitle": "Sure. Here you go.",
+          "translation": "好，請用。",
+          "speaker": "woman_teal",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Excuse me. I’d like to visit Kinkaku-ji. Could you tell me how to get there by bus?",
+          "subtitle": "Excuse me. I’d like to visit Kinkaku-ji. Could you tell me how to get there by bus?",
+          "translation": "不好意思，我想去金閣寺，可以教我怎麼搭公車嗎？",
+          "speaker": "woman_mustard",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Of course. Let me show you.",
+          "subtitle": "Of course. Let me show you.",
+          "translation": "好的，我來為您說明。",
+          "speaker": "staff",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-03-listing-shi": {
+    "en": {
+      "title": "理由不只一個，串起來說",
+      "grammar": "and／too：補充並列｜because：說明原因",
+      "caption": "and／too：補充並列｜because：說明原因",
+      "image": "assets/japanese-comics/j4-03-listing-shi-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "17 103 992 335",
+          "alt": "英文第1格：王先生足球踢得好，也會做菜，而且還會說日文。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "17 446 992 329",
+          "alt": "英文第2格：現在有空，天氣也好，我們出門吧。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "17 784 992 326",
+          "alt": "英文第3格：你今天怎麼搭計程車回來？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "17 1118 992 322",
+          "alt": "英文第4格：因為下雨，而且很冷。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Wang is good at soccer, can cook, and speaks Japanese, too.",
+          "subtitle": "Wang is good at soccer, can cook, and speaks Japanese, too.",
+          "translation": "王先生足球踢得好，也會做菜，而且還會說日文。",
+          "speaker": "woman_mustard",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "We’re free, and the weather is nice. Let’s go out.",
+          "subtitle": "We’re free, and the weather is nice. Let’s go out.",
+          "translation": "現在有空，天氣也好，我們出門吧。",
+          "speaker": "woman_mustard",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Why did you take a taxi home today?",
+          "subtitle": "Why did you take a taxi home today?",
+          "translation": "你今天怎麼搭計程車回來？",
+          "speaker": "man_teal",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Because it was rainy and cold.",
+          "subtitle": "Because it was rainy and cold.",
+          "translation": "因為下雨，而且很冷。",
+          "speaker": "woman_mustard",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-04-potential-forms": {
+    "en": {
+      "title": "從「做」變成「做得到」",
+      "grammar": "英語對照：can／can’t／could＋原形動詞",
+      "caption": "英語對照：can／can’t／could＋原形動詞",
+      "image": "assets/japanese-comics/j4-04-potential-forms-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "16 101 993 314",
+          "alt": "英文第1格：can 後面接原形動詞：我會游泳。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "16 422 993 320",
+          "alt": "英文第2格：can’t 表示不能：我不能吃辣。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "16 749 993 329",
+          "alt": "英文第3格：could 可表示過去的能力。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "16 1085 993 340",
+          "alt": "英文第4格：Can you swim?：你會游泳嗎？",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I can swim.",
+          "subtitle": "can + 原形動詞\nI can swim.",
+          "translation": "can 後面接原形動詞：我會游泳。",
+          "speaker": "narration",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I can’t eat spicy food.",
+          "subtitle": "否定：cannot／can’t\nI can’t eat spicy food.",
+          "translation": "can’t 表示不能：我不能吃辣。",
+          "speaker": "narration",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I could swim when I was younger.",
+          "subtitle": "過去的能力：could\nI could swim when I was younger.",
+          "translation": "could 可表示過去的能力。",
+          "speaker": "narration",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Can you swim?",
+          "subtitle": "疑問：Can + 主詞 + 原形？\nCan you swim?",
+          "translation": "Can you swim?：你會游泳嗎？",
+          "speaker": "narration",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-05-potential-usage": {
+    "en": {
+      "title": "做得到嗎？現在與以前的能力",
+      "grammar": "can：能、會｜can’t：不能｜couldn’t：當時不能",
+      "caption": "can：能、會｜can’t：不能｜couldn’t：當時不能",
+      "image": "assets/japanese-comics/j4-05-potential-usage-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "12 130 1003 308",
+          "alt": "英文第1格：我會說日文。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "12 448 1003 309",
+          "alt": "英文第2格：留學之前，我吃不了辣的料理。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "12 767 1003 319",
+          "alt": "英文第3格：王先生今晚不能來唱卡拉OK。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "12 1096 1003 328",
+          "alt": "英文第4格：昨天打棒球了嗎？\n因為下雨，所以沒辦法打。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I can speak Japanese.",
+          "subtitle": "I can speak Japanese.",
+          "translation": "我會說日文。",
+          "speaker": "woman_mustard",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Before studying abroad, I couldn’t eat spicy food.",
+          "subtitle": "Before studying abroad, I couldn’t eat spicy food.",
+          "translation": "留學之前，我吃不了辣的料理。",
+          "speaker": "woman_mustard",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Wang can’t come to karaoke tonight.",
+          "subtitle": "Wang can’t come to karaoke tonight.",
+          "translation": "王先生今晚不能來唱卡拉OK。",
+          "speaker": "woman_mustard",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Did you play baseball yesterday?",
+          "subtitle": "Did you play baseball yesterday?",
+          "translation": "昨天打棒球了嗎？",
+          "speaker": "woman_mustard",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "No, I couldn’t because it rained.",
+          "subtitle": "No, I couldn’t because it rained.",
+          "translation": "因為下雨，所以沒辦法打。",
+          "speaker": "man_teal",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-06-only-shika": {
+    "en": {
+      "title": "只會這一道，也只送給你",
+      "grammar": "only：限定範圍｜only to you：只給你",
+      "caption": "only：限定範圍｜only to you：只給你",
+      "image": "assets/japanese-comics/j4-06-only-shika-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "14 129 996 300",
+          "alt": "英文第1格：你會做菜嗎？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "14 433 996 317",
+          "alt": "英文第2格：會，但只會煎荷包蛋。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "14 755 996 299",
+          "alt": "英文第3格：這巧克力只送給你。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "14 1057 996 355",
+          "alt": "英文第4格：只送給我？好開心！",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Can you cook?",
+          "subtitle": "Can you cook?",
+          "translation": "你會做菜嗎？",
+          "speaker": "woman_mustard",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I can, but I can only make fried eggs.",
+          "subtitle": "I can, but I can only make fried eggs.",
+          "translation": "會，但只會煎荷包蛋。",
+          "speaker": "man_teal",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I’m giving this chocolate only to you.",
+          "subtitle": "I’m giving this chocolate only to you.",
+          "translation": "這巧克力只送給你。",
+          "speaker": "man_teal",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Just me? How sweet!",
+          "subtitle": "Just me? How sweet!",
+          "translation": "只送給我？好開心！",
+          "speaker": "woman_mustard",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-07-imperatives": {
+    "en": {
+      "title": "加油、快跑！危險時大聲提醒",
+      "grammar": "祈使句：原形開頭｜Run!／Be careful!｜留意語氣",
+      "caption": "祈使句：原形開頭｜Run!／Be careful!｜留意語氣",
+      "image": "assets/japanese-comics/j4-07-imperatives-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "9 144 1007 327",
+          "alt": "英文第1格：加油！跑起來！衝啊！",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "9 479 1006 315",
+          "alt": "英文第2格：危險！小心！",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "9 801 1006 334",
+          "alt": "英文第3格：安靜！仔細聽！",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "9 1141 1006 299",
+          "alt": "英文第4格：祈使句：來！做吧！",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Come on! Run! Go!",
+          "subtitle": "Come on! Run! Go!",
+          "translation": "加油！跑起來！衝啊！",
+          "speaker": "supporter_mustard_left",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Watch out! Be careful!",
+          "subtitle": "Watch out! Be careful!",
+          "translation": "危險！小心！",
+          "speaker": "coach_teal_right",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Be quiet! Listen carefully!",
+          "subtitle": "Be quiet! Listen carefully!",
+          "translation": "安靜！仔細聽！",
+          "speaker": "instructor_left",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Come!\nDo it!",
+          "subtitle": "Come!\nDo it!",
+          "translation": "祈使句：來！做吧！",
+          "speaker": "narrator",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-08-prohibitions": {
+    "en": {
+      "title": "「不要！」的強烈說法",
+      "grammar": "禁止：Don’t＋動詞原形｜Please don’t 可放緩語氣",
+      "caption": "禁止：Don’t＋動詞原形｜Please don’t 可放緩語氣",
+      "image": "assets/japanese-comics/j4-08-prohibitions-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "10 153 1004 272",
+          "alt": "英文第1格：不要動！",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "11 430 1002 313",
+          "alt": "英文第2格：不准抽菸！",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "11 751 1002 340",
+          "alt": "英文第3格：不准把車停在這裡！",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "12 1096 1002 333",
+          "alt": "英文第4格：禁止：Don’t＋動詞原形",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Don't move!",
+          "subtitle": "Don't move!",
+          "translation": "不要動！",
+          "speaker": "guide_teal_right",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Don't smoke!",
+          "subtitle": "Don't smoke!",
+          "translation": "不准抽菸！",
+          "speaker": "officer_mustard_left",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Don't park here!",
+          "subtitle": "Don't park here!",
+          "translation": "不准把車停在這裡！",
+          "speaker": "marshal_teal_right",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Don't move.\nDon't eat.\nDon't come here.",
+          "subtitle": "Don't move.\nDon't eat.\nDon't come here.",
+          "translation": "禁止：Don’t＋動詞原形",
+          "speaker": "narrator",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-09-intransitive-state": {
+    "en": {
+      "title": "停下來了，還是停著呢？",
+      "grammar": "stopped：過去事件｜is parked／is broken：目前狀態",
+      "caption": "stopped：過去事件｜is parked／is broken：目前狀態",
+      "image": "assets/japanese-comics/j4-09-intransitive-state-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "10 146 1003 289",
+          "alt": "英文第1格：車子停下來了。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "11 441 1002 309",
+          "alt": "英文第2格：停在家門前的車是誰的？",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "12 755 1000 325",
+          "alt": "英文第3格：請問，可以借這把傘嗎？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "12 1086 1000 326",
+          "alt": "英文第4格：那把傘壞了。請不要用。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "The car stopped.",
+          "subtitle": "The car stopped.",
+          "translation": "車子停下來了。",
+          "speaker": "woman_mustard_left",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Whose car is parked in front of the house?",
+          "subtitle": "Whose car is parked in front of the house?",
+          "translation": "停在家門前的車是誰的？",
+          "speaker": "woman_mustard_left",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Excuse me, may I borrow this umbrella?",
+          "subtitle": "Excuse me, may I borrow this umbrella?",
+          "translation": "請問，可以借這把傘嗎？",
+          "speaker": "woman_mustard_left",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "That umbrella is broken. Please don't use it.",
+          "subtitle": "That umbrella is broken. Please don't use it.",
+          "translation": "那把傘壞了。請不要用。",
+          "speaker": "friend_teal_right",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-10-purposeful-tearu": {
+    "en": {
+      "title": "菜單貼好了，垃圾桶放好了",
+      "grammar": "is posted／is in…：描述位置與狀態",
+      "caption": "is posted／is in…：描述位置與狀態",
+      "image": "assets/japanese-comics/j4-10-purposeful-tearu-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "8 140 1007 309",
+          "alt": "英文第1格：不好意思，請給我菜單。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "9 454 1007 312",
+          "alt": "英文第2格：菜單貼在牆上喔。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "9 771 1007 317",
+          "alt": "英文第3格：垃圾桶在哪裡？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "9 1092 1007 332",
+          "alt": "英文第4格：放在教室角落喔。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Excuse me, could I have a menu?",
+          "subtitle": "Excuse me, could I have a menu?",
+          "translation": "不好意思，請給我菜單。",
+          "speaker": "customer_mustard_left",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "The menu is posted on the wall.",
+          "subtitle": "The menu is posted on the wall.",
+          "translation": "菜單貼在牆上喔。",
+          "speaker": "worker_teal_right",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Where's the trash can?",
+          "subtitle": "Where's the trash can?",
+          "translation": "垃圾桶在哪裡？",
+          "speaker": "learner_mustard_left",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It's in the corner of the classroom.",
+          "subtitle": "It's in the corner of the classroom.",
+          "translation": "放在教室角落喔。",
+          "speaker": "teacher_teal_right",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-11-prepared-tearu": {
+    "en": {
+      "title": "已經準備好了",
+      "grammar": "have＋過去分詞：已完成｜is written：寫著的狀態",
+      "caption": "have＋過去分詞：已完成｜is written：寫著的狀態",
+      "image": "assets/japanese-comics/j4-11-prepared-tearu-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "14 168 996 277",
+          "alt": "英文第1格：今天美國的親戚要來。房間整理了嗎？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "14 451 996 310",
+          "alt": "英文第2格：當然！已經整理好了。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "14 768 994 283",
+          "alt": "英文第3格：這本書是誰的？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "14 1058 994 350",
+          "alt": "英文第4格：是王先生／小姐的呢。你看，書上寫著名字喔。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Our relatives from the US are coming today. Did you tidy the room?",
+          "subtitle": "Our relatives from the US are coming today. Did you tidy the room?",
+          "translation": "今天美國的親戚要來。房間整理了嗎？",
+          "speaker": "woman_mustard_left",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Of course! I've already tidied it up.",
+          "subtitle": "Of course! I've already tidied it up.",
+          "translation": "當然！已經整理好了。",
+          "speaker": "partner_teal_right",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Whose book is this?",
+          "subtitle": "Whose book is this?",
+          "translation": "這本書是誰的？",
+          "speaker": "woman_mustard_left",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It's Wang's. Look, their name is written in it.",
+          "subtitle": "It's Wang's. Look, their name is written in it.",
+          "translation": "是王先生／小姐的呢。你看，書上寫著名字喔。",
+          "speaker": "partner_teal_right",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-12-complete-teshimau": {
+    "en": {
+      "title": "全部做完，不一定是後悔",
+      "grammar": "already／all／finish：強調完成｜不必帶後悔",
+      "caption": "already／all／finish：強調完成｜不必帶後悔",
+      "image": "assets/japanese-comics/j4-12-complete-teshimau-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "8 146 1007 296",
+          "alt": "英文第1格：今天早上帶來的餅乾還有剩嗎？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "9 448 1006 310",
+          "alt": "英文第2格：大家已經把餅乾吃完了喔。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "9 765 1006 308",
+          "alt": "英文第3格：那部連續劇看了嗎？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "9 1078 1005 338",
+          "alt": "英文第4格：還沒。我打算這個週末把全部看完。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Are there any cookies left from this morning?",
+          "subtitle": "Are there any cookies left from this morning?",
+          "translation": "今天早上帶來的餅乾還有剩嗎？",
+          "speaker": "woman_mustard_left",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "We've already eaten them all.",
+          "subtitle": "We've already eaten them all.",
+          "translation": "大家已經把餅乾吃完了喔。",
+          "speaker": "coworker_teal_right",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Have you watched that drama yet?",
+          "subtitle": "Have you watched that drama yet?",
+          "translation": "那部連續劇看了嗎？",
+          "speaker": "woman_mustard_left",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Not yet. I plan to finish it all this weekend.",
+          "subtitle": "Not yet. I plan to finish it all this weekend.",
+          "translation": "還沒。我打算這個週末把全部看完。",
+          "speaker": "friend_teal_right",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-13-regret-teshimau": {
+    "en": {
+      "title": "糟了！不小心發生了",
+      "grammar": "過去式：說已發生的事｜accidentally：不小心",
+      "caption": "過去式：說已發生的事｜accidentally：不小心",
+      "image": "assets/japanese-comics/j4-13-regret-teshimau-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "17 110 991 300",
+          "alt": "英文第1格：我把她送我的卡片弄丟了。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "17 420 991 297",
+          "alt": "英文第2格：你怎麼了？\n我感冒了。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "17 723 991 314",
+          "alt": "英文第3格：我不小心把手機掉進馬桶了。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "17 1044 991 358",
+          "alt": "英文第4格：我把果汁全喝光了。",
+          "first": 4,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I lost the card she gave me.",
+          "subtitle": "I lost the card she gave me.",
+          "translation": "我把她送我的卡片弄丟了。",
+          "speaker": "worried_man_left",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "What's wrong?",
+          "subtitle": "What's wrong?",
+          "translation": "你怎麼了？",
+          "speaker": "questioner_woman_left",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I've caught a cold.",
+          "subtitle": "I've caught a cold.",
+          "translation": "我感冒了。",
+          "speaker": "sick_man_right",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I accidentally dropped my phone in the toilet.",
+          "subtitle": "I accidentally dropped my phone in the toilet.",
+          "translation": "我不小心把手機掉進馬桶了。",
+          "speaker": "woman_in_cream_left",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Oops, I drank all the juice.",
+          "subtitle": "Oops, I drank all the juice.",
+          "translation": "我把果汁全喝光了。",
+          "speaker": "man_with_empty_glass_left",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-14-prepare-teoku": {
+    "en": {
+      "title": "在那之前，先準備好",
+      "grammar": "before：在……之前｜by：不晚於期限",
+      "caption": "before：在……之前｜by：不晚於期限",
+      "image": "assets/japanese-comics/j4-14-prepare-teoku-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "16 152 992 319",
+          "alt": "英文第1格：最晚明天，請先把資料影印好。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "16 480 992 301",
+          "alt": "英文第2格：好，我今天內會先做好。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "16 789 992 329",
+          "alt": "英文第3格：搭船前，最好先吃暈船藥喔。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "16 1126 992 311",
+          "alt": "英文第4格：知道了。我會在搭船前先吃。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Please make copies of the documents by tomorrow.",
+          "subtitle": "Please make copies of the documents by tomorrow.",
+          "translation": "最晚明天，請先把資料影印好。",
+          "speaker": "manager_woman_left",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Sure. I'll get it done today.",
+          "subtitle": "Sure. I'll get it done today.",
+          "translation": "好，我今天內會先做好。",
+          "speaker": "coworker_man_left",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "You should take motion-sickness medicine before boarding.",
+          "subtitle": "You should take motion-sickness medicine before boarding.",
+          "translation": "搭船前，最好先吃暈船藥喔。",
+          "speaker": "traveler_man_left",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Got it. I'll take it before we board.",
+          "subtitle": "Got it. I'll take it before we board.",
+          "translation": "知道了。我會在搭船前先吃。",
+          "speaker": "traveler_woman_right",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-15-cleanup-teoku": {
+    "en": {
+      "title": "用完整理好，下次更方便",
+      "grammar": "after：……之後｜wash up：清洗餐具",
+      "caption": "after：……之後｜wash up：清洗餐具",
+      "image": "assets/japanese-comics/j4-15-cleanup-teoku-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "13 146 1000 299",
+          "alt": "英文第1格：吃完飯後，請先把盤子洗好。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "13 451 1000 311",
+          "alt": "英文第2格：好，我會整理得方便下次使用。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "13 769 1000 312",
+          "alt": "英文第3格：吃完飯後，記得把盤子和杯子洗好喔。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "13 1089 1000 338",
+          "alt": "英文第4格：知道了。我會先洗好。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Please wash the dishes after you finish eating.",
+          "subtitle": "Please wash the dishes after you finish eating.",
+          "translation": "吃完飯後，請先把盤子洗好。",
+          "speaker": "woman_dining_left",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Sure. I'll leave everything ready for next time.",
+          "subtitle": "Sure. I'll leave everything ready for next time.",
+          "translation": "好，我會整理得方便下次使用。",
+          "speaker": "man_at_dish_rack",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Wash the plates and cups after the meal, okay?",
+          "subtitle": "Wash the plates and cups after the meal, okay?",
+          "translation": "吃完飯後，記得把盤子和杯子洗好喔。",
+          "speaker": "woman_dining_left",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Okay. I'll wash them up.",
+          "subtitle": "Okay. I'll wash them up.",
+          "translation": "知道了。我會先洗好。",
+          "speaker": "man_at_sink",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-16-leave-teoku": {
+    "en": {
+      "title": "先保持這樣就好",
+      "grammar": "leave it on：保持開著｜keep it closed：保持關著",
+      "caption": "leave it on：保持開著｜keep it closed：保持關著",
+      "image": "assets/japanese-comics/j4-16-leave-teoku-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "14 105 995 318",
+          "alt": "英文第1格：因為很熱，請讓冷氣保持開著。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "14 432 995 318",
+          "alt": "英文第2格：知道了。我會讓它繼續開著。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "14 759 995 344",
+          "alt": "英文第3格：要不要把窗戶稍微打開？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "14 1111 995 330",
+          "alt": "英文第4格：不用，因為很冷，請保持關著。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "It's hot, so please leave the air conditioner on.",
+          "subtitle": "It's hot, so please leave the air conditioner on.",
+          "translation": "因為很熱，請讓冷氣保持開著。",
+          "speaker": "office_man_left",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Okay. I'll leave it on.",
+          "subtitle": "Okay. I'll leave it on.",
+          "translation": "知道了。我會讓它繼續開著。",
+          "speaker": "office_woman_right",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Shall I open the window a little?",
+          "subtitle": "Shall I open the window a little?",
+          "translation": "要不要把窗戶稍微打開？",
+          "speaker": "standing_man_at_window",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "No, it's cold. Please keep it closed.",
+          "subtitle": "No, it's cold. Please keep it closed.",
+          "translation": "不用，因為很冷，請保持關著。",
+          "speaker": "seated_woman_right",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-17-deshou": {
+    "en": {
+      "title": "會這樣吧？還是對吧？",
+      "grammar": "probably：推測｜Do you think…?：詢問｜right?：同感",
+      "caption": "probably：推測｜Do you think…?：詢問｜right?：同感",
+      "image": "assets/japanese-comics/j4-17-deshou-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "14 134 996 298",
+          "alt": "英文第1格：颱風快接近了。飛機大概會延遲抵達吧。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "14 438 996 300",
+          "alt": "英文第2格：接著是明天的天氣預報。東京多雲，偶爾會下雨。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "14 744 996 326",
+          "alt": "英文第3格：今天下雨呢。明天也會下雨嗎？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "14 1075 996 344",
+          "alt": "英文第4格：臭豆腐很好吃，對吧？",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "A typhoon is approaching. The plane will probably arrive late.",
+          "subtitle": "A typhoon is approaching. The plane will probably arrive late.",
+          "translation": "颱風快接近了。飛機大概會延遲抵達吧。",
+          "speaker": "airport_woman_right",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Now for tomorrow's forecast. Tokyo will be cloudy, with occasional rain.",
+          "subtitle": "Now for tomorrow's forecast. Tokyo will be cloudy, with occasional rain.",
+          "translation": "接著是明天的天氣預報。東京多雲，偶爾會下雨。",
+          "speaker": "weather_presenter_woman_left",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It's raining today. Do you think it will rain tomorrow too?",
+          "subtitle": "It's raining today. Do you think it will rain tomorrow too?",
+          "translation": "今天下雨呢。明天也會下雨嗎？",
+          "speaker": "umbrella_woman_left",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Stinky tofu is delicious, right?",
+          "subtitle": "Stinky tofu is delicious, right?",
+          "translation": "臭豆腐很好吃，對吧？",
+          "speaker": "tofu_diner_woman_left",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-18-kamoshiremasen": {
+    "en": {
+      "title": "也許如此，先別下定論",
+      "grammar": "may／might／maybe：表示可能，尚未確定",
+      "caption": "may／might／maybe：表示可能，尚未確定",
+      "image": "assets/japanese-comics/j4-18-kamoshiremasen-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "13 133 999 301",
+          "alt": "英文第1格：陳先生今天也沒來呢。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "13 441 999 294",
+          "alt": "英文第2格：是啊，也許生病了吧。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "13 742 999 342",
+          "alt": "英文第3格：那兩人今天一整天都沒說話呢。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "13 1091 999 343",
+          "alt": "英文第4格：是啊，也許吵架了吧。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Chen is absent again today.",
+          "subtitle": "Chen is absent again today.",
+          "translation": "陳先生今天也沒來呢。",
+          "speaker": "office_woman_center",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Yes. Maybe Chen is sick.",
+          "subtitle": "Yes. Maybe Chen is sick.",
+          "translation": "是啊，也許生病了吧。",
+          "speaker": "office_man_center",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Those two haven't spoken to each other all day.",
+          "subtitle": "Those two haven't spoken to each other all day.",
+          "translation": "那兩人今天一整天都沒說話呢。",
+          "speaker": "cafe_woman_teal_left",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Yeah. Maybe they had an argument.",
+          "subtitle": "Yeah. Maybe they had an argument.",
+          "translation": "是啊，也許吵架了吧。",
+          "speaker": "cafe_woman_mustard_right",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-19-expected-hazu": {
+    "en": {
+      "title": "有根據，所以應該會……",
+      "grammar": "should / expect",
+      "caption": "Based on what we know: “should” or “I expect…” Express an expectation, not a guarantee.",
+      "image": "assets/japanese-comics/j4-19-expected-hazu-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "8 139 1009 323",
+          "alt": "英文第1格：部長說有事，所以應該不會來聚餐。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "8 468 1009 328",
+          "alt": "英文第2格：那麼，今天應該是三個人吧。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "8 802 1009 322",
+          "alt": "英文第3格：對。那家店現在應該很安靜。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "8 1129 1009 283",
+          "alt": "英文第4格：不過，還是確認一下比較保險。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Our boss said he had plans, so I don't expect him to join us for drinks.",
+          "subtitle": "Our boss said he had plans, so I don't expect him to join us for drinks.",
+          "translation": "部長說有事，所以應該不會來聚餐。",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "So there should be three of us tonight.",
+          "subtitle": "So there should be three of us tonight.",
+          "translation": "那麼，今天應該是三個人吧。",
+          "speaker": "adult_b",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Yes. That place should be quiet at this hour.",
+          "subtitle": "Yes. That place should be quiet at this hour.",
+          "translation": "對。那家店現在應該很安靜。",
+          "speaker": "adult_a",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Let's check, just to be sure.",
+          "subtitle": "Let's check, just to be sure.",
+          "translation": "不過，還是確認一下比較保險。",
+          "speaker": "adult_b",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-20-evidence-you": {
+    "en": {
+      "title": "從看到、嚐到的線索推測",
+      "grammar": "seem / look",
+      "caption": "Use “It seems…” or “It looks like…” when you draw a conclusion from evidence.",
+      "image": "assets/japanese-comics/j4-20-evidence-you-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "10 122 1005 312",
+          "alt": "英文第1格：好像把糖和鹽弄錯了。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "10 440 1005 299",
+          "alt": "英文第2格：這顆蛋好像壞掉了。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "10 745 1005 299",
+          "alt": "英文第3格：外面好像風很大。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "10 1051 1005 342",
+          "alt": "英文第4格：今天就在家裡吃吧。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "It seems I mixed up the sugar and the salt.",
+          "subtitle": "It seems I mixed up the sugar and the salt.",
+          "translation": "好像把糖和鹽弄錯了。",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "This egg seems to have gone bad.",
+          "subtitle": "This egg seems to have gone bad.",
+          "translation": "這顆蛋好像壞掉了。",
+          "speaker": "adult_b",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It looks windy outside.",
+          "subtitle": "It looks windy outside.",
+          "translation": "外面好像風很大。",
+          "speaker": "adult_a",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Let's eat at home today.",
+          "subtitle": "Let's eat at home today.",
+          "translation": "今天就在家裡吃吧。",
+          "speaker": "adult_b",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-21-wa-mo": {
+    "en": {
+      "title": "話題、也、至少、竟然",
+      "grammar": "too / at least / as many as",
+      "caption": "Connect ideas with “also,” “at least,” “anywhere” in negatives, and “as many as.”",
+      "image": "assets/japanese-comics/j4-21-wa-mo-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "4 142 1016 306",
+          "alt": "英文第1格：王同學是文化大學的學生。\n我也是文化大學的學生。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "4 455 1016 316",
+          "alt": "英文第2格：昨天去哪裡了？\n哪裡都沒去。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "4 777 1016 302",
+          "alt": "英文第3格：新車要花多少錢？\n至少要九十萬日圓吧。",
+          "first": 4,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "4 1085 1016 320",
+          "alt": "英文第4格：小陳竟然吃了五個漢堡耶！",
+          "first": 6,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Wang is a student at Chinese Culture University.",
+          "subtitle": "Wang is a student at Chinese Culture University.",
+          "translation": "王同學是文化大學的學生。",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I'm a student there, too.",
+          "subtitle": "I'm a student there, too.",
+          "translation": "我也是文化大學的學生。",
+          "speaker": "adult_b",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Where did you go yesterday?",
+          "subtitle": "Where did you go yesterday?",
+          "translation": "昨天去哪裡了？",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I didn't go anywhere.",
+          "subtitle": "I didn't go anywhere.",
+          "translation": "哪裡都沒去。",
+          "speaker": "adult_b",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "How much does a new car cost?",
+          "subtitle": "How much does a new car cost?",
+          "translation": "新車要花多少錢？",
+          "speaker": "adult_a",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "At least nine hundred thousand yen, I'd say.",
+          "subtitle": "At least nine hundred thousand yen, I'd say.",
+          "translation": "至少要九十萬日圓吧。",
+          "speaker": "adult_b",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Chen ate as many as five burgers!",
+          "subtitle": "Chen ate as many as five burgers!",
+          "translation": "小陳竟然吃了五個漢堡耶！",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-22-no-e-ya-dake": {
+    "en": {
+      "title": "是誰的？往哪裡？只有多久？",
+      "grammar": "possessives / back / such as / only",
+      "caption": "Use “about” or “mine” for relationships, “to” for direction, “such as” for examples, and “only” for limits.",
+      "image": "assets/japanese-comics/j4-22-no-e-ya-dake-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "6 131 1013 287",
+          "alt": "英文第1格：這是什麼雜誌？\n是汽車雜誌。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "6 422 1013 298",
+          "alt": "英文第2格：這本書是誰的？\n是我的。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "6 723 1013 320",
+          "alt": "英文第3格：老師回自己的國家了。",
+          "first": 4,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "6 1047 1013 368",
+          "alt": "英文第4格：早餐吃了蘋果、麵包等食物。\n午休只休息了十分鐘。",
+          "first": 5,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "What is this magazine about?",
+          "subtitle": "What is this magazine about?",
+          "translation": "這是什麼雜誌？",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It's a car magazine.",
+          "subtitle": "It's a car magazine.",
+          "translation": "是汽車雜誌。",
+          "speaker": "adult_b",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Whose book is this?",
+          "subtitle": "Whose book is this?",
+          "translation": "這本書是誰的？",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It's mine.",
+          "subtitle": "It's mine.",
+          "translation": "是我的。",
+          "speaker": "adult_b",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Our teacher went back to his home country.",
+          "subtitle": "Our teacher went back to his home country.",
+          "translation": "老師回自己的國家了。",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I had things like apples and bread for breakfast.",
+          "subtitle": "I had things like apples and bread for breakfast.",
+          "translation": "早餐吃了蘋果、麵包等食物。",
+          "speaker": "narrator",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I only rested for ten minutes during my lunch break.",
+          "subtitle": "I only rested for ten minutes during my lunch break.",
+          "translation": "午休只休息了十分鐘。",
+          "speaker": "narrator",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-23-de": {
+    "en": {
+      "title": "搭什麼、在哪裡、用什麼？",
+      "grammar": "by / with / at / because of",
+      "caption": "English may use “by,” “with,” “at,” “among,” or “because of,” depending on the situation.",
+      "image": "assets/japanese-comics/j4-23-de-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "9 129 1006 309",
+          "alt": "英文第1格：昨天搭計程車來學校。\n昨天一個人回家。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "9 443 1006 340",
+          "alt": "英文第2格：用手機拍照。\n今天在家看韓劇。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "9 787 1006 314",
+          "alt": "英文第3格：水果裡，我最喜歡蘋果。",
+          "first": 4,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "9 1105 1006 280",
+          "alt": "英文第4格：大樓因地震倒塌了。",
+          "first": 5,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I came to school by taxi yesterday.",
+          "subtitle": "I came to school by taxi yesterday.",
+          "translation": "昨天搭計程車來學校。",
+          "speaker": "narrator",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I went home alone yesterday.",
+          "subtitle": "I went home alone yesterday.",
+          "translation": "昨天一個人回家。",
+          "speaker": "narrator",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I take photos with my phone.",
+          "subtitle": "I take photos with my phone.",
+          "translation": "用手機拍照。",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I'm watching a Korean drama at home today.",
+          "subtitle": "I'm watching a Korean drama at home today.",
+          "translation": "今天在家看韓劇。",
+          "speaker": "adult_b",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Apples are my favorite fruit.",
+          "subtitle": "Apples are my favorite fruit.",
+          "translation": "水果裡，我最喜歡蘋果。",
+          "speaker": "adult_a",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "The building collapsed because of the earthquake.",
+          "subtitle": "The building collapsed because of the earthquake.",
+          "translation": "大樓因地震倒塌了。",
+          "speaker": "news_presenter",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-24-to": {
+    "en": {
+      "title": "和朋友購物，聽消息，按按鈕",
+      "grammar": "and / with / say / when",
+      "caption": "Use “and,” “with,” “said that,” or “when” to express these different relationships.",
+      "image": "assets/japanese-comics/j4-24-to-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "20 158 984 307",
+          "alt": "英文第1格：昨天買了包包和襯衫。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "20 474 984 315",
+          "alt": "英文第2格：和朋友去了百貨公司。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "20 799 984 301",
+          "alt": "英文第3格：王先生說今天要請假。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "20 1110 984 315",
+          "alt": "英文第4格：按下這個按鈕，水就會出來。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I bought a bag and a shirt yesterday.",
+          "subtitle": "I bought a bag and a shirt yesterday.",
+          "translation": "昨天買了包包和襯衫。",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I went to the department store with a friend.",
+          "subtitle": "I went to the department store with a friend.",
+          "translation": "和朋友去了百貨公司。",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Wang said he'd be taking the day off today.",
+          "subtitle": "Wang said he'd be taking the day off today.",
+          "translation": "王先生說今天要請假。",
+          "speaker": "adult_a",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "When you press this button, water comes out.",
+          "subtitle": "When you press this button, water comes out.",
+          "translation": "按下這個按鈕，水就會出來。",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-25-ga-skills-focus": {
+    "en": {
+      "title": "擅長什麼？重點是誰？",
+      "grammar": "be good at / understand / focus",
+      "caption": "Use clear subjects and expressions such as “good at,” “understand,” and “the person in charge.”",
+      "image": "assets/japanese-comics/j4-25-ga-skills-focus-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "15 156 994 304",
+          "alt": "英文第1格：王先生很會做菜。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "15 468 994 306",
+          "alt": "英文第2格：我不懂日文。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "15 784 994 309",
+          "alt": "英文第3格：流鼻水了。\n她的頭髮很長。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "15 1102 994 316",
+          "alt": "英文第4格：請叫負責人來。\n我就是負責人。",
+          "first": 4,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Wang is a good cook.",
+          "subtitle": "Wang is a good cook.",
+          "translation": "王先生很會做菜。",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I don't understand Japanese.",
+          "subtitle": "I don't understand Japanese.",
+          "translation": "我不懂日文。",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "My nose started running.",
+          "subtitle": "My nose started running.",
+          "translation": "流鼻水了。",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "She has long hair.",
+          "subtitle": "She has long hair.",
+          "translation": "她的頭髮很長。",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Could you get the person in charge, please?",
+          "subtitle": "Could you get the person in charge, please?",
+          "translation": "請叫負責人來。",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I'm the person in charge.",
+          "subtitle": "I'm the person in charge.",
+          "translation": "我就是負責人。",
+          "speaker": "adult_b",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-26-ga-links": {
+    "en": {
+      "title": "接下半句，補充更多資訊",
+      "grammar": "but / polite requests / relative clauses",
+      "caption": "Use “but” for contrast, a polite opening before requests, and “that” or “who” in descriptions.",
+      "image": "assets/japanese-comics/j4-26-ga-links-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "16 168 992 293",
+          "alt": "英文第1格：日本料理很好吃，不過很貴。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "16 472 992 289",
+          "alt": "英文第2格：我想去銀行，可以請您告訴我怎麼走嗎？",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "16 772 992 291",
+          "alt": "英文第3格：這張卡片是朋友送我的。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "16 1074 992 312",
+          "alt": "英文第4格：這是媽媽做的麵包。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Japanese food is delicious, but expensive.",
+          "subtitle": "Japanese food is delicious, but expensive.",
+          "translation": "日本料理很好吃，不過很貴。",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I'd like to go to the bank. Could you tell me how to get there?",
+          "subtitle": "I'd like to go to the bank. Could you tell me how to get there?",
+          "translation": "我想去銀行，可以請您告訴我怎麼走嗎？",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "A friend gave me this card.",
+          "subtitle": "A friend gave me this card.",
+          "translation": "這張卡片是朋友送我的。",
+          "speaker": "adult_a",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "This is the bread my mother made.",
+          "subtitle": "This is the bread my mother made.",
+          "translation": "這是媽媽做的麵包。",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-27-kara-made-deadline": {
+    "en": {
+      "title": "從哪裡，到哪裡，何時以前？",
+      "grammar": "from…to / because / since / by",
+      "caption": "Use “from…to…,” “because,” “since,” “until,” and “by” to keep endpoints and deadlines clear.",
+      "image": "assets/japanese-comics/j4-27-kara-made-deadline-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "12 146 1000 296",
+          "alt": "英文第1格：從東京到大阪搭新幹線要三小時。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "12 452 1000 316",
+          "alt": "英文第2格：因為這裡是東京，物價很高。\n搬到東京住之後，每天都在省錢。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "12 778 1000 327",
+          "alt": "英文第3格：課程是下午四點到七點。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "12 1116 1000 328",
+          "alt": "英文第4格：最晚什麼時候必須還書？\n最晚請在星期三交回。",
+          "first": 4,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "It takes three hours to get from Tokyo to Osaka by bullet train.",
+          "subtitle": "It takes three hours to get from Tokyo to Osaka by bullet train.",
+          "translation": "從東京到大阪搭新幹線要三小時。",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Prices are high here because it's Tokyo.",
+          "subtitle": "Prices are high here because it's Tokyo.",
+          "translation": "因為這裡是東京，物價很高。",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I've been watching my spending every day since I moved to Tokyo.",
+          "subtitle": "I've been watching my spending every day since I moved to Tokyo.",
+          "translation": "搬到東京住之後，每天都在省錢。",
+          "speaker": "adult_b",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "The class runs from four p.m. to seven p.m.",
+          "subtitle": "The class runs from four p.m. to seven p.m.",
+          "translation": "課程是下午四點到七點。",
+          "speaker": "adult_a",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "When do I have to return the book by?",
+          "subtitle": "When do I have to return the book by?",
+          "translation": "最晚什麼時候必須還書？",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Please return it by Wednesday.",
+          "subtitle": "Please return it by Wednesday.",
+          "translation": "最晚請在星期三交回。",
+          "speaker": "adult_b",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-28-o-ni-movement": {
+    "en": {
+      "title": "離開、搭乘、進入怎麼說？",
+      "grammar": "leave / get off / get on / enter",
+      "caption": "Notice the whole expression: “leave,” “get off,” “get on,” “enter,” and “turn at.”",
+      "image": "assets/japanese-comics/j4-28-o-ni-movement-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "15 146 994 297",
+          "alt": "英文第1格：離開家。\n下公車。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "15 456 994 301",
+          "alt": "英文第2格：搭上電車。\n進入教室。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "15 770 994 313",
+          "alt": "英文第3格：在空中飛翔。\n在紅綠燈處向右轉。",
+          "first": 4,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "15 1096 994 297",
+          "alt": "英文第4格：明天要做什麼？\n我要學日文。",
+          "first": 6,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I leave the house.",
+          "subtitle": "I leave the house.",
+          "translation": "離開家。",
+          "speaker": "narrator",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I get off the bus.",
+          "subtitle": "I get off the bus.",
+          "translation": "下公車。",
+          "speaker": "narrator",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I get on the train.",
+          "subtitle": "I get on the train.",
+          "translation": "搭上電車。",
+          "speaker": "narrator",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I enter the classroom.",
+          "subtitle": "I enter the classroom.",
+          "translation": "進入教室。",
+          "speaker": "narrator",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It flies through the sky.",
+          "subtitle": "It flies through the sky.",
+          "translation": "在空中飛翔。",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Turn right at the traffic light.",
+          "subtitle": "Turn right at the traffic light.",
+          "translation": "在紅綠燈處向右轉。",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "What are you doing tomorrow?",
+          "subtitle": "What are you doing tomorrow?",
+          "translation": "明天要做什麼？",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I'm going to study Japanese.",
+          "subtitle": "I'm going to study Japanese.",
+          "translation": "我要學日文。",
+          "speaker": "adult_b",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-29-ni-time-purpose": {
+    "en": {
+      "title": "時間、頻率、所在地、目的",
+      "grammar": "Use “on” for dates, “for” for an occasion, “twice a month,” “in,” and “to” for purpose.",
+      "caption": "Use “on” for dates, “for” for an occasion, “twice a month,” “in,” and “to” for purpose.",
+      "image": "assets/japanese-comics/j4-29-ni-time-purpose-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "7 138 1010 312",
+          "alt": "英文第1格：十二月三日要去日本。\n家人在日本。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "7 454 1010 313",
+          "alt": "英文第2格：生日那天，收到男友送的包包。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "7 769 1010 304",
+          "alt": "英文第3格：一個月看兩次電影。\n變安靜了。",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "7 1076 1010 338",
+          "alt": "英文第4格：要去超市買蛋。",
+          "first": 5,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "I'm going to Japan on December third.",
+          "subtitle": "I'm going to Japan on December third.",
+          "translation": "十二月三日要去日本。",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "My family is in Japan.",
+          "subtitle": "My family is in Japan.",
+          "translation": "家人在日本。",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "My boyfriend gave me a bag for my birthday.",
+          "subtitle": "My boyfriend gave me a bag for my birthday.",
+          "translation": "生日那天，收到男友送的包包。",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I see a movie twice a month.",
+          "subtitle": "I see a movie twice a month.",
+          "translation": "一個月看兩次電影。",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It became quiet.",
+          "subtitle": "It became quiet.",
+          "translation": "變安靜了。",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I'm going to the supermarket to buy eggs.",
+          "subtitle": "I'm going to the supermarket to buy eggs.",
+          "translation": "要去超市買蛋。",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-30-which-where-who": {
+    "en": {
+      "title": "哪一個、哪一位、哪裡？",
+      "grammar": "which / who / where",
+      "caption": "Choose “which” for a selection, “who” for identity, and “where” for a place.",
+      "image": "assets/japanese-comics/j4-30-which-where-who-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "11 143 1003 307",
+          "alt": "英文第1格：IU穿的是哪一雙運動鞋？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "12 459 1002 335",
+          "alt": "英文第2格：咖啡和茶，你比較喜歡哪一個？\n我比較喜歡茶。",
+          "first": 1,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "12 803 1002 310",
+          "alt": "英文第3格：那個人是誰？\n那位是誰呢？\n哪一位是王先生？",
+          "first": 3,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "13 1122 1001 292",
+          "alt": "英文第4格：請問您來自哪個國家？\n臺灣。你現在住在哪裡？",
+          "first": 6,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "Which sneakers is IU wearing?",
+          "subtitle": "Which sneakers is IU wearing?",
+          "translation": "IU穿的是哪一雙運動鞋？",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Which do you prefer, coffee or tea?",
+          "subtitle": "Which do you prefer, coffee or tea?",
+          "translation": "咖啡和茶，你比較喜歡哪一個？",
+          "speaker": "adult_b",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I prefer tea.",
+          "subtitle": "I prefer tea.",
+          "translation": "我比較喜歡茶。",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Who is that person?",
+          "subtitle": "Who is that person?",
+          "translation": "那個人是誰？",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "May I ask who that is?",
+          "subtitle": "May I ask who that is?",
+          "translation": "那位是誰呢？",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Which person is Wang?",
+          "subtitle": "Which person is Wang?",
+          "translation": "哪一位是王先生？",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Which country are you from?",
+          "subtitle": "Which country are you from?",
+          "translation": "請問您來自哪個國家？",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Taiwan. Where do you live now?",
+          "subtitle": "Taiwan. Where do you live now?",
+          "translation": "臺灣。你現在住在哪裡？",
+          "speaker": "adult_b",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-31-time-number-price": {
+    "en": {
+      "title": "問時間，也問數量與價錢",
+      "grammar": "what time / how long / how much / how many",
+      "caption": "Use “what time,” “when,” “how long,” “which number,” “how much,” or “how many.”",
+      "image": "assets/japanese-comics/j4-31-time-number-price-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "8 139 1008 299",
+          "alt": "英文第1格：現在幾點？\n會議是什麼時候？",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "8 446 1008 309",
+          "alt": "英文第2格：生日是幾月幾日？\n到現在學習多久了？",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "8 763 1008 319",
+          "alt": "英文第3格：到台北101的公車是幾號？\n那個包包多少錢？",
+          "first": 4,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "8 1090 1008 324",
+          "alt": "英文第4格：有幾個你推的角色公仔？\n有三個。",
+          "first": 6,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "What time is it now?",
+          "subtitle": "What time is it now?",
+          "translation": "現在幾點？",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "When is the meeting?",
+          "subtitle": "When is the meeting?",
+          "translation": "會議是什麼時候？",
+          "speaker": "adult_b",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "What month and day is your birthday?",
+          "subtitle": "What month and day is your birthday?",
+          "translation": "生日是幾月幾日？",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "How long have you been studying?",
+          "subtitle": "How long have you been studying?",
+          "translation": "到現在學習多久了？",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Which bus goes to Taipei one oh one?",
+          "subtitle": "Which bus goes to Taipei one oh one?",
+          "translation": "到台北101的公車是幾號？",
+          "speaker": "adult_a",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "How much is that bag?",
+          "subtitle": "How much is that bag?",
+          "translation": "那個包包多少錢？",
+          "speaker": "adult_a",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "How many figures of your favorite character do you have?",
+          "subtitle": "How many figures of your favorite character do you have?",
+          "translation": "有幾個你推的角色公仔？",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I have three.",
+          "subtitle": "I have three.",
+          "translation": "有三個。",
+          "speaker": "adult_b",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-32-nan-nani": {
+    "en": {
+      "title": "問人數，也問國籍",
+      "grammar": "how many / nationality / what",
+      "caption": "Ask “what,” “how many people,” “what nationality,” or “what language,” depending on the meaning.",
+      "image": "assets/japanese-comics/j4-32-nan-nani-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "10 129 1004 298",
+          "alt": "英文第1格：這是什麼？\n是月曆。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "11 434 1003 303",
+          "alt": "英文第2格：星期幾？\n星期一。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "12 744 1003 339",
+          "alt": "英文第3格：有幾個人？\n是哪一國人？",
+          "first": 4,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "12 1088 1003 333",
+          "alt": "英文第4格：是什麼語言？\n要吃什麼？",
+          "first": 6,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "What is this?",
+          "subtitle": "What is this?",
+          "translation": "這是什麼？",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It is a calendar.",
+          "subtitle": "It is a calendar.",
+          "translation": "是月曆。",
+          "speaker": "adult_b",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "What day of the week is it?",
+          "subtitle": "What day of the week is it?",
+          "translation": "星期幾？",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It is Monday.",
+          "subtitle": "It is Monday.",
+          "translation": "星期一。",
+          "speaker": "adult_b",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "How many people?",
+          "subtitle": "How many people?",
+          "translation": "有幾個人？",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "What nationality?",
+          "subtitle": "What nationality?",
+          "translation": "是哪一國人？",
+          "speaker": "narrator",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "What language is it?",
+          "subtitle": "What language is it?",
+          "translation": "是什麼語言？",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "What would you like to eat?",
+          "subtitle": "What would you like to eat?",
+          "translation": "要吃什麼？",
+          "speaker": "adult_b",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
+    }
+  },
+  "j4-33-what-kind-how-why": {
+    "en": {
+      "title": "哪一種？怎麼樣？為什麼？",
+      "grammar": "what…like / how / would you like / why",
+      "caption": "Use “what is…like,” “what kind of,” “how,” “would you like,” and “why.”",
+      "image": "assets/japanese-comics/j4-33-what-kind-how-why-en.webp",
+      "width": 1024,
+      "height": 1536,
+      "provenance": "英文情境改編；以原漫畫情境練習自然英文，並非日文教材原句，不直接套用日文接續規則。",
+      "panels": [
+        {
+          "title": "第1格",
+          "crop": "11 131 1003 299",
+          "alt": "英文第1格：新老師是怎樣的人？\n是很親切的人。",
+          "first": 0,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第2格",
+          "crop": "11 439 1003 314",
+          "alt": "英文第2格：你喜歡怎樣的花？\n我喜歡白色的花。",
+          "first": 2,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第3格",
+          "crop": "11 762 1003 311",
+          "alt": "英文第3格：日文學得怎麼樣？\n雖然很難，但很有趣。",
+          "first": 4,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        },
+        {
+          "title": "第4格",
+          "crop": "12 1080 1002 323",
+          "alt": "英文第4格：要不要喝咖啡？\n昨天為什麼沒來呢？",
+          "first": 6,
+          "label": "英文情境改編",
+          "skipAudio": false,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編"
+        }
+      ],
+      "cues": [
+        {
+          "text": "What is the new teacher like?",
+          "subtitle": "What is the new teacher like?",
+          "translation": "新老師是怎樣的人？",
+          "speaker": "adult_a",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "The teacher is very kind.",
+          "subtitle": "The teacher is very kind.",
+          "translation": "是很親切的人。",
+          "speaker": "adult_b",
+          "panel": 0,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "What kind of flowers do you like?",
+          "subtitle": "What kind of flowers do you like?",
+          "translation": "你喜歡怎樣的花？",
+          "speaker": "adult_a",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "I like white flowers.",
+          "subtitle": "I like white flowers.",
+          "translation": "我喜歡白色的花。",
+          "speaker": "adult_b",
+          "panel": 1,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "How is your Japanese study going?",
+          "subtitle": "How is your Japanese study going?",
+          "translation": "日文學得怎麼樣？",
+          "speaker": "adult_a",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "It is difficult, but interesting.",
+          "subtitle": "It is difficult, but interesting.",
+          "translation": "雖然很難，但很有趣。",
+          "speaker": "adult_b",
+          "panel": 2,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Would you like some coffee?",
+          "subtitle": "Would you like some coffee?",
+          "translation": "要不要喝咖啡？",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        },
+        {
+          "text": "Why did you not come yesterday?",
+          "subtitle": "Why did you not come yesterday?",
+          "translation": "昨天為什麼沒來呢？",
+          "speaker": "adult_a",
+          "panel": 3,
+          "sourceKind": "adapted",
+          "sourceLabel": "英文情境改編",
+          "skipAudio": false
+        }
+      ],
+      "readingNote": "只朗讀選定語言的對話或詞形；標題、中文解說、來源標示及背景文字不朗讀。",
+      "language": "en",
+      "sourceKind": "adapted",
+      "sourceLabel": "英文情境改編"
     }
   }
 };

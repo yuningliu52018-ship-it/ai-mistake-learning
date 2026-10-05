@@ -305,5 +305,5 @@
     syncLanguage();
   });
   syncLanguage();
-  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.8.75').catch(console.error));
+  if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js?v=5.8.108').catch(console.error));
 })();

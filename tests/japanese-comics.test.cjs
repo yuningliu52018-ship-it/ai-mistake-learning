@@ -90,13 +90,13 @@ test('service worker shares full-image cache keys and does not cache cross-origi
 });
 
 
-test('all 75 cards share the first comic layout, with audio links outside the image link', () => {
+test('all 108 cards share the first comic layout, with audio links outside the image link', () => {
   const css=fs.readFileSync(path.join(root,'japanese-comics.css'),'utf8');
   assert.match(css,/\.comic-card\{display:flex;flex-direction:column\}/);
   assert.match(css,/\.comic-card \.comic-open\{height:auto;flex:1 0 auto\}/);
   assert.doesNotMatch(css,/data-comic="l1-01-polite-request"/);
   const cards=[...html.matchAll(/<article class="comic-card"[^>]*data-comic="([^"]+)"[^>]*>([\s\S]*?)<\/article>/g)];
-  assert.equal(cards.length,75);
+  assert.equal(cards.length,108);
   for(const [,id,card] of cards){
     assert.equal((card.match(/class="voice-entry"/g)||[]).length,1,id);
     assert.match(card,new RegExp('<\\/a>\\s*<a class="voice-entry" href="voiced-comic.html\\?comic='+id+'"'));
