@@ -1,58 +1,20 @@
 # Eva的資料庫
 
-收藏日文文法漫畫、互動學習單元與錯題筆記的學習資料庫。首頁提供四個資源入口，採暖白與鼠尾草綠配色。原有錯題資料、同步碼儲存鍵與後端 API 均維持相容。
+收藏日文／英文雙語漫畫的學習資料庫。首頁提供漫畫入口，手機與電腦皆可閱讀。
 
-手機延續既有拍照建檔模式，並可閱讀日文漫畫；互動教材與完整錯題整理功能使用桌機。
+## 舊錯題功能清理
 
-## 已完成功能
-
-- 新增、編輯、刪除錯題
-- 科目與複習狀態篩選
-- 關鍵字搜尋
-- 隨機抽題重做
-- 錯題統計
-- 瀏覽器 LocalStorage 自動儲存
-- 內建生物錯題範例
-- GitHub Pages 自動部署流程
-- Gemini 互動 HTML 多檔批次匯入
-- 互動學習單元與結構化題目同步保存至 D1
-- 從錯題資料庫重新開啟原始互動頁
-
-## v4.0 資料庫升級
-
-部署新版 Worker 前，先在 `worker` 目錄執行一次：
-
-`npx wrangler d1 execute ai-mistake-learning-db --remote --file=schema.sql`
-
-再執行 `npm run deploy`。`schema.sql` 使用 `CREATE TABLE IF NOT EXISTS`，不會刪除既有錯題。
-
-## 錯題格式
-
-每一題包含：
-
-1. 題目
-2. 正確答案
-3. 我的答案
-4. 我的錯誤
-5. 解題觀念
-6. 知識點
-7. 詳細解答
-8. 錯誤類型標籤
-9. 複習狀態
+- 已移除自然、社會的科目選項、預設值與 AI 錯題處理支持。
+- 已移除兩題內建自然示例；新資料庫從空白開始。
+- 國文、英文、數學的共用程式保留；首頁不載入舊錯題介面。
+- 既有 LocalStorage、同步碼與 D1 資料不做刪除或遷移，Git 歷史亦保留。
+- Worker 原始碼修改須另行執行 `worker` 目錄下的 `npm run deploy` 才會套用至 Cloudflare；GitHub Pages 部署只更新靜態網站。
 
 ## 開啟 GitHub Pages
 
-1. 進入 Repository 的 `Settings`
-2. 點選左側 `Pages`
-3. 在 `Build and deployment` 的 `Source` 選擇 `GitHub Actions`
-4. 等待 Actions 部署完成
-5. 網站網址預計為：
-
-`https://yuningliu52018-ship-it.github.io/ai-mistake-learning/`
-
-## 注意
-
-目前錯題資料儲存在瀏覽器的 LocalStorage，因此不同裝置不會自動同步。後續版本會加入匯出／匯入與雲端同步功能。
+1. 在 Repository 的 `Settings → Pages` 將 `Source` 設為 `GitHub Actions`。
+2. 等待 Actions 部署完成。
+3. 網站： https://yuningliu52018-ship-it.github.io/ai-mistake-learning/
 
 ## 日文文法漫畫
 
@@ -108,3 +70,4 @@
 J4：33組日英雙語漫畫、J5：20組日英雙語漫畫、J6：22組日英雙語漫畫。原有75組雙語資料和299個圖檔逐一比對保留。
 
 每個有聲例句只朗讀所選外語，中文規則不朗讀；同一格多句依序分開。
+

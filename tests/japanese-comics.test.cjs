@@ -26,11 +26,11 @@ test('every comic has a full WebP and thumbnail', () => {
   }
 });
 
-test('homepage links gallery without changing existing app scripts', () => {
+test('homepage links gallery without reintroducing retired mistake tools', () => {
   const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
   assert.match(home, /href="japanese-comics.html"/);
   for (const id of ['addBtn', 'artifactImportButton', 'paperInput', 'questionList', 'questionDialog']) {
-    assert.match(home, new RegExp(`id="${id}"`));
+    assert.doesNotMatch(home, new RegExp(`id="${id}"`));
   }
   assert.doesNotMatch(html, /src="(?:app|mobile-mode|config)\.js/);
 });
@@ -104,3 +104,4 @@ test('all 150 cards share the first comic layout, with audio links outside the i
   assert.match(html,/japanese-comics\.css\?v=5\.6/);
   assert.match(fs.readFileSync(path.join(root,'service-worker.js'),'utf8'),/japanese-comics\.css\?v=5\.6/);
 });
+

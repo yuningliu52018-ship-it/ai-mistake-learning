@@ -215,7 +215,7 @@
         const response = await fetch(endpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({action:'detectMistakes', image:page.image}) });
         const payload = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(payload.detail || payload.error || `HTTP ${response.status}`);
-        page.detected = (Array.isArray(payload.mistakes) ? payload.mistakes : []).map(item => ({
+        page.detected = (Array.isArray(payload.mistakes) ? payload.mistakes : []).filter(item => !['自然','社會','未支援'].includes(String(item.subject || '').trim())).map(item => ({
           ...item,
           imageRequired: item.imageRequired === true,
           imageReason: item.imageReason || '',
