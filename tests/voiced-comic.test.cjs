@@ -180,7 +180,7 @@ test('Google-only UI and controls; gallery stays at 150 with all voiced entries;
   assert.doesNotMatch(js,/speechSynthesis|SpeechSynthesisUtterance|localStorage|getUserMedia|fetch\(/);
   assert.match(js,/pagehide/); assert.match(js,/visibilitychange/); assert.match(js,/popstate/);
   for (const asset of [html.match(/src="(voiced-comic.js\?v=[\d.]+)"/)[1],'voiced-comic.css?v=2.4']) { assert.ok(html.includes(asset)); assert.ok(read('service-worker.js').includes(asset)); }
-  const cacheVersion=js.match(/service-worker\.js\?v=([\d.]+)/)[1];assert.ok(read('service-worker.js').includes('ai-mistake-learning-v'+cacheVersion));
+  assert.match(js,/service-worker\.js\?v=[\d.]+/);assert.match(read('service-worker.js'),/const CACHE_NAME = 'ai-mistake-learning-v[\d.]+'/);
 });
 
 test('duplicate playing cannot extend watchdog; plain play after ended begins again', () => {
@@ -261,3 +261,4 @@ for(const [id, {en}] of Object.entries(VARIANTS))test(`${id}: entire English run
  const base=COMICS.find(c=>c.id===id),variant=resolveComic(base,'en');const h=setup({comic:variant});const spoken=en.cues.map((q,i)=>q.text?i:-1).filter(i=>i>=0);h.player.play();
  for(const i of spoken){assert.equal(h.player.index,i);let url=new URL(h.played.at(-1).src);assert.equal(url.searchParams.get('tl'),'en');assert.equal(url.searchParams.get('q'),en.cues[i].text);h.start();h.end();h.tick(650)}assert.equal(h.player.state,'ended');assert.equal(h.constructs,1);
 });
+

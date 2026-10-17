@@ -83,7 +83,7 @@
         <img src="${cropRect(item.rect)}" alt="錯題 ${index+1}" />
         <div class="detected-body">
           <h3>錯題 ${index+1}</h3>
-          <label>科目<select class="detected-subject" data-index="${index}">${['國文','英文','數學','自然','社會'].map(s=>`<option ${s===item.subject?'selected':''}>${s}</option>`).join('')}</select></label>
+          <label>科目<select class="detected-subject" data-index="${index}"><option value="">請選擇科目</option>${['國文','英文','數學'].map(s=>`<option ${s===item.subject?'selected':''}>${s}</option>`).join('')}</select></label>
           <label>題號<input class="detected-number" data-index="${index}" value="${escapeHtml(item.number)}" placeholder="例如：23" /></label>
           <label>OCR 題目文字<textarea class="detected-ocr" data-index="${index}" rows="6" placeholder="按 OCR 辨識後，可在此人工修正">${escapeHtml(item.ocrText||'')}</textarea></label>
           <div class="ocr-status">${item.ocrStatus==='running'?`辨識中… ${item.progress||0}%`:item.ocrStatus==='error'?'辨識失敗，請重試':item.ocrText?`辨識完成｜信心值 ${Math.round(item.confidence||0)}%`:'尚未辨識'}</div>
@@ -99,7 +99,7 @@
 
   function createBox(data,recordHistory=true) {
     const rect=new Konva.Rect({x:data.x,y:data.y,width:data.width,height:data.height,stroke:'#dc2626',strokeWidth:3/zoom,fill:'rgba(220,38,38,.10)',draggable:mode==='select',dragBoundFunc:pos=>({x:clamp(pos.x,0,imageNode.width()-rect.width()),y:clamp(pos.y,0,imageNode.height()-rect.height())})});
-    const item={rect,subject:data.subject||'自然',number:data.number||'',ocrText:data.ocrText||'',confidence:data.confidence||0,ocrStatus:'idle',progress:0};
+    const item={rect,subject:(['國文','英文','數學'].includes(data.subject)?data.subject:''),number:data.number||'',ocrText:data.ocrText||'',confidence:data.confidence||0,ocrStatus:'idle',progress:0};
     rect.on('click tap',e=>{e.cancelBubble=true;if(mode==='select'&&!spacePressed)selectRect(rect);});
     rect.on('dragend transformend',()=>{normalizeRect(rect);saveHistory();renderDetected();});
     boxes.push(item); layer.add(rect); transformer.moveToTop(); if(recordHistory)saveHistory(); return rect;
@@ -152,7 +152,7 @@
     transformer=new Konva.Transformer({rotateEnabled:false,keepRatio:false,enabledAnchors:['top-left','top-center','top-right','middle-left','middle-right','bottom-left','bottom-center','bottom-right'],anchorSize:12,borderStrokeWidth:2,boundBoxFunc:(oldBox,newBox)=>newBox.width<24||newBox.height<20||newBox.x<0||newBox.y<0||newBox.x+newBox.width>imageNode.width()||newBox.y+newBox.height>imageNode.height()?oldBox:newBox});layer.add(transformer);
     stage.on('mousedown touchstart',event=>{if(spacePressed||mode!=='draw'||event.target!==stage)return;const pos=stage.getRelativePointerPosition();drawStart={x:clamp(pos.x,0,width),y:clamp(pos.y,0,height)};drawingRect=new Konva.Rect({x:drawStart.x,y:drawStart.y,width:1,height:1,stroke:'#dc2626',strokeWidth:3/zoom,fill:'rgba(220,38,38,.10)'});layer.add(drawingRect);});
     stage.on('mousemove touchmove',()=>{if(!drawingRect||!drawStart)return;const pos=stage.getRelativePointerPosition(),x=clamp(pos.x,0,width),y=clamp(pos.y,0,height);drawingRect.setAttrs({x:Math.min(drawStart.x,x),y:Math.min(drawStart.y,y),width:Math.abs(x-drawStart.x),height:Math.abs(y-drawStart.y)});layer.batchDraw();});
-    stage.on('mouseup touchend',()=>{if(!drawingRect)return;const data={x:drawingRect.x(),y:drawingRect.y(),width:drawingRect.width(),height:drawingRect.height(),subject:'自然',number:''};drawingRect.destroy();drawingRect=null;drawStart=null;if(data.width>=24&&data.height>=20)createBox(data);layer.draw();renderDetected();});
+    stage.on('mouseup touchend',()=>{if(!drawingRect)return;const data={x:drawingRect.x(),y:drawingRect.y(),width:drawingRect.width(),height:drawingRect.height(),subject:'',number:''};drawingRect.destroy();drawingRect=null;drawStart=null;if(data.width>=24&&data.height>=20)createBox(data);layer.draw();renderDetected();});
     stage.on('click tap',event=>{if(mode==='select'&&event.target===stage&&!spacePressed)selectRect(null);});
     viewport.onwheel=event=>{event.preventDefault();applyZoom(zoom*(event.deltaY<0?1.12:0.89),event.clientX,event.clientY);};
     viewport.onmousedown=event=>{if(!spacePressed)return;event.preventDefault();panning=true;panStart={x:event.clientX,y:event.clientY,left:viewport.scrollLeft,top:viewport.scrollTop};updateCursor();};
@@ -185,6 +185,7 @@
     if(button.dataset.action==='ocr'){runOcr(index);return;}
     if(button.dataset.action==='remove'){item.rect.destroy();boxes.splice(index,1);selectRect(null);saveHistory();renderDetected();return;}
     if(button.dataset.action==='add'){
+      if(!item.subject)return alert('請先選擇科目。');
       if(typeof window.openQuestionFromCrop!=='function')return alert('錯題表單尚未載入，請重新整理後再試。');
       window.openQuestionFromCrop({image:cropRect(item.rect),subject:item.subject,number:item.number,question:item.ocrText||`【考卷框選圖片】請補上第 ${item.number||'　'} 題完整題目。`,correctAnswer:'待確認',mistake:'由考卷照片框選匯入，尚待分析錯誤原因。',concept:'待整理',knowledge:'待分類',explanation:'待完成詳細解答。',tags:['考卷匯入',item.ocrText?'OCR 已辨識':'待整理']});
     }

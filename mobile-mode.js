@@ -35,7 +35,7 @@
   const originalOpenFromCrop = window.openQuestionFromCrop;
   if (typeof originalOpenFromCrop === 'function') {
     window.openQuestionFromCrop = (draft) => {
-      originalOpenFromCrop(draft);
+      if (originalOpenFromCrop(draft) === false) return;
       window.setTimeout(() => {
         const form = document.getElementById('questionForm');
         if (!form) return;
